@@ -2,7 +2,7 @@
 
 /* 초기화 */
 html {overflow-y:scroll;height:100%;min-width:320px}
-body {margin:0;padding:0;font-size:0.75em;background:#e6e6e6;height:100%}
+body {margin:0;padding:0;font-size:0.75em;background:#fff;height:100%}
 html, h1, h2, h3, h4, h5, h6, form, fieldset, img {margin:0;padding:0;border:0}
 h1, h2, h3, h4, h5, h6 {font-size:1em}
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block}
@@ -232,7 +232,7 @@ a.btn_admin:focus, a.btn_admin:hover {}
 
 /* 기본리스트 */
 .list_01{padding:0 10px;}
-.list_01 li{background:#fff;border-radius:3px;margin:10px 0;padding:10px 15px;border-bottom:1px solid #ccc;}
+.list_01 li{background:#f9f9f9;border-radius:3px;margin:10px 0;padding:10px 15px;border-bottom:1px solid #ccc;}
 
 /* 기본폼 */
 .form_01{margin:10px}
