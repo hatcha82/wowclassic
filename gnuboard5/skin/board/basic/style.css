@@ -106,17 +106,23 @@
 #bo_list .txt_expired {color:#ccc}
 #bo_list tbody tr:hover {border-left:2px solid #253dbe}
 
-#bo_cate {background:#ecf2f3;padding:7px;margin:10px 0;border:1px solid #bed1d4}
+#bo_cate {background:#111;opacity: 0.9;;padding:7px;margin:10px 0;border:1px solid #444}
+#bo_cate a{color:#eee}
 #bo_cate h2 {position:absolute;font-size:0;line-height:0;overflow:hidden}
 #bo_cate ul {zoom:1}
 #bo_cate ul:after {display:block;visibility:hidden;clear:both;content:""}
 #bo_cate li {display:inline-block;padding:2px;}
 #bo_cate a {display:block;line-height:26px;padding:0 10px;border-radius:3px;border:1px solid transparent}
-#bo_cate a:focus, #bo_cate a:hover, #bo_cate a:active {text-decoration:none;background:#d2d6dc;}
-#bo_cate #bo_cate_on {z-index:2;background:#3497d9;color:#fff;font-weight:bold;border-bottom-color:#1977b5;
--webkit-box-shadow: inset 0 2px 5px rgb(33, 135, 202);
--moz-box-shadow: inset 0 2px 5px rgb(33, 135, 202);
-box-shadow:inset 0 2px 5px rgb(33, 135, 202);}
+#bo_cate a:focus, #bo_cate a:hover, #bo_cate a:active {z-index:2;background:#000;color:#fff;font-weight:bold;border-bottom-color:#444;
+  -webkit-box-shadow: inset 0 1x 1px rgb(39, 39, 39);
+  -moz-box-shadow: inset 0 1px 1px rgb(39, 39, 39);
+  box-shadow:inset 0 1px 1px rgb(39, 39, 39);
+  }
+#bo_cate #bo_cate_on {z-index:2;background:#000;color:#fff;font-weight:bold;border-bottom-color:#444;
+-webkit-box-shadow: inset 0 1x 1px rgb(39, 39, 39);
+-moz-box-shadow: inset 0 1px 1px rgb(39, 39, 39);
+box-shadow:inset 0 1px 1px rgb(39, 39, 39);
+}
 .td_subject img {margin-left:5px}
 
 /* 게시판 목록 공통 */
@@ -125,7 +131,7 @@ box-shadow:inset 0 2px 5px rgb(33, 135, 202);}
 .bo_fx {margin-bottom:5px;float:right;zoom:1}
 .bo_fx:after {display:block;visibility:hidden;clear:both;content:""}
 .bo_fx ul {margin:0;padding:0;list-style:none}
-#bo_list_total {float:left;line-height:30px;font-size:0.92em;color:#4e546f;background:#d4d4d4;padding:0 10px;border-radius:5px;}
+#bo_list_total {float:left;line-height:30px;font-size:0.92em;color:#eee;background:#111;opacity: 0.9;;padding:0 10px;border-radius:5px;}
 
 .btn_bo_user {float:right;margin:0;padding:0;list-style:none}
 .btn_bo_user li {float:left;margin-left:5px}
@@ -155,10 +161,10 @@ box-shadow: inset 0 2px 5px  rgba(255,255,255,0.3);}
 #bo_list .bo_tit .fa-lock{display: inline-block;line-height: 14px;width: 16px;font-size: 0.833em;color: #4f818c;background: #cbe3e8;text-align: center;border-radius: 2px;font-size: 12px;border:1px solid #a2c6ce}
 
 
-#bo_sch {float:left;border:1px solid #ccc;background:#fff;border-radius:3px}
+#bo_sch {float:left;border:1px solid #444;background:#111;opacity: 0.9;;border-radius:3px}
 #bo_sch:after {display:block;visibility:hidden;clear:both;content:""}
 #bo_sch legend {position:absolute;margin:0;padding:0;font-size:0;line-height:0;text-indent:-9999em;overflow:hidden}
-#bo_sch select{border:0;margin:9px 5px ;height:20px;float:left;border-right:1px solid #ddd;}
+#bo_sch select{border:0;margin:9px 5px ;height:20px;float:left;border-right:1px solid #444;background: #111;opacity: 0.9;color:#eee}
 #bo_sch .sch_input{height:38px;border:0;padding:0;background-color:transparent;float:left}
 #bo_sch .sch_btn{height:38px;float:left;background:none;border:0;width:40px;font-size:15px}
 

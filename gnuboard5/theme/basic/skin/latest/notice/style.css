@@ -1,6 +1,6 @@
 @charset "utf-8";
 /* 새글 스킨 (latest) */
-.notice {position:relative;padding:15px 50px;border-bottom:1px solid #d0d6e4}
+.notice {position:relative;padding:15px 50px;border-bottom:1px solid #444}
 .notice li{text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
 .notice li a:hover{color:#a22121}
 .notice li .lock_icon{display: inline-block;line-height: 14px;width: 16px;font-size: 0.833em;color: #4f818c;background: #cbe3e8;text-align: center;border-radius: 2px;font-size: 12px;border:1px solid #a2c6ce;vertical-align:top}

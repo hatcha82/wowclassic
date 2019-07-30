@@ -9,14 +9,14 @@
 
 #ol_before {}
 #ol_before:after {display:block;visibility:hidden;clear:both;content:""}
-#ol_before .ol_wr{position:relative;border:1px solid #b7bece;margin-bottom:5px}
-#ol_id {display:block;width:185px;border:1px solid #fff;padding:0 10px;height:32px}
-#ol_pw {display:block;width:185px;border:1px solid #fff;padding:0 10px;border-top:1px solid #ededed;height:32px}
-#ol_submit {position:absolute;top:0;right:0;width:76px;height:64px;background:#fff;border-left:1px solid #ccc;color:#000;font-weight:bold;font-size:1.167em}
+#ol_before .ol_wr{position:relative;border:1px solid #444;margin-bottom:5px;}
+#ol_id {display:block;width:185px;border:1px solid #444;padding:0 10px;height:32px;background: #111;opacity: 0.9;color:#eee}
+#ol_pw {display:block;width:185px;border:1px solid #444;padding:0 10px;border-top:1px solid #444;height:32px;background: #111;opacity: 0.9;color:#eee}
+#ol_submit {position:absolute;top:0;right:0;width:76px;height:64px;background:#111;;border-left:1px solid #444;color:#eee;font-weight:bold;font-size:1.167em}
 #ol_svc {float:right;line-height:20px}
-#ol_svc a{display:inline-block;color:#555;margin:0 5px}
+#ol_svc a{display:inline-block;color:#ddd;margin:0 5px}
 #ol_auto {float:left;line-height:20px}
-#ol_auto label {color:#555}
+#ol_auto label {color:#ddd}
 #ol_auto input {width:13px;height:13px} 
 .ol_auto_wr:after {display:block;visibility:hidden;clear:both;content:""}
 
