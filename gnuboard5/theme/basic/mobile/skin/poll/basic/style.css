@@ -40,17 +40,17 @@
 /* 설문조사 스킨 */
 #poll {margin:30px 10px }
 #poll header {position:relative;}
-#poll h2 {display:inline-block;background: #4162ff;color: #fff;border-radius: 3px;line-height: 24px;padding: 0 10px;margin:0 0 10px;
+#poll h2 {display:inline-block;background: #111;opacity:0.9;color: #fff;border-radius: 3px;line-height: 24px;padding: 0 10px;margin:0 0 10px;
 -webkit-box-shadow: 0 0 5px rgba(65,98,255,0.8);
 -moz-box-shadow: 0 0 5px rgba(65,98,255,0.8);
 box-shadow: 0 0 8px rgba(65,98,255,0.8); 
 }
 #poll header .btn_admin {display:block;margin:0 0 5px;color:#fff;text-align:center;text-decoration:none;line-height:2em;vertical-align:middle}
 #poll header p {padding:0;font-weight:bold}
-#poll li {background:#fff;margin: 8px 0;padding:10px;
-    -webkit-box-shadow: 0 1px 4px #cbd1df;
-    -moz-box-shadow: 0 1px 4px #cbd1df;
-    box-shadow: 0 1px 4px #cbd1df;}
+#poll li {background:#111;opacity: 0.8;color:#eee;;margin: 8px 0;padding:10px;
+    -webkit-box-shadow: 0 1px 4px #444;
+    -moz-box-shadow: 0 1px 4px #444;
+    box-shadow: 0 1px 4px #444;}
 #poll footer:after {display:block;visibility:hidden;clear:both;content:""}
 #poll footer input {float:right;font-weight:bold;}
 #poll footer a {display:inline-block;float:left;background:#c6c6d2;color:#333;font-weight:bold}

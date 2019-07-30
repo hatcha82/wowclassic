@@ -4,13 +4,25 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
     </div>
 </div>
 
-
+<div style="width:320px;height:50px;margin:auto;">
+    <ins class="kakao_ad_area" style="display:none;" 
+    data-ad-unit    = "DAN-s4xfda1viss6" 
+    data-ad-width   = "320" 
+    data-ad-height  = "50"></ins> 
+</div>
 <?php echo poll('theme/basic'); // 설문조사 ?>
 <?php echo popular('theme/basic'); // 인기검색어 ?>
 <?php echo visit('theme/basic'); // 방문자수 ?>
 
 
+<div style="width:320px;height:50px;margin:5px auto;">
+    <ins class="kakao_ad_area" style="display:none;" 
+    data-ad-unit    = "DAN-1ib0wuv8suxpx" 
+    data-ad-width   = "320" 
+    data-ad-height  = "50"></ins> 
+</div>
 <div id="ft">
+
     <div id="ft_copy">
         <div id="ft_company">
             <a href="<?php echo G5_BBS_URL; ?>/content.php?co_id=company">회사소개</a>

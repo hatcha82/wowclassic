@@ -76,7 +76,10 @@ border: 1px solid #558ab7 !important;
 
 .hd_sch_wr{position:absolute;top:25px;left:50%;width:430px;margin-left:-215px;}
 #hd_sch h3 {position:absolute;font-size:0;line-height:0;overflow:hidden}
-#hd_sch{border:2px solid #556ada;background:#fff;border-radius:5px;overflow:hidden}
+#hd_sch{border:2px solid #556ada;background:#fff;border-radius:5px;overflow:hidden;
+    margin-left: 100px;
+    width: 430px;
+}
 #hd_sch #sch_stx {padding-left:10px;height:40px;width:376px;border:0;border-right:0;float:left;font-size:1.25em}
 #hd_sch #sch_submit {height:40px;border:0;background:#fff;color:#253dbe;width:50px;float:left;cursor:pointer;font-size:18px}
 

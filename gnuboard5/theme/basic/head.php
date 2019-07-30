@@ -46,10 +46,11 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
   
     </div>
     <div id="hd_wrapper">
-
+        
        
     
         <div class="hd_sch_wr">
+      
         <div id="logo">
             <a href="<?php echo G5_URL ?>"><img src="<?php echo G5_IMG_URL ?>/logo.png" alt="<?php echo $config['cf_title']; ?>"></a>
         </div>
@@ -92,7 +93,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                 </script>
 
             </fieldset>
-                
+            
             <?php echo popular('theme/basic'); // 인기검색어, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정  ?>
         </div>
         <ul id="hd_qnb">
@@ -240,9 +241,28 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 <hr>
 
 <!-- 콘텐츠 시작 { -->
+
 <div id="wrapper">
     <div id="container_wr">
-   
+    <div style="margin:10px 0;">
+    <div style="width:320px;height:100px;float:left;">
+        <ins class="kakao_ad_area" style="display:none;" 
+            data-ad-unit    = "DAN-qhsuk5fv6yxw" 
+            data-ad-width   = "320" 
+            data-ad-height  = "100"></ins> 
+    </div>
+    <div style="width:728px;height:90px;float:left;margin-left:15px;margin-top:5px">
+        <ins class="kakao_ad_area" style="display:none;" 
+            data-ad-unit    = "DAN-1h822y33b17qc" 
+            data-ad-width   = "728" 
+            data-ad-height  = "90"></ins> 
+    </div>
+        <div style="width:320px;height:100px;float:left;margin-left:15px">
+            <ins class="kakao_ad_area" style="display:none;" 
+            data-ad-unit    = "DAN-rhglnuszc3tw" 
+            data-ad-width   = "320" 
+            data-ad-height  = "100"></ins> 
+    </div>
     <div id="container">
         <?php if (!defined("_INDEX_")) { ?><h2 id="container_title"><span title="<?php echo get_text($g5['title']); ?>"><?php echo get_head_title($g5['title']); ?></span></h2><?php } ?>
 

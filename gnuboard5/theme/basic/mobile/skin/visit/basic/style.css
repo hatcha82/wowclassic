@@ -1,15 +1,16 @@
 @charset "utf-8";
 
 #visit {margin:30px 10px}
-#visit h2 {display:inline-block;background: #4162ff;color: #fff;border-radius: 3px;line-height: 24px;padding: 0 10px;margin:0 0 10px;
--webkit-box-shadow: 0 0 5px rgba(65,98,255,0.8);
--moz-box-shadow: 0 0 5px rgba(65,98,255,0.8);
-box-shadow: 0 0 8px rgba(65,98,255,0.8); }
-#visit dl{background:#fff;padding:10px;border-radius:3px;line-height:20px;
--webkit-box-shadow: 0 1px 4px #cbd1df;
-   -moz-box-shadow: 0 1px 4px #cbd1df;
-        box-shadow: 0 1px 4px #cbd1df;}
+#visit h2 {display:inline-block;background: #111;opacity: 0.9;;color: #eee;border-radius: 3px;line-height: 24px;padding: 0 10px;margin:0 0 10px;
+-webkit-box-shadow: 0 0 5px #444;
+-moz-box-shadow: 0 0 5px #444;
+box-shadow: 0 0 8px #444;
+}
+#visit dl{background:#111;opacity: 0.9;;padding:10px;border-radius:3px;line-height:20px;
+-webkit-box-shadow: 0 1px 4px #444;
+   -moz-box-shadow: 0 1px 4px #444;
+        box-shadow: 0 1px 4px #444;}
 #visit dl:after {display:block;visibility:hidden;clear:both;content:""}
-#visit dt {float:left;width:50%}
-#visit dd {float:left;width:50%;text-align:right}
-#visit a {display:inline-block;padding:10px 3px;text-decoration:none}
+#visit dt {float:left;width:50%;color:#eee}
+#visit dd {float:left;width:50%;text-align:right;color:#eee}
+#visit a {display:inline-block;padding:10px 3px;text-decoration:none;color:#eee}
