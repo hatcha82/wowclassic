@@ -232,7 +232,7 @@ a.btn_admin:focus, a.btn_admin:hover {}
 
 /* 기본리스트 */
 .list_01{padding:0px;margin-bottom:10px}
-.list_01 li{color:#eee;;border-radius:3px;margin:0px 0;padding:5px 15px;border-bottom:1px solid #ccc;}
+.list_01 li{color:#eee;;border-radius:3px;margin:0px 0;padding:5px 15px;border-bottom:1px solid #444;}
 .list_01 li a{color:#ddd}
 
 /* 기본폼 */
