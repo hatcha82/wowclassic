@@ -38,8 +38,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$latest_skin_url.'/style.css">', 
             if ($list[$i]['comment_cnt'])  echo "
             <span class=\"lt_cmt\">+ ".$list[$i]['comment_cnt']."</span>";
 
-            ?>
-
+            ?> 
             <span class="lt_date"><?php echo $list[$i]['datetime2'] ?></span>
         </li>
     <?php }  ?>
