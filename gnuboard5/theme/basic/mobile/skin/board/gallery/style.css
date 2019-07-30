@@ -147,7 +147,7 @@ box-shadow: 0 1px 4px #ddd;}
 #bo_v_table {padding: 10px;color:#999;font-size:0.9em;font-weight:bold}
 
 #bo_v_title {;text-align:center}
-.bo_v_cate{display:inline-block;background: #4162ff;color: #fff;border-radius: 13px;line-height: 24px;padding: 0 10px;font-weight:normal;
+.bo_v_cate{display:inline-block;background: #4162ff;color: #fff;border-radius: 3px;line-height: 24px;padding: 0 10px;font-weight:normal;
 -webkit-box-shadow: 0 0 5px rgba(65,98,255,0.8);
 -moz-box-shadow: 0 0 5px rgba(65,98,255,0.8);
 box-shadow: 0 0 8px rgba(65,98,255,0.8);}

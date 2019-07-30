@@ -283,7 +283,7 @@ a.btn_admin:focus, a.btn_admin:hover {}
 .new_win .win_ul {margin:10px}
 .new_win .win_ul li{display:inline-block;}
 .new_win .win_ul li a{display: block;line-height: 24px;padding: 0 10px;}
-.new_win .win_ul li .selected {background: #4162ff;color: #fff;border-radius: 13px;
+.new_win .win_ul li .selected {background: #4162ff;color: #fff;border-radius: 3px;
 -webkit-box-shadow: 0 0 5px rgba(65,98,255,0.8);
 -moz-box-shadow: 0 0 5px rgba(65,98,255,0.8);
 box-shadow: 0 0 8px rgba(65,98,255,0.8);}

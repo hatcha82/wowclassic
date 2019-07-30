@@ -72,8 +72,8 @@ border: 1px solid #558ab7 !important;
 #hd_wrapper {position:relative;margin:0 auto;padding:10px 0;height:115px;zoom:1}
 #hd_wrapper:after {display:block;visibility:hidden;clear:both;content:""}
 
-#logo {float:left;padding:30px 0 0}
-#logo img{width:200px;margin-top:-30px}
+#logo {position: absolute;left:-160px;top:10px}
+#logo img{width:150px;margin-top:-10px}
 
 .hd_sch_wr{position:absolute;top:25px;left:50%;width:430px;margin-left:-215px;}
 #hd_sch h3 {position:absolute;font-size:0;line-height:0;overflow:hidden}

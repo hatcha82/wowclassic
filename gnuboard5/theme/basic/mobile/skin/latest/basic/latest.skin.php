@@ -6,34 +6,40 @@ add_stylesheet('<link rel="stylesheet" href="'.$latest_skin_url.'/style.css">', 
 ?>
 
 <div class="lt list_01">
+    <div class="bo_name">
     <a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=<?php echo $bo_table ?>" class="lt_title"><i class="fa fa-list-ul" aria-hidden="true"></i> <strong><?php echo $bo_subject ?></strong></a>
+    </div>
     <ul>
     <?php for ($i=0; $i<count($list); $i++) { ?>
         <li>
-            <?php
+            
+            <?php            
+            if ($list[$i]['ca_name'])  {
+                $cateName = $list[$i]['ca_name'];
+                echo "<a  class='bo_cate_link' href='" . $list[$i]['ca_name_href'] . "'>[$cateName] </a>";
+            }
             if ($list[$i]['icon_secret']) echo "<i class=\"fa fa-lock\" aria-hidden=\"true\"></i> ";
             //echo $list[$i]['icon_reply']." ";
             echo "<a href=\"".$list[$i]['href']."\" class=\"lt_tit\">";
             if ($list[$i]['is_notice'])
-                echo "<strong>".$list[$i]['subject']."</strong>";
+                echo "<strong>".$list[$i]['wr_subject']."</strong>";
             else
-                echo $list[$i]['subject'];
+                echo $list[$i]['wr_subject'];
 
                 // if ($list[$i]['link']['count']) { echo "[{$list[$i]['link']['count']}]"; }
                 // if ($list[$i]['file']['count']) { echo "<{$list[$i]['file']['count']}>"; }
-
-            if ($list[$i]['icon_new']) echo " <span class=\"new_icon\">NEW</span>";
-            if ($list[$i]['icon_file']) echo " <i class=\"fa fa-download\" aria-hidden=\"true\"></i>" ;
-            if ($list[$i]['icon_link']) echo " <i class=\"fa fa-link\" aria-hidden=\"true\"></i>" ;
-            if ($list[$i]['icon_hot']) echo " <i class=\"fa fa-heart\" aria-hidden=\"true\"></i>";
-
+                echo '&nbsp';
+                if (isset($list[$i]['icon_new'])) echo $list[$i]['icon_new'];
+                if (isset($list[$i]['icon_hot'])) echo $list[$i]['icon_hot'];
+                if (isset($list[$i]['icon_file'])) echo $list[$i]['icon_file'];
+                if (isset($list[$i]['icon_link'])) echo $list[$i]['icon_link'];
+                if (isset($list[$i]['icon_secret'])) echo $list[$i]['icon_secret'];
             echo "</a>";
-
             ?>
             <div class="lt_info">
                 <?php echo $list[$i]['name'] ?>
-                <span class="lt_date"><?php if ($list[$i]['comment_cnt']) { ?><span class="sound_only">댓글</span><i class="fa fa-commenting-o" aria-hidden="true"></i><?php echo $list[$i]['comment_cnt']; ?><span class="sound_only">개</span><?php } ?> 
-                <i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $list[$i]['datetime2'] ?></span>
+                <?php if ($list[$i]['comment_cnt']) { ?><span class="sound_only">댓글</span><i class="fa fa-commenting-o" aria-hidden="true"></i><?php echo $list[$i]['comment_cnt']; ?><span class="sound_only">개</span><?php } ?> 
+                <i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $list[$i]['datetime2'] ?>
             </div>
         </li>
     <?php } ?>
