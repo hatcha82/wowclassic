@@ -26,7 +26,7 @@ if (PHP_VERSION >= '5.1.0') {
 보안서버주소가 없다면 공란으로 두시면 되며 보안서버주소 뒤에 / 는 붙이지 않습니다.
 입력예) https://www.domain.com:443/gnuboard5
 */
-define('G5_DOMAIN', 'http://wowclassic.furiganahub.com');
+define('G5_DOMAIN', 'http://wowclassic.furiganahub.com/');
 define('G5_HTTPS_DOMAIN', '');
 
 /*
@@ -156,12 +156,12 @@ define('G5_MOBILE_AGENT',   'phone|samsung|lgtel|mobile|[^A]skt|nokia|blackberry
 
 // SMTP
 // lib/mailer.lib.php 에서 사용
-define('G5_SMTP','smtp.t2l.co.kr');
-define('G5_SMTP_PORT', '25');
+define('G5_SMTP','smtp.gmail.com');
+define('G5_SMTP_PORT', '465');
 define('G5_SMTP_AUTH','true');
-define('G5_SMTP_USER_ID' , 'cbha@t2l.co.kr');
-define('G5_SMTP_PASSWORD', 'cbha7036!@');
-define('G5_SMTP_SSL_SECURE','none');
+define('G5_SMTP_USER_ID' , 'furiganahub@gmail.com');
+define('G5_SMTP_PASSWORD', 'g8ckdqja1013');
+define('G5_SMTP_SSL_SECURE','ssl');
 
 
 /********************
