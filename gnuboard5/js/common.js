@@ -740,24 +740,9 @@ function get_write_token(bo_table)
 
     return token;
 }
-/* 와우 오픈 관련 */
-function openClassicRelese(){
-    var release = moment('2019-08-27 07:00:00')
-    var now = moment()
-    var diff = release.diff(now)
-    var diffDuration = moment.duration(diff)
-    var msg = "";
-    if (diff > 0) {
-        msg = `클래식 오픈까지 ${diffDuration.days()}일 ${diffDuration.hours()}시간 ${diffDuration.minutes()}분 ${diffDuration.seconds()}초 남았습니다.`
-    } else {
-        msg = `클래식 오픈이후 ${Math.abs(diffDuration.days())}일 ${Math.abs(diffDuration.hours())}시간 ${Math.abs(diffDuration.minutes())}분 ${Math.abs(diffDuration.seconds())}초 지났습니다.`
-    }
-    $("#classicOpenDDay").text(msg)
-}
 
 $(function() {
-    openClassicRelese()
-    setInterval(openClassicRelese,1000)
+  
     $(document).on("click", "form[name=fwrite] input:submit, form[name=fwrite] button:submit, form[name=fwrite] input:image", function() {
         var f = this.form;
 

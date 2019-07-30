@@ -206,6 +206,24 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
     <script>
     
     $(function(){
+
+        /* 와우 오픈 관련 */
+        function openClassicRelese(){
+            var release = moment('2019-08-27 07:00:00')
+            var now = moment()
+            var diff = release.diff(now)
+            var diffDuration = moment.duration(diff)
+            var msg = "";
+            if (diff > 0) {
+                msg = `클래식 오픈까지 ${diffDuration.days()}일 ${diffDuration.hours()}시간 ${diffDuration.minutes()}분 ${diffDuration.seconds()}초 남았습니다.`
+            } else {
+                msg = `클래식 오픈이후 ${Math.abs(diffDuration.days())}일 ${Math.abs(diffDuration.hours())}시간 ${Math.abs(diffDuration.minutes())}분 ${Math.abs(diffDuration.seconds())}초 지났습니다.`
+            }
+            $("#classicOpenDDay").text(msg)
+        }
+        openClassicRelese()
+        setInterval(openClassicRelese,1000)
+
         $(".gnb_menu_btn").click(function(){
             $("#gnb_all").show();
         });
