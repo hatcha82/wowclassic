@@ -197,4 +197,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
         data-ad-width   = "320" 
         data-ad-height  = "50"></ins> 
     </div>
-    <?php if (!defined("_INDEX_")) { ?><h2 id="container_title" class="top" title="<?php echo get_text($g5['title']); ?>"><?php echo get_head_title($g5['title']); ?></h2><?php } ?>
+    <?php if (!defined("_INDEX_")) { ?>
+       <a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=<?php echo $board['bo_table'];?>"> <h2 id="container_title" class="top" title="<?php echo get_text($g5['title']); ?>"><?php echo get_head_title($g5['title']); ?></h2></a>
+    <?php } ?>
+    
