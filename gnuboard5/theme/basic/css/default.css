@@ -266,7 +266,7 @@ button.btn02 {display:inline-block;margin:0;padding:7px;border:1px solid #3b3c3f
 .btn_confirm {text-align:right} /* 서식단계 진행 */
 
 .btn_submit {border:0;background:#4f4f4f;color:#fff;cursor:pointer;border:0}
-.btn_submit:hover {background:#0025eb}
+.btn_submit:hover {background:#666}
 
 a.btn_cancel {display:inline-block;background:#969696;color:#fff;text-decoration:none;vertical-align:middle;}
 button.btn_cancel {display:inline-block;background:#969696;color:#fff;text-decoration:none;vertical-align:middle}
