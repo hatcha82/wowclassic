@@ -10,7 +10,8 @@
 
 /* .lat li:before{position: absolute;top: 12px;left: 0px;width: 4px;height: 4px;background: #aaa;content: '';border-radius: 50%;} */
 .lat li a{color:#fff}
-.lat li a:hover{color:#a22121}
+.lat li a.bo_cate_link{color:#47aef3}
+.lat li a:hover{color:#3497d9}
 .lat li .fa-heart{color:#ff0000;}
 .lat li .fa-lock{display: inline-block;line-height: 14px;width: 16px;font-size: 0.833em;color: #4f818c;background: #cbe3e8;text-align: center;border-radius: 2px;font-size: 12px;border:1px solid #a2c6ce}
 .lat li .new_icon{display:inline-block;width: 16px;line-height:16px;font-size:0.833em;color:#ffff00;background:#6db142;text-align:center;border-radius: 2px;}

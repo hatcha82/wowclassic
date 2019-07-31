@@ -27,8 +27,11 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
     }
     ?>
     <div id="tnb">
-        <div id="classicOpenDDay" style="position:absolute;line-height: 30px;padding-left:10px;font-weight:bold">
+        <img src="/img/logo-wow.png" style="float:left;height:30px;"/>
+        <a class="blizzard" href="https://worldofwarcraft.com/ko-kr/wowclassic" style="position:absolute;left:30px">
+        <div id="classicOpenDDay" style="line-height: 30px;padding-left:10px;font-weight:bold;">
         </div>
+        </a>
         <ul>
             <?php if ($is_member) {  ?>
 
