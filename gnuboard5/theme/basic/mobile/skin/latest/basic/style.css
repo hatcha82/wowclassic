@@ -21,4 +21,4 @@
 .lt .lt_tit .fa-heart{color: #fe4560;}
 .lt .lt_date{position:absolute;top:10px;right:0;color:#666;font-style:italic}
 .lt .comment_icon{background:url(./img/icon_comment.png) no-repeat 50% 50% ;display:inline-block;width:20px;height:28px;text-indent:-999px;overflow:hidden;vertical-align:top;background-size:70%;margin:0 0px 0 5px}
-.lt .empty_li{text-align:center;padding:40px 0;color:#777}
+.lt .empty_li{text-align:center;padding:40px 0;color:#eee}
