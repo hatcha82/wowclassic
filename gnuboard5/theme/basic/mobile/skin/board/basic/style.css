@@ -227,7 +227,7 @@ box-shadow: 0 0 8px rgba(65,98,255,0.8);}
 #bo_vc .sv_member, #bo_vc .sv_guest {font-weight:bold}
 .bo_vc_hdinfo {display:inline-block;color:#777;font-style:italic}
 #bo_vc h1 {width:0;height:0;font-size:0;line-height:0;overflow:hidden}
-#bo_vc .cmt_contents {padding:10px 15px ;margin:5px 0 0 ;border-radius:5px;background:#f6f6f6;line-height:1.8em}
+#bo_vc .cmt_contents {padding:10px 15px ;margin:5px 0 0 ;border-radius:5px;background:rgba(57, 57, 57, 0.6);line-height:1.8em}
 #bo_vc .cmt_contents  p{font-size:1.083em}
 #bo_vc p a {text-decoration:underline}
 #bo_vc p a.s_cmt {text-decoration:underline;color:#ed6479}
@@ -239,7 +239,7 @@ box-shadow: 0 0 8px rgba(65,98,255,0.8);}
 .bo_vc_act {text-align:right;;margin:0;list-style:none}
 .bo_vc_act:after {display:block;visibility:hidden;clear:both;content:""}
 .bo_vc_act li {display:inline-block;margin:0 2px}
-.bo_vc_act li a{color:#3497d9;text-decoration:underline}
+.bo_vc_act li a{color:#3497d9}
 
 .bo_vc_w {position:relative;margin:10px 0;display:block;}
 .bo_vc_w:after {display:block;visibility:hidden;clear:both;content:""}
