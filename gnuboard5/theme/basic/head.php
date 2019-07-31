@@ -246,7 +246,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 <!-- 콘텐츠 시작 { -->
 
 <div id="wrapper">
-    <div id="container_wr">
+    <div id="container_wr">    
     <div style="margin:10px 0;">
     <div style="width:320px;height:100px;float:left;">
         <ins class="kakao_ad_area" style="display:none;" 
