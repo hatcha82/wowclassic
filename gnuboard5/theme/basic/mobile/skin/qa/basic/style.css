@@ -244,7 +244,7 @@ box-shadow: 0 1px 4px #cbd1df;}
 #bo_vc .sv_member, #bo_vc .sv_guest {font-weight:bold}
 .bo_vc_hdinfo {display:inline-block;margin:0 10px 0 5px}
 #bo_vc h1 {width:0;height:0;font-size:0;line-height:0;overflow:hidden}
-#bo_vc a {color:#000;text-decoration:none}
+#bo_vc a {color:#fff;text-decoration:none}
 #bo_vc p {padding:0 0 5px;line-height:1.8em}
 #bo_vc p a {text-decoration:underline}
 #bo_vc_empty {margin:0;padding:15px !important;border-bottom:1px dotted #ccc;text-align:center}

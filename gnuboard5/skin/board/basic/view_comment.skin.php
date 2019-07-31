@@ -17,6 +17,7 @@ var char_max = parseInt(<?php echo $comment_max ?>); // 최대
         $comment_id = $list[$i]['wr_id'];
         $cmt_depth = strlen($list[$i]['wr_comment_reply']) * 50;
         $comment = $list[$i]['content'];
+        $name = get_sideview($list[$i]['mb_id'], get_text(cut_str($list[$i]['wr_name'], $config['cf_cut_name'])), $list[$i]['wr_email'],$list[$i]['wr_homepage']);
         /*
         if (strstr($list[$i]['wr_option'], "secret")) {
             $str = $str;
@@ -29,7 +30,7 @@ var char_max = parseInt(<?php echo $comment_max ?>); // 최대
     <article id="c_<?php echo $comment_id ?>" <?php if ($cmt_depth) { ?>style="margin-left:<?php echo $cmt_depth ?>px;border-top-color:#e0e0e0"<?php } ?>>
         <header style="z-index:<?php echo $cmt_sv; ?>">
             <h2><?php echo get_text($list[$i]['wr_name']); ?>님의 <?php if ($cmt_depth) { ?><span class="sound_only">댓글의</span><?php } ?> 댓글</h2>
-            <?php echo $list[$i]['name'] ?>
+            <?php echo $name ?>
             <?php if ($is_ip_view) { ?>
             <span class="sound_only">아이피</span>
             <span>(<?php echo $list[$i]['ip']; ?>)</span>

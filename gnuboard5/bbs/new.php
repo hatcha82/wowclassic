@@ -72,7 +72,7 @@ for ($i=0; $row=sql_fetch_array($result); $i++) {
     } else {
 
         // 코멘트
-        $comment = '[코] ';
+        $comment = '[댓글] ';
         $comment_link = '#c_'.$row['wr_id'];
         $row2 = sql_fetch(" select * from {$tmp_write_table} where wr_id = '{$row['wr_parent']}' ");
         $row3 = sql_fetch(" select mb_id, wr_name, wr_email, wr_homepage, wr_datetime from {$tmp_write_table} where wr_id = '{$row['wr_id']}' ");

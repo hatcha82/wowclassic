@@ -60,7 +60,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$new_skin_url.'/style.css">', 0);
         </th>
         <?php } ?>
         <th scope="col">그룹</th>
-        <th scope="col">게시판</th>
+        <th scope="col" width="180px">게시판</th>
         <th scope="col">제목</th>
         <th scope="col">이름</th>
         <th scope="col">일시</th>

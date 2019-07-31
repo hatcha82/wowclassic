@@ -17,7 +17,7 @@ select {margin:0;background:none}
 p {margin:0;padding:0;word-break:break-all}
 hr {display:none}
 pre {overflow-x:scroll;font-size:1.1em}
-a {color:#000;text-decoration:none}
+a {color:#fff;text-decoration:none}
 ul,li,dl,dt,dd{padding:0;margin:0}
 ul{list-style:none;}
 
@@ -44,7 +44,7 @@ ul{list-style:none;}
 #logo {padding:10px 10px;height:50px;text-align:center}
 #logo img{vertical-align:middle;max-height:100%;width:auto}
 #gnb_open {position:absolute;top:10px;left:10px;padding:0 10px;height:30px;width:30px;border:0;background-size:70%;color:#fff;background:none; font-size: 16px;}
-#gnb {display:none;background:#111;position:fixed;top:0;left:0;z-index:99999;height:100%;overflow-y:auto;width:300px;
+#gnb {display:none;background:rgba(17, 17, 17, 0.9);position:fixed;top:0;left:0;z-index:99999;height:100%;overflow-y:auto;width:300px;
 -webkit-box-shadow:0 0 5px  rgba(55,55,5,0.4);
 -moz-box-shadow:0 0 5px  rgba(55,55,5,0.4);
 box-shadow: 0 0 5px  rgba(55,55,5,0.4);}
@@ -101,7 +101,7 @@ box-shadow: 0 0 5px  rgba(100,100,100,0.2);}
 #wrapper:after {display:block;visibility:hidden;clear:both;content:""}
 #container {position:relative;min-height:300px}
 #container:after {display:block;visibility:hidden;clear:both;content:""}
-#container_title {font-size:1.2em;font-weight:bold;height:50px;padding:10px;line-height:30px;background:#111;color:#eee;opacity: 0.9;;
+#container_title {font-size:1.2em;font-weight:bold;height:50px;padding:10px;line-height:30px;background:rgba(17, 17, 17, 0.9);color:#eee;;;
 -webkit-box-shadow: 0 0 5px rgba(55,55,5,0.4);
 -moz-box-shadow: 0 0 5px rgba(55,55,5,0.4);
 box-shadow: 0 0 5px rgba(55,55,5,0.4);

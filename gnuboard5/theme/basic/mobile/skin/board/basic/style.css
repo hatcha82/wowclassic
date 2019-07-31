@@ -94,7 +94,7 @@ box-shadow: 0 0 8px  rgba(65,98,255,0.8);}
 .bo_info .cnt_cmt {display:inline-block;margin: 0 5px 0 3px;}
 .bo_info .profile_img img{border-radius:50%;vertical-align:top}
 
-#bo_sch {background:#111;opacity: 0.9;;border:1px solid #444;position:relative;margin:10px;border-radius:3px}
+#bo_sch {background:rgba(17, 17, 17, 0.9);;;border:1px solid #444;position:relative;margin:10px;border-radius:3px}
 #bo_sch:after {display:block;visibility:hidden;clear:both;content:""}
 #bo_sch legend {position:absolute;margin:0;padding:0;font-size:0;line-height:0;text-indent:-9999em;overflow:hidden}
 #bo_sch select{border:0;;margin:9px 0;height:20px;border-right:1px solid #ddd;float:left;width:40%}

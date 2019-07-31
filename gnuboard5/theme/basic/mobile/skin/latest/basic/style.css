@@ -8,7 +8,7 @@
 .lt {position:relative;padding:10px 0px ;}
 .lt .bo_name{padding:0}
 .lt ul {margin-top:0px;padding:0;list-style:none;}
-.lt .lt_title {display:block;background: #111;opacity: 0.9;;color: #fff;line-height: 30px;padding: 0 10px;border-bottom:1px solid #ccc;}
+.lt .lt_title {display:block;background:rgba(17, 17, 17, 0.9);;;color: #fff;line-height: 30px;padding: 0 10px;border-bottom:1px solid #ccc;}
 .lt .lt_more {position:absolute;top:5px;right:10px}
 .lt .cnt_cmt {display:inline-block;margin:0 5px 0 3px;}
 .lt .lt_info{    font-size: 0.9em;  margin:  0;line-height: 20px;color: #ddd;position: relative;padding-top: 10px;vertical-align:top}

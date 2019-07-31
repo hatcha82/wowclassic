@@ -46,13 +46,13 @@
 #bo_list .bo_subject .new_icon{display:inline-block;padding: 0 3px;line-height:16px ;font-size:0.833em;color:#fff;background:#c56bed}
 #bo_list .bo_tit .fa-lock{color:#666}
 
-#bo_cate{background:#111;opacity: 0.9;;padding-bottom:1px}
+#bo_cate{background:rgba(17, 17, 17, 0.9);;;padding-bottom:1px}
 #bo_cate h2 {width:0;height:0;font-size:0;line-height:0;overflow:hidden}
 #bo_cate ul {margin: 10px;padding-left:1px;zoom:1}
 #bo_cate ul:after {display:block;visibility:hidden;clear:both;content:""} 
 #bo_cate li{display:inline-block;float:left;margin:3px 5px 3px 0}
 #bo_cate a {display:block;line-height:24px;padding:0 10px;border-radius:3px;background:#fff;}
-#bo_cate #bo_cate_on {background:#111;color:#eee;opacity: 0.9;;
+#bo_cate #bo_cate_on {background:rgba(17, 17, 17, 0.9);color:#eee;;;
 -webkit-box-shadow:0 0 5px  #444;
 -moz-box-shadow:0 0 5px  #444;
 box-shadow: 0 0 8px  #444;}
@@ -103,7 +103,7 @@ font-size: 0.9em;
 .bo_info .cnt_cmt {display:inline-block;margin: 0 5px 0 3px;}
 .bo_info .profile_img img{border-radius:50%;vertical-align:top}
 
-#bo_sch {background:#111;opacity: 0.9;;border:1px solid #444;position:relative;margin:10px;border-radius:3px}
+#bo_sch {background:rgba(17, 17, 17, 0.9);;;border:1px solid #444;position:relative;margin:10px;border-radius:3px}
 #bo_sch:after {display:block;visibility:hidden;clear:both;content:""}
 #bo_sch legend {position:absolute;margin:0;padding:0;font-size:0;line-height:0;text-indent:-9999em;overflow:hidden}
 #bo_sch select{border:0;;margin:9px 0;height:20px;border-right:1px solid #444;float:left;width:40%;color:#eee;}
@@ -112,7 +112,7 @@ font-size: 0.9em;
 #bo_sch .sch_btn{height:38px;position:absolute;top:0;right:0;border:0;width:40px;background:none;font-size:15px;color:#eee;}
 
 .view_is_list.btn_top{position:relative;z-index:auto;top:0;left:0}
-.view_is_list{margin:8px 10px 0;height:50px;padding:10px;line-height:30px;border-radius:3px;border-bottom:1px solid #444;background:#111;opacity: 0.9;;color:#eee;text-align:right}
+.view_is_list{margin:8px 10px 0;height:50px;padding:10px;line-height:30px;border-radius:3px;border-bottom:1px solid #444;background:rgba(17, 17, 17, 0.9);;;color:#eee;text-align:right}
 .view_is_list li{display:inline-block}
 
 /* 게시판 쓰기 */
@@ -125,7 +125,7 @@ font-size: 0.9em;
 #wr_email, #wr_homepage, #wr_subject, .wr_link {width:100%}
 
 /* 게시판 읽기 */
-#bo_v {padding:20px 10px 10px;background:#111;opacity: 0.9;color:#eee;
+#bo_v {padding:20px 10px 10px;background:rgba(17, 17, 17, 0.9);;color:#eee;
 ;-webkit-box-shadow:  0 1px 4px #ddd;
 -moz-box-shadow:  0 1px 4px #ddd;
 box-shadow: 0 1px 4px #ddd;}
