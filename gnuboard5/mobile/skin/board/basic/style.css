@@ -51,11 +51,11 @@
 #bo_cate ul {margin: 10px;padding-left:1px;zoom:1}
 #bo_cate ul:after {display:block;visibility:hidden;clear:both;content:""} 
 #bo_cate li{display:inline-block;float:left;margin:3px 5px 3px 0}
-#bo_cate a {display:block;line-height:24px;padding:0 10px;border-radius:3px;background:#fff;}
-#bo_cate #bo_cate_on {background:rgba(17, 17, 17, 0.9);color:#eee;;;
--webkit-box-shadow:0 0 5px  #444;
--moz-box-shadow:0 0 5px  #444;
-box-shadow: 0 0 8px  #444;}
+#bo_cate a {display:block;line-height:24px;padding:0 10px;border-radius:3px;background:rgba(17, 17, 17, 0.9);}
+#bo_cate #bo_cate_on {background:#333;color:#eee;;;
+-webkit-box-shadow:0 0 2px  #444;
+-moz-box-shadow:0 0 2px  #444;
+box-shadow: 0 0 2px  #444;}
 
 /* 관리자일 때 */
 #bo_list_admin th label {position:absolute;font-size:0;line-height:0;overflow:hidden}
