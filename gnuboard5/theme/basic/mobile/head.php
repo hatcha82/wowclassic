@@ -29,6 +29,9 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
         <button type="button" id="gnb_open" class="hd_opener"><i class="fa fa-bars" aria-hidden="true"></i><span class="sound_only"> 메뉴열기</span></button>
 
         <div id="gnb" class="hd_div">
+            <div style="position:absolute;left:5px;top:1px;">
+                <img src="<?php echo G5_URL ?>/img/logo-wow.png" style="width:50px"/>
+            </div>
             <button type="button" id="gnb_close" class="hd_closer"><span class="sound_only">메뉴 </span>닫기</button>
 
             <ul id="gnb_1dul">
