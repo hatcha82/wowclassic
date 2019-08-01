@@ -266,6 +266,39 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
             data-ad-width   = "320" 
             data-ad-height  = "100"></ins> 
     </div>
+    <div id="left_navi">
+        <ul class="">
+            <?php
+            
+            $i = 0;
+            foreach( $menu_datas as $row ){
+            ?>
+            <li class="depth1">
+                <a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" class="gnb_al_a"><?php echo $row['me_name'] ?></a>
+                <?php
+                $k = 0;
+                foreach( (array) $row['sub'] as $row2 ){
+                    if($k == 0)
+                        echo '<ul>'.PHP_EOL;
+                ?>
+                    <li><a href="<?php echo $row2['me_link']; ?>" target="_<?php echo $row2['me_target']; ?>"><i class="fa fa-caret-right" aria-hidden="true"></i> <?php echo $row2['me_name'] ?></a></li>
+                <?php
+                $k++;
+                }   //end foreach $row2
+
+                if($k > 0)
+                    echo '</ul>'.PHP_EOL;
+                ?>
+            </li>
+            <?php
+            $i++;
+            }   //end foreach $row
+
+            if ($i == 0) {  ?>
+                <li class="gnb_empty">메뉴 준비 중입니다.<?php if ($is_admin) { ?> <br><a href="<?php echo G5_ADMIN_URL; ?>/menu_list.php">관리자모드 &gt; 환경설정 &gt; 메뉴설정</a>에서 설정하실 수 있습니다.<?php } ?></li>
+            <?php } ?>
+        </ul>
+    </div>
     <div id="container">
         <?php if (!defined("_INDEX_")) { ?><h2 id="container_title"><span title="<?php echo get_text($g5['title']); ?>"><?php echo get_head_title($g5['title']); ?></span></h2><?php } ?>
 
