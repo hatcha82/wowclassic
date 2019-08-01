@@ -182,7 +182,7 @@ transition: all 0.3s ease-out;}
 #container_wr {z-index:5;margin:0 auto;height:100%;zoom:1}
 #aside {float:right;width:305px;padding:0;background:rgba(17, 17, 17, 0.9);;;height: 100%;border: 1px solid #444;margin:20px 0 20px 20px}
 #aside a{color:#eee;}
-#aside a.bx-prev, #aside a.bx-next{background:rgba(17, 17, 17, 0.9);border:1px solid #444}
+#aside a.bx-prev, #aside a.bx-next, #aside a.btn_b04{background:rgba(17, 17, 17, 0.9);border:1px solid #444}
 
 #aside div.sns-wrap a{background-color: rgba(17, 17, 17, 0.9);;}
 #container {z-index:4;position:relative;float:left;min-height:500px;height:auto !important;margin:20px  0;height:500px;font-size:1em;width:1075px;zoom:1}
