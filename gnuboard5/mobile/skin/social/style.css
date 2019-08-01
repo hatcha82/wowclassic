@@ -85,7 +85,7 @@ box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.2);}
 #sns_register .sns-wrap{display:inline-block;padding:20px;vertical-align:top;margin:0}
 #sns_register .sns-icon{display:inline-block;height:40px;line-height:40px;width:100%;margin:0 0 5px;padding-left:40px;text-align:left;color:#fff;border-radius:2px;float:left}
 #sns_register .sns-icon:nth-child(3n+1){clear:both}
-#sns_register .sns-naver{background-color:#1fc800;background-position:5px 5px;border-bottom:1px solid #1ea505}
+#sns_register .sns-naver{background-color:#1fc800;background-position:5px 5px;border-bottom:1px solid #1ea505;width:145px}
 #sns_register .sns-kakao{background-color:#ffeb00;background-position:5px 5px;border-bottom:1px solid #e2c10a}
 #sns_register .sns-kakao {color:#3c1e1e}
 #sns_register .sns-facebook{background-color:#3b579d;background-position:5px 5px;border-bottom:1px solid #28458f}
