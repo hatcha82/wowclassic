@@ -212,7 +212,7 @@ box-shadow: 0 0 8px rgba(65,98,255,0.8);}
 
 .btn_share{display:none;}
 .bo_v_snswr{position:relative;float:right}
-#bo_v_sns {;padding:0;list-style:none;zoom:1}
+#bo_v_sns {padding:0;list-style:none;zoom:1}
 #bo_v_sns:after {display:block;visibility:hidden;clear:both;content:""}
 #bo_v_sns li {float:left;width:50px;text-align:center;margin-left:3px}
 #bo_v_sns li a{height:40px;padding:10px 0;}
