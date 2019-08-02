@@ -10,8 +10,8 @@
 #ol_before {}
 #ol_before:after {display:block;visibility:hidden;clear:both;content:""}
 #ol_before .ol_wr{position:relative;border:1px solid #444;margin-bottom:5px;}
-#ol_id {display:block;width:185px;border:1px solid #444;padding:0 10px;height:32px;background:rgba(17, 17, 17, 0.9);;color:#eee}
-#ol_pw {display:block;width:185px;border:1px solid #444;padding:0 10px;border-top:1px solid #444;height:32px;background:rgba(17, 17, 17, 0.9);;color:#eee}
+#ol_id {display:block;width:156px;border:1px solid #444;padding:0 10px;height:32px;background:rgba(17, 17, 17, 0.9);;color:#eee}
+#ol_pw {display:block;width:156px;border:1px solid #444;padding:0 10px;border-top:1px solid #444;height:32px;background:rgba(17, 17, 17, 0.9);;color:#eee}
 #ol_submit {position:absolute;top:0;right:0;width:76px;height:64px;background:rgba(17, 17, 17, 0.9);;border-left:1px solid #444;color:#eee;font-weight:bold;font-size:1.167em}
 #ol_svc {float:right;line-height:20px}
 #ol_svc a{display:inline-block;color:#ddd;margin:0 5px}
