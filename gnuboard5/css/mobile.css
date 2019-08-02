@@ -276,7 +276,7 @@ a.btn_admin:focus, a.btn_admin:hover {}
 
 /* 새창 기본 스타일 */
 .new_win {}
-.new_win #win_title {font-size: 1.2em;font-weight: bold;height: 50px;padding: 10px;line-height: 30px;background: #4162ff;color: #fff;}
+.new_win #win_title {font-size: 1.2em;font-weight: bold;height: 50px;padding: 10px;line-height: 30px;background:rgba(17,17,17,0.9); color: #fff;}
 .new_win #win_title .sv {font-size:0.75em;line-height:1.2em}
 .new_win_con{margin:10px}
 
