@@ -1,11 +1,11 @@
 <?php
 	# 총 4군데 변경입니다.
 	# common.php 파일 위치 절대 경로 세팅
-	include_once ("/var/www/common.php"); # 꼭 변경하세요.
+	include_once ("/app/src/public/common.php"); # 꼭 변경하세요.
 
 	# 기본 설정
-	$wwwPath = "/var/www/"; # 꼭 변경하세요.
-	$wwwURL = "http://www.domain.com"; # 꼭 변경하세요.
+	$wwwPath = "/app/src/public/"; # 꼭 변경하세요.
+	$wwwURL = "http://wowclassic.furiganahub.com"; # 꼭 변경하세요.
 	
 	# 게시판 리스트
 	$sql = " SELECT * FROM {$g5['board_table']} WHERE bo_read_level = 1";
