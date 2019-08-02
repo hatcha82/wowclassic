@@ -96,7 +96,7 @@ box-shadow: 0 0 8px rgba(65,98,255,0.8);
 
 .poll_cmt_del a {display:inline-block;margin-left:5px;color:#49857c;font-size:16px;}
 .poll_cmt_del a:hover{color:#98ca69}
-#poll_result_oth {padding:0}
+#poll_result_oth {padding:0;color:#eee}
 #poll_result_oth ul {margin:0;padding:0;list-style:none;}
 #poll_result_oth li{position:relative}
 #poll_result_oth li:after {display:block;visibility:hidden;clear:both;content:""}

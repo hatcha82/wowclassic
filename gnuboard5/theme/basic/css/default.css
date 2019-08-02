@@ -2,7 +2,7 @@
 
 /* 초기화 */
 html {overflow-y:scroll;}
-body {margin:0;padding:0;font-size:0.75em;font-family:'Malgun Gothic', dotum, sans-serif;background:#000;background: url(/img/bg.jpg) no-repeat;background-size: cover}
+body {margin:0;padding:0;font-size:0.75em;font-family:'Malgun Gothic', dotum, sans-serif;background: url(/img/bg.jpg) no-repeat;background-size: cover;;background-color: rgba(17, 17, 17, 0.9)}
 html, h1, h2, h3, h4, h5, h6, form, fieldset, img {margin:0;padding:0;border:0}
 h1, h2, h3, h4, h5, h6 {font-size:1em;font-family:'Malgun Gothic', dotum, sans-serif}
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block}
@@ -118,6 +118,7 @@ a.blizzard:focus, #tnb a.blizzard:hover{color:#4f4f4f;background: transparent}
 #hd_qnb li .fa-history:hover{background:#6700a9}
 
 /* 메인메뉴 */
+.menu_icon{width:15px;height:15px;border:1px solid #747474;border-radius:15px;}
 #gnb{position:relative}
 #gnb h2{position:absolute;font-size:0;line-height:0;overflow:hidden}
 #gnb .gnb_wrap{margin:0 auto;position:relative}
@@ -464,3 +465,7 @@ box-sizing: content-box;
 /* Mobile화면으로 */
 #device_change {display:block;margin:0.3em;padding:0.5em 0;border:1px solid #eee;border-radius:2em;background:#fff;color:#000;font-size:2em;text-decoration:none;text-align:center}
 
+.category_icon{width:15px;height:15px;border:1px solid #747474;border-radius:15px;}
+
+#faq{background: rgba(17, 17, 17, 0.9);padding:10px;color:#eee;}
+#faq img{max-width:600px;}

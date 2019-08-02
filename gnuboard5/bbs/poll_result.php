@@ -27,6 +27,7 @@ for ($i=1; $i<=9; $i++) {
 }
 $nf_total_po_cnt = number_format($total_po_cnt);
 
+$g5['title'] = '[ ' . $nf_total_po_cnt  . '명 참여 ] ' . $g5['title'] ;
 $list = array();
 
 for ($i=1; $i<=9; $i++) {
@@ -44,6 +45,21 @@ for ($i=1; $i<=9; $i++) {
     $list[$i]['num'] = $i;
 }
 
+function sortBySubkey(&$array, $subkey, $sortType = SORT_DESC) {
+    foreach ($array as $subarray) {
+        $keys[] = $subarray[$subkey];
+    }
+    array_multisort($keys, $sortType, $array);
+}
+
+sortBySubkey($list, 'rate');
+$sortedList = array();
+for ($i=0; $i<9; $i++) {
+    if($list[$i])
+    $sortedList[$i + 1] = $list[$i]  ;
+}
+//print_R($sortedList);
+$list = $sortedList;
 $list2 = array();
 
 // 기타의견 리스트

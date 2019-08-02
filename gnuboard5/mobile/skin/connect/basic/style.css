@@ -7,10 +7,10 @@
 #current_connect li:nth-child(2n+1){clear:both}
 #current_connect .crt_name {padding:20px 0;display:block}
 #current_connect .crt_name img{ border-radius:50%;margin: 0 0 5px}
-#current_connect .crt_wr{background:#fff;position:relative;
--webkit-box-shadow: 0 1px 4px #cbd1df;
-   -moz-box-shadow: 0 1px 4px #cbd1df;
-        box-shadow: 0 1px 4px #cbd1df;}
+#current_connect .crt_wr{background:rgba(17,17,17,0.9);position:relative;color:#eee;
+-webkit-box-shadow: 0 1px 4px #444;
+   -moz-box-shadow: 0 1px 4px #444;
+        box-shadow: 0 1px 4px #444;}
 #current_connect .crt_lct{display:block;text-align:center;border-top:1px solid #ddd;padding:10px 5px;line-height:1.4em}
 #current_connect .crt_lct a{color:#3ca1ff}
 #current_connect .crt_num{position:absolute;top:10px;left:10px;color:#777;font-weight:bold}
