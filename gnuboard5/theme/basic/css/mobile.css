@@ -322,3 +322,5 @@ box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.2);}
 .pg_next {background:url(../img/btn_next.gif) no-repeat 50% 50% #fff;width:30px;height:30px ;text-indent:-999px;overflow:hidden}
 .pg_end {background:url(../img/btn_end.gif) no-repeat 50% 50% #fff;width:30px;height:30px ;text-indent:-999px;overflow:hidden}
 .pg_current {display:inline-block;background:#4c4f6f;color:#fff;font-weight:normal;border-radius:3px;line-height:30px;}
+
+.category_icon{width:15px;height:15px;border:1px solid #747474;border-radius:15px;}
