@@ -143,7 +143,12 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                     if( empty($row) ) continue; 
                 ?>
                 <li class="gnb_1dli" style="z-index:<?php echo $gnb_zindex--; ?>">
-                    <a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" class="gnb_1da"><?php echo $row['me_name'] ?></a>
+                    <a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" class="gnb_1da">
+                    <?php if ($row2['me_icon_url']) { ?>
+                        <img src="<?php echo $row['me_icon_url']?>" class="menu_icon"/>
+                    <?php }?>
+                    <?php echo $row['me_name'] ?>
+                    </a>
                     <?php
                     $k = 0;
                     foreach( (array) $row['sub'] as $row2 ){
@@ -153,7 +158,14 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                         if($k == 0)
                             echo '<span class="bg">하위분류</span><ul class="gnb_2dul">'.PHP_EOL;
                     ?>
-                        <li class="gnb_2dli"><a href="<?php echo $row2['me_link']; ?>" target="_<?php echo $row2['me_target']; ?>" class="gnb_2da"><?php echo $row2['me_name'] ?></a></li>
+                        <li class="gnb_2dli">
+                            <a href="<?php echo $row2['me_link']; ?>" target="_<?php echo $row2['me_target']; ?>" class="gnb_2da">
+                            <?php if ($row2['me_icon_url']) { ?>
+                                <img src="<?php echo $row2['me_icon_url']?>" class="menu_icon"/>
+                            <?php }?>
+                            <?php echo $row2['me_name'] ?>
+                            </a>
+                        </li>
                     <?php
                     $k++;
                     }   //end foreach $row2
@@ -179,14 +191,27 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                     foreach( $menu_datas as $row ){
                     ?>
                     <li class="gnb_al_li">
-                        <a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" class="gnb_al_a"><?php echo $row['me_name'] ?></a>
+                        <a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" class="gnb_al_a">
+                        <?php if ($row['me_icon_url']) { ?>
+                            <img src="<?php echo $row['me_icon_url']?>" class="menu_icon"/>
+                        <?php }?>
+                        <?php echo $row['me_name'] ?>
+                        </a>
                         <?php
                         $k = 0;
                         foreach( (array) $row['sub'] as $row2 ){
                             if($k == 0)
                                 echo '<ul>'.PHP_EOL;
                         ?>
-                            <li><a href="<?php echo $row2['me_link']; ?>" target="_<?php echo $row2['me_target']; ?>"><i class="fa fa-caret-right" aria-hidden="true"></i> <?php echo $row2['me_name'] ?></a></li>
+                            <li>
+                                <a href="<?php echo $row2['me_link']; ?>" target="_<?php echo $row2['me_target']; ?>">
+                                    <i class="fa fa-caret-right" aria-hidden="true"></i>    
+                                    <?php if ($row2['me_icon_url']) { ?>
+                                        <img src="<?php echo $row2['me_icon_url']?>" class="menu_icon"/>
+                                    <?php }?>
+                                    <?php echo $row2['me_name'] ?>
+                                </a>
+                            </li>
                         <?php
                         $k++;
                         }   //end foreach $row2
@@ -274,14 +299,27 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
             foreach( $menu_datas as $row ){
             ?>
             <li class="depth1">
-                <a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" class="gnb_al_a"><?php echo $row['me_name'] ?></a>
+                <a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" class="gnb_al_a">
+                <?php if ($row['me_icon_url']) { ?>
+                    <img src="<?php echo $row['me_icon_url']?>" class="menu_icon"/>
+                <?php }?>
+                <?php echo $row['me_name'] ?>
+                </a>
                 <?php
                 $k = 0;
                 foreach( (array) $row['sub'] as $row2 ){
                     if($k == 0)
                         echo '<ul>'.PHP_EOL;
                 ?>
-                    <li><a href="<?php echo $row2['me_link']; ?>" target="_<?php echo $row2['me_target']; ?>"><i class="fa fa-caret-right" aria-hidden="true"></i> <?php echo $row2['me_name'] ?></a></li>
+                    <li>
+                        <a href="<?php echo $row2['me_link']; ?>" target="_<?php echo $row2['me_target']; ?>">
+                        <i class="fa fa-caret-right" aria-hidden="true"></i> 
+                        <?php if ($row2['me_icon_url']) { ?>
+                            <img src="<?php echo $row2['me_icon_url']?>" class="menu_icon"/>
+                        <?php }?>
+                        <?php echo $row2['me_name'] ?>
+                        </a>
+                    </li>
                 <?php
                 $k++;
                 }   //end foreach $row2
