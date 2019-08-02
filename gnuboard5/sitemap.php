@@ -5,7 +5,7 @@
 
 	# 기본 설정
 	$wwwPath = "/var/www/"; # 꼭 변경하세요.
-	$wwwURL = "http://www.domain.com"; # 꼭 변경하세요.
+	$wwwURL = "http://wowclassic.furiganahub.com"; # 꼭 변경하세요.
 	
 	# 게시판 리스트
 	$sql = " SELECT * FROM {$g5['board_table']} WHERE bo_read_level = 1";
