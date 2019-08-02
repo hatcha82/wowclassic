@@ -118,6 +118,7 @@ a.blizzard:focus, #tnb a.blizzard:hover{color:#4f4f4f;background: transparent}
 #hd_qnb li .fa-history:hover{background:#6700a9}
 
 /* 메인메뉴 */
+.menu_icon{width:15px;height:15px;}
 #gnb{position:relative}
 #gnb h2{position:absolute;font-size:0;line-height:0;overflow:hidden}
 #gnb .gnb_wrap{margin:0 auto;position:relative}
