@@ -324,3 +324,6 @@ box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.2);}
 .pg_current {display:inline-block;background:#4c4f6f;color:#fff;font-weight:normal;border-radius:3px;line-height:30px;}
 
 .category_icon{width:15px;height:15px;border:1px solid #747474;border-radius:15px;}
+
+#faq{background: rgba(17, 17, 17, 0.9);padding:10px;color:#eee;}
+#faq img{max-width:400px;}

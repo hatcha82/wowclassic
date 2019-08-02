@@ -89,7 +89,9 @@ if(is_file($skin_file)) {
             $faq_list[$i]['fa_content'] = search_font($stx, conv_content($faq_list[$i]['fa_content'], 1));
         }
     }
+    echo '<div id="faq">';
     include_once($skin_file);
+    echo '</div>';
 } else {
     echo '<p>'.str_replace(G5_PATH.'/', '', $skin_file).'이 존재하지 않습니다.</p>';
 }

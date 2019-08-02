@@ -466,3 +466,6 @@ box-sizing: content-box;
 #device_change {display:block;margin:0.3em;padding:0.5em 0;border:1px solid #eee;border-radius:2em;background:#fff;color:#000;font-size:2em;text-decoration:none;text-align:center}
 
 .category_icon{width:15px;height:15px;border:1px solid #747474;border-radius:15px;}
+
+#faq{background: rgba(17, 17, 17, 0.9);padding:10px;color:#eee;}
+#faq img{max-width:600px;}
