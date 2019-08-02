@@ -63,7 +63,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
                     <input type="checkbox" name="chk_wr_id[]" value="<?php echo $list[$i]['wr_id'] ?>" id="chk_wr_id_<?php echo $i ?>">
                 </div><?php } ?>
 
-                <div class="bo_subject">                
+                <div class="bo_subject">                                  
                     <?php
                     if ($is_category && $list[$i]['ca_name']) {
                     ?>

@@ -16,6 +16,9 @@ if ($board['bo_use_category']) {
     $categories = explode('|', $board['bo_category_list']); // 구분자가 , 로 되어 있음
     for ($i=0; $i<count($categories); $i++) {
         $category = trim($categories[$i]);
+
+        $icon_url = get_icon_by_categoryName($category);
+        $icon_img_tag = $icon_url == '' ? '' : '<img class="category_icon" src="' .  $icon_url . '" /> ';
         if ($category=='') continue;
         $category_option .= '<li><a href="'.($category_href."&amp;sca=".urlencode($category)).'"';
         $category_msg = '';
@@ -23,7 +26,7 @@ if ($board['bo_use_category']) {
             $category_option .= ' id="bo_cate_on"';
             $category_msg = '<span class="sound_only">열린 분류 </span>';
         }
-        $category_option .= '>'.$category_msg.$category.'</a></li>';
+        $category_option .= '>'.$category_msg.$icon_img_tag.$category.'</a></li>';
     }
 }
 

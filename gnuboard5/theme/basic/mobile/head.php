@@ -21,16 +21,15 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
     } ?>
 
     <div id="hd_wrapper">
-
-        <div id="logo">
+        <div id="logo">          
             <a href="<?php echo G5_URL ?>"><img src="<?php echo G5_IMG_URL ?>/m_logo.png" alt="<?php echo $config['cf_title']; ?>"></a>
         </div>
 
         <button type="button" id="gnb_open" class="hd_opener"><i class="fa fa-bars" aria-hidden="true"></i><span class="sound_only"> 메뉴열기</span></button>
 
         <div id="gnb" class="hd_div">
-            <div style="position:absolute;left:5px;top:1px;">
-                <img src="<?php echo G5_URL ?>/img/logo-wow.png" style="width:50px"/>
+            <div style="position:absolute;left:5px;top:1px;">            
+                <img src="<?php echo G5_URL ?>/img/logo-wow.png" style="width:30px;margin-top:10px"/>
             </div>
             <button type="button" id="gnb_close" class="hd_closer"><span class="sound_only">메뉴 </span>닫기</button>
 
@@ -46,7 +45,11 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
             for($i=0; $row=sql_fetch_array($result); $i++) {
             ?>
                 <li class="gnb_1dli">
-                    <a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" class="gnb_1da"><?php echo $row['me_name'] ?></a>
+                    <a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" class="gnb_1da">
+                    <?php if ($row['me_icon_url']) { ?>
+                        <img src="<?php echo $row['me_icon_url']?>" class="menu_icon"/>
+                    <?php }?>
+                    <?php echo $row['me_name'] ?></a>
                     <?php
                     $sql2 = " select *
                                 from {$g5['menu_table']}
@@ -60,7 +63,12 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                         if($k == 0)
                             echo '<button type="button" class="btn_gnb_op">하위분류</button><ul class="gnb_2dul">'.PHP_EOL;
                     ?>
-                        <li class="gnb_2dli"><a href="<?php echo $row2['me_link']; ?>" target="_<?php echo $row2['me_target']; ?>" class="gnb_2da"><span></span><?php echo $row2['me_name'] ?></a></li>
+                        <li class="gnb_2dli"><a href="<?php echo $row2['me_link']; ?>" target="_<?php echo $row2['me_target']; ?>" class="gnb_2da"><span></span>
+                            <?php if ($row2['me_icon_url']) { ?>
+                                <img src="<?php echo $row2['me_icon_url']?>" class="menu_icon"/>
+                            <?php }?>
+                            <?php echo $row2['me_name'] ?></a>
+                        </li>
                     <?php
                     }
 
