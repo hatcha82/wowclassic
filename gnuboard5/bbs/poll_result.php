@@ -27,7 +27,7 @@ for ($i=1; $i<=9; $i++) {
 }
 $nf_total_po_cnt = number_format($total_po_cnt);
 
-$g5['title'] = '[ ' . $nf_total_po_cnt  . ':명 참여 ] ' . $g5['title'] ;
+$g5['title'] = '[ ' . $nf_total_po_cnt  . '명 참여 ] ' . $g5['title'] ;
 $list = array();
 
 for ($i=1; $i<=9; $i++) {
