@@ -46,7 +46,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
             ?>
                 <li class="gnb_1dli">
                     <a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" class="gnb_1da">
-                    <?php if ($row['me_icon_url']) { ?>
+                    <?php if ($row['me_icon_url'] ) { ?>
                         <img src="<?php echo $row['me_icon_url']?>" class="menu_icon"/>
                     <?php }?>
                     <?php echo $row['me_name'] ?></a>
