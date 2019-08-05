@@ -144,8 +144,8 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                 ?>
                 <li class="gnb_1dli" style="z-index:<?php echo $gnb_zindex--; ?>">
                     <a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" class="gnb_1da">
-                    <?php if ($row['me_icon_url']) { ?>
-                        <img src="<?php echo $row['me_icon_url']?>" class="menu_icon"/>
+                    <?php if (get_icon_by_categoryName($row['me_name'])) { ?>
+                        <img src="<?php echo get_icon_by_categoryName($row2['me_name'])?>" class="menu_icon"/>
                     <?php }?>
                     <?php echo $row['me_name'] ?>
                     </a>
@@ -160,8 +160,8 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                     ?>
                         <li class="gnb_2dli">
                             <a href="<?php echo $row2['me_link']; ?>" target="_<?php echo $row2['me_target']; ?>" class="gnb_2da">
-                            <?php if ($row2['me_icon_url']) { ?>
-                                <img src="<?php echo $row2['me_icon_url']?>" class="menu_icon"/>
+                            <?php if (get_icon_by_categoryName($row2['me_name'])) { ?>
+                                <img src="<?php echo get_icon_by_categoryName($row2['me_name'])?>" class="menu_icon"/>
                             <?php }?>
                             <?php echo $row2['me_name'] ?>
                             </a>
@@ -192,8 +192,8 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                     ?>
                     <li class="gnb_al_li">
                         <a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" class="gnb_al_a">
-                        <?php if ($row['me_icon_url']) { ?>
-                            <img src="<?php echo $row['me_icon_url']?>" class="menu_icon"/>
+                        <?php if (get_icon_by_categoryName($row['me_name'])) { ?>
+                            <img src="<?php echo get_icon_by_categoryName($row['me_name'])?>" class="menu_icon"/>
                         <?php }?>
                         <?php echo $row['me_name'] ?>
                         </a>
@@ -206,8 +206,8 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                             <li>
                                 <a href="<?php echo $row2['me_link']; ?>" target="_<?php echo $row2['me_target']; ?>">
                                     <i class="fa fa-caret-right" aria-hidden="true"></i>    
-                                    <?php if ($row2['me_icon_url']) { ?>
-                                        <img src="<?php echo $row2['me_icon_url']?>" class="menu_icon"/>
+                                    <?php if (get_icon_by_categoryName($row2['me_name'])) { ?>
+                                        <img src="<?php echo get_icon_by_categoryName($row2['me_name'])?>" class="menu_icon"/>
                                     <?php }?>
                                     <?php echo $row2['me_name'] ?>
                                 </a>
@@ -300,8 +300,8 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
             ?>
             <li class="depth1">
                 <a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" class="gnb_al_a">
-                <?php if ($row['me_icon_url']) { ?>
-                    <img src="<?php echo $row['me_icon_url']?>" class="menu_icon"/>
+                <?php if (get_icon_by_categoryName($row['me_name'])) { ?>
+                    <img src="<?php echo get_icon_by_categoryName($row['me_name'])?>" class="menu_icon"/>
                 <?php }?>
                 <?php echo $row['me_name'] ?>
                 </a>
@@ -314,8 +314,8 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                     <li>
                         <a href="<?php echo $row2['me_link']; ?>" target="_<?php echo $row2['me_target']; ?>">
                         <i class="fa fa-caret-right" aria-hidden="true"></i> 
-                        <?php if ($row2['me_icon_url']) { ?>
-                            <img src="<?php echo $row2['me_icon_url']?>" class="menu_icon"/>
+                        <?php if (get_icon_by_categoryName($row2['me_name'])) { ?>
+                            <img src="<?php echo get_icon_by_categoryName($row2['me_name'])?>" class="menu_icon"/>
                         <?php }?>
                         <?php echo $row2['me_name'] ?>
                         </a>
