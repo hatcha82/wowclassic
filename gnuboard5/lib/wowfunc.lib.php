@@ -25,7 +25,7 @@ function get_icon_by_categoryName($name){
     case "마법부여" :   $url=  "/img/WOW/profession/enchanting.png";break;
     case "재봉"     :	$url=  "/img/WOW/profession/tailoring.png";break;
     case "연금술"   :	$url=  "/img/WOW/profession/alchemy.png";break;
-    case "무둘질"   :	$url=  "/img/WOW/profession/leatherworking.png";break;
+    case "무두질"   :	$url=  "/img/WOW/profession/leatherworking.png";break;
     case "약초"     :	$url=  "/img/WOW/profession/herbalism.png";break;
     case "채광"   :	$url=  "/img/WOW/profession/mining.png";break;
     case "낚시"   :	$url=  "/img/WOW/profession/fishing.png";break;
