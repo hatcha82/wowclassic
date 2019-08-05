@@ -38,7 +38,7 @@ if(strpos($_SERVER['HTTP_HOST'], 'localhost') !== false ){
 }else{
     $G5_DOMAIN_NAME = 'http://' . $_SERVER['HTTP_HOST'];
 
-    if(strpos($_SERVER['HTTP_HOST'], $G5_BASE_DOMAIN) !== false ){
+    if($_SERVER['HTTP_HOST'] === $G5_BASE_DOMAIN){
 
     header("Location: ". $G5_DOMAIN_NAME); 
     }
