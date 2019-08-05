@@ -4,7 +4,7 @@ function daum_adfit(){
 
   
 
-  if(strpos($_SERVER['SERVER_NAME'], $G5_BASE_DOMAIN) !== true ){
+  if(strpos($_SERVER['SERVER_NAME'], $G5_BASE_DOMAIN) !== false ){
     
     echo <<<EOT
     <div style="width:320px;height:100px;float:left;">
