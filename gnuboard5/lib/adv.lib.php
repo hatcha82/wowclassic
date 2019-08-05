@@ -2,9 +2,10 @@
 function daum_adfit(){
   $G5_BASE_DOMAIN = 'classicwow.co.kr';
 
-  
+  //echo "<script>alert('" . (strpos('www.classicwow.co.kr', $G5_BASE_DOMAIN) !==  false ) ."')</script>";
 
-  if(strpos($_SERVER['SERVER_NAME'], $G5_BASE_DOMAIN) !==  false){
+
+  if(strpos($_SERVER['SERVER_NAME'],'www.classicwow.co.kr') !==  false){
     echo <<<EOT
     <div style="width:320px;height:100px;float:left;">
         <ins class="kakao_ad_area" style="display:none;" 
