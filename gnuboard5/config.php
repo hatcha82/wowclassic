@@ -30,16 +30,14 @@ $G5_BASE_DOMAIN = 'classicwow.co.kr';
 $G5_DOMAIN_NAME = 'http://' . 'www.classicwow.co.kr';
 $G5_DOMAIN_COOKIE = '';
 
-if(strpos($_SERVER['SERVER_NAME'], 'localhost') !== false ){
-    
+if(strpos($_SERVER['HTTP_HOST'], 'localhost') !== false ){
     $G5_DOMAIN_NAME = '';
-    
 }else{
     $G5_DOMAIN_NAME = 'http://' . $_SERVER['SERVER_NAME'];
-    if($_SERVER['SERVER_NAME'] === $G5_BASE_DOMAIN){
+    if($_SERVER['HTTP_HOST'] === $G5_BASE_DOMAIN){
         header("Location: ". 'http://www'.$G5_DOMAIN_NAME); 
     }
-    if(strpos($_SERVER['SERVER_NAME'], $G5_BASE_DOMAIN) !== false ){
+    if(strpos($_SERVER['HTTP_HOST'], $G5_BASE_DOMAIN) !== false ){
         $G5_DOMAIN_COOKIE =  '.classicwow.co.kr';
     }else{
         $G5_DOMAIN_COOKIE = '';
