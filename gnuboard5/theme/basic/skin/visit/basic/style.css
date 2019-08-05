@@ -11,5 +11,5 @@ box-shadow:0 1px 2px rgba(0,0,0,0.1)}
 #visit dl:after {display:block;visibility:hidden;clear:both;content:""}
 #visit dt {float:left;width:20%;padding:0 5px;line-height:23px;height:23px;color:#eee}
 #visit dt span{display:inline-block;width:5px;height:5px;border-radius:50%;vertical-align: middle;}
-#visit dd {float:left;;width:30%;padding:0 5px;;text-align:right;text-align:right;font-weight:bold;line-height:23px;height:23px;font-size:0.92em}
+#visit dd {float:left;;width:80%;padding:0 5px;;text-align:right;text-align:right;font-weight:bold;line-height:23px;height:23px;font-size:0.92em}
 #visit dd strong{display:inline-block;padding:0 5px;border-radius:20px;line-height:15px;color:#fff;}
