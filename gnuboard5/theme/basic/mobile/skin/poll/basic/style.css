@@ -59,15 +59,16 @@ box-shadow: 0 0 8px #444;
 /* 설문조사 결과 (새창) */
 #poll_result {}
 #poll_result section {margin:0 0 20px;padding:25px;border:1px solid #dbdbdb;background:#fff;
--webkit-box-shadow: 0 0 5px rgba(55,55,5,0.1));
-   -moz-box-shadow: 0 0 5px rgba(55,55,5,0.1));
+-webkit-box-shadow: 0 0 5px rgba(55,55,5,0.1);
+   -moz-box-shadow: 0 0 5px rgba(55,55,5,0.1);
         box-shadow: 0 0 5px rgba(55,55,5,0.1); }
 #poll_result .tbl_wrap {margin:0}
 #poll_result h2 {}
 #poll_result a {}
 #poll_result .sv_member,
 #poll_result .sv_guest {font-weight:bold}
-#poll_result .poll_all{float:right;display:inline-block;padding:0 5px;margin:0 0 10px;line-height:26px;border:1px solid #ddd;border-radius:3px;font-size:0.92em;background:#fff}
+#poll_result .poll_all{min-width:80px;float:right;display:inline-block;padding:0 5px;margin:0 0 10px;line-height:26px;border:1px solid #ddd;border-radius:3px;font-size:0.92em;background:#fff}
+#poll_result .poll_home{text-align: center;min-width:80px;float:right;display:inline-block;padding:0 5px;margin:0 0 10px;margin-right:10px;line-height:26px;border:1px solid #ddd;border-radius:3px;font-size:0.92em;background:#fff;color:#333;}
 #poll_result .btn_confirm{text-align:right;margin:5px 0 0}
 #poll_result_list {margin:0 auto 20px;clear:both}
 #poll_result_list h2 {margin:0;font-size:1.083em;padding: 0 0 15px;margin:0 0 15px;border-bottom:1px solid #ddd;text-align:center;}

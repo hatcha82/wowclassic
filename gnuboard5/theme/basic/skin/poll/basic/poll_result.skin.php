@@ -11,6 +11,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$poll_skin_url.'/style.css">', 0)
     <div class="new_win_con">
         <!-- 설문조사 결과 그래프 시작 { -->
         <span class="poll_all">전체 <?php echo $nf_total_po_cnt ?>표</span>
+        <a href="/" target="_blank" class="poll_home" >홈</a>
         <section id="poll_result_list">
             <h2><?php echo $po_subject ?> 결과</h2>
 
