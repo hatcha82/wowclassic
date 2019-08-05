@@ -27,11 +27,18 @@ if (PHP_VERSION >= '5.1.0') {
 입력예) https://www.domain.com:443/gnuboard5  . $_SERVER['SERVER_NAME'];
 */
 $G5_DOMAIN_NAME = 'http://' . 'www.classicwow.co.kr';
+$G5_DOMAIN_COOKIE =  '.classicwow.co.kr';
 
 if(strpos($_SERVER['SERVER_NAME'], 'localhost') !== false ){
     $G5_DOMAIN_NAME = '';
 }else{
     $G5_DOMAIN_NAME = 'http://' . $_SERVER['SERVER_NAME'];
+    if(strpos($_SERVER['SERVER_NAME'], $G5_DOMAIN_COOKIE) !== false ){
+        $G5_DOMAIN_COOKIE =  '.classicwow.co.kr';
+    }else{
+        $G5_DOMAIN_COOKIE = '';
+    }
+    
 }
 
 define('G5_DOMAIN', $G5_DOMAIN_NAME);
@@ -41,7 +48,7 @@ define('G5_HTTPS_DOMAIN', '');
 www.sir.kr 과 sir.kr 도메인은 서로 다른 도메인으로 인식합니다. 쿠키를 공유하려면 .sir.kr 과 같이 입력하세요.
 이곳에 입력이 없다면 www 붙은 도메인과 그렇지 않은 도메인은 쿠키를 공유하지 않으므로 로그인이 풀릴 수 있습니다.
 */
-define('G5_COOKIE_DOMAIN',  $G5_DOMAIN_NAME );
+define('G5_COOKIE_DOMAIN', $G5_DOMAIN_COOKIE);
 
 define('G5_DBCONFIG_FILE',  'dbconfig.php');
 
