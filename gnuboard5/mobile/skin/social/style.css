@@ -76,11 +76,11 @@
 #sns_login .txt{text-align:left;padding-left:10px;border-left:1px solid rgba(0,0,0,0.1);display:block;font-weight:bold}
 
 /*회원가입 */
-#sns_register{margin:0 0 10px;padding:0;text-align:center;background:#fff;border: 1px solid #dbdbdb;
+#sns_register{margin:0 0 10px;padding:0;text-align:center;background: rgba(17,17,17,0.9);border: 1px solid #dbdbdb;
 -webkit-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.2);
 -moz-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.2);
 box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.2);}
-#sns_register h2{font-size: 1.167em;text-align: left;padding: 15px 20px;border-bottom: 1px solid #dbdbdb;}
+#sns_register h2{text-align: left;padding: 15px 20px;border-bottom: 1px solid #444}
 #sns_register .sns-wrap:after {display:block;visibility:hidden;clear:both;content:""}
 #sns_register .sns-wrap{display:inline-block;padding:20px;vertical-align:top;margin:0}
 #sns_register .sns-icon{display:inline-block;height:40px;line-height:40px;width:100%;margin:0 0 5px;padding-left:40px;text-align:left;color:#fff;border-radius:2px;float:left}

@@ -79,8 +79,8 @@
 #sns_login .txt:hover{background:rgba(0,0,0,0.07)}
 
 /*회원가입 */
-#sns_register{margin:0 0 10px;padding:0;text-align:center}
-#sns_register h2{text-align: left;padding: 15px 20px;border-bottom: 1px solid #dbdbdb;background: #f8f8f8;}
+#sns_register{margin:0 0 10px;padding:0;text-align:center;background: rgba(17,17,17,0.9);color:#eee}
+#sns_register h2{text-align: left;padding: 15px 20px;border-bottom: 1px solid #444;}
 #sns_register .sns-wrap:after {display:block;visibility:hidden;clear:both;content:""}
 #sns_register .sns-wrap{display:inline-block;margin:18px 0 15px;vertical-align:top}
 #sns_register .sns-icon{display:inline-block;height:40px;line-height:40px;width:210px;margin:0 3px 5px;padding-left:40px;text-align:left;color:#fff;border-radius:2px;float:left}
