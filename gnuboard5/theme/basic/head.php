@@ -29,7 +29,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
     <div id="tnb">
         <img src="/img/logo-wow.png" style="float:left;height:30px;"/>
         <a class="blizzard" href="https://worldofwarcraft.com/ko-kr/wowclassic" style="position:absolute;left:30px">
-        <div id="classicOpenDDay" style="line-height: 30px;padding-left:10px;font-weight:bold;">
+        <div id="classicOpenDDay" style="">
         </div>
         </a>
         <ul>

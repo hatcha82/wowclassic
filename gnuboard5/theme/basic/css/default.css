@@ -82,7 +82,7 @@ border: 1px solid #444 !important;
 #hd_sch #sch_submit {height:40px;border:0;background:#333;color:#eee;width:50px;float:left;cursor:pointer;font-size:18px}
 
 #sbn_side{position:absolute;top:20px;right:0}
-#classicOpenDDay{color:#eee}
+#classicOpenDDay{color:#eee;line-height:35px;padding-left:10px;font-weight:bold;}
 #tnb {border-bottom:1px solid #333;background:#000;;}
 #tnb h3 {position:absolute;font-size:0;line-height:0;overflow:hidden}
 #tnb ul {margin:0 auto;zoom:1}

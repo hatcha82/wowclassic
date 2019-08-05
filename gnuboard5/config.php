@@ -26,19 +26,24 @@ if (PHP_VERSION >= '5.1.0') {
 보안서버주소가 없다면 공란으로 두시면 되며 보안서버주소 뒤에 / 는 붙이지 않습니다.
 입력예) https://www.domain.com:443/gnuboard5  . $_SERVER['SERVER_NAME'];
 */
+$G5_BASE_DOMAIN = 'classicwow.co.kr';
 $G5_DOMAIN_NAME = 'http://' . 'www.classicwow.co.kr';
-$G5_DOMAIN_COOKIE =  '.classicwow.co.kr';
+$G5_DOMAIN_COOKIE = '';
 
 if(strpos($_SERVER['SERVER_NAME'], 'localhost') !== false ){
+    
     $G5_DOMAIN_NAME = '';
+    
 }else{
     $G5_DOMAIN_NAME = 'http://' . $_SERVER['SERVER_NAME'];
-    if(strpos($_SERVER['SERVER_NAME'], $G5_DOMAIN_COOKIE) !== false ){
+    if($_SERVER['SERVER_NAME'] === $G5_BASE_DOMAIN){
+        header("Location: ". 'http://www'.$G5_DOMAIN_NAME); 
+    }
+    if(strpos($_SERVER['SERVER_NAME'], $G5_BASE_DOMAIN) !== false ){
         $G5_DOMAIN_COOKIE =  '.classicwow.co.kr';
     }else{
         $G5_DOMAIN_COOKIE = '';
     }
-    
 }
 
 define('G5_DOMAIN', $G5_DOMAIN_NAME);
