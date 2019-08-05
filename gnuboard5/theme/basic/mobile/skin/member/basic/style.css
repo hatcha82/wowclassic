@@ -75,14 +75,14 @@
 /* ### 기본 스타일 커스터마이징 끝 ### */
 
 /* 회원가입 약관 */
-#fregister section {background:#fff;margin:10px 0;border:1px solid #dbdbdb;
+#fregister section {background:#fff;margin:10px 0;border:1px solid #444;
 -webkit-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.2);
 -moz-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.2);
 box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.2);}
 #fregister .chk_all{text-align:left}
-#fregister h2 {text-align:left;border-bottom:1px solid #dbdbdb;padding:10px 15px;line-height:1.7em;font-size:1.167em}
+#fregister h2 {text-align:left;border-bottom:1px solid #444;padding:10px 15px;line-height:1.7em;font-size:1.167em}
 #fregister textarea {display:block;padding:10px;width:100%;border:0;background:#fff;height:180px;line-height:1.5em;color:#555}
-.fregister_agree {border-top:1px solid #dbdbdb;padding:10px 15px;line-height:1.7em;text-align:left;font-size:1.083em}
+.fregister_agree {border-top:1px solid #444;padding:10px 15px;line-height:1.7em;text-align:left;font-size:1.083em}
 .fregister_agree label {display:inline-block;margin-right:5px}
 #fregister p {border:0;padding:0 0 5px;}
 #fregister .btn_confirm {margin:15px 0}
