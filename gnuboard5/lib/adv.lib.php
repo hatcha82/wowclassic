@@ -49,4 +49,49 @@ EOT;
 EOT;
   }
 }
+function daum_adfit_mobile($type){
+    $G5_BASE_DOMAIN = 'classicwow.co.kr';
+    $unit = '';
+    $style = '';
+  //echo "<script>alert('" . (strpos('www.classicwow.co.kr', $G5_BASE_DOMAIN) !==  false ) ."')</script>";
+
+    if($type == 'top'){
+        $style= "margin:5px auto;width:320px;height:50px";
+    }else if($type == 'top'){
+        $style = 'width:320px;height:50px;margin:auto';
+    }else if($type == 'footer'){
+        $style = 'width:320px;height:50px;margin:5px auto;';
+    }
+
+
+  if(strpos($_SERVER['HTTP_HOST'],$G5_BASE_DOMAIN) !==  false){
+    if($type == 'top'){
+        $unit = '1h7ly8jdb9ruh';
+    }else if($type == 'top'){
+        $unit = '1iyexohwdu62f';
+    }else if($type == 'footer'){
+        $unit = '1hv2pzitmbd4n';
+    }
+  }else{
+    if($type == 'top'){
+        $unit = 'toamf2ui83zo';
+    }else if($type == 'top'){
+        $unit = 's4xfda1viss6';
+    }else if($type == 'footer'){
+        $unit = '1ib0wuv8suxpx';
+    }
+  }
+  if($unit !== ''){
+      echo <<<EOT
+        <div style="$style;">
+            <ins class="kakao_ad_area" style="display:none;" 
+                data-ad-unit    = "DAN-$unit" 
+                data-ad-width   = "320" 
+                data-ad-height  = "50"></ins> 
+        </div>
+EOT;
+  }else{
+      echo '';
+  }
+}
 ?>

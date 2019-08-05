@@ -195,16 +195,9 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
     </div>
 </header>
 
-
-
 <div id="wrapper">
     <div id="container">
-    <div style="margin:5px auto;width:320px;height:50px;">
-        <ins class="kakao_ad_area" style="display:none;" 
-        data-ad-unit    = "DAN-toamf2ui83zo" 
-        data-ad-width   = "320" 
-        data-ad-height  = "50"></ins> 
-    </div>
+    <?php echo daum_adfit_mobile('top');?>
     <?php if (!defined("_INDEX_")) { ?>
        <a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=<?php echo $board['bo_table'];?>"> <h2 id="container_title" class="top" title="<?php echo get_text($g5['title']); ?>"><?php echo get_head_title($g5['title']); ?></h2></a>
     <?php } ?>
