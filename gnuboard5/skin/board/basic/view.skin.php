@@ -69,7 +69,9 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
         <div id="bo_v_act">
             <?php if ($good_href) { ?>
             <span class="bo_v_act_gng">
-                <a href="<?php echo $good_href.'&amp;'.$qstr ?>" id="good_button" class="bo_v_good"><span class="sound_only">추천</span><strong><?php echo number_format($view['wr_good']) ?></strong></a>
+                <a href="<?php echo $good_href.'&amp;'.$qstr ?>" id="good_button" class="bo_v_good"><span class="sound_only"></span><strong>
+                    <?php echo number_format($view['wr_good']) ?></strong>
+                </a>
                 <b id="bo_v_act_good"></b>
             </span>
             <?php } ?>

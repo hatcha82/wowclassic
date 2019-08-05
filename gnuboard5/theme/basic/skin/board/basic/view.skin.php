@@ -80,7 +80,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
             if($board['bo_use_good'] || $board['bo_use_nogood']) {
         ?>
         <div id="bo_v_act">
-            <?php if($board['bo_use_good']) { ?><span class="bo_v_good"><span class="sound_only">추천</span><strong><?php echo number_format($view['wr_good']) ?></strong></span><?php } ?>
+            <?php if($board['bo_use_good']) { ?><span class=""><span class="">추천</span><strong><?php echo number_format($view['wr_good']) ?></strong></span><?php } ?>
             <?php if($board['bo_use_nogood']) { ?><span class="bo_v_nogood"><span class="sound_only">비추천</span><strong><?php echo number_format($view['wr_nogood']) ?></strong></span><?php } ?>
         </div>
         <?php
