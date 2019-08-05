@@ -28,6 +28,7 @@ if (PHP_VERSION >= '5.1.0') {
 */
 $G5_BASE_DOMAIN = 'classicwow.co.kr';
 $G5_DOMAIN_NAME = 'http://' . 'www.classicwow.co.kr';
+
 $G5_DOMAIN_COOKIE = '';
 
 if(strpos($_SERVER['SERVER_NAME'], 'localhost') !== false ){
@@ -36,9 +37,11 @@ if(strpos($_SERVER['SERVER_NAME'], 'localhost') !== false ){
     
 }else{
     $G5_DOMAIN_NAME = 'http://' . $_SERVER['SERVER_NAME'];
-    if($_SERVER['SERVER_NAME'] === $G5_BASE_DOMAIN){
-    header("Location: ". 'http://www'.$G5_DOMAIN_NAME); 
 
+    if(strpos($_SERVER['SERVER_NAME'], $G5_BASE_DOMAIN) !== false ){
+
+    header("Location: ". $G5_DOMAIN_NAME); 
+    }
     if(strpos($_SERVER['SERVER_NAME'], $G5_BASE_DOMAIN) !== false ){
         $G5_DOMAIN_COOKIE =  '.classicwow.co.kr';
     }else{
