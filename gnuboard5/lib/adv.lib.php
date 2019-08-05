@@ -4,11 +4,10 @@ function daum_adfit(){
 
   
 
-  if(strpos($_SERVER['SERVER_NAME'], $G5_BASE_DOMAIN) !== false ){
-    
+  if(strpos($_SERVER['SERVER_NAME'], $G5_BASE_DOMAIN) !==  false){
     echo <<<EOT
     <div style="width:320px;height:100px;float:left;">
-        <ins class="kakao_ad_area" style="display:none;" 
+        <ins class="kakao_ad_area" style="display:none;border:1px solid red" 
             data-ad-unit    = "DAN-sl6o3ds7ip2b" 
             data-ad-width   = "320" 
             data-ad-height  = "100"></ins> 
@@ -28,7 +27,7 @@ function daum_adfit(){
 EOT;
   }else{
     echo <<<EOT
-    <div style="width:320px;height:100px;float:left;">
+    <div style="width:320px;height:100px;float:left;border:1px solid blue">
         <ins class="kakao_ad_area" style="display:none;" 
             data-ad-unit    = "DAN-qhsuk5fv6yxw" 
             data-ad-width   = "320" 
