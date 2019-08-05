@@ -108,9 +108,7 @@ position:absolute;z-index:-1;top:2%;bottom:0;left:10px;right:10px;
 #fregister{color:#eee}
 #fregister p{text-align:center;color: #c7254e;background: rgba(17, 17, 17, 0.9);padding:10px;border:1px solid #444;margin:0 0 5px}
 #fregister section {margin:10px auto 30px;border:1px solid #444;position:relative;border-radius:3px 3px 0 0 ;background: rgba(17, 17, 17, 0.9);color:#eee;
--webkit-box-shadow:  0 1px 3px #eee;
--moz-box-shadow:  0 1px 3px #eee;
-box-shadow: 0 1px 3px #eee;
+
 }
 #fregister_chkall{text-align:right}
 #fregister h2 {text-align:left;padding:15px 20px;border-bottom:1px solid #444;}
