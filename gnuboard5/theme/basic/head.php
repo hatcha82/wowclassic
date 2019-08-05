@@ -273,24 +273,8 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 <div id="wrapper">
     <div id="container_wr">    
     <div style="margin:10px 0;">
-    <div style="width:320px;height:100px;float:left;">
-        <ins class="kakao_ad_area" style="display:none;" 
-            data-ad-unit    = "DAN-qhsuk5fv6yxw" 
-            data-ad-width   = "320" 
-            data-ad-height  = "100"></ins> 
-    </div>
-    <div style="width:728px;height:90px;float:left;margin-left:15px;margin-top:5px">
-        <ins class="kakao_ad_area" style="display:none;" 
-            data-ad-unit    = "DAN-1h822y33b17qc" 
-            data-ad-width   = "728" 
-            data-ad-height  = "90"></ins> 
-    </div>
-        <div style="width:320px;height:100px;float:left;margin-left:15px">
-            <ins class="kakao_ad_area" style="display:none;" 
-            data-ad-unit    = "DAN-rhglnuszc3tw" 
-            data-ad-width   = "320" 
-            data-ad-height  = "100"></ins> 
-    </div>
+    <?php daum_adfit();?>
+    
     <div id="left_navi">
         <ul class="">
             <?php
