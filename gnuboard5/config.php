@@ -182,7 +182,7 @@ define('G5_MOBILE_AGENT',   'phone|samsung|lgtel|mobile|[^A]skt|nokia|blackberry
 define('G5_SMTP','smtp.gmail.com');
 define('G5_SMTP_PORT', '465');
 define('G5_SMTP_AUTH','true');
-define('G5_SMTP_USER_ID' , 'wowclassic.furiganahub@gmail.com');
+define('G5_SMTP_USER_ID' , 'classicwow.co.kr@gmail.com');
 define('G5_SMTP_PASSWORD', 'g8ckdqja1013');
 define('G5_SMTP_SSL_SECURE','ssl');
 
