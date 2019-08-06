@@ -138,7 +138,7 @@ box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.2);}
 #mb_login .mb_login_join a{display:block;float:left;width:50%;}
 #login_password_lost{border-right:1px solid #cdcdcd;}
 
-#flogin{background:#fff;padding:20px;margin:20px 0;border-bottom:1px solid #ddd;}
+#flogin{background:rgba(17,17,17,0.9);color:#eee;padding:20px;margin:20px 0;border-bottom:1px solid #ddd;}
 
 #mb_login_notmb{background:#fff;border-bottom:1px solid #ccc;padding:20px;}
 #mb_login_notmb h2{font-size:1.25em;padding:10px;background:#f3f3f3}

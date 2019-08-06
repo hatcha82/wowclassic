@@ -63,7 +63,7 @@
 #sns_outlogin .sns-icon .ico {width:30px;height:30px}
 
 /*로그인 */
-#sns_login{border:0;margin-top:15px;padding:0; border-top:1px solid #edeaea}
+#sns_login{border:0;margin-top:15px;padding:0; border-top:1px solid #444}
 #sns_login h3{padding: 0;font-weight:bold;color:#eee;text-align:center}
 #sns_login .sns-icon{display:block;height:40px;line-height:40px;width:100%;margin:0 0 5px;padding-left:40px;text-align:left;color:#fff;border-radius:2px}
 #sns_login .sns-naver{background-color:#1fc800;background-position:5px 5px;border-bottom:1px solid #1ea505}
@@ -102,24 +102,24 @@ box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.2);}
 /*기존 계정에 연결하기*/
 
 /* Styles for Accordion */
-.mbskin .toggle{position:relative;display:block;border:1px solid #c6cacc;margin-top:-1px;background-color: #fcfcfc;margin:0 0 5px}
+.mbskin .toggle{position:relative;display:block;border:1px solid #444;margin-top:-1px;background-color:rgba(17,17,17,0.9);color:#eee;;margin:0 0 5px}
 .mbskin .toggle .toggle-title{padding:13px 15px;line-height:20px}
 .mbskin .toggle .title-name{display:block}
-.mbskin .toggle .toggle-inner{padding:15px;line-height:1.5em;display:none;background:#fff;border-top:1px solid #e2e2e2;}
+.mbskin .toggle .toggle-inner{padding:15px;line-height:1.5em;display:none;background:rgba(17,17,17,0.9);color:#eee;border-top:1px solid #444;}
 .mbskin .toggle .toggle-inner div{max-width:100%}
 .mbskin .right_i{position:absolute;font-size:0.92em;top:10px;right:10px;padding:0 10px 0 0;border-radius:3px;display:inline-block;z-index: 2;background: #3497d9;color: #fff;border-bottom-color: #1977b5;}
 .mbskin .toggle .toggle-title .right_i i{background:url("./img/plus_minus.png") 0 -24px no-repeat;width:20px;height:24px;display:inline-block;vertical-align:middle}
 .mbskin .toggle .toggle-title.active .right_i i{background:url("./img/plus_minus.png") 0 0 no-repeat}
-.mbskin .all_agree{position:relative;display:block;;margin-bottom:6px;background:#d9d9d9;border-radius:3px;border-top:0;padding:13px 15px;line-height:20px}
+.mbskin .all_agree{position:relative;display:block;;margin-bottom:6px;background-color:rgba(17,17,17,0.9);color:#eee;border-radius:3px;border: 1px solid #444;padding:13px 15px;line-height:20px}
 
-#register_member .sns_tbl{background:#fff;;margin:10px 0;border:1px solid #c6cacc;}
+#register_member .sns_tbl{background:rgba(17,17,17,0.9);color:#eee;;;margin:10px 0;border:1px solid #444;}
 .sns_tbl table{border:0}
-.sns_tbl caption{ padding: 0 20px;line-height: 45px;font-size: 1.083em;border-bottom: 1px solid #e2e2e2;color:#4162ff;background: #fff;}
+.sns_tbl caption{ padding: 0 20px;line-height: 45px;font-size: 1.083em;border-bottom: 1px solid #444;color:#4162ff;background: rgba(17,17,17,0.9);}
 .sns_tbl th{width:80px;text-align:right;vertical-align:top;line-height:40px;padding:10px;}
 .sns_tbl td{padding:10px;}
 .sns_tbl .email_msg{color:#777;margin:5px 0 0}
-.sns_tbl .frm_input {width:100%}
-#fregisterform{margin:10px}
+.sns_tbl .frm_input {width:100%;background: rgba(17,17,17,0.9);color:#eee}
+#fregisterform{margin:10px;background:rgba(17,17,17,0.9);color:#eee;}
 #fregisterform .btn_confirm{text-align:center;margin:20px 0}
 #fregisterform .btn_confirm .btn_submit{height:45px;;padding:0 30px;font-weight:bold;font-size:1.083em}
 #fregisterform .btn_confirm .btn_cancel{line-height:45px;height:45px;padding:0 30px;font-weight:bold;font-size:1.083em}
@@ -144,7 +144,7 @@ box-shadow:0 0 10px rgba(0, 0, 0,0.8);}
 #sns-link-pnl .connect-fg .connect-title {margin-top:25px;margin-bottom:10px;font-size:1.667em;font-weight:bold;text-align:center}
 
 .mbskin .member_connect:after {display:block;visibility:hidden;clear:both;content:""}
-.mbskin .member_connect{margin-top:1em;border: 2px solid #cacaca;margin:10px;padding:10px;text-align:left}
+.mbskin .member_connect{margin-top:1em;background: rgba(17,17,17,0.9);color:#eee;border:1px solid #444;margin:10px;padding:10px;text-align:left}
 .mbskin .member_connect .strong{font-weight:bold;margin:0 0 10px;font-size:0.97em}
 .mbskin .member_connect button{color: #fff;border:0;padding:7px 13px;border:1px solid #6446e7;font-weight:bold;background: #6f50e7;border-radius:3px;font-size:0.92em}
 .mbskin .member_connect button:hover{background:#6446e7}

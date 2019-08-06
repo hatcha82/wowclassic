@@ -99,19 +99,19 @@
 
 /* Styles for Accordion */
 
-.mbskin .toggle{position:relative;display:block;border:1px solid #c6cacc;margin-top:-1px;background-color: #fcfcfc;}
+.mbskin .toggle{position:relative;display:block;border:1px solid #444;margin-top:-1px;background-color: rgba(17,17,17,0.9);color:#eee}
 .mbskin .toggle .toggle-title{padding:13px 15px;line-height:20px}
 .mbskin .toggle .title-name{display:block}
-.mbskin .toggle .toggle-inner{padding:15px;line-height:1.5em;display:none;background:#fff;border-top:1px solid #e2e2e2;}
+.mbskin .toggle .toggle-inner{padding:15px;line-height:1.5em;display:none;background:rgba(17,17,17,0.9);border-top:1px solid #444;}
 .mbskin .toggle .toggle-inner div{max-width:100%}
 .mbskin .right_i{position:absolute;font-size:0.92em;top:10px;right:10px;padding:0 10px 0 0;border-radius:3px;display:inline-block;z-index: 2;background: #3497d9;color: #fff;border-bottom-color: #1977b5;cursor:pointer}
 .mbskin .toggle .toggle-title .right_i i{background:url("./img/plus_minus.png") 0 -24px no-repeat;width:20px;height:24px;display:inline-block;vertical-align:middle}
 .mbskin .toggle .toggle-title.active .right_i i{background:url("./img/plus_minus.png") 0 0 no-repeat}
-.mbskin .all_agree{position:relative;display:block;;margin-bottom:6px;background:#fff;border:1px solid #c6cacc;border-top:0;padding:13px 15px;line-height:20px}
+.mbskin .all_agree{position:relative;display:block;;margin-bottom:6px;background-color: rgba(17,17,17,0.9);color:#eee;border:1px solid #444;border-top:0;padding:13px 15px;line-height:20px}
 
-#register_member .sns_tbl{background:#fff;;margin:10px 0;border:1px solid #c6cacc;}
+#register_member .sns_tbl{background:rgba(17,17,17,0.9);color:#eee;;margin:10px 0;border:1px solid #444;}
 .sns_tbl table{border:0}
-.sns_tbl caption{ padding: 0 20px;line-height: 45px;font-size: 1.083em;border-bottom: 1px solid #e2e2e2;color: #253dbe;background: #fcfcfc;}
+.sns_tbl caption{ padding: 0 20px;line-height: 45px;font-size: 1.083em;border-bottom: 1px solid #444;color: #eee;background: rgba(17,17,17,0.9);}
 .sns_tbl th{width:100px;text-align:right;padding:10px;}
 .sns_tbl td{padding:10px;}
 .sns_tbl .email_msg{color:#777;margin:5px 0 0}
@@ -136,7 +136,7 @@
 #sns-link-pnl .connect-fg .connect-title {margin-top:25px;margin-bottom:10px;font-size:1.667em;font-weight:bold;text-align:center}
 
 .mbskin .member_connect:after {display:block;visibility:hidden;clear:both;content:""}
-.mbskin .member_connect{margin-top:80px;background:#d9d9d9;border-radius:3px;padding:10px;text-align:left}
+.mbskin .member_connect{margin-top:80px;background: rgba(17,17,17,0.9);color:#eee;border-radius:3px;padding:10px;text-align:left}
 .mbskin .member_connect .strong{font-size:1em;font-weight:bold;margin:0 0 10px}
 .mbskin .member_connect button{color: #fff;border:0;padding:6px 20px 7px;border:1px solid #6446e7;font-weight:bold;background: #6f50e7;border-radius:3px;font-size:0.91em}
 .mbskin .member_connect button:hover{background:#6446e7}

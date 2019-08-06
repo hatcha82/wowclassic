@@ -107,12 +107,10 @@ position:absolute;z-index:-1;top:2%;bottom:0;left:10px;right:10px;
 /* 회원가입 약관 */
 #fregister{color:#eee}
 #fregister p{text-align:center;color: #c7254e;background: rgba(17, 17, 17, 0.9);padding:10px;border:1px solid #444;margin:0 0 5px}
-#fregister section {margin:10px auto 30px;border:1px solid #444;position:relative;border-radius:3px 3px 0 0 ;background: rgba(17, 17, 17, 0.9);color:#eee;
-
-}
+#fregister section {margin:10px auto 30px;border:1px solid #444;position:relative;border-radius:3px 3px 0 0 ;background: rgba(17, 17, 17, 0.9);color:#eee;}
 #fregister_chkall{text-align:right}
 #fregister h2 {text-align:left;padding:15px 20px;border-bottom:1px solid #444;}
-#fregister textarea {display:block;padding:20px;width:100%;height:150px;background:transparent ;color:#eee;border:0;line-height:1.6em;};
+#fregister textarea {display:block;padding:20px;width:100%;height:150px;background:transparent ;color:#eee;border:0;line-height:1.6em;}
 #fregister .fregister_agree {position:absolute;top:0;right:0;;padding:15px;}
 #fregister_private div{padding:20px;color:#eee;}
 #fregister_private table{width:100%;border-collapse:collapse}
@@ -123,7 +121,7 @@ position:absolute;z-index:-1;top:2%;bottom:0;left:10px;right:10px;
 #fregister .btn_confirm .btn_submit{height:50px;padding:0 40px;font-weight:bold;font-size:1.083em}
 
 /* 회원가입 입력 */
-#register_form{background:#fff;padding:20px;margin-bottom:20px}
+#register_form{background:rgba(17, 17, 17, 0.9);color:#eee;padding:20px;margin-bottom:20px}
 #fregisterform #msg_certify {margin:5px 0 0;padding:5px;border:1px solid #dbecff;background:#eaf4ff;text-align:center}
 #fregisterform .frm_address {margin:5px 0 0}
 #fregisterform #mb_addr3 {display:inline-block;margin:5px 0 0;vertical-align:middle}
@@ -138,7 +136,7 @@ position:absolute;z-index:-1;top:2%;bottom:0;left:10px;right:10px;
 
 
 /* 회원가입 완료 */
-#reg_result {padding:100px 0 40px;text-align:center;background:#fff}
+#reg_result {padding:100px 0 40px;text-align:center;background:rgba(17, 17, 17, 0.9);color:#eee;}
 #reg_result h2{font-size:2em;margin:0 0 20px}
 #reg_result h2 strong{color:#ed6478}
 #reg_result #result_email {margin:20px 0;padding:10px 50px;border-top:1px solid #e9e9e9;border-bottom:1px solid #dde4e9;background:#fff;line-height:2em}

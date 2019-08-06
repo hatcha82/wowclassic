@@ -102,18 +102,18 @@
 #fregisterform .reg_mb_img_file img{max-width:100%;height:auto}
 
 /* 회원가입 완료 */
-#reg_result {padding:20px 10px 10px}
+#reg_result {padding:20px 10px 10px;color:#eee;}
 #reg_result #result_email {margin:20px 0;padding:10px 50px;border-top:1px solid #eee;border-bottom:1px solid #eee;background:#fff;line-height:2em}
 #reg_result #result_email span {display:inline-block;width:150px}
 #reg_result #result_email strong {color:#e8180c;font-size:1.2em}
 #reg_result h2{text-align:center;font-size:1.25em;margin:0 0 10px}
 #reg_result h2 strong{color:#ed6478}
 #reg_result p {line-height:1.7em}
-#reg_result .btn_confirm {margin:20px 0 30px}
-#reg_result .reg_result_wr{background:#fff;padding:10px 20px}
+#reg_result .btn_confirm {margin:20px 0 30px;}
+#reg_result .reg_result_wr{background:rgba(17,17,17,0.9);color:#eee;padding:10px 20px}
 #reg_result .reg_cong{margin:10px 0;font-size:1.083em;font-weight:bold}
 #reg_result .reg_cong strong{color:#3497d9}
-#reg_result .btn_confirm a{display:inline-block;padding:0 20px;height:40px;line-height:38px;border:1px solid #ed6478;color:#ed6478;border-radius:3px;font-weight:bold}
+#reg_result .btn_confirm a{display:inline-block;padding:0 20px;height:40px;line-height:38px;border:1px solid #ed6478;background: #ed6478;color:#eee;color:#eee;border-radius:3px;font-weight:bold}
 
 /* 아이디/비밀번호 찾기 */
 /*#find_info #info_fs {margin:0 20px 10px}*/
@@ -122,21 +122,21 @@
 #find_info #captcha{margin:5px 0 }
 
 /* 로그인 */
-#mb_login {margin:40px auto 10px;;max-width:500px;padding:20px;}
+#mb_login {margin:40px auto 10px;;max-width:500px;padding:20px;color:#eee;}
 #mb_login h1 {font-size:2em;text-align:center;margin:0 0 20px}
 #mb_login h2 {margin:0}
 #mb_login p {padding:10px 0;line-height:1.5em}
 #mb_login #login_frm {position:relative}
 #mb_login #login_frm div {padding:10px 0 ;text-align:right}
-#mb_login .frm_input {width:100%;margin:5px 0}
+#mb_login .frm_input {width:100%;margin:5px 0;background: rgba(17,17,17,0.9);color:#eee}
 #mb_login .btn_submit {width:100%;border-radius:3px;height:40px;margin:5px 0;font-size:1.083em;font-weight:bold}
-#mb_login .mb_login_join{border-top:1px solid #ddd;margin:20px 0 0 ;padding:10px 0}
+#mb_login .mb_login_join{border-top:1px solid #444;margin:20px 0 0 ;padding:10px 0}
 #mb_login .mb_login_join:after {display:block;visibility:hidden;clear:both;content:""}
 #mb_login .mb_login_join h2{position:absolute;font-size:0;line-height:0;overflow:hidden}
 #mb_login .mb_login_join a{display:block;float:left;width:50%;}
-#login_password_lost{border-right:1px solid #cdcdcd;}
+#login_password_lost{border-right:1px solid #444;}
 
-#flogin{background:#fff;padding:20px;margin:20px 0;border-bottom:1px solid #ddd;}
+#flogin{background:rgba(17,17,17,0.9);color:#eee;padding:20px;margin:20px 0;border-bottom:1px solid #444;}
 
 #mb_login_notmb{background:#fff;border-bottom:1px solid #ccc;padding:20px;}
 #mb_login_notmb h2{font-size:1.25em;padding:10px;background:#f3f3f3}
