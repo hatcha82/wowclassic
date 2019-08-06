@@ -64,7 +64,7 @@ box-shadow:0 1px 2px rgba(0,0,0,0.1)}
 #poll_result h2 {}
 #poll_result a {}
 #poll_result .sv_member,
-#poll_result .sv_guest {font-weight:bold}
+#poll_result .sv_guest {font-weight:bold;color:#444}
 #poll_result .poll_all{min-width:80px;float:right;display:inline-block;margin:0 0 10px;line-height: 30px;font-size: 0.92em;color: #4e546f;background: #d4d4d4;padding: 0 10px;border-radius: 5px;}
 #poll_result .poll_home{text-align: center;min-width:80px;float:right;display:inline-block;margin:0 0 10px;margin-right:10px;line-height: 30px;font-size: 0.92em;color: #4e546f;background: #d4d4d4;padding: 0 10px;border-radius: 5px;}
 #poll_result_list {margin:0 auto 20px;clear:both}
