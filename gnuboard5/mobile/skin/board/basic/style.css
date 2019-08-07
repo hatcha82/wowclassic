@@ -220,6 +220,7 @@ box-shadow: 0 0 8px rgba(65,98,255,0.8);}
 #bo_v_sns li .sns_t{display:block;background:#35b3dc;border-radius:3px}
 #bo_v_sns li .sns_g{display:block;background:#d5503a;border-radius:3px}
 #bo_v_sns li .sns_k{display:block;background:#fbe300;border-radius:3px}
+#bo_v_sns li .sns_n{display:block;background:#00c63b;border-radius:3px}
 #bo_v_sns li img{vertical-align:top}
 
 /* 게시판 댓글 */
