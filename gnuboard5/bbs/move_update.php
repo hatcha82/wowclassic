@@ -24,16 +24,21 @@ $cnt = 0;
 $wr_id_list = preg_replace('/[^0-9\,]/', '', $_POST['wr_id_list']);
 
 $sql = " select distinct wr_num from $write_table where wr_id in ({$wr_id_list}) order by wr_id ";
+
+
 $result = sql_query($sql);
+
 while ($row = sql_fetch_array($result))
 {
     $wr_num = $row['wr_num'];
     for ($i=0; $i<count($_POST['chk_bo_table']); $i++)
     {
         $move_bo_table = preg_replace('/[^a-z0-9_]/i', '', $_POST['chk_bo_table'][$i]);
-
+        $move_ca_name =  $_POST['ca_name'][ $move_bo_table];
+        
         // 취약점 18-0075 참고
-        $sql = "select * from {$g5['board_table']} where bo_table = '".sql_real_escape_string($move_bo_table)."' ";
+        $sql = "select * from {$g5['board_table']} where bo_table = '".sql_real_escape_string($move_bo_table)."' ";      
+
         $move_board = sql_fetch($sql);
         // 존재하지 않다면
         if( !$move_board['bo_table'] ) continue;
@@ -78,7 +83,7 @@ while ($row = sql_fetch_array($result))
                              wr_is_comment = '{$row2['wr_is_comment']}',
                              wr_comment = '{$row2['wr_comment']}',
                              wr_comment_reply = '{$row2['wr_comment_reply']}',
-                             ca_name = '".addslashes($row2['ca_name'])."',
+                             ca_name = '{$move_ca_name}',
                              wr_option = '{$row2['wr_option']}',
                              wr_subject = '".addslashes($row2['wr_subject'])."',
                              wr_content = '".addslashes($row2['wr_content'])."',
@@ -109,7 +114,6 @@ while ($row = sql_fetch_array($result))
                              wr_9 = '".addslashes($row2['wr_9'])."',
                              wr_10 = '".addslashes($row2['wr_10'])."' ";
             sql_query($sql);
-
             $insert_id = sql_insert_id();
 
             // 코멘트가 아니라면
@@ -213,7 +217,6 @@ if ($sw == 'move')
     }
     sql_query(" update {$g5['board_table']} set bo_count_write = bo_count_write - '$save_count_write', bo_count_comment = bo_count_comment - '$save_count_comment' where bo_table = '$bo_table' ");
 }
-
 $msg = '해당 게시물을 선택한 게시판으로 '.$act.' 하였습니다.';
 $opener_href  = './board.php?bo_table='.$bo_table.'&amp;page='.$page.'&amp;'.$qstr;
 $opener_href1 = str_replace('&amp;', '&', $opener_href);

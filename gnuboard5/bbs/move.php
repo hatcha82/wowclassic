@@ -66,6 +66,7 @@ for ($i=0; $row=sql_fetch_array($result); $i++)
                 <input type="checkbox" id="chkall" onclick="if (this.checked) all_checked(true); else all_checked(false);">
             </th>
             <th scope="col">게시판</th>
+            <th scope="col">카테고리</th>
         </tr>
         </thead>
         <tbody>
@@ -91,6 +92,28 @@ for ($i=0; $row=sql_fetch_array($result); $i++)
                     <?php echo $list[$i]['bo_subject'] ?> (<?php echo $list[$i]['bo_table'] ?>)
                     <?php echo $atc_mark; ?>
                 </label>
+            </td>
+            <td>
+            <?php
+                $is_category = false;
+                $category_option = '';
+                if ($list[$i]['bo_use_category']) {
+                    $ca_name = "";
+                    if (isset($write['ca_name']))
+                        $ca_name = $write['ca_name'];
+                    $category_option = get_category_option_for_move($list, $i);
+                    $is_category = true;
+                }
+            ?>
+      
+                <div class="bo_w_select write_div">
+                    <label for="ca_name"  class="sound_only">분류</label>
+                    <select name="ca_name[<?php echo $list[$i]['bo_table'];?>]" id="ca_name">
+                        <option value="">분류를 선택하세요</option>
+                        <?php echo $category_option ?>
+                    </select>
+                </div>
+               
             </td>
         </tr>
         <?php } ?>

@@ -808,6 +808,21 @@ function is_admin($mb_id)
 
 // 분류 옵션을 얻음
 // 4.00 에서는 카테고리 테이블을 없애고 보드테이블에 있는 내용으로 대체
+function get_category_option_for_move($list, $i){
+    $categories = explode("|", $list[$i]['bo_category_list'].($is_admin?"|공지":"")); // 구분자가 | 로 되어 있음
+    $str = "";
+    for ($i=0; $i<count($categories); $i++) {
+        $category = trim($categories[$i]);
+        if (!$category) continue;
+
+        $str .= "<option value=\"$categories[$i]\"";
+        if ($category == $ca_name) {
+            $str .= ' selected="selected"';
+        }
+        $str .= ">$categories[$i]</option>\n";
+    } 
+    return $str;           
+}
 function get_category_option($bo_table='', $ca_name='')
 {
     global $g5, $board, $is_admin;
