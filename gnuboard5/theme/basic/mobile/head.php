@@ -148,6 +148,8 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
         <script>
         $(function () {
             //폰트 크기 조정 위치 지정
+           
+         
             var font_resize_class = get_cookie("ck_font_resize_add_class");
             if( font_resize_class == 'ts_up' ){
                 $("#text_size button").removeClass("select");

@@ -232,12 +232,16 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                 <button type="button" class="gnb_close_btn"><i class="fa fa-times" aria-hidden="true"></i></button>
             </div>
         </div>
-    </nav>
+    </nav>    
     <script>
     
     $(function(){
 
         /* 와우 오픈 관련 */
+      
+       
+     
+       
         function openClassicRelese(){
             var release = moment('2019-08-27 07:00:00')
             var now = moment()
@@ -270,7 +274,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 <hr>
 
 <!-- 콘텐츠 시작 { -->
-
+<img src="http://www.furiganahub.com/img/test.png"/>
 <div id="wrapper">
     <div id="container_wr">    
     <div style="margin:10px 0;">

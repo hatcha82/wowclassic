@@ -76,7 +76,14 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 
         <div id="bo_v_con"><?php echo get_view_thumbnail($view['content']); ?></div>
         <?php //echo $view['rich_content']; // {이미지:0} 과 같은 코드를 사용할 경우 ?>
-
+        <script>       
+        $('img').on('error',function(){
+            var src = $(this).attr('src');
+            $(this).addClass('noImage')
+            $(this).attr('src', '/img/no_img.png');            
+            $(this).after("<br><a class='noImage' href='" + src+"'>원본 이미지 링크</a>");
+        });
+       </script>
         <?php if ($is_signature) { ?><p><?php echo $signature ?></p><?php } ?>
 
         <?php if ( $good_href || $nogood_href) { ?>
