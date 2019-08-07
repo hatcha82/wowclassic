@@ -10,8 +10,7 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
     
     $sql = " select bo_table
             from `{$g5['board_table']}` a left join `{$g5['group_table']}` b on (a.gr_id=b.gr_id)
-            where a.bo_device <> 'pc'
-            ";
+            where a.bo_device in ('mobile','both')";
     if(!$is_admin){
         $sql .= " and a.bo_use_cert = '' ";
     }

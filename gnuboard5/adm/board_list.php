@@ -179,6 +179,7 @@ $colspan = 15;
                 <option value="both"<?php echo get_selected($row['bo_device'], 'both', true); ?>>모두</option>
                 <option value="pc"<?php echo get_selected($row['bo_device'], 'pc'); ?>>PC</option>
                 <option value="mobile"<?php echo get_selected($row['bo_device'], 'mobile'); ?>>모바일</option>
+                <option value="none"<?php echo get_selected($row['bo_device'], 'none'); ?>>미사용</option>
             </select>
         </td>
         <td class="td_mng td_mng_m">
