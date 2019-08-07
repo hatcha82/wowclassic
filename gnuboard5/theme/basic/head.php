@@ -274,7 +274,6 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 <hr>
 
 <!-- 콘텐츠 시작 { -->
-<img src="http://www.furiganahub.com/img/test.png"/>
 <div id="wrapper">
     <div id="container_wr">    
     <div style="margin:10px 0;">
