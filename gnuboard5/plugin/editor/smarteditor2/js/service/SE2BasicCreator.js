@@ -54,7 +54,7 @@ function createSEditor2(elIRField, htParams, elSeAppContainer){
 	}
 
 	var htDimension = {
-		nMinHeight:205,
+		nMinHeight:700,
 		nMinWidth:parseInt(elIRField.style.minWidth, 10)||570,
 		nHeight:elIRField.style.height||elIRField.offsetHeight,
 		nWidth:elIRField.style.width||elIRField.offsetWidth
@@ -88,7 +88,8 @@ function createSEditor2(elIRField, htParams, elSeAppContainer){
 
 	oEditor.registerPlugin(new nhn.husky.SE_WYSIWYGEnterKey("P"));							// 엔터 시 처리, 현재는 P로 처리
 	
-	oEditor.registerPlugin(new nhn.husky.SE2M_ColorPalette(elAppContainer));				// 색상 팔레트
+	oEditor.registerPlugin(new nhn.husky.SE2M_ColorPalette(elAppContainer));	
+console.log(elAppContainer)			// 색상 팔레트
 	oEditor.registerPlugin(new nhn.husky.SE2M_FontColor(elAppContainer));					// 글자색
 	oEditor.registerPlugin(new nhn.husky.SE2M_BGColor(elAppContainer));						// 글자배경색
 	oEditor.registerPlugin(new nhn.husky.SE2M_FontNameWithLayerUI(elAppContainer, aAdditionalFontList));	// 글꼴종류
