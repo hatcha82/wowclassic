@@ -63,7 +63,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
             var src = $(this).attr('src');
             $(this).addClass('noImage')
             $(this).attr('src', '/img/no_img.png');            
-            $(this).after("<br><a class='noImage' href='" + src+"'>원본 이미지 링크</a>");
+            $(this).after("<br><a target='_blank' class='noImage' href='" + src+"'>원본 이미지 링크</a>");
         });
        </script>
         <?php //echo $view['rich_content']; // {이미지:0} 과 같은 코드를 사용할 경우 ?>
