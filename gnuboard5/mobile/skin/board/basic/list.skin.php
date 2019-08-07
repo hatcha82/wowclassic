@@ -64,6 +64,14 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
                 </div><?php } ?>
 
                 <div class="bo_subject">
+                <?php
+                    if ($list[$i]['is_notice']) // 공지사항
+                        echo '<strong class="notice_icon"><i class="fa fa-bullhorn" aria-hidden="true"></i><span class="sound_only">공지</span></strong>';
+                    else if ($wr_id == $list[$i]['wr_id'])
+                        echo "<span class=\"bo_current\">열람중</span>";
+                    else
+                       
+                    ?>
                     <?php
                     if ($is_category && $list[$i]['ca_name']) {
                     ?>
