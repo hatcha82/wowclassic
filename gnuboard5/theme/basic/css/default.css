@@ -42,7 +42,7 @@ box-shadow: 0 0 5px #777;
 border: 1px solid #444 !important;
 }
 .placeholdersjs { color: #aaa !important; }
-img.noImage{opacity: 0.5 !important;border:1px solid #444;padding:10px;}
+img.noImage{opacity: 0.5 !important;border:1px solid #444;}
 a.noImage{font-size:0.8em}
 /* 레이아웃 크기 지정 */
 #hd, #wrapper, #ft{min-width:1200px}
