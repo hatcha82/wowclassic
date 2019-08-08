@@ -7,9 +7,15 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 <?php echo daum_adfit_mobile('bottom');?>
 <?php echo poll('theme/basic'); // 설문조사 ?>
 <?php echo popular('theme/basic'); // 인기검색어 ?>
-<?php echo visit('theme/basic'); // 방문자수 ?>
 
+<?php echo visit('theme/basic'); // 방문자수 ?>
 <?php echo daum_adfit_mobile('footer');?>
+<div style="">
+<tenping class="adsbytenping" style="width: 100%; margin: 0px auto; display: block; max-width: 768px;" tenping-ad-client="OG1GZvcF9%2ftKBJFmMMMQpiZ41M0GlEawTCO4hzThpVdH%2bxRVRthTfGyB2E94CJtF" tenping-ad-display-type="67%2be3LHzHbblsB9oLrOpWQ%3d%3d"></tenping><script async src='//ads.tenping.kr/scripts/adsbytenping.min.js' ></script>
+</div>
+
+
+
 <div id="ft">
 
     <div id="ft_copy">
