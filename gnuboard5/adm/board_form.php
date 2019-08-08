@@ -1385,8 +1385,8 @@ function fboardform_submit(f)
         return false;
     }
 
-    if (parseInt(f.bo_count_delete.value) < 1) {
-        alert("원글 삭제 불가 댓글수는 1 이상 입력하셔야 합니다.");
+    if (parseInt(f.bo_count_delete.value) < 0) {
+        alert("원글 삭제 불가 댓글수는 0 이상 입력하셔야 합니다.");
         f.bo_count_delete.focus();
         return false;
     }
