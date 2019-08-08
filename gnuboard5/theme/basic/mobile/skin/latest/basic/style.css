@@ -2,9 +2,7 @@
 
 /* 최근게시물 스킨 (latest) */
 ul.category{margin:0 auto;color:#eee;text-align: center;margin-top:10px !important}
-ul.category li{display: inline-flex;
-  width:100px;
-  padding:10px;margin:3px;border:1px solid #444;background:rgba(72, 20, 3, 0.58);}
+ul.category li{display: inline-block;width:100px;text-align: center;padding:10px;margin:3px;border:1px solid #444;background:rgba(72, 20, 3, 0.58);}
 .bo_cate_link{    color: #3ca1ff !important;
   font-weight: normal;
   text-decoration: none;
