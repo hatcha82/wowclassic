@@ -14,7 +14,9 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
     <header>
         <h2 id="bo_v_title">
             <?php if ($category_name) { ?>
+            <a class="boardHead" href="<?php echo G5_BBS_URL ?>/board.php?bo_table=<?php echo $board['bo_table'];?>&sca=<?php echo $view['ca_name'];?>">
             <span class="bo_v_cate"><?php echo $view['ca_name']; // 분류 출력 끝 ?></span> 
+            </a>
             <?php } ?>
             <span class="bo_v_tit">
             <?php
