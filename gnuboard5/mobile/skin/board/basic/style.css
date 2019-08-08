@@ -125,7 +125,7 @@ font-size: 0.9em;
 #wr_email, #wr_homepage, #wr_subject, .wr_link {width:100%}
 
 /* 게시판 읽기 */
-#bo_v {padding:20px 10px 10px;background:rgba(17, 17, 17, 0.9);;color:#eee;
+#bo_v {padding:20px 10px 10px;background:#000;color:#fff;
 ;-webkit-box-shadow:  0 1px 4px #ddd;
 -moz-box-shadow:  0 1px 4px #ddd;
 box-shadow: 0 1px 4px #ddd;}
