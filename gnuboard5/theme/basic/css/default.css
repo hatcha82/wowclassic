@@ -180,7 +180,8 @@ transition: all 0.3s ease-out;}
 /* 좌측 메뉴 */
 #left_navi{ float:left;width:200px;margin:20px;margin-left:0;background:rgba(17, 17, 17, 0.9);color:#eee; border:1px solid #444;}
 #left_navi ul{width:100%}
-#left_navi ul li {padding:5px;width:100%;}
+#left_navi ul li.depth1{padding:5px;}
+#left_navi ul li {padding:1px 5px;width:100%;}
 #left_navi ul li a{background:rgba(209, 63, 74, 0.9);padding:5px;border-radius:3px;display: block;width:100%}
 #left_navi ul li ul li a{background: transparent}
 /* 중간 레이아웃 */
