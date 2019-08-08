@@ -366,8 +366,18 @@ box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);}
 #bo_w #wr_password{margin:0 0.5%  }
 #bo_w .wr_content.smarteditor2 iframe{background:#fff}
 #bo_w .bo_w_tit{position:relative}
-#bo_w .bo_w_tit .frm_input{padding-right:120px;}
+#bo_w .bo_w_tit .frm_input{padding-right:225px;}
 #bo_w .bo_w_tit #btn_autosave{position:absolute;top:5px;right:5px;line-height:30px;height:30px;}
+#bo_w .bo_w_tit #div_savecancel{position:absolute;top:3px;right:105px;line-height:30px;height:30px;}
+#bo_w .bo_w_tit #div_savecancel input, #bo_w .bo_w_tit #div_savecancel a{
+  height: 30px;
+  line-height: 30px;
+  margin-top: 2px;
+  border-radius: 5px;
+  margin-left: 3px;
+}
+
+
 #bo_w .bo_w_link label{position:absolute;top:1px;left:1px;border-radius:3px 0 0 3px;height:38px;line-height:38px;width:40px;background: rgba(17, 17, 17, 0.9);text-align:center;color:#eee}
 #bo_w .bo_w_link .frm_input{padding-left:50px}
 #bo_w .bo_w_flie .lb_icon{position:absolute;top:0px;left:0px;border-radius:3px 0 0 3px;height:38px;line-height:38px;width:40px;background: rgba(17, 17, 17, 0.9);text-align:center;color:#eee}

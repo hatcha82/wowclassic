@@ -61,6 +61,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
             <option value="">분류를 선택하세요</option>
             <?php echo $category_option ?>
         </select>
+        
     </div>
     <?php } ?>
 
@@ -88,12 +89,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
     </div>
     <?php } ?>
 
-    <?php if ($option) { ?>
-    <div class="write_div">
-        <span class="sound_only">옵션</span>
-        <?php echo $option ?>
-    </div>
-    <?php } ?>
+    
 
     <div class="bo_w_tit write_div">
         <label for="wr_subject" class="sound_only">제목<strong>필수</strong></label>
@@ -103,17 +99,27 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
             <?php if ($is_member) { // 임시 저장된 글 기능 ?>
             <script src="<?php echo G5_JS_URL; ?>/autosave.js"></script>
             <?php if($editor_content_js) echo $editor_content_js; ?>
+            <div id="div_savecancel">
+            <a href="./board.php?bo_table=<?php echo $bo_table ?>" class="btn_cancel btn">취소</a>
+            <input type="submit" value="작성완료" id="btn_submit" accesskey="s" class="btn_frmline btn">
+            </div>   
             <button type="button" id="btn_autosave" class="btn_frmline">임시 저장된 글 (<span id="autosave_count"><?php echo $autosave_count; ?></span>)</button>
             <div id="autosave_pop">
                 <strong>임시 저장된 글 목록</strong>
                 <ul></ul>
                 <div><button type="button" class="autosave_close">닫기</button></div>
             </div>
+            
             <?php } ?>
         </div>
         
     </div>
-
+    <?php if ($option) { ?>
+    <div class="write_div" style="float:left;margin-top:3px">
+        <span class="sound_only">옵션</span>
+        <?php echo $option ?>
+    </div>
+    <?php } ?>
     <div class="write_div">
         <label for="wr_content" class="sound_only">내용<strong>필수</strong></label>
         <div class="wr_content <?php echo $is_dhtml_editor ? $config['cf_editor'] : ''; ?>">
