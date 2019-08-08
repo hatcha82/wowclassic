@@ -7,7 +7,9 @@ add_stylesheet('<link rel="stylesheet" href="'.$latest_skin_url.'/style.css">', 
 
 <div class="lt list_01">
     <div class="bo_name">
-    <a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=<?php echo $bo_table ?>" class="lt_title"><i class="fa fa-list-ul" aria-hidden="true"></i> <strong><?php echo $bo_subject ?></strong></a>
+        <div class="lt_title">   
+            <a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=<?php echo $bo_table ?>" ><i class="fa fa-list-ul" aria-hidden="true"></i> <strong><?php echo $bo_subject ?></strong></a>
+        </div>
     </div>
     <ul>
     <?php for ($i=0; $i<count($list); $i++) { ?>
@@ -46,6 +48,12 @@ add_stylesheet('<link rel="stylesheet" href="'.$latest_skin_url.'/style.css">', 
     <?php } ?>
     <?php if (count($list) == 0) { //게시물이 없을 때 ?>
     <li class="empty_li">게시물이 없습니다.</li>
-    <?php } ?>
+    <?php }?>
     </ul>
+    <?php if ($is_category) { ?>
+            <ul class="category">
+                <?php echo $category_option ?>
+            </ul>
+        <?php } ?>
+        
 </div>

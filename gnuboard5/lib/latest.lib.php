@@ -52,6 +52,9 @@ function latest($skin_dir='', $bo_table, $rows=10, $subject_len=40, $cache_time=
                     $caches = unserialize(base64_decode($file_ex[1]));
 
                     $list = (is_array($caches) && isset($caches['list'])) ? $caches['list'] : array();
+                    $is_category = (is_array($caches) && isset($caches['is_category'])) ? $caches['is_category'] : false;
+                    $category_option = (is_array($caches) && isset($caches['category_option'])) ? $caches['category_option'] : '';
+
                     $bo_subject = (is_array($caches) && isset($caches['bo_subject'])) ? $caches['bo_subject'] : '';
                 } catch(Exception $e){
                     $cache_fwrite = true;
@@ -84,11 +87,41 @@ function latest($skin_dir='', $bo_table, $rows=10, $subject_len=40, $cache_time=
             $list[$i] = get_list($row, $board, $latest_skin_url, $subject_len);
         }
 
+        $is_category = false;
+        $category_option = '';
+        if ($board['bo_use_category']) {
+            $is_category = true;
+            $category_href = G5_BBS_URL.'/board.php?bo_table='.$bo_table;
+            
+            $category_option .= '<li><a href="'.$category_href.'"';
+            if ($sca=='')
+                $category_option .= ' id="bo_cate_on"';
+            $category_option .= '>전체</a></li>';
+        
+            $categories = explode('|', $board['bo_category_list']); // 구분자가 , 로 되어 있음
+            for ($i=0; $i<count($categories); $i++) {
+                $category = trim($categories[$i]);
+        
+                $icon_url = get_icon_by_categoryName($category);
+                $icon_img_tag = $icon_url == '' ? '' : '<img class="category_icon" src="' .  $icon_url . '" /> ';
+                if ($category=='') continue;
+                $category_option .= '<li><a href="'.($category_href."&amp;sca=".urlencode($category)).'"';
+                $category_msg = '';
+                if ($category==$sca) { // 현재 선택된 카테고리라면
+                    $category_option .= ' id="bo_cate_on"';
+                    $category_msg = '<span class="sound_only">열린 분류 </span>';
+                }
+                $category_option .= '>'.$category_msg.$icon_img_tag.$category.'</a></li>';
+            }
+        }
+        
         if($cache_fwrite) {
             $handle = fopen($cache_file, 'w');
             $caches = array(
                 'list' => $list,
                 'bo_subject' => sql_escape_string($bo_subject),
+                'is_category' => $is_category,
+                'category_option' =>$category_option
                 );
             $cache_content = "<?php if (!defined('_GNUBOARD_')) exit; ?>\n\n";
             $cache_content .= base64_encode(serialize($caches));  //serialize
