@@ -40,23 +40,23 @@ if ($len < 0) $len = 0;
 $reply = substr($write['wr_reply'], 0, $len);
 
 // 원글만 구한다.
-$sql = " select count(*) as cnt from $write_table
-            where wr_reply like '$reply%'
-            and wr_id <> '{$write['wr_id']}'
-            and wr_num = '{$write['wr_num']}'
-            and wr_is_comment = 0 ";
-$row = sql_fetch($sql);
-if ($row['cnt'] && !$is_admin)
-    alert('이 글과 관련된 답변글이 존재하므로 삭제 할 수 없습니다.\\n\\n우선 답변글부터 삭제하여 주십시오.');
+// $sql = " select count(*) as cnt from $write_table
+//             where wr_reply like '$reply%'
+//             and wr_id <> '{$write['wr_id']}'
+//             and wr_num = '{$write['wr_num']}'
+//             and wr_is_comment = 0 ";
+// $row = sql_fetch($sql);
+// if ($row['cnt'] && !$is_admin)
+//     alert('이 글과 관련된 답변글이 존재하므로 삭제 할 수 없습니다.\\n\\n우선 답변글부터 삭제하여 주십시오.');
 
 // 코멘트 달린 원글의 삭제 여부
-$sql = " select count(*) as cnt from $write_table
-            where wr_parent = '$wr_id'
-            and mb_id <> '{$member['mb_id']}'
-            and wr_is_comment = 1 ";
-$row = sql_fetch($sql);
-if ($row['cnt'] >= $board['bo_count_delete'] && !$is_admin)
-    alert('이 글과 관련된 코멘트가 존재하므로 삭제 할 수 없습니다.\\n\\n코멘트가 '.$board['bo_count_delete'].'건 이상 달린 원글은 삭제할 수 없습니다.');
+// $sql = " select count(*) as cnt from $write_table
+//             where wr_parent = '$wr_id'
+//             and mb_id <> '{$member['mb_id']}'
+//             and wr_is_comment = 1 ";
+// $row = sql_fetch($sql);
+// if ($row['cnt'] >= $board['bo_count_delete'] && !$is_admin)
+//     alert('이 글과 관련된 코멘트가 존재하므로 삭제 할 수 없습니다.\\n\\n코멘트가 '.$board['bo_count_delete'].'건 이상 달린 원글은 삭제할 수 없습니다.');
 
 
 // 사용자 코드 실행
