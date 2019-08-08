@@ -18,7 +18,7 @@ if (G5_IS_MOBILE) {
         ?>
         <?php echo outlogin('theme/basic'); // 외부 로그인, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정 ?>
         <?php echo poll('theme/basic'); // 설문조사, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정 ?>
-        <div style="margin:50px 20px 20px;">
+        <div style="margin:0px 20px;">
         <tenping class="adsbytenping" style="width: 100%; margin: 0px auto; display: block; max-width: 768px;" tenping-ad-client="OG1GZvcF9%2ftKBJFmMMMQpiZ41M0GlEawTCO4hzThpVdH%2bxRVRthTfGyB2E94CJtF" tenping-ad-display-type="67%2be3LHzHbblsB9oLrOpWQ%3d%3d"></tenping><script async src='//ads.tenping.kr/scripts/adsbytenping.min.js' ></script>
         </div>
         <?php echo visit('theme/basic'); // 접속자집계, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정 ?>
