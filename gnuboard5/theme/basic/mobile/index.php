@@ -16,18 +16,24 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
     }
     $sql .= " order by b.gr_order, a.bo_order ";
     $result = sql_query($sql);
+    
     for ($i=0; $row=sql_fetch_array($result); $i++) {
         // 이 함수가 바로 최신글을 추출하는 역할을 합니다.
         // 스킨은 입력하지 않을 경우 관리자 > 환경설정의 최신글 스킨경로를 기본 스킨으로 합니다.
-
+        
         // 사용방법
         // latest(스킨, 게시판아이디, 출력라인, 글자수);
         if($row['bo_table'] == 'notice'){
             echo latest('theme/basic', $row['bo_table'], 3, 25);
+        }else if($row['bo_table'] == 'free'){
+            echo latest('theme/basic', $row['bo_table'], 10, 25);
+        }else if($row['gr_id'] == 'community'){
+            echo latest('theme/basic', $row['bo_table'], 5, 25);
+        }else if($row['gr_id'] == 'game'){
+            echo latest('theme/basic', $row['bo_table'], 10, 25);
         }else{
             echo latest('theme/basic', $row['bo_table'], 5, 25);
         }
- 
 }
 ?>
 <!-- 메인화면 최신글 끝 -->
