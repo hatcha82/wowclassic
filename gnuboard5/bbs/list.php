@@ -170,26 +170,48 @@ if ($sst) {
 }
 
 if ($is_search_bbs) {
-    $sql = " select distinct wr_parent from {$write_table} where {$sql_search} {$sql_order} limit {$from_record}, $page_rows ";
+    if($bo_table === 'quest'){ // quest 게시판일 경우
+        $sql = " select distinct wr_parent from {$write_table} where {$sql_search} {$sql_order} limit {$from_record}, $page_rows ";
+    }else{
+        $sql = " select distinct wr_parent from {$write_table} where {$sql_search} {$sql_order} limit {$from_record}, $page_rows ";
+    }
+
 } else {
-    $sql = " select * from {$write_table} where wr_is_comment = 0 ";
+
+    if($bo_table === 'quest'){ // quest 게시판일 경우
+        $sql = " select * 
+                 from {$write_table}
+                 join wow_db.quest_template
+                 on  {$write_table}.wr_id = wow_db.quest_template.entry     
+                 where wr_is_comment = 0 ";                 
+    }else{
+        $sql = " select * from {$write_table} where wr_is_comment = 0 ";
+    }
     if(!empty($notice_array))
         $sql .= " and wr_id not in (".implode(', ', $notice_array).") ";
     $sql .= " {$sql_order} limit {$from_record}, $page_rows ";
 }
-
 // 페이지의 공지개수가 목록수 보다 작을 때만 실행
 if($page_rows > 0) {
     $result = sql_query($sql);
-
     $k = 0;
 
     while ($row = sql_fetch_array($result))
     {
         // 검색일 경우 wr_id만 얻었으므로 다시 한행을 얻는다
         if ($is_search_bbs)
-            $row = sql_fetch(" select * from {$write_table} where wr_id = '{$row['wr_parent']}' ");
-
+            if($bo_table === 'quest'){ // quest 게시판일 경우
+                $row = sql_fetch("  select * from {$write_table} 
+                                    join wow_db.quest_template
+                                    on  {$write_table}.wr_id = wow_db.quest_template.entry     
+                                    where wr_id = '{$row['wr_parent']}' 
+                                    order
+                                    by   wow_db.quest_template.QuestLevel asc  
+                                     ");
+            }else{
+                $row = sql_fetch("  select * from {$write_table} 
+                                    where wr_id = '{$row['wr_parent']}' ");  
+            }    
         $list[$i] = get_list($row, $board, $board_skin_url, G5_IS_MOBILE ? $board['bo_mobile_subject_len'] : $board['bo_subject_len']);
         if (strstr($sfl, 'subject')) {
             $list[$i]['subject'] = search_font($stx, $list[$i]['subject']);

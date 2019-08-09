@@ -66,9 +66,11 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
     <input type="hidden" name="sod" value="<?php echo $sod ?>">
     <input type="hidden" name="page" value="<?php echo $page ?>">
     <input type="hidden" name="sw" value="">
-
+    <style>
+        table.questList tr td{vertical-align:top; }
+    </style>
     <div class="tbl_head01 tbl_wrap">
-        <table>
+        <table class="questList">
         <caption><?php echo $board['bo_subject'] ?> 목록</caption>
         <thead>
         <tr>
@@ -80,7 +82,10 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
             <?php } ?>
             <th scope="col">번호</th>
             <th scope="col">제목</th>
-            <!-- <th scope="col">글쓴이</th>
+            <th scope="col" >필요 아이템</th>
+            <th scope="col" >처치</th>
+            <th scope="col" >보상</th>
+            <!--
             <th scope="col"><?php echo subject_sort_link('wr_hit', $qstr2, 1) ?>조회 <i class="fa fa-sort" aria-hidden="true"></i></a></th>
             <?php if ($is_good) { ?><th scope="col"><?php echo subject_sort_link('wr_good', $qstr2, 1) ?>추천 <i class="fa fa-sort" aria-hidden="true"></i></a></th><?php } ?>
             <?php if ($is_nogood) { ?><th scope="col"><?php echo subject_sort_link('wr_nogood', $qstr2, 1) ?>비추천 <i class="fa fa-sort" aria-hidden="true"></i></a></th><?php } ?>
@@ -110,37 +115,86 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
             </td>
 
             <td class="td_subject" style="padding-left:<?php echo $list[$i]['reply'] ? (strlen($list[$i]['wr_reply'])*10) : '0'; ?>px">
+                <ul>
                 <?php
                 if ($is_category && $list[$i]['ca_name']) {
                  ?>
-                [<a href='<?php echo $list[$i]['ca_name_href'] ?>' class="bo_cate_link">
-                                
+                <li>[<a href='<?php echo $list[$i]['ca_name_href'] ?>' class="">
                 <a style="pointer-events: none;cursor: default;" target="_blank" href="https://ko.classic.wowhead.com/zone=<?php echo $list[$i]['ca_name'] ?>"></a> 
                 </a>]
+                </li>
                 <?php } ?>
                 <?php $href=$list[$i]['href'];?>
-                <div class="bo_tit" >
+                <!-- <div class="bo_tit" > -->
                         <?php
                             if (isset($list[$i]['icon_secret'])) echo rtrim($list[$i]['icon_secret']);
                          ?>
+                         <li>
                         <a style="" target="_blank"  href="https://ko.classic.wowhead.com/quest=<?php echo $list[$i]['wr_id'] ?>"></a>                       
-
+                        </li>
+                        
                     <?php
                     // if ($list[$i]['file']['count']) { echo '<'.$list[$i]['file']['count'].'>'; }
-                    if (isset($list[$i]['icon_file'])) echo rtrim($list[$i]['icon_file']);
+                    
+                    // if ($list[$i]['ReqItemId2'] > 0 ) echo "<a href='https://ko.classic.wowhead.com/item=". $list[$i]['ReqItemId2'] . "/></a>";
+                    // if ($list[$i]['ReqItemId3'] > 0 ) echo "<a href='https://ko.classic.wowhead.com/item=". $list[$i]['ReqItemId3'] . "/></a>";
+                    // if ($list[$i]['ReqItemId4'] > 0 ) echo "<a href='https://ko.classic.wowhead.com/item=". $list[$i]['ReqItemId4'] . "/></a>";    
+                    
                     if (isset($list[$i]['icon_link'])) echo rtrim($list[$i]['icon_link']);
-                    if (isset($list[$i]['icon_new'])) echo rtrim($list[$i]['icon_new']);
+                    // if (isset($list[$i]['icon_new'])) echo rtrim($list[$i]['icon_new']);
                     if (isset($list[$i]['icon_hot'])) echo rtrim($list[$i]['icon_hot']);
                     ?>
                     <?php if ($list[$i]['comment_cnt']) { ?><span class="sound_only">댓글</span><span class="cnt_cmt">+ <?php echo $list[$i]['wr_comment']; ?></span><span class="sound_only">개</span><?php } ?>
-                </div>
-
+                <!-- </div> -->
+                    <li>
+                    Level: <?php echo $list[$i]['QuestLevel'] ?> 
+                    </li>
+                <ul>
             </td>
-
+            
+            <td>
+                <ul>
+                <?php if ($list[$i]['ReqItemId1'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/item=". $list[$i]['ReqItemId1'] . "'/></a>(".$list[$i]['ReqItemCount1'].")</li>"; ?>
+                <?php if ($list[$i]['ReqItemId2'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/item=". $list[$i]['ReqItemId2'] . "'/></a>(".$list[$i]['ReqItemCount2'].")</li>"; ?>
+                <?php if ($list[$i]['ReqItemId3'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/item=". $list[$i]['ReqItemId3'] . "'/></a>(".$list[$i]['ReqItemCount3'].")</li>"; ?>
+                <?php if ($list[$i]['ReqItemId4'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/item=". $list[$i]['ReqItemId4'] . "'/></a>(".$list[$i]['ReqItemCount4'].")</li>"; ?>
+                <ul>
+            </td>
+            <td>
+                <ul>
+                <?php if ($list[$i]['ReqCreatureOrGOId1'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/npc=". $list[$i]['ReqCreatureOrGOId1'] . "'/></a>(".$list[$i]['ReqCreatureOrGOCount1'].")</li>"; ?>
+                <?php if ($list[$i]['ReqCreatureOrGOId2'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/npc=". $list[$i]['ReqCreatureOrGOId2'] . "'/></a>(".$list[$i]['ReqCreatureOrGOCount1'].")</li>"; ?>
+                <?php if ($list[$i]['ReqCreatureOrGOId3'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/npc=". $list[$i]['ReqCreatureOrGOId3'] . "'/></a>(".$list[$i]['ReqCreatureOrGOCount1'].")</li>"; ?>
+                <?php if ($list[$i]['ReqCreatureOrGOId4'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/npc=". $list[$i]['ReqCreatureOrGOId4'] . "'/></a>(".$list[$i]['ReqCreatureOrGOCount1'].")</li>"; ?>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <?php if ($list[$i]['RewItemId1'] + $list[$i]['RewItemId2'] + $list[$i]['RewItemId3']+ $list[$i]['RewItemId4']> 0 ){?>기본<?php }?>
+                    <?php if ($list[$i]['RewItemId1'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/item=". $list[$i]['RewItemId1'] . "'/></a>(".$list[$i]['RewItemCount1'].")</li>"; ?>
+                    <?php if ($list[$i]['RewItemId2'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/item=". $list[$i]['RewItemId2'] . "'/></a>(".$list[$i]['RewItemCount2'].")</li>"; ?>
+                    <?php if ($list[$i]['RewItemId3'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/item=". $list[$i]['RewItemId3'] . "'/></a>(".$list[$i]['RewItemCount3'].")</li>"; ?>
+                    <?php if ($list[$i]['RewItemId4'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/item=". $list[$i]['RewItemId4'] . "'/></a>(".$list[$i]['RewItemCount4'].")</li>"; ?>
+                </ul>
+                <ul>
+                    <?php if ($list[$i]['RewChoiceItemId1'] + 
+                              $list[$i]['RewChoiceItemId2'] + 
+                              $list[$i]['RewChoiceItemId3'] +
+                              $list[$i]['RewChoiceItemId4'] +
+                              $list[$i]['RewChoiceItemId5'] + 
+                              $list[$i]['RewChoiceItemId6']> 0 ){?>보상<?php }?>
+                    <?php if ($list[$i]['RewChoiceItemId1'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/item=". $list[$i]['RewChoiceItemId1'] . "'/></a>(".$list[$i]['RewChoiceItemCount1'].")</li>"; ?>
+                    <?php if ($list[$i]['RewChoiceItemId2'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/item=". $list[$i]['RewChoiceItemId2'] . "'/></a>(".$list[$i]['RewChoiceItemCount2'].")</li>"; ?>
+                    <?php if ($list[$i]['RewChoiceItemId3'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/item=". $list[$i]['RewChoiceItemId3'] . "'/></a>(".$list[$i]['RewChoiceItemCount3'].")</li>"; ?>
+                    <?php if ($list[$i]['RewChoiceItemId4'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/item=". $list[$i]['RewChoiceItemId4'] . "'/></a>(".$list[$i]['RewChoiceItemCount4'].")</li>"; ?>
+                    <?php if ($list[$i]['RewChoiceItemId5'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/item=". $list[$i]['RewChoiceItemId5'] . "'/></a>(".$list[$i]['RewChoiceItemCount5'].")</li>"; ?>
+                    <?php if ($list[$i]['RewChoiceItemId6'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/item=". $list[$i]['RewChoiceItemId6'] . "'/></a>(".$list[$i]['RewChoiceItemCount6'].")</li>"; ?>
+                </ul>
+            </td>
             <!-- <?php
             $name = get_sideview($list[$i]['mb_id'], get_text(cut_str($list[$i]['wr_name'], $config['cf_cut_name'])), $list[$i]['wr_email'],$list[$i]['wr_homepage']);
             ?>
-            <td class="td_name"><?php echo $name ?></td>
+            
             <td class="td_num"><?php echo $list[$i]['wr_hit'] ?></td>
             <?php if ($is_good) { ?><td class="td_num"><?php echo $list[$i]['wr_good'] ?></td><?php } ?>
             <?php if ($is_nogood) { ?><td class="td_num"><?php echo $list[$i]['wr_nogood'] ?></td><?php } ?>
