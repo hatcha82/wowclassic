@@ -40,10 +40,9 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
         <ul id="bo_cate_ul">    
         <?php for ($i=0; $i<count($categories); $i++) {?>
         <?php $category = trim($categories[$i]); ?>     
-            <li onclick='alert("<?php echo G5_BBS_URL.'/board.php?bo_table='. $bo_table ."&amp;sca=". urlencode($category); ?>")' >              
-                 <a style="pointer-events: none;cursor: default;" target="_blank" href="https://ko.classic.wowhead.com/zone=<?php echo $category; ?>"> -->
-                <?php echo $category; ?>            
-                </a>         
+            <li style="cursor:pointer" onclick='window.location="<?php echo G5_BBS_URL.'/board.php?bo_table='. $bo_table ."&amp;sca=". urlencode($category); ?>"' >              
+                 <a style="pointer-events: none;cursor: default;" target="_blank" href="https://ko.classic.wowhead.com/zone=<?php echo $category; ?>">
+                </a>  
             </li>
         <?php }?>
         </ul>
@@ -114,21 +113,18 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
                 <?php
                 if ($is_category && $list[$i]['ca_name']) {
                  ?>
-                <a href="<?php echo $list[$i]['ca_name_href'] ?>" class="bo_cate_link">[
+                [<a href='<?php echo $list[$i]['ca_name_href'] ?>' class="bo_cate_link">
                                 
-                <a style="pointer-events: none;cursor: default;" target="_blank" href="https://ko.classic.wowhead.com/zone=<?php echo $list[$i]['ca_name'] ?>"><?php echo $list[$i]['ca_name'] ?></a> 
-                ]</a>
+                <a style="pointer-events: none;cursor: default;" target="_blank" href="https://ko.classic.wowhead.com/zone=<?php echo $list[$i]['ca_name'] ?>"></a> 
+                </a>]
                 <?php } ?>
-                <div class="bo_tit">
-                    
-                    <a href="<?php echo $list[$i]['href'] ?>">
-                        <?php echo $list[$i]['icon_reply'] ?>
+                <?php $href=$list[$i]['href'];?>
+                <div class="bo_tit" >
                         <?php
                             if (isset($list[$i]['icon_secret'])) echo rtrim($list[$i]['icon_secret']);
                          ?>
-                        <a style="pointer-events: none;
-   cursor: default;" target="_blank"  href="https://ko.classic.wowhead.com/quest=<?php echo $list[$i]['wr_subject'] ?>"> <?php echo $list[$i]['wr_subject'] ?></a>                       
-                    </a>
+                        <a style="" target="_blank"  href="https://ko.classic.wowhead.com/quest=<?php echo $list[$i]['wr_id'] ?>"></a>                       
+
                     <?php
                     // if ($list[$i]['file']['count']) { echo '<'.$list[$i]['file']['count'].'>'; }
                     if (isset($list[$i]['icon_file'])) echo rtrim($list[$i]['icon_file']);

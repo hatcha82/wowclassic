@@ -55,5 +55,5 @@ add_stylesheet('<link rel="stylesheet" href="'.$latest_skin_url.'/style.css">', 
                 <?php echo $category_option ?>
             </ul>
         <?php } ?>
-        
+
 </div>

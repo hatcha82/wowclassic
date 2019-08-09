@@ -7,6 +7,15 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 ?>
 
 <script src="<?php echo G5_JS_URL; ?>/viewimageresize.js"></script>
+<pre style="color:#fff">
+<?php
+$sql = " select * from wow_db.quest_template where entry = '$wr_id' ";
+
+$wowQuest = sql_fetch($sql);
+echo var_dump($wowQuest);
+?>
+</pre>
+
 
 <!-- 게시물 읽기 시작 { -->
 
@@ -15,13 +24,13 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
         <h2 id="bo_v_title">
             <?php if ($category_name) { ?>
             <a class="boardHead" href="<?php echo G5_BBS_URL ?>/board.php?bo_table=<?php echo $board['bo_table'];?>&sca=<?php echo $view['ca_name'];?>">
-            <span class="bo_v_cate"><?php echo $view['ca_name']; // 분류 출력 끝 ?></span> 
+            <div class="bo_v_cate">
+            <a style="pointer-events: none;cursor: default;" target="_blank" href="https://ko.classic.wowhead.com/zone=<?php echo $view['ca_name'] ?>"></a>     
+            </div> 
             </a>
             <?php } ?>
             <span class="bo_v_tit">
-            <?php
-            echo cut_str(get_text($view['wr_subject']), 70); // 글제목 출력
-            ?></span>
+            <a style="pointer-events: none;cursor: default;" target="_blank"  href="https://ko.classic.wowhead.com/quest=<?php echo $view['wr_id'] ?>"></a>                       
         </h2>
     </header>
 
@@ -88,7 +97,21 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
          ?>
       
         <!-- 본문 내용 시작 { -->
-        <div id="bo_v_con"><?php echo get_view_thumbnail($view['content']); ?></div>
+        <div id="bo_v_con">
+        <a href="https://ko.classic.wowhead.com/quest=<?php echo $wowQuest['entry'] ?>"></a>
+        <!-- <iframe src="https://ko.classic.wowhead.com/quest=<?php echo $wowQuest['entry'] ?>/" width="100%"> -->
+        <?php for($i = 1; $i <=4 ;$i++){ ?>  
+            
+            <?php if ($wowQuest['ReqCreatureOrGOId'.$i]) { ?>
+                 <a href="https://ko.classic.wowhead.com/npc=<?php echo $wowQuest['ReqCreatureOrGOId'.$i]; ?>"></a>
+                 (<?php echo $wowQuest['ReqCreatureOrGOCount'. $i]?>)
+            <?php }?>
+        <?php }?>
+
+        
+        <?php echo get_view_thumbnail($view['content']); ?>
+    
+        </div>
         <script>       
         $('img').on('error',function(){
             var src = $(this).attr('src');

@@ -17,7 +17,7 @@ include_once(G5_THEME_PATH.'/head.php');
 
     <?php
     //  최신글
-    $sql = " select bo_table
+    $sql = " select bo_table, bo_skin
                 from `{$g5['board_table']}` a left join `{$g5['group_table']}` b on (a.gr_id=b.gr_id)
                 where a.bo_device in ('pc','both') ";
     if(!$is_admin)
@@ -34,7 +34,8 @@ include_once(G5_THEME_PATH.'/head.php');
         // 이 함수가 바로 최신글을 추출하는 역할을 합니다.
         // 사용방법 : latest(스킨, 게시판아이디, 출력라인, 글자수);
         // 테마의 스킨을 사용하려면 theme/basic 과 같이 지정
-        echo latest('theme/basic', $row['bo_table'], 6, 30);
+        
+        echo latest('theme/'.$row['bo_skin'], $row['bo_table'], 6, 30);
         ?>
     </div>
     <?php
