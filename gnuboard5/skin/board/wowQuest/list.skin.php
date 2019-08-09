@@ -123,13 +123,18 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
                 </a>]
                 </li>
                 <?php } ?>
+                <?php if ($list[$i]['PrevQuestId'] > 0 ) {?>
+                    <li style="font-size:0.8em">
+                    이전 퀘스트: <a style="" target="_blank"  href="https://ko.classic.wowhead.com/quest=<?php echo $list[$i]['PrevQuestId'] ?>"></a>                        
+                    </li>
+                <?php } ?>
                 <?php $href=$list[$i]['href'];?>
                 <!-- <div class="bo_tit" > -->
                         <?php
                             if (isset($list[$i]['icon_secret'])) echo rtrim($list[$i]['icon_secret']);
                          ?>
                          <li>
-                        <a style="" target="_blank"  href="https://ko.classic.wowhead.com/quest=<?php echo $list[$i]['wr_id'] ?>"></a>                       
+                        <a style="color:#47aef3;font-size:1.1em" target="_blank"  href="https://ko.classic.wowhead.com/quest=<?php echo $list[$i]['wr_id'] ?>"></a>                       
                         <!-- (<?php echo $list[$i][' PointX'];?> , <?php echo $list[$i][' PointY'];?>) -->
                         </li>
                         
@@ -146,17 +151,12 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
                     ?>
                     <?php if ($list[$i]['comment_cnt']) { ?><span class="sound_only">댓글</span><span class="cnt_cmt">+ <?php echo $list[$i]['wr_comment']; ?></span><span class="sound_only">개</span><?php } ?>
                 <!-- </div> -->
-                    <li>
+                    <li style="font-size:0.8em">
                     퀘스트 레벨: <?php echo $list[$i]['QuestLevel'] ?>, 최소 레벨:  <?php echo $list[$i]['MinLevel'] ?> 
                     </li>
-                    <?php if ($list[$i]['NextQuestId'] + $list[$i]['PrevQuestId']> 0 ) {?>
-                    <li>
-                    <?php if ($list[$i]['PrevQuestId'] > 0 ) {?>
-                    이전 퀘스트: <a style="" target="_blank"  href="https://ko.classic.wowhead.com/quest=<?php echo $list[$i]['PrevQuestId'] ?>"></a>                        
-                    <?php } ?>
-                    <?php if ($list[$i]['NextQuestId'] > 0 ) {?>
+                    <?php if ($list[$i]['NextQuestId'] > 0 ) {?>                   
+                    <li style="font-size:0.8em">
                     다음 퀘스트: <a style="" target="_blank"  href="https://ko.classic.wowhead.com/quest=<?php echo $list[$i]['NextQuestId'] ?>"></a>   
-                    <?php } ?>
                     </li>
                     <?php } ?>
                 <ul>
