@@ -18,7 +18,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$latest_skin_url.'/style.css">', 
             <?php            
             if ($list[$i]['ca_name'])  {
                 $cateName = $list[$i]['ca_name'];
-                echo "[<a style='pointer-events: none;cursor: default;'  class='bo_cate_link' href='https://ko.classic.wowhead.com/zone=" . $cateName . "'>$cateName</a>]";
+                echo "<span class='bo_cate_link'>[</span><a style='pointer-events: none;cursor: default;line-height:25px;'  class='bo_cate_link' href='https://ko.classic.wowhead.com/zone=" . $cateName . "'>$cateName</a><span class='bo_cate_link'>] </span>";
             }
             if ($list[$i]['icon_secret']) echo "<i class=\"fa fa-lock\" aria-hidden=\"true\"></i> ";
             //echo $list[$i]['icon_reply']." ";
@@ -38,12 +38,12 @@ add_stylesheet('<link rel="stylesheet" href="'.$latest_skin_url.'/style.css">', 
                 if (isset($list[$i]['icon_secret'])) echo $list[$i]['icon_secret'];
             echo "</a>";
             ?>
-            <div class="lt_info">
+            <!-- <div class="lt_info">
                 <span class="sound_only">작성자</span><?php echo $list[$i]['name'] ?> |
                 <?php if ($list[$i]['comment_cnt']) { ?><span class="sound_only">댓글</span><i class="fa fa-commenting-o" aria-hidden="true"></i><?php echo $list[$i]['comment_cnt'] . ' |'; ?> <span class="sound_only">개 </span><?php } ?> 
                 <span class="">조회 </span><?php echo $list[$i]['wr_hit'] ?> |
                 <i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $list[$i]['datetime2'] ?>
-            </div>
+            </div> -->
         </li>
     <?php } ?>
     <?php if (count($list) == 0) { //게시물이 없을 때 ?>
