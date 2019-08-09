@@ -18,7 +18,9 @@ add_stylesheet('<link rel="stylesheet" href="'.$latest_skin_url.'/style.css">', 
             <?php            
             if ($list[$i]['ca_name'])  {
                 $cateName = $list[$i]['ca_name'];
-                echo "<span class='bo_cate_link'>[</span><a style='pointer-events: none;cursor: default;line-height:25px;'  class='bo_cate_link' href='https://ko.classic.wowhead.com/zone=" . $cateName . "'>$cateName</a><span class='bo_cate_link'>] </span>";
+                echo "<span class='bo_cate_link'>[</span>
+                <a style='pointer-events: none;cursor: default;line-height:25px;'  class='bo_cate_link' href='https://ko.classic.wowhead.com/zone=" . $cateName . "'>$cateName</a>
+                <span class='bo_cate_link'>] </span>";
             }
             if ($list[$i]['icon_secret']) echo "<i class=\"fa fa-lock\" aria-hidden=\"true\"></i> ";
             //echo $list[$i]['icon_reply']." ";

@@ -11,7 +11,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 ?>
 <style>
     #detail ul{padding-left:20px;}
-    #detail ul li{border:none;line-height:25px;}
+    #detail ul li{border:none;line-height:20px;}
 </style>
 <?php if ($rss_href || $write_href) { ?>
 <ul class="<?php echo isset($view) ? 'view_is_list btn_top' : 'btn_top top';?>">

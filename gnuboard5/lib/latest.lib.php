@@ -106,7 +106,8 @@ function latest($skin_dir='', $bo_table, $rows=10, $subject_len=40, $cache_time=
                 $icon_img_tag = $icon_url == '' ? '' : '<img class="category_icon" src="' .  $icon_url . '" /> ';
                 if ($category=='') continue;
                 if($board['bo_table']=='quest'){
-                    $category_option .= '<li><a href="https://ko.classic.wowhead.com/zone='. $category .'"';
+                    $location_href = "window.location='" . ($category_href."&amp;sca=".urlencode($category))  . "'";
+                    $category_option .= '<li onclick='. " $location_href .'" . $location_href . '><a style="pointer-events: none;cursor" href="https://ko.classic.wowhead.com/zone='. $category .'"';
                 }else{
 
                     $category_option .= '<li><a href="'.($category_href."&amp;sca=".urlencode($category)).'"';
