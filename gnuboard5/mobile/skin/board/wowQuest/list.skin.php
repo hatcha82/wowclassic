@@ -9,7 +9,10 @@ if ($is_checkbox) $colspan++;
 // add_stylesheet('css 구문', 출력순서); 숫자가 작을 수록 먼저 출력됨
 add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0);
 ?>
-
+<style>
+    #detail ul{padding-left:20px;}
+    #detail ul li{border:none;line-height:25px;}
+</style>
 <?php if ($rss_href || $write_href) { ?>
 <ul class="<?php echo isset($view) ? 'view_is_list btn_top' : 'btn_top top';?>">
     <?php if ($rss_href) { ?><li><a href="<?php echo $rss_href ?>" class="btn_b01"><i class="fa fa-rss" aria-hidden="true"></i><span class="sound_only">RSS</span></a></li><?php } ?>
@@ -20,14 +23,6 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 <!-- 게시판 목록 시작 -->
 <div id="bo_list">
 
-    <?php if ($is_category) { ?>
-    <nav id="bo_cate">
-        <h2><?php echo ($board['bo_mobile_subject'] ? $board['bo_mobile_subject'] : $board['bo_subject']) ?> 카테고리</h2>
-        <ul id="bo_cate_ul">
-            <?php echo $category_option ?>
-        </ul>
-    </nav>
-    <?php } ?>
 
     <div id="bo_list_total">
         <span>전체 <?php echo number_format($total_count) ?>건</span>
@@ -75,30 +70,48 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
                     <?php
                     if ($is_category && $list[$i]['ca_name']) {
                     ?>
-                    <a href="<?php echo $list[$i]['ca_name_href'] ?>" class="bo_cate_link">[<?php echo $list[$i]['ca_name'] ?>]</a>
+                    <span class="bo_cate_link">[</span><a style="pointer-events: none;cursor: default;" class="bo_cate_link" target="_blank" href="https://ko.classic.wowhead.com/zone=<?php echo $list[$i]['ca_name'] ?>"></a><span class="bo_cate_link">]</span>
                     <?php } ?>
-                    <a href="<?php echo $list[$i]['href'] ?>" class="bo_subject">
-                        <?php echo $list[$i]['icon_reply']; ?>
-                        <?php if ($list[$i]['is_notice']) { ?><strong class="notice_icon"><i class="fa fa-volume-up" aria-hidden="true"></i>공지</strong><?php } ?> 
-                        <?php echo $list[$i]['wr_subject'] ?>
-                        <?php
-                        // if ($list[$i]['file']['count']) { echo '<'.$list[$i]['file']['count'].'>'; }
-
-                        if (isset($list[$i]['icon_new'])) echo $list[$i]['icon_new'];
-                        if (isset($list[$i]['icon_hot'])) echo $list[$i]['icon_hot'];
-                        if (isset($list[$i]['icon_file'])) echo $list[$i]['icon_file'];
-                        if (isset($list[$i]['icon_link'])) echo $list[$i]['icon_link'];
-                        if (isset($list[$i]['icon_secret'])) echo $list[$i]['icon_secret'];
-
-                        ?>
-                    </a>
-
-                </div>
-                <div class="bo_info">
-                    <span class="sound_only">작성자</span><?php echo $list[$i]['name'] ?> |
-                    <?php if ($list[$i]['comment_cnt']) { ?><span class="sound_only">댓글</span><i class="fa fa-commenting-o" aria-hidden="true"></i><?php echo $list[$i]['comment_cnt'] . '|'; ?> <span class="sound_only">개 </span><?php } ?> 
-                    <span class="">조회 </span><?php echo $list[$i]['wr_hit'] ?> |
-                    <i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $list[$i]['datetime2'] ?>
+                    <br>
+                    <a style="" target="_blank"  href="https://ko.classic.wowhead.com/quest=<?php echo $list[$i]['wr_id'] ?>"></a>                           
+                    <span style="font-size:0.9em">(퀘스트 레벨: <?php echo $list[$i]['QuestLevel'] ?>, 최소 레벨:  <?php echo $list[$i]['MinLevel'] ?> )</span>
+                    <div id="detail">
+                        <ul>
+                            <?php if ($list[$i]['ReqItemId1'] + $list[$i]['ReqItemId2'] + $list[$i]['ReqItemId3']+ $list[$i]['ReqItemId4']> 0 ){?>수집<?php }?>
+                            <?php if ($list[$i]['ReqItemId1'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/item=". $list[$i]['ReqItemId1'] . "'/></a>(".$list[$i]['ReqItemCount1'].")</li>"; ?>
+                            <?php if ($list[$i]['ReqItemId2'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/item=". $list[$i]['ReqItemId2'] . "'/></a>(".$list[$i]['ReqItemCount2'].")</li>"; ?>
+                            <?php if ($list[$i]['ReqItemId3'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/item=". $list[$i]['ReqItemId3'] . "'/></a>(".$list[$i]['ReqItemCount3'].")</li>"; ?>
+                            <?php if ($list[$i]['ReqItemId4'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/item=". $list[$i]['ReqItemId4'] . "'/></a>(".$list[$i]['ReqItemCount4'].")</li>"; ?>
+                        </ul>
+                        <ul>
+                            <?php if ($list[$i]['ReqCreatureOrGOId1'] + $list[$i]['ReqCreatureOrGOId2'] + $list[$i]['ReqCreatureOrGOId3']+ $list[$i]['ReqCreatureOrGOId4']> 0 ){?>처치<?php }?>
+                            <?php if ($list[$i]['ReqCreatureOrGOId1'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/npc=". $list[$i]['ReqCreatureOrGOId1'] . "'/></a>(".$list[$i]['ReqCreatureOrGOCount1'].")</li>"; ?>
+                            <?php if ($list[$i]['ReqCreatureOrGOId2'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/npc=". $list[$i]['ReqCreatureOrGOId2'] . "'/></a>(".$list[$i]['ReqCreatureOrGOCount1'].")</li>"; ?>
+                            <?php if ($list[$i]['ReqCreatureOrGOId3'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/npc=". $list[$i]['ReqCreatureOrGOId3'] . "'/></a>(".$list[$i]['ReqCreatureOrGOCount1'].")</li>"; ?>
+                            <?php if ($list[$i]['ReqCreatureOrGOId4'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/npc=". $list[$i]['ReqCreatureOrGOId4'] . "'/></a>(".$list[$i]['ReqCreatureOrGOCount1'].")</li>"; ?>
+                        </ul>
+                        <ul>
+                            <?php if ($list[$i]['RewItemId1'] + $list[$i]['RewItemId2'] + $list[$i]['RewItemId3']+ $list[$i]['RewItemId4']> 0 ){?>기본 보상<?php }?>
+                            <?php if ($list[$i]['RewItemId1'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/item=". $list[$i]['RewItemId1'] . "'/></a>(".$list[$i]['RewItemCount1'].")</li>"; ?>
+                            <?php if ($list[$i]['RewItemId2'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/item=". $list[$i]['RewItemId2'] . "'/></a>(".$list[$i]['RewItemCount2'].")</li>"; ?>
+                            <?php if ($list[$i]['RewItemId3'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/item=". $list[$i]['RewItemId3'] . "'/></a>(".$list[$i]['RewItemCount3'].")</li>"; ?>
+                            <?php if ($list[$i]['RewItemId4'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/item=". $list[$i]['RewItemId4'] . "'/></a>(".$list[$i]['RewItemCount4'].")</li>"; ?>
+                        </ul>
+                        <ul>
+                            <?php if ($list[$i]['RewChoiceItemId1'] + 
+                                    $list[$i]['RewChoiceItemId2'] + 
+                                    $list[$i]['RewChoiceItemId3'] +
+                                    $list[$i]['RewChoiceItemId4'] +
+                                    $list[$i]['RewChoiceItemId5'] + 
+                                    $list[$i]['RewChoiceItemId6']> 0 ){?>선택 보상<?php }?>
+                            <?php if ($list[$i]['RewChoiceItemId1'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/item=". $list[$i]['RewChoiceItemId1'] . "'/></a>(".$list[$i]['RewChoiceItemCount1'].")</li>"; ?>
+                            <?php if ($list[$i]['RewChoiceItemId2'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/item=". $list[$i]['RewChoiceItemId2'] . "'/></a>(".$list[$i]['RewChoiceItemCount2'].")</li>"; ?>
+                            <?php if ($list[$i]['RewChoiceItemId3'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/item=". $list[$i]['RewChoiceItemId3'] . "'/></a>(".$list[$i]['RewChoiceItemCount3'].")</li>"; ?>
+                            <?php if ($list[$i]['RewChoiceItemId4'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/item=". $list[$i]['RewChoiceItemId4'] . "'/></a>(".$list[$i]['RewChoiceItemCount4'].")</li>"; ?>
+                            <?php if ($list[$i]['RewChoiceItemId5'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/item=". $list[$i]['RewChoiceItemId5'] . "'/></a>(".$list[$i]['RewChoiceItemCount5'].")</li>"; ?>
+                            <?php if ($list[$i]['RewChoiceItemId6'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/item=". $list[$i]['RewChoiceItemId6'] . "'/></a>(".$list[$i]['RewChoiceItemCount6'].")</li>"; ?>
+                        </ul>
+                    </div>
                 </div>
                 
             </li><?php } ?>
@@ -122,6 +135,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
     <?php } ?>
     </form>
 </div>
+
 
 <?php if($is_checkbox) { ?>
 <noscript>
@@ -153,7 +167,21 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
     <button type="submit" value="검색" class="sch_btn"><i class="fa fa-search" aria-hidden="true"></i> <span class="sound_only">검색</span></button>
     </form>
 </fieldset>
-
+<?php if ($is_category) { ?>
+<nav id="bo_cate">
+    <h2><?php echo ($board['bo_mobile_subject'] ? $board['bo_mobile_subject'] : $board['bo_subject']) ?> 카테고리</h2>
+    <ul id="bo_cate_ul">    
+    <?php for ($i=0; $i<count($categories); $i++) {?>
+    <?php $category = trim($categories[$i]); ?>     
+        <li style="cursor:pointer" onclick='window.location="<?php echo G5_BBS_URL.'/board.php?bo_table='. $bo_table ."&amp;sca=". urlencode($category); ?>"' >              
+                <a style="pointer-events: none;cursor: default;" target="_blank" href="https://ko.classic.wowhead.com/zone=<?php echo $category; ?>">
+            </a>  
+        </li>
+    <?php }?>
+    </ul>
+    
+</nav>
+<?php } ?>
 <?php if ($is_checkbox) { ?>
 <script>
 function all_checked(sw) {

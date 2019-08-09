@@ -169,7 +169,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
                 <?php if ($list[$i]['ReqItemId2'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/item=". $list[$i]['ReqItemId2'] . "'/></a>(".$list[$i]['ReqItemCount2'].")</li>"; ?>
                 <?php if ($list[$i]['ReqItemId3'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/item=". $list[$i]['ReqItemId3'] . "'/></a>(".$list[$i]['ReqItemCount3'].")</li>"; ?>
                 <?php if ($list[$i]['ReqItemId4'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/item=". $list[$i]['ReqItemId4'] . "'/></a>(".$list[$i]['ReqItemCount4'].")</li>"; ?>
-                <ul>
+                </ul>
                 <ul>
                 <?php if ($list[$i]['ReqCreatureOrGOId1'] + $list[$i]['ReqCreatureOrGOId2'] + $list[$i]['ReqCreatureOrGOId3']+ $list[$i]['ReqCreatureOrGOId4']> 0 ){?>처치<?php }?>
                 <?php if ($list[$i]['ReqCreatureOrGOId1'] > 0 ) echo "<li><a href='https://ko.classic.wowhead.com/npc=". $list[$i]['ReqCreatureOrGOId1'] . "'/></a>(".$list[$i]['ReqCreatureOrGOCount1'].")</li>"; ?>

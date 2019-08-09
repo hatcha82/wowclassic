@@ -105,7 +105,13 @@ function latest($skin_dir='', $bo_table, $rows=10, $subject_len=40, $cache_time=
                 $icon_url = get_icon_by_categoryName($category);
                 $icon_img_tag = $icon_url == '' ? '' : '<img class="category_icon" src="' .  $icon_url . '" /> ';
                 if ($category=='') continue;
-                $category_option .= '<li><a href="'.($category_href."&amp;sca=".urlencode($category)).'"';
+                if($board['bo_table']=='quest'){
+                    $category_option .= '<li><a href="https://ko.classic.wowhead.com/zone='. $category .'"';
+                }else{
+
+                    $category_option .= '<li><a href="'.($category_href."&amp;sca=".urlencode($category)).'"';
+                }
+
                 $category_msg = '';
                 if ($category==$sca) { // 현재 선택된 카테고리라면
                     $category_option .= ' id="bo_cate_on"';
