@@ -171,7 +171,13 @@ if ($sst) {
 
 if ($is_search_bbs) {
     if($bo_table === 'quest'){ // quest 게시판일 경우
-        $sql = " select distinct wr_parent from {$write_table} where {$sql_search} {$sql_order} limit {$from_record}, $page_rows ";
+        $sql = " select distinct wr_parent from {$write_table} 
+                 join wow_db.quest_template
+                 on  {$write_table}.wr_id = wow_db.quest_template.entry     
+                where {$sql_search}
+                order
+                by   wow_db.quest_template.QuestLevel asc  
+                limit {$from_record}, $page_rows ";                
     }else{
         $sql = " select distinct wr_parent from {$write_table} where {$sql_search} {$sql_order} limit {$from_record}, $page_rows ";
     }
