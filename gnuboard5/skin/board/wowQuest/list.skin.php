@@ -80,11 +80,11 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
             <?php } ?>
             <th scope="col">번호</th>
             <th scope="col">제목</th>
-            <th scope="col">글쓴이</th>
+            <!-- <th scope="col">글쓴이</th>
             <th scope="col"><?php echo subject_sort_link('wr_hit', $qstr2, 1) ?>조회 <i class="fa fa-sort" aria-hidden="true"></i></a></th>
             <?php if ($is_good) { ?><th scope="col"><?php echo subject_sort_link('wr_good', $qstr2, 1) ?>추천 <i class="fa fa-sort" aria-hidden="true"></i></a></th><?php } ?>
             <?php if ($is_nogood) { ?><th scope="col"><?php echo subject_sort_link('wr_nogood', $qstr2, 1) ?>비추천 <i class="fa fa-sort" aria-hidden="true"></i></a></th><?php } ?>
-            <th scope="col"><?php echo subject_sort_link('wr_datetime', $qstr2, 1) ?>날짜  <i class="fa fa-sort" aria-hidden="true"></i></a></th>
+            <th scope="col"><?php echo subject_sort_link('wr_datetime', $qstr2, 1) ?>날짜  <i class="fa fa-sort" aria-hidden="true"></i></a></th> -->
         </tr>
         </thead>
         <tbody>
@@ -137,14 +137,14 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 
             </td>
 
-            <?php
+            <!-- <?php
             $name = get_sideview($list[$i]['mb_id'], get_text(cut_str($list[$i]['wr_name'], $config['cf_cut_name'])), $list[$i]['wr_email'],$list[$i]['wr_homepage']);
             ?>
             <td class="td_name"><?php echo $name ?></td>
             <td class="td_num"><?php echo $list[$i]['wr_hit'] ?></td>
             <?php if ($is_good) { ?><td class="td_num"><?php echo $list[$i]['wr_good'] ?></td><?php } ?>
             <?php if ($is_nogood) { ?><td class="td_num"><?php echo $list[$i]['wr_nogood'] ?></td><?php } ?>
-            <td class="td_datetime"><?php echo $list[$i]['datetime2'] ?></td>
+            <td class="td_datetime"><?php echo $list[$i]['datetime2'] ?></td> -->
 
         </tr>
         <?php } ?>
