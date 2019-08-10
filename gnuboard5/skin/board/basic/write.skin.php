@@ -115,7 +115,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
         
     </div>
     <?php if ($option) { ?>
-    <div class="write_div" style="float:left;margin-top:3px">
+    <div class="write_div" style="float:left;margin-top:3px;z-index:2">
         <span class="sound_only">옵션</span>
         <?php echo $option ?>
     </div>
