@@ -13,14 +13,17 @@ add_stylesheet('<link rel="stylesheet" href="'.$latest_skin_url.'/style.css">', 
     </div>
     <ul>
     <?php for ($i=0; $i<count($list); $i++) { ?>
-        <li>
-            
+        <?php 
+            $cateName = $list[$i]['ca_name'];
+            $location_href  = G5_BBS_URL . "/board.php?bo_table=$bo_table&sca=$cateName";
+            $location_href = "location_href('$location_href')";
+        ?>
+        <li onclick="<?php echo $location_href?>">
             <?php            
             if ($list[$i]['ca_name'])  {
-                $cateName = $list[$i]['ca_name'];
-                echo "<span class='bo_cate_link'>[</span>
-                <a style='pointer-events: none;cursor: default;line-height:25px;'  class='bo_cate_link' href='https://ko.classic.wowhead.com/zone=" . $cateName . "'>$cateName</a>
-                <span class='bo_cate_link'>] </span>";
+                echo "<a class='bo_cate_link' >[</span>
+                <a onclick='$location_href' style='pointer-events: none;cursor: default;line-height:25px;'  class='bo_cate_link' href='https://ko.classic.wowhead.com/zone=" . $cateName . "'>$cateName</a>
+                <a class='bo_cate_link'>] </span>";
             }
             if ($list[$i]['icon_secret']) echo "<i class=\"fa fa-lock\" aria-hidden=\"true\"></i> ";
             //echo $list[$i]['icon_reply']." ";

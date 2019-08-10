@@ -740,6 +740,9 @@ function get_write_token(bo_table)
 
     return token;
 }
+function location_href(url){
+    window.location.href = url;
+}
 
 $(function() {
   
