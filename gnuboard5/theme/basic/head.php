@@ -257,23 +257,23 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
         }
         openClassicRelese()
         setInterval(openClassicRelese,1000)
-        $('a[href*="https://www.youtube.com/embed"]').each(function(index,ele){
-            var href= $(ele).attr('href');
-            var iframeTag = `<iframe src="${href}" frameborder="0" allowfullscreen></iframe>`;
-            $(ele).parent().html(iframeTag)
-        });
-        $('a[href*="https://youtu.be/"]').each(function(index,ele){
-            var href= $(ele).attr('href');
-            href =href.split('https://youtu.be/').join('https://www.youtube.com/embed/')
-            var iframeTag = `<div style="padding:10px;"><iframe src="${href}" frameborder="0" allowfullscreen></iframe></div>`;
-            $(ele).parent().html(iframeTag)
-        });
-        $('a[href*="https://www.youtube.com/watch?v="]').each(function(index,ele){
-                var href= $(ele).attr('href');
-                href =href.split('watch?v=').join('embed/')
-                var iframeTag = `<div style="padding:10px;"><iframe src="${href}" frameborder="0" allowfullscreen></iframe></div>`;
-                $(ele).parent().html(iframeTag)
-            });
+        // $('a[href*="https://www.youtube.com/embed"]').each(function(index,ele){
+        //     var href= $(ele).attr('href');
+        //     var iframeTag = `<iframe src="${href}" frameborder="0" allowfullscreen></iframe>`;
+        //     $(ele).parent().html(iframeTag)
+        // });
+        // $('a[href*="https://youtu.be/"]').each(function(index,ele){
+        //     var href= $(ele).attr('href');
+        //     href =href.split('https://youtu.be/').join('https://www.youtube.com/embed/')
+        //     var iframeTag = `<div style="padding:10px;"><iframe src="${href}" frameborder="0" allowfullscreen></iframe></div>`;
+        //     $(ele).parent().html(iframeTag)
+        // });
+        // $('a[href*="https://www.youtube.com/watch?v="]').each(function(index,ele){
+        //         var href= $(ele).attr('href');
+        //         href =href.split('watch?v=').join('embed/')
+        //         var iframeTag = `<div style="padding:10px;"><iframe src="${href}" frameborder="0" allowfullscreen></iframe></div>`;
+        //         $(ele).parent().html(iframeTag)
+        //     });
         $(".gnb_menu_btn").click(function(){
             $("#gnb_all").show();
         });
