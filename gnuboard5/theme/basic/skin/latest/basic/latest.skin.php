@@ -39,7 +39,8 @@ add_stylesheet('<link rel="stylesheet" href="'.$latest_skin_url.'/style.css">', 
             <div class="lt_info">
             <!-- <span class="lt_date"> -->
                 <span class="sound_only">작성자</span><?php echo $list[$i]['name'] ?> |
-                <?php if ($list[$i]['comment_cnt']) { ?><span class="sound_only">댓글</span><i class="fa fa-commenting-o" aria-hidden="true"></i><?php echo $list[$i]['comment_cnt'] . ' |'; ?> <span class="sound_only">개 </span><?php } ?> 
+                <?php if ($list[$i]['comment_cnt']) { ?><span class="">댓글 </span><i class="fa fa-commenting-o" aria-hidden="true"></i> <?php echo $list[$i]['comment_cnt'] . ' |'; ?> <span class="sound_only">개 </span><?php } ?> 
+                <?php if ($list[$i]['wr_good'] && $list[$i]['wr_good'] > 0) { ?><span class="">추천 </span><i class="fa fa-thumbs-up" aria-hidden="true"></i> <?php echo $list[$i]['wr_good'] . ' |'; ?><span class="sound_only">개 </span><?php } ?> 
                 <span class="">조회 </span><?php echo $list[$i]['wr_hit'] ?> |
                 <i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $list[$i]['datetime2'] ?>
             <!-- </span> -->
