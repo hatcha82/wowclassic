@@ -30,26 +30,30 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
         
         // 사용방법
         // latest(스킨, 게시판아이디, 출력라인, 글자수);
-        if($row['bo_table'] == 'notice'){
-            echo latest('theme/'.$row['bo_mobile_skin'], $row['bo_table'], 3, 25);
-            echo '<div class="lt list_01"><ul class="category">';
-            for ($j=0; $j<=count($lateList); $j++) {
-                $rowj = $lateList[$j];
-                if( isset($rowj['bo_subject'])){
-                    $href_url =  G5_BBS_URL . '/board.php?bo_table=' .$rowj['bo_table'];
-                    echo "<a href='$href_url' ><li>". $rowj['bo_subject'] . "</li></a>";
+
+
+        if( isset( $row['bo_table']) ) {
+            if($row['bo_table'] == 'notice'){
+                echo latest('theme/'.$row['bo_mobile_skin'], $row['bo_table'], 3, 25);
+                echo '<div class="lt list_01"><ul class="category">';
+                for ($j=0; $j<=count($lateList); $j++) {
+                    $rowj = $lateList[$j];
+                    if( isset($rowj['bo_subject'])){
+                        $href_url =  G5_BBS_URL . '/board.php?bo_table=' .$rowj['bo_table'];
+                        echo "<a href='$href_url' ><li>". $rowj['bo_subject'] . "</li></a>";
+                    }
+       
                 }
-   
+                echo '</ul></div>';
+            }else if($row['bo_table'] == 'free'){
+                echo latest('theme/'.$row['bo_mobile_skin'], $row['bo_table'], 10, 25);
+            }else if($row['gr_id'] == 'community'){
+                echo latest('theme/'.$row['bo_mobile_skin'], $row['bo_table'], 5, 25);
+            }else if($row['gr_id'] == 'game'){
+                echo latest('theme/'.$row['bo_mobile_skin'],$row['bo_table'], 10, 25);
+            }else{
+                echo latest('theme/'.$row['bo_mobile_skin'], $row['bo_table'], 5, 25);
             }
-            echo '</ul></div>';
-        }else if($row['bo_table'] == 'free'){
-            echo latest('theme/'.$row['bo_mobile_skin'], $row['bo_table'], 10, 25);
-        }else if($row['gr_id'] == 'community'){
-            echo latest('theme/'.$row['bo_mobile_skin'], $row['bo_table'], 5, 25);
-        }else if($row['gr_id'] == 'game'){
-            echo latest('theme/'.$row['bo_mobile_skin'],$row['bo_table'], 10, 25);
-        }else{
-            echo latest('theme/'.$row['bo_mobile_skin'], $row['bo_table'], 5, 25);
         }
 }
 ?>
