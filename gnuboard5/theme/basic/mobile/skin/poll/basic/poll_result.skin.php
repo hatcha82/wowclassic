@@ -7,6 +7,10 @@ add_stylesheet('<link rel="stylesheet" href="'.$poll_skin_url.'/style.css">', 0)
 
 <div id="poll_result" class="new_win">
     <h1 id="win_title"><?php echo $g5['title'] ?></h1>
+    <ins class="kakao_ad_area" style="display:none;" 
+        data-ad-unit    = "DAN-rhlo2jj9i2pf" 
+        data-ad-width   = "320" 
+        data-ad-height  = "50"></ins>
     <div  class="new_win_con">
         <span class="poll_all">전체 <?php echo $nf_total_po_cnt ?>표</span>
         <a href="/" target="_blank" class="poll_home" >홈</a>
@@ -81,7 +85,10 @@ add_stylesheet('<link rel="stylesheet" href="'.$poll_skin_url.'/style.css">', 0)
 
         </section>
         <?php } ?>
-
+        <ins class="kakao_ad_area" style="display:none;" 
+            data-ad-unit    = "DAN-1h85bvc0mmasx" 
+            data-ad-width   = "320" 
+            data-ad-height  = "100"></ins> 
         <aside id="poll_result_oth" class="list_01">
             <h2>다른 투표 결과 보기</h2>
             <ul>
@@ -95,8 +102,13 @@ add_stylesheet('<link rel="stylesheet" href="'.$poll_skin_url.'/style.css">', 0)
             <button type="button" onclick="window.close();" class="btn_close">창닫기</button>
         </div>
     </div>
+    
 </div>
-
+<ins class="kakao_ad_area" style="display:none;" 
+            data-ad-unit    = "DAN-toan4jzfzbqv" 
+            data-ad-width   = "320" 
+            data-ad-height  = "100"></ins> 
+<script type="text/javascript" src="//t1.daumcdn.net/adfit/static/ad.min.js" async></script>
 <script>
 $(function() {
     $(".poll_delete").click(function() {

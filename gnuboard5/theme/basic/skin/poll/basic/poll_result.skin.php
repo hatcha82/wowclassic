@@ -7,7 +7,13 @@ add_stylesheet('<link rel="stylesheet" href="'.$poll_skin_url.'/style.css">', 0)
 
 <!-- 설문조사 결과 시작 { -->
 <div id="poll_result" class="new_win">
+   
+    
     <h1 id="win_title"><i class="fa fa-bar-chart" aria-hidden="true"></i> <?php echo $g5['title'] ?></h1>
+    <ins class="kakao_ad_area" style="display:none;" 
+    data-ad-unit    = "DAN-rhlo2jj9i2pf" 
+    data-ad-width   = "320" 
+    data-ad-height  = "50"></ins>
     <div class="new_win_con">
         <!-- 설문조사 결과 그래프 시작 { -->
         <span class="poll_all">전체 <?php echo $nf_total_po_cnt ?>표</span>
@@ -85,9 +91,13 @@ add_stylesheet('<link rel="stylesheet" href="'.$poll_skin_url.'/style.css">', 0)
         </section>
         <?php }  ?>
         <!-- } 설문조사 기타의견 끝 -->
-
+        <ins class="kakao_ad_area" style="display:none;" 
+            data-ad-unit    = "DAN-1h85bvc0mmasx" 
+            data-ad-width   = "320" 
+            data-ad-height  = "100"></ins> 
         <!-- 설문조사 다른 결과 보기 시작 { -->
         <aside id="poll_result_oth">
+       
             <h2>다른 투표 결과 보기</h2>
             <ul>
                 <?php for ($i=0; $i<count($list3); $i++) {  ?>
@@ -100,9 +110,15 @@ add_stylesheet('<link rel="stylesheet" href="'.$poll_skin_url.'/style.css">', 0)
         <div class="win_btn">
             <button type="button" onclick="window.close();" class="btn_close">창닫기</button>
         </div>
+        
     </div>
-</div>
 
+</div>
+<ins class="kakao_ad_area" style="display:none;" 
+            data-ad-unit    = "DAN-toan4jzfzbqv" 
+            data-ad-width   = "320" 
+            data-ad-height  = "100"></ins> 
+<script type="text/javascript" src="//t1.daumcdn.net/adfit/static/ad.min.js" async></script>
 <script>
 $(function() {
     $(".poll_delete").click(function() {
