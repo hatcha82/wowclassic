@@ -81,12 +81,12 @@ function daum_adfit_mobile($type){
   }
   if($unit !== ''){
       echo 
-        "<div style='$style;'>
+        "
             <ins class='kakao_ad_area' style='display:none;' 
                 data-ad-unit    = 'DAN-$unit' 
                 data-ad-width   = '320'
                 data-ad-height  = '50'></ins> 
-        </div>";
+       ";
   }else{
       echo '';
   }
