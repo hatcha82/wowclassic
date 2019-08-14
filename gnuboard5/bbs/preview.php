@@ -1,6 +1,6 @@
 <?php
 include_once('./_common.php');
-
+include_once(G5_EDITOR_LIB);
 
 if (!$board['bo_table']) {
     alert('존재하지 않는 게시판입니다.', G5_URL);
@@ -150,16 +150,17 @@ if ($board['bo_use_signature'] && $view['mb_id']) {
 }
 */
 
-include_once(G5_BBS_PATH.'/board_head.php');
-$view = array();
-$view['wr_subject'] = $_POST['wr_subject'];
-$wr_content = substr(trim($_POST['wr_content']),0,65536);
-$wr_content = preg_replace("#[\\\]+$#", "", $wr_content);
+include_once(G5_THEME_PATH.'/head.sub.php');
+include_once(G5_LIB_PATH.'/latest.lib.php');
+include_once(G5_LIB_PATH.'/outlogin.lib.php');
+include_once(G5_LIB_PATH.'/poll.lib.php');
+include_once(G5_LIB_PATH.'/visit.lib.php');
+include_once(G5_LIB_PATH.'/connect.lib.php');
+include_once(G5_LIB_PATH.'/popular.lib.php');
 
-$view['wr_content'] = $wr_content;
-$view['content'] = conv_content($wr_content, 2);
-// echo var_dump($_POST);
-// return;
+$view = get_view( $_POST, $board, $board_skin_path);
+$view['wr_subject'] = $_POST['wr_subject'];
+$view['content'] = stripslashes($_POST['wr_content']);
 
 include_once($board_skin_path.'/preview.skin.php');
 @include_once($board_skin_path.'/preview.tail.skin.php');
@@ -169,3 +170,11 @@ echo "\n<!-- 사용스킨 : ".(G5_IS_MOBILE ? $board['bo_mobile_skin'] : $board[
 
 include_once(G5_PATH.'/tail.sub.php');
 ?>
+<script>
+$("body").hide();
+$("#left_navi, #aside, #gnb, #hd, #ft").hide()
+$("#container").css({margin:"0 auto", "margin-left":"15px"});
+$("#bo_v").css({margin: "20px"});
+
+$("body").show();
+</script>

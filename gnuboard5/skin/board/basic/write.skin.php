@@ -10,18 +10,8 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
     <form action="./preview.php?bo_table=<?php echo $bo_table ?>" method="post" name="previewform">
     <input type="hidden" name="wr_subject" value="">
     <input type="hidden" name="wr_content" value="">
-<script>
-function preview_submit(){
-    <?php echo $editor_js; // 에디터 사용시 자바스크립트에서 내용을 폼필드로 넣어주며 내용이 입력되었는지 검사함   ?>
-    previewform.wr_subject.value =  fwrite.wr_subject.value;
-    previewform.wr_content.value =  wr_content_editor_data;
-    previewform.target='POPUPW'; POPUPW = window.open('about:blank','POPUPW','width=1400,height=800');
-    
-}
-</script>
-<input type="submit" name="subpopup" value="Submit in Popup" 
-   onclick="preview_submit()">
 
+    <input type="submit" id="previewSubmit" name="subpopup" value="Submit in Popup" style="display:none" onclick="preview_submit()">
 </form>
     <!-- 게시물 작성/수정 시작 { -->
     <form name="fwrite" id="fwrite" action="<?php echo $action_url ?>" onsubmit="return fwrite_submit(this);" method="post" enctype="multipart/form-data" autocomplete="off" style="width:<?php echo $width; ?>">
@@ -116,8 +106,8 @@ function preview_submit(){
             <script src="<?php echo G5_JS_URL; ?>/autosave.js"></script>
             <?php if($editor_content_js) echo $editor_content_js; ?>
             <div id="div_savecancel">
-                <a target="_blank" href="./preview.php?bo_table=<?php echo $bo_table ?>" class="btn_cancel btn">미리보기</a>
-                <a href="./board.php?bo_table=<?php echo $bo_table ?>" class="btn_cancel btn">취소</a>
+                <a href="javascript:void(0)" onclick='$("#previewSubmit").click()' class="btn_cancel btn">미리보기</a>
+                <!-- <a href="./board.php?bo_table=<?php echo $bo_table ?>" class="btn_cancel btn">취소</a> -->
                 <input type="submit" value="작성완료" id="btn_submit" accesskey="s" class="btn_frmline btn">
             </div>   
             <button type="button" id="btn_autosave" class="btn_frmline">임시 저장된 글 (<span id="autosave_count"><?php echo $autosave_count; ?></span>)</button>
@@ -219,7 +209,13 @@ function preview_submit(){
         else
             obj.value = "";
     }
-
+    function preview_submit()
+    {
+        <?php echo $editor_js; // 에디터 사용시 자바스크립트에서 내용을 폼필드로 넣어주며 내용이 입력되었는지 검사함   ?>       
+        document.previewform.wr_subject.value =  document.fwrite.wr_subject.value
+        document.previewform.wr_content.value =  document.getElementById("wr_content").value;
+        document.previewform.target='POPUPW'; POPUPW = window.open('about:blank','POPUPW','width=920,height=800');
+    }
     function fwrite_submit(f)
     {
         <?php echo $editor_js; // 에디터 사용시 자바스크립트에서 내용을 폼필드로 넣어주며 내용이 입력되었는지 검사함   ?>
@@ -241,7 +237,6 @@ function preview_submit(){
                 content = data.content;
             }
         });
-
         if (subject) {
             alert("제목에 금지단어('"+subject+"')가 포함되어있습니다");
             f.wr_subject.focus();
@@ -254,7 +249,7 @@ function preview_submit(){
                 ed_wr_content.returnFalse();
             else
                 f.wr_content.focus();
-            return false;
+            return true;
         }
 
         if (document.getElementById("char_count")) {
