@@ -17,6 +17,43 @@ if (G5_IS_MOBILE) {
         echo latest('theme/notice', 'notice', 4, 13);
         ?>
         <?php echo outlogin('theme/basic'); // 외부 로그인, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정 ?>
+        <?php
+            $sql = " select 	wr_content
+            from 	g5_write_free
+            where 	ca_name = 'Youtube'
+            and  INSTR(wr_content,'https://www.youtube.com/watch?') limit 30";
+           
+            $youtubeIdList = array();
+            $result = sql_query($sql);
+            for ($i=0; $row=sql_fetch_array($result); $i++) {
+                preg_match('#(\.be/|/embed/|/v/|/watch\?v=)([A-Za-z0-9_-]{5,11})#',  $row['wr_content'], $matches);
+
+                if(isset($matches[2]) && $matches[2] != ''){
+                    $YoutubeCode = $matches[2];
+                    array_push($youtubeIdList,$YoutubeCode);
+                }
+                
+            }
+            $YoutubeCode = $youtubeIdList[array_rand($youtubeIdList)];
+        ?>
+        <div style="padding: 0 25px">
+        <!-- <a  href="https://www.youtube.com/embed/<?php echo $YoutubeCode?>?autoplay=0&playsinline=1" > -->
+        <img src="/img/youtube.png" style="width:25px;float:left;"/> 
+        <span style="color:#eee;line-height:25px;padding:0 5px;">팬사이트 추천 WoW Youtube</span>
+        </a>
+        <!-- </div>   -->
+        <?php if(isset($YoutubeCode) && $YoutubeCode != ''){?>
+
+        
+        <div style="width:230px;margin:0 auto;">
+            <div id="youtube_area" style="width:230px;margin-top:10px;margin-bottom:20px;border:1px solid #444">
+                <div style="position: relative; padding-bottom: 56.25%;">
+                <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/<?php echo $YoutubeCode?>?autoplay=0&playsinline=1" frameborder="0" gesture="media" allow="autoplay;encrypted-media" allowfullscreen="allowfullscreen"></iframe>
+                </div>
+                <!-- <a target="_blank" href="https://www.youtube.com/watch?v=<coYw-eVU0Ks" ></a>        -->
+            </div>
+        </div> 
+        <?php } ?>
         <?php echo poll('theme/basic'); // 설문조사, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정 ?>
         <div style="margin:0px 20px;">
         <tenping class="adsbytenping" style="width: 100%; margin: 0px auto; display: block; max-width: 768px;" tenping-ad-client="OG1GZvcF9%2ftKBJFmMMMQpiZ41M0GlEawTCO4hzThpVdH%2bxRVRthTfGyB2E94CJtF" tenping-ad-display-type="67%2be3LHzHbblsB9oLrOpWQ%3d%3d"></tenping><script async src='//ads.tenping.kr/scripts/adsbytenping.min.js' ></script>
