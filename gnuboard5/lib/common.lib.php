@@ -1247,7 +1247,7 @@ function get_sideview($mb_id, $name='', $email='', $homepage='')
         if ($config['cf_use_member_icon']) {
             $mb_dir = substr($mb_id,0,2);
             $icon_file = G5_DATA_PATH.'/member/'.$mb_dir.'/'.$mb_id.'.gif';
-
+            $icon_camp_img_file  = G5_DATA_PATH.'/member/'.$mb_dir.'/'.$mb_id.'_camp.png';
             if (file_exists($icon_file)) {
                 $width = $config['cf_member_icon_width'];
                 $height = $config['cf_member_icon_height'];
@@ -1256,7 +1256,17 @@ function get_sideview($mb_id, $name='', $email='', $homepage='')
 
                 if ($config['cf_use_member_icon'] == 2) // 회원아이콘+이름
                     $tmp_name = $tmp_name.' '.$name;
+            }else if (file_exists($icon_camp_img_file)) {
+                $width = $config['cf_member_icon_width'];
+                $height = $config['cf_member_icon_height'];
+                $icon_camp_img_file = G5_DATA_URL.'/member/'.$mb_dir.'/'.$mb_id.'_camp.png';
+                $tmp_name .= '<span class="profile_img"><img src="'.$icon_camp_img_file.'" width="'.$width.'" height="'.$height.'" alt=""></span>';
+                
+                if ($config['cf_use_member_icon'] == 2) // 회원아이콘+이름
+                    $tmp_name = $tmp_name.' '.$name;
             } else {
+
+
                 $no_profile_img_raid = array(
                 "IconSmall_RaidCircle.png"
                 ,"IconSmall_RaidCross.png"

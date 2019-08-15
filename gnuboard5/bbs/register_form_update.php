@@ -54,7 +54,7 @@ $mb_mailling    = isset($_POST['mb_mailling'])      ? trim($_POST['mb_mailling']
 $mb_sms         = isset($_POST['mb_sms'])           ? trim($_POST['mb_sms'])         : "";
 $mb_1           = isset($_POST['mb_1'])             ? trim($_POST['mb_1'])           : "";
 $mb_2           = isset($_POST['mb_2'])             ? trim($_POST['mb_2'])           : "";
-$mb_3           = isset($_POST['mb_3'])             ? trim($_POST['mb_3'])           : "";
+$mb_3           = isset($_POST['mb_3'])             ? trim(implode( '|', $_POST['mb_3'] ))           : "";
 $mb_4           = isset($_POST['mb_4'])             ? trim($_POST['mb_4'])           : "";
 $mb_5           = isset($_POST['mb_5'])             ? trim($_POST['mb_5'])           : "";
 $mb_6           = isset($_POST['mb_6'])             ? trim($_POST['mb_6'])           : "";
@@ -62,7 +62,6 @@ $mb_7           = isset($_POST['mb_7'])             ? trim($_POST['mb_7'])      
 $mb_8           = isset($_POST['mb_8'])             ? trim($_POST['mb_8'])           : "";
 $mb_9           = isset($_POST['mb_9'])             ? trim($_POST['mb_9'])           : "";
 $mb_10          = isset($_POST['mb_10'])            ? trim($_POST['mb_10'])          : "";
-
 $mb_name        = clean_xss_tags($mb_name);
 $mb_email       = get_email_address($mb_email);
 $mb_homepage    = clean_xss_tags($mb_homepage);
@@ -364,6 +363,7 @@ $msg = "";
 // 아이콘 업로드
 $mb_icon = '';
 $image_regex = "/(\.(gif|jpe?g|png))$/i";
+$mb_icon_camp_img = $mb_id.'_camp.png';
 $mb_icon_img = $mb_id.'.gif';
 
 if (isset($_FILES['mb_icon']) && is_uploaded_file($_FILES['mb_icon']['tmp_name'])) {
@@ -408,6 +408,17 @@ if (isset($_FILES['mb_icon']) && is_uploaded_file($_FILES['mb_icon']['tmp_name']
     } else {
         $msg .= $_FILES['mb_icon']['name'].'은(는) 이미지 파일이 아닙니다.';
     }
+}else{
+    $dest_path = $mb_dir.'/'.$mb_icon_camp_img;
+    $default_icon_path =  $mb_1 == 'A' ? "/Alliance.png" : "/horde.png";
+    $default_icon_path =  G5_IMG_URL . $default_icon_path;
+    @mkdir($mb_dir, G5_DIR_PERMISSION);
+    @chmod($mb_dir, G5_DIR_PERMISSION);
+
+   if (!copy($default_icon_path, $dest_path)) {
+        echo "failed from $default_icon_path to copy $dest_path...\n";
+    }
+    
 }
 
 // 회원 프로필 이미지
