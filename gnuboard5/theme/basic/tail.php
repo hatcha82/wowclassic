@@ -58,11 +58,13 @@ if (G5_IS_MOBILE) {
                 </div>
                 <!-- <a target="_blank" href="https://www.youtube.com/watch?v=<coYw-eVU0Ks" ></a>        -->
             </div>
-            
-            <!-- <div style="color:#eee">
-            <a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=free&wr_id=<?php echo  $YoutubeCodeWr['wr_id']?>&sca=Youtube">
+            <a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=free&wr_id=<?php echo  $YoutubeCodeWr['wr_id']?>&sca=Youtube"> 
             <?php echo $YoutubeCodeWr['wr_subject']?> 
             </a>
+            <!-- <div style="color:#eee">
+           
+            
+            
             <br>
             <span style="font-size:10px;">
             <?php echo $YoutubeCodeWr['name']?> 
