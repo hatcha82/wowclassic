@@ -26,7 +26,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 <div class="lt list_01" style="padding:0;margin-bottom:0">
     <div class="bo_name">
         <div class="lt_title">   
-        <img src="/img/youtube.png" style="width:25px;float:left;"/> 
+        <img src="/img/youtube.png" style="width:25px;float:left;margin-top:13px"/> 
         <span style="color:#eee;line-height:25px;padding:0 5px;">팬사이트 추천 WoW Youtube</span>
         </div>
     </div>
