@@ -48,7 +48,7 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
                 }
                 echo '</ul></div>';
             }else if($row['bo_table'] == 'free'){
-                include_once(G5_THEME_MOBILE_PATH.'/youtube.php');
+                //include_once(G5_THEME_MOBILE_PATH.'/youtube.php');
                 echo latest('theme/'.$row['bo_mobile_skin'], $row['bo_table'], 10, 25);
                 
             }else if($row['gr_id'] == 'community'){
