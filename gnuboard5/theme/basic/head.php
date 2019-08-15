@@ -261,23 +261,39 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
         }
         openClassicRelese()
         setInterval(openClassicRelese,1000)
-        $('a[href*="https://www.youtube.com/embed"]').each(function(index,ele){
-            var href= $(ele).attr('href');
-            var iframeTag = `<iframe src="${href}" frameborder="0" allowfullscreen></iframe>`;
-            $(ele).after(iframeTag)
-        });
-        $('a[href*="https://youtu.be/"]').each(function(index,ele){
-            var href= $(ele).attr('href');
-            href =href.split('https://youtu.be/').join('https://www.youtube.com/embed/')
-            var iframeTag = `<div style="padding:10px;"><iframe src="${href}" frameborder="0" allowfullscreen></iframe></div>`;
-            $(ele).after(iframeTag)
-        });
-        $('a[href*="https://www.youtube.com/watch?v="]').each(function(index,ele){
+        youtubeLinktoPlayer();
+        function youtubeLinktoPlayer(){
+            var youtubeTemplate = `
+            <div style="width:100%;padding:0px;margin:0 auto;">
+                <div id="youtube_area" style="width:100%;border:1px solid #444">
+                    <div style="position: relative; padding-bottom: 56.25%;">
+                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="[href]" frameborder="0"  allowfullscreen="allowfullscreen"></iframe>
+                    </div>
+                </div>
+            </div>`
+            $('a[href*="https://www.youtube.com/embed"]').each(function(index,ele){
                 var href= $(ele).attr('href');
-                href =href.split('watch?v=').join('embed/')
-                var iframeTag = `<div style="padding:10px;"><iframe src="${href}" frameborder="0" allowfullscreen></iframe></div>`;
+                //var iframeTag = `<iframe src="${href}" frameborder="0" allowfullscreen></iframe>`;
+                var iframeTag = youtubeTemplate.split('[href]').join(href);
                 $(ele).after(iframeTag)
             });
+            $('a[href*="https://youtu.be/"]').each(function(index,ele){
+                var href= $(ele).attr('href');
+                href =href.split('https://youtu.be/').join('https://www.youtube.com/embed/')
+                //var iframeTag = `<div style="padding:10px;"><iframe src="${href}" frameborder="0" allowfullscreen></iframe></div>`;
+                var iframeTag = youtubeTemplate.split('[href]').join(href);
+                $(ele).after(iframeTag)
+            });
+            $('a[href*="https://www.youtube.com/watch?v="]').each(function(index,ele){
+                var href= $(ele).attr('href');
+                href =href.split('watch?v=').join('embed/')
+                var iframeTag = youtubeTemplate.split('[href]').join(href);
+                //var iframeTag = `<div style="padding:10px;"><iframe src="${href}" frameborder="0" allowfullscreen></iframe></div>`;
+                $(ele).after(iframeTag)
+            });
+
+        }
+
         $(".gnb_menu_btn").click(function(){
             $("#gnb_all").show();
         });

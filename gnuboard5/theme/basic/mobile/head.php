@@ -148,23 +148,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
         <script>
         $(function () {
             //폰트 크기 조정 위치 지정
-            $('a[href*="https://www.youtube.com/embed"]').each(function(index,ele){
-                var href= $(ele).attr('href');
-                var iframeTag = `<iframe src="${href}" frameborder="0" allowfullscreen></iframe>`;
-                $(ele).after(iframeTag)
-            });
-            $('a[href*="https://youtu.be/"]').each(function(index,ele){
-                var href= $(ele).attr('href');
-                href =href.split('https://youtu.be/').join('https://www.youtube.com/embed/')
-                var iframeTag = `<div style="padding:10px;"><iframe src="${href}" frameborder="0" allowfullscreen></iframe></div>`;
-                $(ele).after(iframeTag)
-            });
-            $('a[href*="https://www.youtube.com/watch?v="]').each(function(index,ele){
-                var href= $(ele).attr('href');
-                href =href.split('watch?v=').join('embed/')
-                var iframeTag = `<div style="padding:10px;"><iframe src="${href}" frameborder="0" allowfullscreen></iframe></div>`;
-                $(ele).after(iframeTag)
-            });
+            youtubeLinktoPlayer()
          
             var font_resize_class = get_cookie("ck_font_resize_add_class");
             if( font_resize_class == 'ts_up' ){
