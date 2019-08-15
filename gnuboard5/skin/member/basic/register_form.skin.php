@@ -151,8 +151,34 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
             </li>
             <?php }  ?>
         </ul>
-    </div>
+        <h2>World Of Warcraft 정보</h2>
+        <ul>
+            <li>
+            <label for="reg_mb_1" class="sound_only"><strong>진영</strong></label>
+                <ul>
+                    <li>
+                    <label>
+                        <input type="radio" name="mb_1" value="A" <?php echo get_text($member['mb_1']) == 'A' ? 'checked' : '' ?>>
+                        <img src="/img/Alliance.png">
+                        얼라이언스
+                    </label>
+                    </li>
+                    <li>
+                       
+                        <label>
+                            <input type="radio" name="mb_1" value="H" <?php echo get_text($member['mb_1']) == 'H' ? 'checked' : '' ?>>
+                            <img src="/img/Horde.png">
+                            호드
+                        </label>
+                    </li>
+                <ul>
+                
+                
+            </li>
+        <ul>
 
+    </div>
+    
     <div class="tbl_frm01 tbl_wrap">
         <h2>기타 개인설정</h2>
         <ul>
@@ -261,10 +287,10 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
             </li>
             <?php }  ?>
 
-            <li class="is_captcha_use">
+            <!-- <li class="is_captcha_use">
                 자동등록방지
                 <?php echo captcha_html(); ?>
-            </li>
+            </li> -->
         </ul>
     </div>
     

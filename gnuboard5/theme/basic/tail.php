@@ -18,7 +18,7 @@ if (G5_IS_MOBILE) {
         ?>
         <?php echo outlogin('theme/basic'); // 외부 로그인, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정 ?>
         <?php
-            $sql = "select 	wr_content
+            $sql = "select 	*
                     from 	g5_write_free
                     where wr_is_comment = 0 
                     and 	ca_name = 'Youtube'
@@ -32,16 +32,22 @@ if (G5_IS_MOBILE) {
                 preg_match('#(\.be/|/embed/|/v/|/watch\?v=)([A-Za-z0-9_-]{5,11})#',  $row['wr_content'], $matches);
 
                 if(isset($matches[2]) && $matches[2] != ''){
-                    $YoutubeCode = $matches[2];
-                    array_push($youtubeIdList,$YoutubeCode);
+                    $row['YoutubeCode'] = $matches[2];
+
+                    array_push($youtubeIdList,$row);
                 }
                 
             }
-            $YoutubeCode = $youtubeIdList[array_rand($youtubeIdList)];
+            $YoutubeCodeWr = $youtubeIdList[array_rand($youtubeIdList)];
+            $YoutubeCode = $YoutubeCodeWr['YoutubeCode'];
+            $tmp_name = get_text(cut_str($YoutubeCodeWr['wr_name'], $config['cf_cut_name'])); // 설정된 자리수 만큼만 이름 출력
+            $tmp_name2 = cut_str($YoutubeCodeWr['wr_name'], $config['cf_cut_name']); // 설정된 자리수 만큼만 이름 출력
+            $YoutubeCodeWr['name'] = get_sideview($YoutubeCodeWr['mb_id'], $tmp_name2, $YoutubeCodeWr['wr_email'], $YoutubeCodeWr['wr_homepage']);
         ?>
         <div style="padding: 0 25px">
         <img src="/img/youtube.png" style="width:25px;float:left;"/> 
         <span style="color:#eee;line-height:25px;padding:0 5px;">팬사이트 추천 WoW Youtube</span>
+       
         </a>
         </div>  
         <?php if(isset($YoutubeCode) && $YoutubeCode != ''){?>
@@ -52,7 +58,19 @@ if (G5_IS_MOBILE) {
                 </div>
                 <!-- <a target="_blank" href="https://www.youtube.com/watch?v=<coYw-eVU0Ks" ></a>        -->
             </div>
-        </div> 
+            
+            <!-- <div style="color:#eee">
+            <a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=free&wr_id=<?php echo  $YoutubeCodeWr['wr_id']?>&sca=Youtube">
+            <?php echo $YoutubeCodeWr['wr_subject']?> 
+            </a>
+            <br>
+            <span style="font-size:10px;">
+            <?php echo $YoutubeCodeWr['name']?> 
+            </span>
+            </div> -->
+            
+        </div>
+         
         <?php } ?>
         <?php echo poll('theme/basic'); // 설문조사, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정 ?>
         <div style="margin:0px 20px;">

@@ -1257,10 +1257,21 @@ function get_sideview($mb_id, $name='', $email='', $homepage='')
                 if ($config['cf_use_member_icon'] == 2) // 회원아이콘+이름
                     $tmp_name = $tmp_name.' '.$name;
             } else {
+                $no_profile_img_raid = array(
+                "IconSmall_RaidCircle.png"
+                ,"IconSmall_RaidCross.png"
+                ,"IconSmall_RaidMoon.png"
+                ,"IconSmall_RaidSkull.png"
+                ,"IconSmall_RaidSquare.png"
+                ,"IconSmall_RaidStar.png"
+                ,"IconSmall_RaidTriangle.png"
+                );
+                $no_profile_img_raid = $no_profile_img_raid[array_rand($no_profile_img_raid)];
+                $no_profile_img_raid_tag = '<span class="profile_img"><img src="/img/'.$no_profile_img_raid.'" alt="no_profile" width="20" height="20"></span>';
                 if( defined('G5_THEME_NO_PROFILE_IMG') ){
-                    $tmp_name .= G5_THEME_NO_PROFILE_IMG;
+                    $tmp_name .$no_profile_img_raid_tag; // G5_THEME_NO_PROFILE_IMG;
                 } else if( defined('G5_NO_PROFILE_IMG') ){
-                    $tmp_name .= G5_NO_PROFILE_IMG;
+                    $tmp_name .= $no_profile_img_raid_tag; ;
                 }
                 if ($config['cf_use_member_icon'] == 2) // 회원아이콘+이름
                     $tmp_name = $tmp_name.' '.$name;
