@@ -10,6 +10,27 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
 <?php
 //  최신글
     
+    $sqlYoutube = "select 	wr_content
+            from 	g5_write_free
+            where wr_is_comment = 0 
+            and 	ca_name = 'Youtube'
+            order
+            by 		wr_num
+            limit 30";
+    
+    $youtubeIdList = array();
+    $youtubeResult = sql_query($sqlYoutube);
+    for ($i=0; $row3=sql_fetch_array($youtubeResult); $i++) {
+        preg_match('#(\.be/|/embed/|/v/|/watch\?v=)([A-Za-z0-9_-]{5,11})#',  $row3['wr_content'], $matches);
+
+        if(isset($matches[2]) && $matches[2] != ''){
+            $YoutubeCode = $matches[2];
+            array_push($youtubeIdList,$YoutubeCode);
+        }
+        
+    }
+    $YoutubeCode = $youtubeIdList[array_rand($youtubeIdList)];
+
     $sql = " select bo_table, bo_subject, bo_mobile_skin
             from `{$g5['board_table']}` a left join `{$g5['group_table']}` b on (a.gr_id=b.gr_id)
             where a.bo_device in ('mobile','both')";
@@ -48,8 +69,24 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
                 }
                 echo '</ul></div>';
             }else if($row['bo_table'] == 'free'){
-                //include_once(G5_THEME_MOBILE_PATH.'/youtube.php');
+                echo "<div class='lt list_01' >
+                    <div class='bo_name'>
+                        <div class='lt_title'>   
+                        <img src='/img/youtube.png' style='width:25px;float:left;margin-top:13px'/> 
+                        <span style='color:#eee;line-height:25px;padding:0 5px;'>팬사이트 추천 WoW Youtube</span>
+                        </div>
+                        <div style='width:100%;padding:0px;margin:0 auto;'>
+                        <div id='youtube_area' style='width:100%;border:1px solid #444'>
+                            <div style='position: relative; padding-bottom: 56.25%;'>
+                            <iframe style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' 
+                                src='https://www.youtube.com/embed/$YoutubeCode?autoplay=0&playsinline=1'
+                                frameborder='0' gesture='media' allow='autoplay;encrypted-media' allowfullscreen='allowfullscreen'></iframe
+                            </div>
+                        </div>
+                    </div> 
+                </div>";
                 echo latest('theme/'.$row['bo_mobile_skin'], $row['bo_table'], 10, 25);
+                //include(G5_THEME_MOBILE_PATH.'/youtube.php');
             }else if($row['gr_id'] == 'community'){
                 echo latest('theme/'.$row['bo_mobile_skin'], $row['bo_table'], 5, 25);
             }else if($row['gr_id'] == 'game'){
@@ -59,6 +96,7 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
             }
         }
 }
+
 ?>
 <!-- 메인화면 최신글 끝 -->
 </div>
