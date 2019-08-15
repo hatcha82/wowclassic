@@ -175,6 +175,6 @@ $("body").hide();
 $("#left_navi, #aside, #gnb, #hd, #ft").hide()
 $("#container").css({margin:"0 auto", "margin-left":"15px"});
 $("#bo_v").css({margin: "20px"});
-
+youtubeLinktoPlayer();
 $("body").show();
 </script>
