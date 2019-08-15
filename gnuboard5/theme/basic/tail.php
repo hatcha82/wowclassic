@@ -18,10 +18,13 @@ if (G5_IS_MOBILE) {
         ?>
         <?php echo outlogin('theme/basic'); // 외부 로그인, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정 ?>
         <?php
-            $sql = " select 	wr_content
-            from 	g5_write_free
-            where 	ca_name = 'Youtube'
-            and  INSTR(wr_content,'https://www.youtube.com/watch?') limit 30";
+            $sql = "select 	wr_content
+                    from 	g5_write_free
+                    where wr_is_comment = 0 
+                    and 	ca_name = 'Youtube'
+                    order
+                    by 		wr_num
+                    limit 30";
            
             $youtubeIdList = array();
             $result = sql_query($sql);
