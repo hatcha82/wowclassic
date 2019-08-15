@@ -167,12 +167,14 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
                        
                         <label>
                             <input type="radio" name="mb_1" value="H" <?php echo get_text($member['mb_1']) == 'H' ? 'checked' : '' ?>>
-                            <img src="/img/Horde.png">
+                            <img src="/img/horde.png">
                             호드
                         </label>
                     </li>
                 <ul>
-                
+                <li>
+
+                <li>
                 
             </li>
         <ul>
