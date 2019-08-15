@@ -4,6 +4,8 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 include_once(G5_THEME_MOBILE_PATH.'/head.php');
 ?>
 <div style="margin-top: -12px;">
+
+
 <!-- 메인화면 최신글 시작 -->
 <?php
 //  최신글
@@ -45,6 +47,9 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
        
                 }
                 echo '</ul></div>';
+
+                include_once(G5_THEME_MOBILE_PATH.'/youtube.php');
+                
             }else if($row['bo_table'] == 'free'){
                 echo latest('theme/'.$row['bo_mobile_skin'], $row['bo_table'], 10, 25);
             }else if($row['gr_id'] == 'community'){
