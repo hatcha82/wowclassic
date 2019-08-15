@@ -38,13 +38,11 @@ if (G5_IS_MOBILE) {
         ?>
         <div style="padding: 0 25px">
         <!-- <a  href="https://www.youtube.com/embed/<?php echo $YoutubeCode?>?autoplay=0&playsinline=1" > -->
-        <img src="/img/youtube.png" style="width:25px;float:left;"/> 
-        <span style="color:#eee;line-height:25px;padding:0 5px;">팬사이트 추천 WoW Youtube</span>
+        <!-- <img src="/img/youtube.png" style="width:25px;float:left;"/> 
+        <span style="color:#eee;line-height:25px;padding:0 5px;">팬사이트 추천 WoW Youtube</span> -->
         </a>
         <!-- </div>   -->
         <?php if(isset($YoutubeCode) && $YoutubeCode != ''){?>
-
-        
         <div style="width:230px;margin:0 auto;">
             <div id="youtube_area" style="width:230px;margin-top:10px;margin-bottom:20px;border:1px solid #444">
                 <div style="position: relative; padding-bottom: 56.25%;">
