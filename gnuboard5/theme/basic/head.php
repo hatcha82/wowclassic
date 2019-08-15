@@ -56,8 +56,12 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
         <div class="hd_sch_wr">
       
         <div id="logo">
-            <a href="<?php echo G5_URL ?>"><img src="<?php echo G5_IMG_URL ?>/logo.png" alt="<?php echo $config['cf_title']; ?>"></a>
+            <a href="<?php echo G5_URL ?>"><img src="<?php echo G5_IMG_URL ?>/logo.png" alt="<?php echo $config['cf_title']; ?>" ></a>
+            <br>
+            <span style="">클래식 월드 오브 워크래프트 팬사이트</span>
+           
         </div>
+            
             <fieldset id="hd_sch" >
                 <legend>사이트 내 전체검색</legend>
                 <form name="fsearchbox" method="get" action="<?php echo G5_BBS_URL ?>/search.php" onsubmit="return fsearchbox_submit(this);">

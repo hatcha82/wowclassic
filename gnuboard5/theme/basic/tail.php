@@ -78,7 +78,8 @@ if (G5_IS_MOBILE) {
             <a href="<?php echo get_device_change_url(); ?>">모바일버전</a>
         </div>
         <div id="ft_catch"><img src="<?php echo G5_IMG_URL; ?>/ft_logo.png" alt="<?php echo G5_VERSION ?>"></div>
-        <div id="ft_copy">Copyright &copy; <b>wowclassic.furiganahub.com </b> All rights reserved.</div>
+        <span style="color:#eee">클래식 월드 오브 워크래프트 팬사이트</span>
+        <div id="ft_copy">Copyright &copy; <b>classicwow.co.kr </b> All rights reserved.</div>
     </div>
     
     <button type="button" id="top_btn"><i class="fa fa-arrow-up" aria-hidden="true"></i><span class="sound_only">상단으로</span></button>
