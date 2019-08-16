@@ -3449,7 +3449,8 @@ function get_member_profile_img($mb_id='', $width='', $height='', $alt='profile_
     }
 
     if( $src ){
-        $attributes = array('src'=>$src, 'width'=>$width, 'height'=>$height, 'alt'=>$alt, 'title'=>$title);
+
+        $attributes = array('src'=>$src . '?' . GUID(), 'width'=>$width, 'height'=>$height, 'alt'=>$alt, 'title'=>$title);
         $output ='<img';
         foreach ($attributes as $name => $value) {
             if (!empty($value)) {
