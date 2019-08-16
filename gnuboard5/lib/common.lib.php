@@ -3419,7 +3419,7 @@ function get_member_profile_img($mb_id='', $width='', $height='', $alt='profile_
 
     if( $mb_id ){
         if( isset($member_cache[$mb_id]) ){
-            $src = $member_cache[$mb_id];
+            $src = $member_cache[$mb_id];            
         } else {
             $member_img = G5_DATA_PATH.'/member_image/'.substr($mb_id,0,2).'/'.$mb_id.'.gif';
             if (is_file($member_img)) {
@@ -3433,7 +3433,7 @@ function get_member_profile_img($mb_id='', $width='', $height='', $alt='profile_
             $src = $no_profile_cache;
         } else {
             // 프로필 이미지가 없을때 기본 이미지
-            // $no_profile_img = (defined('G5_THEME_NO_PROFILE_IMG') && G5_THEME_NO_PROFILE_IMG) ? G5_THEME_NO_PROFILE_IMG : G5_NO_PROFILE_IMG;
+            $no_profile_img = (defined('G5_THEME_NO_PROFILE_IMG') && G5_THEME_NO_PROFILE_IMG) ? G5_THEME_NO_PROFILE_IMG : G5_NO_PROFILE_IMG;
             $class_img = G5_DATA_PATH.'/member_image/'.substr($mb_id,0,2).'/'.$mb_id.'_class.jpg';
             $class_img_url = G5_DATA_URL . '/member_image/'.substr($mb_id,0,2).'/'.$mb_id.'_class.jpg'; 
             if (is_file($class_img)) {
@@ -3443,6 +3443,8 @@ function get_member_profile_img($mb_id='', $width='', $height='', $alt='profile_
                 $no_profile_img = (defined('G5_THEME_NO_PROFILE_IMG') && G5_THEME_NO_PROFILE_IMG) ? G5_THEME_NO_PROFILE_IMG : G5_NO_PROFILE_IMG;
                 $no_profile_cache_url = G5_IMG_URL.'/no_profile.gif';
             }
+            $no_profile_img = (defined('G5_THEME_NO_PROFILE_IMG') && G5_THEME_NO_PROFILE_IMG) ? G5_THEME_NO_PROFILE_IMG : G5_NO_PROFILE_IMG;
+            $no_profile_cache_url = G5_IMG_URL.'/no_profile.gif';
             $tmp = array();
             preg_match( '/src="([^"]*)"/i', $foo, $tmp );
             $no_profile_cache = $src = isset($tmp[1]) ? $tmp[1] :$no_profile_cache_url;
