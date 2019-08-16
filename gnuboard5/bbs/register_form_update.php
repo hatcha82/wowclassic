@@ -412,20 +412,7 @@ if (isset($_FILES['mb_icon']) && is_uploaded_file($_FILES['mb_icon']['tmp_name']
 
 $dest_path = $mb_dir.'/'.$mb_icon_camp_img;
 $default_icon_path =  $mb_1 === 'A' ? "/img/Alliance.png" : "/img/horde.png";
-
-if($mb_id  === 'kakao_8c2e0880'){
-    echo "$default_icon_path and $mb1은 이거";
-}
-
-
 $default_icon_path =  G5_PATH . $default_icon_path;
-
-if($mb_id  === 'kakao_8c2e0880'){
-    echo "$default_icon_path and $mb1은 이거";
-    echo var_dump($_POST);
-    return;
-}
-
 
 @mkdir($mb_dir, G5_DIR_PERMISSION);
 @chmod($mb_dir, G5_DIR_PERMISSION);
