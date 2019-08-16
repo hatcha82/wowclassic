@@ -38,8 +38,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
 
         </tbody>
         </table>
-    
-
+        <?php include_once(G5_BBS_PATH. '/wow_info.php');?>
         <section>
             <h2>인사말</h2>
             <p><?php echo $mb_profile ?></p>

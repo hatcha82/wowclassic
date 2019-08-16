@@ -73,7 +73,7 @@ a.noImage{font-size:0.8em}
 #hd_wrapper {position:relative;margin:0 auto;padding:10px 0;height:115px;zoom:1}
 #hd_wrapper:after {display:block;visibility:hidden;clear:both;content:""}
 
-#logo {position: absolute;left:-245px;top:10px;text-align: center;color:#eee;}
+#logo {position: absolute;left:-200px;top:10px;text-align: center;color:#eee;}
 #logo img{width:150px;margin-top:-10px}
 
 .hd_sch_wr{position:absolute;top:25px;left:50%;width:430px;margin-left:-135px;}
@@ -375,7 +375,7 @@ box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
 .form_01 .frm_label{display:inline-block;width:130px}
 
 .form_01 li ul.camp, .form_01 li ul.class_choose, .form_01 li ul.professional{padding-left:20px}
-.form_01 li ul.camp li, .form_01 li ul.class_choose li, .form_01 li ul.professional li{padding-left:20px;display:inline-flex;line-height: 15px;width:150px;}
+.form_01 li ul.camp li, .form_01 li ul.class_choose li, .form_01 li ul.professional li{padding-left:20px;display:inline-flex;line-height: 15px;width:125px;}
 .form_01 li ul.camp li img,
 .form_01 li ul.class_choose li img,
  .form_01 li ul.professional li img{margin-left:10px;width:20px;border-radius:25px}
@@ -489,3 +489,13 @@ box-sizing: content-box;
 .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 .iframe100 {   display: block;   border: none;   height: 100vh;width:100vw;}
 
+.wow_info_readOnly{color:#eee;background:rgba(17, 17, 17, 0.9);padding:20px;}
+.wow_info_readOnly ul.wow_info{padding:10px;}
+.wow_info_readOnly ul.wow_info li{display:inline-block;line-height: 25px;}
+.wow_info_readOnly ul.wow_info li img{width:25px;margin:0px 10px;border-radius: 25px;}
+.wow_info_readOnly ul.wow_info li ul{padding:10px}
+
+.wow_info_readOnly ul.wow_info li ul.camp li{display:block;width:100%}
+.wow_info_readOnly ul.wow_info li ul.camp li input{margin-top:0px;}
+.wow_info_readOnly ul.wow_info li ul li{display:inline-flex;width:31%;}
+.wow_info_readOnly ul.wow_info li ul li input{margin-top:5px;}

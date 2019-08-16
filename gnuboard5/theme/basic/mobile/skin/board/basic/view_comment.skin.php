@@ -27,7 +27,6 @@ var char_max = parseInt(<?php echo $comment_max ?>); // 최대
         <header>
             <h2><?php echo get_text($list[$i]['wr_name']); ?>님의 댓글<?php if ($cmt_depth) { ?><span class="sound_only">의 댓글</span><?php } ?></h2>
             <span class="comment_profile_img"><?php echo get_member_profile_img($list[$i]['mb_id'], 40, 40); ?></span> <?php echo $list[$i]['name'] ?>
-            
             <?php if ($is_ip_view) { ?>
             <span class="sound_only">아이피</span>
             <span class="bo_vc_hdinfo">(<?php echo $list[$i]['ip']; ?>)</span>
