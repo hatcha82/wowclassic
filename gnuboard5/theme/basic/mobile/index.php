@@ -3,7 +3,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 
 include_once(G5_THEME_MOBILE_PATH.'/head.php');
 ?>
-<div style="margin-top: -12px;">
+<div style="margin-top: -1px;">
 
 
 <!-- 메인화면 최신글 시작 -->
