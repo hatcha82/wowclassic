@@ -411,16 +411,21 @@ if (isset($_FILES['mb_icon']) && is_uploaded_file($_FILES['mb_icon']['tmp_name']
 }
 $dest_path = $mb_dir.'/'.$mb_icon_camp_img;
 $default_icon_path =  $mb_1 === 'A' ? "/img/Alliance.png" : "/img/horde.png";
+
 $default_icon_path =  G5_PATH . $default_icon_path;
+
 @mkdir($mb_dir, G5_DIR_PERMISSION);
 @chmod($mb_dir, G5_DIR_PERMISSION);
 if (is_file($dest_path) === true) {
+    echo $default_icon_path;
+    return;
     // if the destination file already exists, it will NOT be overwritten.        
     @unlink($dest_path);
 }
 if (!copy($default_icon_path, $dest_path)) {
     echo "failed from $default_icon_path to copy $dest_path...\n";
 }
+@chmod($dest_path, G5_FILE_PERMISSION);
 
 
 // 회원 프로필 이미지
@@ -500,6 +505,8 @@ if (is_file($dest_path) === true) {
 if (!copy($default_profile_icon_path, $dest_path)) {
     echo "failed from $default_profile_icon_path to copy $dest_path...\n";
 }
+@chmod($dest_path, G5_FILE_PERMISSION);
+
 // 인증메일 발송
 if ($config['cf_use_email_certify'] && $old_email != $mb_email) {
     $subject = '['.$config['cf_title'].'] 인증확인 메일입니다.';
