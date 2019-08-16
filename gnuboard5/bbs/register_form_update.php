@@ -410,8 +410,8 @@ if (isset($_FILES['mb_icon']) && is_uploaded_file($_FILES['mb_icon']['tmp_name']
     }
 }
 $dest_path = $mb_dir.'/'.$mb_icon_camp_img;
-$default_icon_path =  $mb_1 == 'A' ? "/Alliance.png" : "/horde.png";
-$default_icon_path =  G5_IMG_URL . $default_icon_path;
+$default_icon_path =  $mb_1 === 'A' ? "/img/Alliance.png" : "/img/horde.png";
+$default_icon_path =  G5_PATH . $default_icon_path;
 @mkdir($mb_dir, G5_DIR_PERMISSION);
 @chmod($mb_dir, G5_DIR_PERMISSION);
 if (is_file($dest_path) === true) {
@@ -421,7 +421,6 @@ if (is_file($dest_path) === true) {
 if (!copy($default_icon_path, $dest_path)) {
     echo "failed from $default_icon_path to copy $dest_path...\n";
 }
-    
 
 
 // 회원 프로필 이미지
@@ -493,7 +492,7 @@ if( !is_dir($mb_dir) ){
 }
 $mb_icon_class_img = $mb_id.'_class.jpg';
 $dest_path = $mb_dir.'/'.$mb_icon_class_img;
-$default_profile_icon_path = G5_URL . get_icon_by_categoryName($mb_2);
+$default_profile_icon_path = G5_PATH . get_icon_by_categoryName($mb_2);
 if (is_file($dest_path) === true) {
     // if the destination file already exists, it will NOT be overwritten.        
     @unlink($dest_path);
