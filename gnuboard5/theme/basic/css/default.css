@@ -73,7 +73,7 @@ a.noImage{font-size:0.8em}
 #hd_wrapper {position:relative;margin:0 auto;padding:10px 0;height:115px;zoom:1}
 #hd_wrapper:after {display:block;visibility:hidden;clear:both;content:""}
 
-#logo {position: absolute;left:-200px;top:10px;text-align: center;color:#eee;}
+#logo {position: absolute;left:-245px;top:10px;text-align: center;color:#eee;}
 #logo img{width:150px;margin-top:-10px}
 
 .hd_sch_wr{position:absolute;top:25px;left:50%;width:430px;margin-left:-135px;}
