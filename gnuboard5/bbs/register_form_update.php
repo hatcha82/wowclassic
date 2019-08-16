@@ -502,8 +502,7 @@ if (is_file($dest_path) === true) {
     @unlink($dest_path);
 }
 if (!copy($default_profile_icon_path, $dest_path)) {
-    echo "failed from $default_profile_icon_path to copy $dest_path...\n";
-    return;
+    echo "failed from $default_profile_icon_path to copy $dest_path...\n";    
 }
 @chmod($dest_path, G5_FILE_PERMISSION);
 
