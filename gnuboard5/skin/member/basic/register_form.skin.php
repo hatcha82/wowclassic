@@ -182,7 +182,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
                     <li>
                     <input type="radio" name="mb_2" value="<?php echo $class[$i] ?>" <?php echo get_text($member['mb_2']) == $class[$i] ? 'checked' : '' ?>>    
                     <img src="<?php echo get_icon_by_categoryName($class[$i])?>"> <?php echo $class[$i];?>
-                    <li>
+                    </li>
                     <?php } ?>
                 </ul>
             </li>
@@ -196,12 +196,11 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
                     <?php $professioanl_array = explode('|', $member['mb_3']); ?> 
                     <input type="checkbox" name="mb_3[]" value="<?php echo $professional[$i] ?>" <?php if(in_array($professional[$i], $professioanl_array)) echo 'checked'; ?>>    
                     <img src="<?php echo get_icon_by_categoryName($professional[$i])?>"> <?php echo $professional[$i];?>
-                    <li>
+                    </li>
                     <?php } ?>
                 </ul>
             </li>
-        <ul>
-
+        </ul> <!--  <ul class="wow_info">  end -->
     </div>
     
     <div class="tbl_frm01 tbl_wrap">
