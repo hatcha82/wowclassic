@@ -480,6 +480,21 @@ if( $config['cf_member_img_size'] && $config['cf_member_img_width'] && $config['
     }
 }
 
+//유저 선택 클라스 이미지 저장
+$mb_tmp_dir = G5_DATA_PATH.'/member_image/';
+$mb_dir = $mb_tmp_dir.substr($mb_id,0,2);
+
+if( !is_dir($mb_dir) ){
+    @mkdir($mb_dir, G5_DIR_PERMISSION);
+    @chmod($mb_dir, G5_DIR_PERMISSION);
+}
+$mb_icon_class_img = $mb_id.'_class.jpg';
+$dest_path = $mb_dir.'/'.$mb_icon_class_img;
+$default_profile_icon_path = G5_URL . get_icon_by_categoryName($mb_2);
+
+if (!copy($default_profile_icon_path, $dest_path)) {
+    echo "failed from $default_profile_icon_path to copy $dest_path...\n";
+}
 // 인증메일 발송
 if ($config['cf_use_email_certify'] && $old_email != $mb_email) {
     $subject = '['.$config['cf_title'].'] 인증확인 메일입니다.';

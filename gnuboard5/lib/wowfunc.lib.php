@@ -9,15 +9,15 @@ function get_wowItem($contents)
 function get_icon_by_categoryName($name){   
     $url = "";
     switch ($name) {
-    case "전사"	    :   $url= "https://wow.zamimg.com/images/wow/icons/tiny/class_warrior.gif";break;
-    case "도적"	    :   $url=  "https://wow.zamimg.com/images/wow/icons/tiny/class_rogue.gif";break;
-    case "마법사"   :	$url=  "https://wow.zamimg.com/images/wow/icons/tiny/class_mage.gif";break;
-    case "흑마법사" :   $url=  "https://wow.zamimg.com/images/wow/icons/tiny/class_warlock.gif";break;
-    case "사제"     :	$url=  "https://wow.zamimg.com/images/wow/icons/tiny/class_priest.gif";break;
-    case "성기사"   :	$url=  "https://wow.zamimg.com/images/wow/icons/tiny/class_paladin.gif";break;
-    case "주술사"   :	$url=  "https://wow.zamimg.com/images/wow/icons/tiny/class_shaman.gif";break;
-    case "드루이드" :	$url=  "https://wow.zamimg.com/images/wow/icons/tiny/class_druid.gif";break;
-    case "사냥꾼"   :	$url=  "https://wow.zamimg.com/images/wow/icons/tiny/class_hunter.gif";break;
+    case "전사"	    :   $url= "/img/WOW/class/classicon_warrior.jpg";break;
+    case "도적"	    :   $url=  "/img/WOW/class/classicon_rogue.jpg";break;
+    case "마법사"   :	$url=  "/img/WOW/class/classicon_mage.jpg";break;
+    case "흑마법사" :   $url=  "/img/WOW/class/classicon_warlock.jpg";break;
+    case "사제"     :	$url=  "/img/WOW/class/classicon_priest.jpg";break;
+    case "성기사"   :	$url=  "/img/WOW/class/classicon_paladin.jpg";break;
+    case "주술사"   :	$url=  "/img/WOW/class/classicon_shaman.jpg";break;
+    case "드루이드" :	$url=  "/img/WOW/class/classicon_druid.jpg";break;
+    case "사냥꾼"   :	$url=  "/img/WOW/class/classicon_hunter.jpg";break;
 
     case "가죽세공"	:   $url= "/img/WOW/profession/skinning.png";break;
     case "기계공학"	:   $url=  "/img/WOW/profession/engineering.png";break;
