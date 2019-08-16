@@ -14,7 +14,12 @@ add_stylesheet('<link rel="stylesheet" href="'.$outlogin_skin_url.'/style.css">'
             
             <a href="<?php echo G5_BBS_URL ?>/member_confirm.php?url=register_form.php" id="ol_after_info" title="정보수정"><i class="fa fa-cog" aria-hidden="true"></i><span class="sound_only">정보수정</span></a>
         </span>
-        <strong><img src="<?php echo G5_IMG_URL . ($member['mb_1'] === 'A' ? '/Alliance.png' : '/horde.png' )  ?>"/> <?php echo $nick ?>님</strong>
+        <strong>
+            <?php if(isset($member['mb_1'])) {?>
+            <img src="<?php echo G5_IMG_URL . ($member['mb_1'] === 'A' ? '/Alliance.png' : '/horde.png' )  ?>"/>
+            <?php } ?>
+            <?php echo $nick ?>님
+        </strong>
         <a href="<?php echo G5_BBS_URL ?>/logout.php" id="ol_after_logout" class="btn_b04">로그아웃</a>
         <?php if ($is_admin == 'super' || $is_auth) {  ?><a href="<?php echo G5_ADMIN_URL ?>" class="btn_admin btn_04">관리자</a><?php }  ?>
     </header>
