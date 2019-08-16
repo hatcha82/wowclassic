@@ -14,7 +14,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$outlogin_skin_url.'/style.css">'
             <?php echo get_member_profile_img($member['mb_id']); ?>
             <a href="<?php echo G5_BBS_URL ?>/member_confirm.php?url=register_form.php" id="ol_after_info" title="정보수정">정보수정</a>
         </span>
-        <strong><?php echo $nick ?>님</strong>
+        <strong><img src="<?php echo G5_IMG_URL . ($member['mb_1'] === 'A' ? '/Alliance.png' : '/horde.png' )  ?>"/><?php echo $nick ?>님</strong>
     </div>
 
     <div id="ol_after_btn">
