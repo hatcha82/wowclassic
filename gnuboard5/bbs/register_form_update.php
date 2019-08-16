@@ -417,8 +417,6 @@ $default_icon_path =  G5_PATH . $default_icon_path;
 @mkdir($mb_dir, G5_DIR_PERMISSION);
 @chmod($mb_dir, G5_DIR_PERMISSION);
 if (is_file($dest_path) === true) {
-    echo $default_icon_path;
-    return;
     // if the destination file already exists, it will NOT be overwritten.        
     @unlink($dest_path);
 }
