@@ -125,6 +125,10 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
     <div class="write_div" style="float:left;margin-top:3px;z-index:2">
         <span class="sound_only">옵션</span>
         <?php echo $option ?>
+        <div style="margin-top:10px;"> 
+        <a style="color:#eee;background:#1d9d74;padding:1px 5px;" href="javascript:window.open('https://ko.classic.wowhead.com/','Wow Head','width=300,height=500')">와우 헤드 검색창</a>
+        아이템, 스펠, 퀘스트, NPC를 검색후 검색결과에서 마우스 오른쪽 클릭하여 링크주소를 복사하시고 에디터에 입력하시면 와우툴팁으로 보줍니다.
+        </div>
     </div>
     <?php } ?>
     <div class="write_div">
