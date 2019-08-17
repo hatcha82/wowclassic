@@ -51,10 +51,8 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
     </div>
     <div id="hd_wrapper">
         
-       
-    
         <div class="hd_sch_wr">
-      
+        
         <div id="logo">
             <a href="<?php echo G5_URL ?>"><img src="<?php echo G5_IMG_URL ?>/logo.png" alt="<?php echo $config['cf_title']; ?>" ></a>
             <br>
@@ -243,7 +241,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 
         /* 와우 오픈 관련 */
       
-       
+    
      
        
         function openClassicRelese(){
@@ -263,7 +261,14 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
         setInterval(openClassicRelese,1000)
         youtubeLinktoPlayer();
         
-
+        $('.owl-carousel').owlCarousel({
+            items:1,
+            loop:true,
+            autoplay:true,
+            autoWidth:true,
+            autoplayTimeout:5000,
+            autoplayHoverPause:true
+        })
         $(".gnb_menu_btn").click(function(){
             $("#gnb_all").show();
         });

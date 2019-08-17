@@ -1,0 +1,20 @@
+@charset "utf-8";
+/* 새글 스킨 (latest) */
+img.clan_logo{ width:100%;height:100%;padding:3px}
+.wow_banner {position:relative;padding:15px 20px;border-bottom:1px solid #444;margin-top:10px;}
+.wow_banner li{width: 200px;height: 200px;overflow: hidden;position: relative;}
+
+.wow_banner h1.desc{position: absolute;bottom:0;width:100%;background: rgba(17,17,17,0.6);border-top:#444;color:#eee;padding:10px 20px;}
+.wow_banner li a{display:inline}
+.wow_banner li a:hover img{padding:0px}
+.wow_banner li a:hover h1.desc{}
+.wow_banner li .lock_icon{display: inline-block;line-height: 14px;width: 16px;font-size: 0.833em;color: #4f818c;background: #cbe3e8;text-align: center;border-radius: 2px;font-size: 12px;border:1px solid #a2c6ce;vertical-align:top}
+.wow_banner li .new_icon{display:inline-block;line-height:16px;width:16px;font-size:0.833em;color:#ffff00;background:#6db142;text-align:center;margin-right:3px;border-radius:2px;vertical-align:top}
+.wow_banner .cnt_cmt{background:#5c85c1;color:#fff; font-size:11px;height:16px;line-height:16px;padding:0 5px;border-radius:3px;white-space: nowrap;margin-left:5px;
+-webkit-box-shadow: inset 0 2px 5px  rgba(255,255,255,0.4);
+-moz-box-shadow: inset 0 2px 5px  rgba(255,255,255,0.4);
+box-shadow: inset 0 2px 5px  rgba(255,255,255,0.4)}
+
+.wow_banner h2{color:#eee;line-height: 25px}
+.wow_banner .bx-next{display:none;position:absolute;top:0px;right:10px;;width:26px;height:26px;line-height:24px;text-align:center;background:#fff;border:1px solid #d1d1d1;margin-top:-12px}
+.wow_banner .bx-prev{display:none;position:absolute;top:0px;right:35px;width:26px;height:26px;line-height:24px;text-align:center;background:#fff;border:1px solid #d1d1d1;margin-top:-12px}
