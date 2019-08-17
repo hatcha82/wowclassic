@@ -51,7 +51,6 @@ if($config['cf_add_meta'])
 <title><?php echo $g5_head_title; ?></title>
 
 <link rel="stylesheet" href="<?php echo G5_THEME_CSS_URL; ?>/<?php echo G5_IS_MOBILE ? 'mobile' : 'default'; ?>.css?ver=<?php echo G5_CSS_VER; ?>">
-<link rel="stylesheet" href="<?php echo G5_PLUGIN_URL; ?>/OwlCarousel2/dist/assets/owl.carousel.min.css" />
 
 <!--[if lte IE 8]>
 <script src="<?php echo G5_JS_URL ?>/html5.js"></script>
@@ -70,11 +69,9 @@ var g5_cookie_domain = "<?php echo G5_COOKIE_DOMAIN ?>";
 </script>
 <script src="<?php echo G5_JS_URL ?>/jquery-1.8.3.min.js"></script>
 <script src="<?php echo G5_JS_URL ?>/jquery.menu.js?ver=<?php echo G5_JS_VER; ?>"></script>
-
 <script src="<?php echo G5_JS_URL ?>/common.js?ver=<?php echo G5_JS_VER; ?>"></script>
 <script src="<?php echo G5_JS_URL ?>/wrest.js?ver=<?php echo G5_JS_VER; ?>"></script>
 <script src="<?php echo G5_JS_URL ?>/placeholders.min.js"></script>
-<script src="<?php echo G5_PLUGIN_URL; ?>/OwlCarousel2/dist/owl.carousel.min.js" ></script>
 <link rel="stylesheet" href="<?php echo G5_JS_URL ?>/font-awesome/css/font-awesome.min.css">
 <link rel="shortcut icon" href="/img/logo-wow.ico" type="image/x-icon" />
 <?php

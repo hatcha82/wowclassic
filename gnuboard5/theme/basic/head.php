@@ -261,14 +261,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
         setInterval(openClassicRelese,1000)
         youtubeLinktoPlayer();
         
-        $('.owl-carousel').owlCarousel({
-            items:1,
-            loop:true,
-            autoplay:true,
-            autoWidth:true,
-            autoplayTimeout:5000,
-            autoplayHoverPause:true
-        })
+        
         $(".gnb_menu_btn").click(function(){
             $("#gnb_all").show();
         });
