@@ -73,7 +73,9 @@ function wow_banner($skin_dir='', $bo_table, $rows=10, $subject_len=40, $cache_t
                 join    g5_board_file file
                 on 		file.bo_table = 'finder'
                 and 	file.wr_id =  finder.wr_id
-                where bf_no = 0
+                where   bf_no = 0
+                order 
+                by      finder.wr_id desc
                 limit 30
         ";
         $result = sql_query($sql);
