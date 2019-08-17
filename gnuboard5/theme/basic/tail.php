@@ -16,6 +16,9 @@ if (G5_IS_MOBILE) {
         // 테마의 스킨을 사용하려면 theme/basic 과 같이 지정
         echo latest('theme/notice', 'notice', 4, 13);
         ?>
+       
+
+
         <?php echo outlogin('theme/basic'); // 외부 로그인, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정 ?>
         <?php
             $sql = "select 	*
@@ -130,6 +133,9 @@ if ($config['cf_analytics']) {
 $(function() {
     // 폰트 리사이즈 쿠키있으면 실행
     font_resize("container", get_cookie("ck_font_resize_rmv_class"), get_cookie("ck_font_resize_add_class"));
+    setInterval(function(){
+        $("#aside > div.notice > div > div.bx-controls.bx-has-controls-direction > div > a.bx-next").click()
+    },10000)
 });
 </script>
 
