@@ -22,7 +22,7 @@ add_javascript('<script src="'.G5_JS_URL.'/jquery.bxslider.js"></script>', 10);
     <?php for ($i=0; $i<count($list); $i++) {  ?>
         <li>
             <a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=finder&wr_id=<?php echo $list[$i]['wr_id']?>">
-            <img class="clan_logo" src="<?php echo G5_BBS_URL ?>/data/file/finder/<?php echo  $list[$i]['bf_file'] ?>"/>
+            <img class="clan_logo" src="http://www.classicwow.co.kr/data/file/finder/<?php echo  $list[$i]['bf_file'] ?>"/>
             <h1 class="desc"><?php echo $list[$i]['wr_subject']?></h1>
             </a>
         </li>
