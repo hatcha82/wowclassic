@@ -104,6 +104,10 @@ var char_max = parseInt(<?php echo $comment_max ?>); // 최대
 
     <span class="sound_only">내용</span>
     <?php if ($comment_min || $comment_max) { ?><strong id="char_cnt"><span id="char_count"></span>글자</strong><?php } ?>
+    <div style="margin-top:10px;"> 
+        <a style="color:#eee;background:#1d9d74;padding:1px 5px;" href="javascript:window.open('https://ko.classic.wowhead.com/','Wow Head','width=300,height=500')">와우 헤드 검색창</a>
+        아이템, 스펠, 퀘스트, NPC를 검색후 검색결과에서 마우스 오른쪽 클릭하여 링크주소를 복사하시고 에디터에 입력하시면 와우툴팁으로 보줍니다.
+        </div>
     <textarea id="wr_content" name="wr_content" maxlength="10000" required class="required" title="내용" placeholder="댓글내용을 입력해주세요" 
     <?php if ($comment_min || $comment_max) { ?>onkeyup="check_byte('wr_content', 'char_count');"<?php } ?>><?php echo $c_wr_content; ?></textarea>
     <?php if ($comment_min || $comment_max) { ?><script> check_byte('wr_content', 'char_count'); </script><?php } ?>
