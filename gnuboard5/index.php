@@ -60,7 +60,10 @@ include_once(G5_PATH.'/head.php');
     echo latest('pic_basic', 'gallery', 5, 23);
     ?>
     <!-- } 사진 최신글2 끝 -->
+    
 </div>
+  
+
 
 <?php
 include_once(G5_PATH.'/tail.php');

@@ -303,7 +303,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                     if($k == 0)
                         echo '<ul>'.PHP_EOL;
                 ?>
-                    <li>
+                    <li class="depth2">
                         <a href="<?php echo $row2['me_link']; ?>" target="_<?php echo $row2['me_target']; ?>">
                         <i class="fa fa-caret-right" aria-hidden="true"></i> 
                         <?php if (get_icon_by_categoryName($row2['me_name'])) { ?>
@@ -317,7 +317,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                 }   //end foreach $row2
 
                 if($k > 0)
-                    echo '</ul>'.PHP_EOL;
+                    echo '</ul><div style="clear:both"/>'.PHP_EOL;
                 ?>
             </li>
             <?php
@@ -328,6 +328,9 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                 <li class="gnb_empty">메뉴 준비 중입니다.<?php if ($is_admin) { ?> <br><a href="<?php echo G5_ADMIN_URL; ?>/menu_list.php">관리자모드 &gt; 환경설정 &gt; 메뉴설정</a>에서 설정하실 수 있습니다.<?php } ?></li>
             <?php } ?>
         </ul>
+        <div style="width:160px;margin:10px auto;">
+        <script type="text/javascript" src="//ad.ilikesponsorad.com/ad/ad.js?adImpMgrCode=60719&width=160&height=600"></script>
+        </div>
     </div>
     <div id="container">
         <?php if (!defined("_INDEX_")) { ?>
