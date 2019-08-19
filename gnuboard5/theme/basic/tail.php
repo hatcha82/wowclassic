@@ -92,8 +92,8 @@ if (G5_IS_MOBILE) {
 </div>
 <!-- } 콘텐츠 끝 -->
 <div class="container_wr">
-<div style="width: 970px;margin: 10px auto">
-    <<script type="text/javascript" src="//ad.ilikesponsorad.com/ad/ad.js?adImpMgrCode=60720&width=970&height=90"></script>
+<div style="width: 970px;margin: 10px auto;margin-left:420px">
+    <script type="text/javascript" src="//ad.ilikesponsorad.com/ad/ad.js?adImpMgrCode=60720&width=970&height=90"></script>
 </div>
 </div>
 
