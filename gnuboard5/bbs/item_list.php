@@ -39,10 +39,10 @@ $stx = trim($stx);
 //검색인지 아닌지 구분하는 변수 초기화
 $is_search_bbs = false;
 
-if ( $sca || $stx || $stx === '0') {     //검색이면
+if ($sca || $stx || $stx === '0') {     //검색이면
     $is_search_bbs = true;      //검색구분변수 true 지정
     $sql_search = get_sql_search($sca, $sfl, $stx, $sop);
-    
+
     // 가장 작은 번호를 얻어서 변수에 저장 (하단의 페이징에서 사용)
     $sql = " select MIN(wr_num) as min_wr_num from {$write_table} ";
     $row = sql_fetch($sql);
@@ -51,8 +51,6 @@ if ( $sca || $stx || $stx === '0') {     //검색이면
     if (!$spt) $spt = $min_spt;
 
     $sql_search .= " and (wr_num between {$spt} and ({$spt} + {$config['cf_search_part']})) ";
-
-
 
     // 원글만 얻는다. (코멘트의 내용도 검색하기 위함)
     // 라엘님 제안 코드로 대체 http://sir.kr/g5_bug/2922
@@ -180,34 +178,6 @@ if ($is_search_bbs) {
                 order
                 by   wow_db.quest_template.QuestLevel asc  
                 limit {$from_record}, $page_rows ";                
-    }else if($bo_table === 'item'){ // quest 게시판일 경우
-        
-        if(isset($_GET['class']) && $_GET['class'] !== ''){
-            $class = $_GET['class'];
-            $sql_search .= " and item_template.class = $class";
-        }
-        if(isset($_GET['subclass']) && $_GET['subclass'] !== ''){
-            $subclass = $_GET['subclass'];
-            $sql_search .= " and item_template.subclass = $subclass";
-        }
-        if(isset($_GET['RequiredLevel']) && $_GET['RequiredLevel'] !== ''){
-            $RequiredLevel = $_GET['RequiredLevel'];
-            $RequiredLevel = str_replace('-' , ' and ', $RequiredLevel);
-            $sql_search .= " and item_template.RequiredLevel between $RequiredLevel";
-        }
-        
-
-        
-        $sql = " select distinct wr_parent from {$write_table} 
-                 join wow_db.item_template
-                 on  {$write_table}.wr_id = wow_db.item_template.entry     
-                where {$sql_search}
-                order
-                by   wow_db.item_template.ItemLevel asc  
-                limit {$from_record}, $page_rows ";     
-                echo $sql;
-                return;  
-                         
     }else{
         $sql = " select distinct wr_parent from {$write_table} where {$sql_search} {$sql_order} limit {$from_record}, $page_rows ";
     }
@@ -220,28 +190,6 @@ if ($is_search_bbs) {
                  join wow_db.quest_template
                  on  {$write_table}.wr_id = wow_db.quest_template.entry     
                  where wr_is_comment = 0 ";                 
-    }else if($bo_table === 'item'){ // quest 게시판일 경우
-        if(isset($_GET['class']) && $_GET['class'] !== ''){
-            $class = $_GET['class'];
-            $sql_search .= " and item_template.class = $class";
-        }
-        if(isset($_GET['subclass']) && $_GET['subclass'] !== ''){
-            $subclass = $_GET['subclass'];
-            $sql_search .= " and item_template.subclass = $subclass";
-        }
-        if(isset($_GET['RequiredLevel']) && $_GET['RequiredLevel'] !== ''){
-            $RequiredLevel = $_GET['RequiredLevel'];
-            $RequiredLevel = str_replace('-' , ' and ', $RequiredLevel);
-            $sql_search .= " and item_template.RequiredLevel between $RequiredLevel";
-        }
-        
-        $sql = " select * 
-                 from {$write_table}
-                 join wow_db.item_template
-                 on  {$write_table}.wr_id = wow_db.item_template.entry     
-                 where wr_is_comment = 0 ";   
-                 $sql .= $sql_search;
-                 
     }else{
         $sql = " select * from {$write_table} where wr_is_comment = 0 ";
     }
