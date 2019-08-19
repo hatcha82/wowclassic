@@ -44,7 +44,8 @@ if ($qa_subject == '') {
 
 $qa_content = '';
 if (isset($_POST['qa_content'])) {
-    $qa_content = substr(trim($_POST['qa_content']),0,65536);
+    $qa_content = trim($_POST['qa_content']);
+    //$qa_content = substr(trim($_POST['wr_content']),0,65536);
     $qa_content = preg_replace("#[\\\]+$#", "", $qa_content);
 }
 if ($qa_content == '') {

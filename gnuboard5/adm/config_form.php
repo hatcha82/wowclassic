@@ -72,7 +72,7 @@ if(!sql_query(" DESC {$g5['autosave_table']} ", false)) {
                   `mb_id` varchar(20) NOT NULL,
                   `as_uid` bigint(20) unsigned NOT NULL,
                   `as_subject` varchar(255) NOT NULL,
-                  `as_content` text NOT NULL,
+                  `as_content` mediumtext NOT NULL, 
                   `as_datetime` datetime NOT NULL,
                   PRIMARY KEY (`as_id`),
                   UNIQUE KEY `as_uid` (`as_uid`),
