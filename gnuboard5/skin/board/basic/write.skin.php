@@ -70,10 +70,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
             <?php echo $category_option ?>
         </select>
         <?php } ?>
-        <select name="wr_1" id="wr_1" required>
-            <option value="DARK">배경색 : 어두움</option>    
-            <option value="WHITE">배경색 : 밝음</option>
-        </select>
+       
     </div>
     
 
@@ -130,6 +127,11 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
     <?php if ($option) { ?>
     <div class="write_div" style="float:left;margin-top:3px;z-index:2">
         <span class="sound_only">옵션</span>
+        <ul id="bgSelect">
+            <li>배경색</li>
+            <li><input type="radio" name="wr_1" value="DARK" checked >어두움</li>
+            <li><input type="radio" name="wr_1" value="WHITE">밝음</li>
+        </ul>
         <?php echo $option ?>
         <div style="margin-top:10px;"> 
         <a style="color:#eee;background:#1d9d74;padding:1px 5px;" href="javascript:window.open('https://ko.classic.wowhead.com/','Wow Head','width=300,height=500')">와우 헤드 검색창</a>
@@ -213,12 +215,12 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 
 
     $( document ).ready(function() {
-        $("#wr_1").change( function(e){
-            var value = $(this).val();
+
+        $('input[type=radio][name=wr_1]').change(function() {
             var style = {background:'#242424',color: '#bbb'}
+            var value = $(this).val();
             if(value == 'DARK'){
                 style = {background:'#242424',color: '#bbb'}
-                
             }else{
                 style= {background:'#fff',color: '#333'};
             }

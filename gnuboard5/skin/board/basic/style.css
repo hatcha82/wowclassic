@@ -243,6 +243,7 @@ box-shadow: inset 0 2px 5px rgb(33, 135, 202);
 .bo_v_link_cnt {position:absolute;top:5px;right:10px;color:#888;font-size:0.92em}
 
 #bo_v_top {zoom:1}
+#bo_v_top select{border:1px solid #444;background:rgba(17, 17, 17, 0.9);color:#eee;height:35px;border-radius:3px}
 #bo_v_top:after {display:block;visibility:hidden;clear:both;content:""}
 #bo_v_top h2 {position:absolute;font-size:0;line-height:0;overflow:hidden}
 #bo_v_top ul {padding:0;list-style:none;word-break:break-all}
@@ -257,6 +258,7 @@ box-shadow: inset 0 2px 5px rgb(33, 135, 202);
 
 .bo_v_left {margin:20px 0;float:left}
 .bo_v_left li {float:left;margin-right:5px}
+
 
 .bo_v_nb {margin:20px 0;position:relative;clear:both;text-align:left;border-bottom:1px solid #ddd}
 .bo_v_nb:after {display:block;visibility:hidden;clear:both;content:""}
@@ -364,6 +366,8 @@ box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);}
 
 
 /*글쓰기*/
+#bgSelect{display: inline}
+#bgSelect  li{display: inline-block}
 #bo_w .write_div{margin:10px 0;position:relative;color:#eee;}
 #bo_w .bo_w_info:after {display:block;visibility:hidden;clear:both;content:""}
 #bo_w .bo_w_info .frm_input{float:left;width:33%}
