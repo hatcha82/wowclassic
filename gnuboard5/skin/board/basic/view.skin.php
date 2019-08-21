@@ -43,11 +43,13 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 
         <ul class="bo_v_left">
         
-        <ul id="bgSelect" style="line-height:35px;">
-            <li>배경색</li>
-            <li><input type="radio" name="wr_1" value="DARK"  <?php if ( isset($view['wr_1'])  && $view['wr_1'] === "DARK" ) echo "checked"?> >어두움</li>
-            <li><input type="radio" name="wr_1" value="WHITE" <?php if ( isset($view['wr_1'])  && $view['wr_1'] === "WHITE" ) echo "checked"?> >밝음</li>
-        </ul>
+            <li>
+                <ul id="bgSelect" style="line-height:35px;">
+                    <li>배경색</li>
+                    <li><input type="radio" name="wr_1" value="DARK"  <?php if ( isset($view['wr_1'])  && $view['wr_1'] === "DARK" ) echo "checked"?> >어두움</li>
+                    <li><input type="radio" name="wr_1" value="WHITE" <?php if ( isset($view['wr_1'])  && $view['wr_1'] === "WHITE" ) echo "checked"?> >밝음</li>
+                </ul>
+            </li>
             <?php if ($update_href) { ?><li><a href="<?php echo $update_href ?>" class="btn_b01 btn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 수정</a></li><?php } ?>
             <?php if ($delete_href) { ?><li><a href="<?php echo $delete_href ?>" class="btn_b01 btn" onclick="del(this.href); return false;"><i class="fa fa-trash-o" aria-hidden="true"></i> 삭제</a></li><?php } ?>
             <?php if ($copy_href) { ?><li><a href="<?php echo $copy_href ?>" class="btn_admin btn" onclick="board_move(this.href); return false;"><i class="fa fa-files-o" aria-hidden="true"></i> 복사</a></li><?php } ?>

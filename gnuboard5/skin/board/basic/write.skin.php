@@ -129,8 +129,10 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
         <span class="sound_only">옵션</span>
         <ul id="bgSelect">
             <li>배경색</li>
-            <li><input type="radio" name="wr_1" value="DARK" checked >어두움</li>
-            <li><input type="radio" name="wr_1" value="WHITE">밝음</li>
+
+            
+            <li><input type="radio" name="wr_1" value="DARK" <?php if ( isset($write['wr_1'])  && $write['wr_1'] === "DARK" ) echo "checked"?>  >어두움</li>
+            <li><input type="radio" name="wr_1" value="WHITE" <?php if ( isset($write['wr_1'])  && $write['wr_1'] === "WHITE" ) echo "checked"?> >밝음</li>
         </ul>
         <?php echo $option ?>
         <div style="margin-top:10px;"> 
@@ -215,7 +217,12 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 
 
     $( document ).ready(function() {
-
+        $("#fwrite iframe").load(function(){
+            
+            $("#fwrite iframe").contents().find('body').find('#se2_iframe').load(function(){
+                $('input[type=radio][name=wr_1]').change()
+            })
+        })
         $('input[type=radio][name=wr_1]').change(function() {
             var style = {background:'#242424',color: '#bbb'}
             var value = $(this).val();
