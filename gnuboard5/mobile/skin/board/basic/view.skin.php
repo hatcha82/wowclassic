@@ -12,8 +12,8 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
     <div class="btn_top top"> 
         <ul id="bgSelect" style="line-height:35px;">
               <li>
-                  <input id="dark" type="radio" name="wr_1" value="DARK"  <?php if ( isset($view['wr_1'])  && $view['wr_1'] === "DARK" ) echo "checked"?> >
-                  <label for="dark">어두움</label>
+                    <input id="dark" type="radio" name="wr_1" value="DARK"  <?php if ( isset($view['wr_1'])  || $view['wr_1'] === "DARK" ) echo "checked"?> >
+                    <label for="dark">어두움</label>
               </li>
               <li>
                   <input id="white"  type="radio" name="wr_1" value="WHITE" <?php if ( isset($view['wr_1'])  && $view['wr_1'] === "WHITE" ) echo "checked"?> >

@@ -10,7 +10,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
     <form action="./preview.php?bo_table=<?php echo $bo_table ?>" method="post" name="previewform">
     <input type="hidden" name="wr_subject" value="">
     <input type="hidden" name="wr_content" value="">
-
+    <input type="hidden" name="wr_1" value="">
     <input type="submit" id="previewSubmit" name="subpopup" value="Submit in Popup" style="display:none" onclick="preview_submit()">
 </form>
     <!-- 게시물 작성/수정 시작 { -->
@@ -129,8 +129,14 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
         <span class="sound_only">옵션</span>
         <ul id="bgSelect">
             <li>배경색</li>
-            <li><input type="radio" name="wr_1" value="DARK" <?php if ( isset($write['wr_1'])  && $write['wr_1'] === "DARK" ) echo "checked"?>  >어두움</li>
-            <li><input type="radio" name="wr_1" value="WHITE" <?php if ( isset($write['wr_1'])  && $write['wr_1'] === "WHITE" ) echo "checked"?> >밝음</li>
+            <li>
+                <input id="dark" type="radio" name="wr_1" value="DARK"  <?php if ( isset($write['wr_1'])  || $write['wr_1'] === "DARK" ) echo "checked"?> >
+                <label for="dark">어두움</label>
+            </li>
+            <li>
+                <input id="white"  type="radio" name="wr_1" value="WHITE" <?php if ( isset($write['wr_1'])  && $write['wr_1'] === "WHITE" ) echo "checked"?> >
+                <label for="white">밝음</label>
+            </li>
         </ul>
         <?php echo $option ?>
         <div style="margin-top:10px;"> 
@@ -248,6 +254,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
     {
         <?php echo $editor_js; // 에디터 사용시 자바스크립트에서 내용을 폼필드로 넣어주며 내용이 입력되었는지 검사함   ?>       
         document.previewform.wr_subject.value =  document.fwrite.wr_subject.value
+        document.previewform.wr_1.value =  document.fwrite.wr_1.value
         document.previewform.wr_content.value =  document.getElementById("wr_content").value;
         document.previewform.target='POPUPW'; POPUPW = window.open('about:blank','POPUPW','width=920,height=800');
     }

@@ -44,8 +44,14 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
             <li>
                 <ul id="bgSelect" style="line-height:35px;">
                     <li>배경색</li>
-                    <li><input type="radio" name="wr_1" value="DARK"  <?php if ( isset($view['wr_1'])  && $view['wr_1'] === "DARK" ) echo "checked"?> >어두움</li>
-                    <li><input type="radio" name="wr_1" value="WHITE" <?php if ( isset($view['wr_1'])  && $view['wr_1'] === "WHITE" ) echo "checked"?> >밝음</li>
+                    <li>
+                        <input id="dark" type="radio" name="wr_1" value="DARK"  <?php if ( !isset($view['wr_1'])  || $view['wr_1'] === "DARK" ) echo "checked"?> >
+                        <label for="dark">어두움</label>
+                    </li>
+                    <li>
+                        <input id="white"  type="radio" name="wr_1" value="WHITE" <?php if ( isset($view['wr_1'])  && $view['wr_1'] === "WHITE" ) echo "checked"?> >
+                        <label for="white">밝음</label>
+                    </li>
                 </ul>
             </li>
             <?php if ($update_href) { ?><li><a href="<?php echo $update_href ?>" class="btn_b01 btn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 수정</a></li><?php } ?>

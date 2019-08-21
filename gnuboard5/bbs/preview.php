@@ -159,6 +159,7 @@ include_once(G5_LIB_PATH.'/connect.lib.php');
 include_once(G5_LIB_PATH.'/popular.lib.php');
 
 $view = get_view( $_POST, $board, $board_skin_path);
+$view['wr_1'] = $_POST['wr_1'];
 $view['wr_subject'] = $_POST['wr_subject'];
 $view['content'] = stripslashes($_POST['wr_content']);
 

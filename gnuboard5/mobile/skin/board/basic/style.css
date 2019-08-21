@@ -186,9 +186,9 @@ box-shadow: 0 0 8px rgba(65,98,255,0.8);}
 .bo_v_nb .bo_v_next{;position:absolute;top:0;right:0;}
 .bo_v_nb .bo_v_prev{;position:absolute;top:0;left:0;}
 
-#bo_v_atc {min-height:200px}
-#bo_v_atc.dark {padding:10px;}
-#bo_v_atc.white {background:#fff;color:#333;padding:10px;border-radius:7px;}
+#bo_v_atc {min-height:200px;padding:10px;}
+#bo_v_atc.dark {}
+#bo_v_atc.white {background:#fff;color:#333;border-radius:7px;}
 #bo_v_atc_title {margin:0;padding:0;height:0;overflow:hidden}
 
 #bo_v_img {margin:0 0 10px;width:100%;overflow:hidden;zoom:1}

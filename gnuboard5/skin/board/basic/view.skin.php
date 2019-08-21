@@ -46,11 +46,18 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
             <li>
                 <ul id="bgSelect" style="line-height:35px;">
                     <li>배경색</li>
-                    <li><input type="radio" name="wr_1" value="DARK"  <?php if ( isset($view['wr_1'])  && $view['wr_1'] === "DARK" ) echo "checked"?> >어두움</li>
-                    <li><input type="radio" name="wr_1" value="WHITE" <?php if ( isset($view['wr_1'])  && $view['wr_1'] === "WHITE" ) echo "checked"?> >밝음</li>
+                    <li>
+                        <input id="dark" type="radio" name="wr_1" value="DARK"  <?php if ( isset($view['wr_1'])  || $view['wr_1'] === "DARK" ) echo "checked"?> >
+                        <label for="dark">어두움</label>
+                    </li>
+                    <li>
+                        <input id="white"  type="radio" name="wr_1" value="WHITE" <?php if ( isset($view['wr_1'])  && $view['wr_1'] === "WHITE" ) echo "checked"?> >
+                        <label for="white">밝음</label>
+                    </li>
+
                 </ul>
             </li>
-            <?php if ($update_href) { ?><li><a href="<?php echo $update_href ?>" class="btn_b01 btn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 수정</a></li><?php } ?>
+            <?php if ($update_href) { ?><li><a href="<?php echo $update_href ?>&wr_1=<?php echo $view['wr_1']?>" class="btn_b01 btn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 수정</a></li><?php } ?>
             <?php if ($delete_href) { ?><li><a href="<?php echo $delete_href ?>" class="btn_b01 btn" onclick="del(this.href); return false;"><i class="fa fa-trash-o" aria-hidden="true"></i> 삭제</a></li><?php } ?>
             <?php if ($copy_href) { ?><li><a href="<?php echo $copy_href ?>" class="btn_admin btn" onclick="board_move(this.href); return false;"><i class="fa fa-files-o" aria-hidden="true"></i> 복사</a></li><?php } ?>
             <?php if ($move_href) { ?><li><a href="<?php echo $move_href ?>" class="btn_admin btn" onclick="board_move(this.href); return false;"><i class="fa fa-arrows" aria-hidden="true"></i> 이동</a></li><?php } ?>
