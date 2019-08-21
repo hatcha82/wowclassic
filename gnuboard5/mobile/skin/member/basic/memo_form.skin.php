@@ -4,7 +4,10 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 // add_stylesheet('css 구문', 출력순서); 숫자가 작을 수록 먼저 출력됨
 add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 0);
 ?>
-
+ <ins class="kakao_ad_area" style="display:none;" 
+    data-ad-unit    = "DAN-rhlo2jj9i2pf" 
+    data-ad-width   = "320" 
+    data-ad-height  = "50"></ins>
 <div id="memo_write" class="new_win">
     <h1 id="win_title">쪽지보내기</h1>
 
@@ -43,7 +46,11 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
     </div>
     </form>
 </div>
-
+<ins class="kakao_ad_area" style="display:none;" 
+            data-ad-unit    = "DAN-toan4jzfzbqv" 
+            data-ad-width   = "320" 
+            data-ad-height  = "100"></ins> 
+<script type="text/javascript" src="//t1.daumcdn.net/adfit/static/ad.min.js" async></script>
 <script>
 function fmemoform_submit(f)
 {

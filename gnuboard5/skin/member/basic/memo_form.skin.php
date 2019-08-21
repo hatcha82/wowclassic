@@ -8,6 +8,10 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
 <!-- 쪽지 보내기 시작 { -->
 <div id="memo_write" class="new_win">
     <h1 id="win_title"><i class="fa fa-envelope-o" aria-hidden="true"></i> 쪽지 보내기</h1>
+    <ins class="kakao_ad_area" style="display:none;" 
+    data-ad-unit    = "DAN-rhlo2jj9i2pf" 
+    data-ad-width   = "320" 
+    data-ad-height  = "50"></ins>
     <div class="new_win_con">
         <ul class="win_ul">
             <li><a href="./memo.php?kind=recv">받은쪽지</a></li>
@@ -48,7 +52,11 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
     </div>
     </form>
 </div>
-
+<ins class="kakao_ad_area" style="display:none;" 
+            data-ad-unit    = "DAN-toan4jzfzbqv" 
+            data-ad-width   = "320" 
+            data-ad-height  = "100"></ins> 
+<script type="text/javascript" src="//t1.daumcdn.net/adfit/static/ad.min.js" async></script>
 <script>
 function fmemoform_submit(f)
 {

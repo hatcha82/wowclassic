@@ -248,7 +248,7 @@ transition: all 0.3s ease-out;}
 #captcha #captcha_mp3 {margin:0;padding:0;width:40px;height:40px;border:0;background:transparent;vertical-align:middle;overflow:hidden;cursor:pointer;background:url('../../../img/captcha2.png') no-repeat;text-indent:-999px;border-radius:3px}
 #captcha #captcha_reload {margin:0;padding:0;width:40px;height:40px;border:0;background:transparent;vertical-align:middle;overflow:hidden;cursor:pointer;background:url('../../../img/captcha2.png') no-repeat  0 -40px;text-indent:-999px;border-radius:3px}
 #captcha #captcha_key {margin:0 0 0 3px;padding:0 5px;width:90px;height:40px;border:1px solid #ccc;background:#fff;font-size:1.333em;font-weight:bold;text-align:center;border-radius:3px;vertical-align:top}
-#captcha #captcha_info {display:block;margin:5px 0 0;font-size:0.95em;letter-spacing:-0.1em}
+#captcha #captcha_info {color:#eee;display:block;margin:5px 0 0;font-size:0.95em;letter-spacing:-0.1em}
 
 /* 캡챠 자동등록(입력)방지 기본 - mobile */
 #captcha.m_captcha audio {display:block;margin:0 0 5px;width:187px}
@@ -414,14 +414,14 @@ box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
 .new_win .tbl_wrap {margin:0 20px}
 .new_win #win_title {font-size:1.25em;height:50px;line-height:30px;padding:10px 20px;background:#333;color:#fff;}
 .new_win #win_title .sv {font-size:0.75em;line-height:1.2em}
-.new_win .win_ul {border-right:1px solid #dfe6e7;}
+.new_win .win_ul {}
 .new_win .win_ul:after {display:block;visibility:hidden;clear:both;content:""}
-.new_win .win_ul li{float:left;background:#fff;width:33.333%;text-align:center;border:1px solid #ccc;margin-left:-1px}
+.new_win .win_ul li{float:left;background:rgba(17, 17, 17, 0.9);color:#eee;width:33.333%;text-align:center;border:1px solid #444;margin-left:-1px}
 .new_win .win_ul li a{display:block;padding:10px 0}
-.new_win .win_ul .selected{background:#fff;border-color:#4f4f4f;position:relative;z-index:5}
+.new_win .win_ul .selected{background:#f7f7f7e0;border-color:#4f4f4f;position:relative;z-index:5}
 .new_win .win_ul .selected a{color:#4f4f4f;font-weight:bold}
-.new_win .win_desc {margin:5px 0;font-size:0.92em;color:#3598db;}
-.new_win .frm_info{font-size:0.92em;color:#3598db}
+.new_win .win_desc {margin:5px 0;font-size:0.92em;color:#3598db;background: rgba(17,17,17,0.9);padding: 10px;}
+.new_win .frm_info{font-size:0.92em;color:#3598db;background: rgba(17,17,17,0.9);padding: 3px;display: block;}
 .new_win .win_total{text-align:right;margin:10px 0}
 .new_win .win_total span{display:inline-block;line-height:30px;font-size:0.92em;color:#4e546f;background:#d4d4d4;padding:0 10px;border-radius:5px;}
 .new_win .new_win_con{margin:20px;}
