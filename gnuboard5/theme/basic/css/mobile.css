@@ -166,6 +166,9 @@ box-shadow: 0 0 5px rgba(55,55,5,0.4);
 #rc-imageselect, .g-recaptcha {transform:scale(0.7);-webkit-transform:scale(0.7);transform-origin:0 0;-webkit-transform-origin:0 0;}
 
 /* ckeditor 태그 기본값 */
+#bo_v_con {}
+#bo_v_con.dark {}
+#bo_v_con.white{background:#fff;color:#333;padding:20px;border-radius:7px;}
 #bo_v_con ul{display: block;list-style-type: disc;margin-top: 1em;margin-bottom: 1em;margin-left: 0;margin-right: 0;padding-left: 40px;}
 #bo_v_con ol{display: block;list-style-type: decimal;margin-top: 1em;margin-bottom: 1em;margin-left: 0;margin-right: 0;padding-left: 40px;}
 #bo_v_con li{display: list-item;}
@@ -336,6 +339,8 @@ box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.2);}
 
 .iframe100 {   display: block;   border: none;   height: 100vh;   width: 100vw; }
 
+#bgSelect{color:#eee;display:inline}
+#bgSelect{}
 .wow_info_readOnly{color:#eee;background:rgba(17, 17, 17, 0.9);padding:20px;}
 .wow_info_readOnly ul.wow_info{padding:10px;}
 .wow_info_readOnly ul.wow_info li{display:inline-block;line-height: 25px;}

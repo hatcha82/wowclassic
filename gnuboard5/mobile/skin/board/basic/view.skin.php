@@ -10,6 +10,16 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 
 <!-- <div id="bo_v_table"><?php echo ($board['bo_mobile_subject'] ? $board['bo_mobile_subject'] : $board['bo_subject']); ?></div> -->
     <div class="btn_top top"> 
+        <ul id="bgSelect" style="line-height:35px;">
+              <li>
+                  <input id="dark" type="radio" name="wr_1" value="DARK"  <?php if ( isset($view['wr_1'])  && $view['wr_1'] === "DARK" ) echo "checked"?> >
+                  <label for="dark">어두움</label>
+              </li>
+              <li>
+                  <input id="white"  type="radio" name="wr_1" value="WHITE" <?php if ( isset($view['wr_1'])  && $view['wr_1'] === "WHITE" ) echo "checked"?> >
+                  <label for="white">밝음</label>
+              </li>
+          </ul>
         <?php if ($reply_href) { ?><a href="<?php echo $reply_href ?>" class="btn_b01"><i class="fa fa-reply" aria-hidden="true"></i> 답변</a><?php } ?>
         <?php if ($write_href) { ?><a href="<?php echo $write_href ?>" class="btn_b02 btn"><i class="fa fa-pencil" aria-hidden="true"></i> 글쓰기</a><?php } ?>
 
@@ -53,8 +63,8 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
         ob_end_flush();
          ?>
     </div>
-
-    <section id="bo_v_atc">
+    <?php $styleClass= isset($view['wr_1']) ? strtolower($view['wr_1']) : ""?>
+    <section id="bo_v_atc" class="<?php echo $styleClass?>">
         <h2 id="bo_v_atc_title">본문</h2>
 
         <?php
@@ -237,6 +247,11 @@ function board_move(href)
 
 <script>
 $(function() {
+    $('input[type=radio][name=wr_1]').change(function() {
+        var value = $(this).val();
+        var classStyle = value.toLowerCase();
+        $("#bo_v_atc").removeAttr('class').addClass(classStyle)
+    });
     $("a.view_image").click(function() {
         window.open(this.href, "large_image", "location=yes,links=no,toolbar=no,top=10,left=10,width=10,height=10,resizable=yes,scrollbars=no,status=no");
         return false;

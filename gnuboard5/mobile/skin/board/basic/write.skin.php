@@ -92,8 +92,17 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 
         <?php if ($option) { ?>
         <div class="write_div">
+           
+              
+            <input id="dark" type="radio" name="wr_1" value="DARK"  <?php if ( isset($view['wr_1'])  && $view['wr_1'] === "DARK" ) echo "checked"?> >
+            <label for="dark">어두움</label>
+        
+            <input id="white"  type="radio" name="wr_1" value="WHITE" <?php if ( isset($view['wr_1'])  && $view['wr_1'] === "WHITE" ) echo "checked"?> >
+            <label for="white">밝음</label>
+              
             <span class="sound_only">옵션</span>
             <?php echo $option ?>
+            
         </div>
         <?php } ?>
 
@@ -174,6 +183,20 @@ $(function() {
 });
 
 <?php } ?>
+
+$( document ).ready(function() {
+    $('input[type=radio][name=wr_1]').change(function() {
+        var style = {background:'#242424',color: '#bbb'}
+        var value = $(this).val();
+        if(value == 'DARK'){
+            style = {background:'#242424',color: '#bbb'}
+        }else{
+            style= {background:'#fff',color: '#333'};
+        }
+        $("#fwrite iframe").contents().find('body').find('#se2_iframe').contents().find('body').css(style)
+    });
+});
+
 function html_auto_br(obj)
 {
     if (obj.checked) {
