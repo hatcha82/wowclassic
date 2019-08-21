@@ -67,10 +67,9 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
          ?>
     </div>
     </section>
-
-    <section id="bo_v_atc">
-        <h2 id="bo_v_atc_title">본문</h2>
-
+    <?php $styleClass= isset($view['wr_1']) ? strtolower($view['wr_1']) : ""?>
+    <section id="bo_v_atc" class="<?php echo $styleClass?>">
+        <h2 id="bo_v_atc_title">본문 </h2>
         <?php
         // 파일 출력
         $v_img_count = count($view['file']);

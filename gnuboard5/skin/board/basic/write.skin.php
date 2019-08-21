@@ -59,17 +59,23 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 
     echo $option_hidden;
     ?>
-
-    <?php if ($is_category) { ?>
+  
+    
     <div class="bo_w_select write_div">
+    <!-- $("#fwrite iframe").contents().find('body').find('#se2_iframe').contents().find('body').css('background','red') -->
+        <?php if ($is_category) { ?>
         <label for="ca_name"  class="sound_only">분류<strong>필수</strong></label>
         <select name="ca_name" id="ca_name" required>
             <option value="">분류를 선택하세요</option>
             <?php echo $category_option ?>
         </select>
-        
+        <?php } ?>
+        <select name="wr_1" id="wr_1" required>
+            <option value="DARK">배경색 : 어두움</option>    
+            <option value="WHITE">배경색 : 밝음</option>
+        </select>
     </div>
-    <?php } ?>
+    
 
     <div class="bo_w_info write_div">
     <?php if ($is_name) { ?>
@@ -193,14 +199,32 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
     var char_min = parseInt(<?php echo $write_min; ?>); // 최소
     var char_max = parseInt(<?php echo $write_max; ?>); // 최대
     check_byte("wr_content", "char_count");
-
+  
     $(function() {
+        
+        // 
+      
         $("#wr_content").on("keyup", function() {
             check_byte("wr_content", "char_count");
         });
     });
 
     <?php } ?>
+
+
+    $( document ).ready(function() {
+        $("#wr_1").change( function(e){
+            var value = $(this).val();
+            var style = {background:'#242424',color: '#bbb'}
+            if(value == 'DARK'){
+                style = {background:'#242424',color: '#bbb'}
+                
+            }else{
+                style= {background:'#fff',color: '#333'};
+            }
+            $("#fwrite iframe").contents().find('body').find('#se2_iframe').contents().find('body').css(style)
+        });
+    });
     function html_auto_br(obj)
     {
         if (obj.checked) {
