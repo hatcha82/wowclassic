@@ -112,7 +112,7 @@
 #reg_result .btn_confirm {margin:20px 0 30px;}
 #reg_result .reg_result_wr{background:rgba(17,17,17,0.9);color:#eee;padding:10px 20px}
 #reg_result .reg_cong{margin:10px 0;font-size:1.083em;font-weight:bold}
-#reg_result .reg_cong strong{color:#3497d9}
+#reg_result .reg_cong strong{color:#4ac7ff}
 #reg_result .btn_confirm a{display:inline-block;padding:0 20px;height:40px;line-height:38px;border:1px solid #ed6478;background: #ed6478;color:#eee;color:#eee;border-radius:3px;font-weight:bold}
 
 /* 아이디/비밀번호 찾기 */

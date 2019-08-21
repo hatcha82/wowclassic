@@ -132,7 +132,7 @@ box-shadow: 0 1px 3px #eee;
 #fregisterform .btn_confirm{text-align:center}
 #fregisterform .btn_confirm .btn_submit{height:45px;;padding:0 30px;font-weight:bold;font-size:1.083em}
 #fregisterform .btn_confirm .btn_cancel{line-height:45px;height:45px;padding:0 30px;font-weight:bold;font-size:1.083em}
-#fregisterform .frm_info{display:block;color:#3497d9;font-size:0.92em}
+#fregisterform .frm_info{display:block;color:#4ac7ff;font-size:0.92em}
 #fregisterform .form_01 div{margin: 0 0 50px}
 #fregisterform .captcha{display:block;margin:5px 0 0}
 #fregisterform .reg_mb_img_file img{max-width:100%;height:auto}
@@ -148,7 +148,7 @@ box-shadow: 0 1px 3px #eee;
 #reg_result p {line-height:1.8em}
 #reg_result .btn_confirm {margin:50px 0}
 #reg_result .reg_result_p{font-size:1.25em;margin:0 0 10px;}
-#reg_result .reg_result_p strong{color:#3497d9}
+#reg_result .reg_result_p strong{color:#4ac7ff}
 #reg_result .btn_submit{padding: 0 30px;font-weight:bold;height:40px;line-height:40px;display:inline-block;margin:30px 0 0 ;font-size:1.083em}
 
 /* 아이디/비밀번호 찾기 */
