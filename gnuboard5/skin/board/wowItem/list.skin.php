@@ -227,6 +227,7 @@ var bondingList =[
     ,   {bonding : 4 , name:'퀘스트'}    
 ]
 function createOptions(id , list, keyName,selectedItem){
+    $("#"+ id).html('')
     var option = `<option value="">선택</option>`
     $("#" + id).append(option)
     list.forEach(function(obj){
@@ -251,6 +252,16 @@ function createSubClassOption(selectedClass,selectedValue){
         $("#subClassSelect")
         $("#subClassSelect").html('')
         createOptions('subClassSelect' , classFiltered, 'subClassId', `${selectedValue}`)
+}
+function reset_item_search(){
+    createOptions('classSelect' , classList, 'classId' ,'')
+    createSubClassOption('','');    
+    createOptions('InventoryTypeSelect' , InventoryTypeList, 'InventoryType', '')
+    createOptions('RequiredLevelSelect' , RequiredLevelList, 'RequiredLevel','')
+    createOptions('AllowableClassSelect' , AllowableClassList, 'AllowableClass','')
+    createOptions('QualitySelect' , QualityList, 'Quality','')
+    createOptions('bondingSelect' , bondingList, 'bonding','')
+
 }
 $( document ).ready(function() {
 
@@ -322,8 +333,7 @@ $( document ).ready(function() {
         #bo_sch {color:#eee;width:100%}
         #bo_sch label{float:left;display:block;line-height:36px;width:60px;padding:0 5px;}
         #bo_sch select{width:120px;border: 1px solid #444;}
-      
-        #bo_sch button.sch_btn{float:none;}
+        #bo_sch button.sch_btn{float:right;margin-right:10px;border:1px solid #444;padding:0 20px;width:120px;height:30px;}
         </style>
         <fieldset id="bo_sch" >
         <legend>게시물 검색</legend>
@@ -364,17 +374,20 @@ $( document ).ready(function() {
             <select  name="class" id="classSelect"></select>
             <label for="subClassSelect">분류2</label>
             <select name="subclass"id="subClassSelect"></select>
-           
+            
+            <button type="submit"  value="검색" class="sch_btn"><i class="fa fa-search" aria-hidden="true"></i><span class="" style="font-size:0.9em;"> 검색</span></button>       
+            <button type="button" onclick="reset_item_search()" value="초기화" class="sch_btn"><i class="fa fa-search" aria-hidden="true"></i><span class="" style="font-size:0.9em;"> 초기화</span></button>       
             <div style="clear:both"/>
         </div>
-        <div style="width:100%">
+        <div>
+        
+        </div>
+        <div style="width:100%;display:none;">
             <label for="AllowableClassSelect">직업</label>
             <select name="AllowableClass" id="AllowableClassSelect"></select>
             <div style="clear:both"/>
         </div>
-       
         
-        <button type="submit" value="검색" class="sch_btn"><i class="fa fa-search" aria-hidden="true"></i><span class="sound_only">검색</span></button>
         </form>
     </fieldset>
     <!-- } 게시판 검색 끝 -->   
@@ -405,7 +418,8 @@ $( document ).ready(function() {
             <?php } ?>
             <th scope="col">번호</th>
             <th scope="col">제목</th>
-            <th scope="col">AllowableClass</th>
+            <th scope="col">아이템 레벨</th>
+            <th scope="col">필요 레벨</th>
             
             <!--
             <th scope="col"><?php echo subject_sort_link('wr_hit', $qstr2, 1) ?>조회 <i class="fa fa-sort" aria-hidden="true"></i></a></th>
@@ -471,9 +485,13 @@ $( document ).ready(function() {
                 <!-- </div> -->
                 <ul>
             </td>
-            <td>
-                        <?php echo $list[$i]['AllowableClass'] ?>
-                        <!-- AllowableClass& (1<<getClass()))) -->
+            <td align="center">
+                <?php echo $list[$i]['ItemLevel'] ?>
+                <!-- AllowableClass& (1<<getClass()))) -->
+            </td>
+            <td align="center">
+                <?php echo $list[$i]['RequiredLevel'] ?>
+                <!-- AllowableClass& (1<<getClass()))) -->
             </td>
             <!-- <?php
             $name = get_sideview($list[$i]['mb_id'], get_text(cut_str($list[$i]['wr_name'], $config['cf_cut_name'])), $list[$i]['wr_email'],$list[$i]['wr_homepage']);
