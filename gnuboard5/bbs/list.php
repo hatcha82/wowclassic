@@ -182,31 +182,14 @@ if ($is_search_bbs) {
                 limit {$from_record}, $page_rows ";                
     }else if($bo_table === 'item'){ // quest 게시판일 경우
         
-        if(isset($_GET['class']) && $_GET['class'] !== ''){
-            $class = $_GET['class'];
-            $sql_search .= " and item_template.class = $class";
-        }
-        if(isset($_GET['subclass']) && $_GET['subclass'] !== ''){
-            $subclass = $_GET['subclass'];
-            $sql_search .= " and item_template.subclass = $subclass";
-        }
-        if(isset($_GET['RequiredLevel']) && $_GET['RequiredLevel'] !== ''){
-            $RequiredLevel = $_GET['RequiredLevel'];
-            $RequiredLevel = str_replace('-' , ' and ', $RequiredLevel);
-            $sql_search .= " and item_template.RequiredLevel between $RequiredLevel";
-        }
-        
-
-        
+        $sql_search .= get_item_searchStr($_GET,$sql_search);
         $sql = " select distinct wr_parent from {$write_table} 
                  join wow_db.item_template
                  on  {$write_table}.wr_id = wow_db.item_template.entry     
                 where {$sql_search}
                 order
                 by   wow_db.item_template.ItemLevel asc  
-                limit {$from_record}, $page_rows ";     
-                echo $sql;
-                return;  
+                limit {$from_record}, $page_rows ";   
                          
     }else{
         $sql = " select distinct wr_parent from {$write_table} where {$sql_search} {$sql_order} limit {$from_record}, $page_rows ";
@@ -221,27 +204,13 @@ if ($is_search_bbs) {
                  on  {$write_table}.wr_id = wow_db.quest_template.entry     
                  where wr_is_comment = 0 ";                 
     }else if($bo_table === 'item'){ // quest 게시판일 경우
-        if(isset($_GET['class']) && $_GET['class'] !== ''){
-            $class = $_GET['class'];
-            $sql_search .= " and item_template.class = $class";
-        }
-        if(isset($_GET['subclass']) && $_GET['subclass'] !== ''){
-            $subclass = $_GET['subclass'];
-            $sql_search .= " and item_template.subclass = $subclass";
-        }
-        if(isset($_GET['RequiredLevel']) && $_GET['RequiredLevel'] !== ''){
-            $RequiredLevel = $_GET['RequiredLevel'];
-            $RequiredLevel = str_replace('-' , ' and ', $RequiredLevel);
-            $sql_search .= " and item_template.RequiredLevel between $RequiredLevel";
-        }
-        
+        $sql_search .= get_item_searchStr($_GET,$sql_search);      
         $sql = " select * 
                  from {$write_table}
                  join wow_db.item_template
                  on  {$write_table}.wr_id = wow_db.item_template.entry     
-                 where wr_is_comment = 0 ";   
-                 $sql .= $sql_search;
-                 
+                 where wr_is_comment = 0 {$sql_search}"
+              ;                 
     }else{
         $sql = " select * from {$write_table} where wr_is_comment = 0 ";
     }
@@ -251,13 +220,16 @@ if ($is_search_bbs) {
 }
 // 페이지의 공지개수가 목록수 보다 작을 때만 실행
 if($page_rows > 0) {
+   
     $result = sql_query($sql);
     $k = 0;
 
     while ($row = sql_fetch_array($result))
     {
+      
         // 검색일 경우 wr_id만 얻었으므로 다시 한행을 얻는다
-        if ($is_search_bbs)
+        if ($is_search_bbs)            
+           
             if($bo_table === 'quest'){ // quest 게시판일 경우
                 $row = sql_fetch("  select * from {$write_table} 
                                     join wow_db.quest_template
@@ -269,7 +241,9 @@ if($page_rows > 0) {
             }else{
                 $row = sql_fetch("  select * from {$write_table} 
                                     where wr_id = '{$row['wr_parent']}' ");  
-            }    
+                              
+            }
+          
         $list[$i] = get_list($row, $board, $board_skin_url, G5_IS_MOBILE ? $board['bo_mobile_subject_len'] : $board['bo_subject_len']);
         if (strstr($sfl, 'subject')) {
             $list[$i]['subject'] = search_font($stx, $list[$i]['subject']);

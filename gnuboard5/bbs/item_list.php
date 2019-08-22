@@ -1,12 +1,12 @@
 <?php
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
-
+$qstr = get_item_queryStr($_GET,$qstr);
 // 분류 사용 여부
 $is_category = false;
 $category_option = '';
 if ($board['bo_use_category']) {
     $is_category = true;
-    $category_href = G5_BBS_URL.'/board.php?bo_table='.$bo_table;
+    $category_href = G5_BBS_URL.'/item.php?bo_table='.$bo_table;
 
     $category_option .= '<li><a href="'.$category_href.'"';
     if ($sca=='')
@@ -39,12 +39,17 @@ $stx = trim($stx);
 //검색인지 아닌지 구분하는 변수 초기화
 $is_search_bbs = false;
 
-if ($sca || $stx || $stx === '0') {     //검색이면
+if ( $item) {     //검색이면
     $is_search_bbs = true;      //검색구분변수 true 지정
-    $sql_search = get_sql_search($sca, $sfl, $stx, $sop);
-
+    $sql_search =  '1';//get_sql_search($sca, $sfl, $stx, $sop);
+    $sql_search .= get_item_searchStr($_GET,'');
     // 가장 작은 번호를 얻어서 변수에 저장 (하단의 페이징에서 사용)
-    $sql = " select MIN(wr_num) as min_wr_num from {$write_table} ";
+    $sql = " select MIN(wr_num) as min_wr_num 
+            from {$write_table}
+            join wow_db.item_template
+            on  {$write_table}.wr_id = wow_db.item_template.entry     
+    ";
+ 
     $row = sql_fetch($sql);
     $min_spt = (int)$row['min_wr_num'];
 
@@ -54,9 +59,16 @@ if ($sca || $stx || $stx === '0') {     //검색이면
 
     // 원글만 얻는다. (코멘트의 내용도 검색하기 위함)
     // 라엘님 제안 코드로 대체 http://sir.kr/g5_bug/2922
-    $sql = " SELECT COUNT(DISTINCT `wr_parent`) AS `cnt` FROM {$write_table} WHERE {$sql_search} ";
+    $sql = " SELECT COUNT(DISTINCT `wr_parent`) AS `cnt` 
+             FROM {$write_table} 
+             join wow_db.item_template
+             on  {$write_table}.wr_id = wow_db.item_template.entry     
+             WHERE {$sql_search} ";
+           
     $row = sql_fetch($sql);
     $total_count = $row['cnt'];
+
+   
     /*
     $sql = " select distinct wr_parent from {$write_table} where {$sql_search} ";
     $result = sql_query($sql);
@@ -64,7 +76,6 @@ if ($sca || $stx || $stx === '0') {     //검색이면
     */
 } else {
     $sql_search = "";
-
     $total_count = $board['bo_count_write'];
 }
 
@@ -170,6 +181,8 @@ if ($sst) {
 }
 
 if ($is_search_bbs) {
+
+   
     if($bo_table === 'quest'){ // quest 게시판일 경우
         $sql = " select distinct wr_parent from {$write_table} 
                  join wow_db.quest_template
@@ -178,6 +191,19 @@ if ($is_search_bbs) {
                 order
                 by   wow_db.quest_template.QuestLevel asc  
                 limit {$from_record}, $page_rows ";                
+    }else if($bo_table === 'item'){ // quest 게시판일 경우
+        
+        $sql_search .= get_item_searchStr($_GET,'');
+        $sql = " select distinct wr_parent from {$write_table} 
+                 join wow_db.item_template
+                 on  {$write_table}.wr_id = wow_db.item_template.entry     
+                where {$sql_search}
+                order
+                by   wow_db.item_template.ItemLevel asc  
+                limit {$from_record}, $page_rows ";   
+                
+   
+                         
     }else{
         $sql = " select distinct wr_parent from {$write_table} where {$sql_search} {$sql_order} limit {$from_record}, $page_rows ";
     }
@@ -190,35 +216,43 @@ if ($is_search_bbs) {
                  join wow_db.quest_template
                  on  {$write_table}.wr_id = wow_db.quest_template.entry     
                  where wr_is_comment = 0 ";                 
+    }else if($bo_table === 'item'){ // quest 게시판일 경우
+        $sql_search .= get_item_searchStr($_GET,$sql_search);      
+        $sql = " select * 
+                 from {$write_table}
+                 join wow_db.item_template
+                 on  {$write_table}.wr_id = wow_db.item_template.entry     
+                 where wr_is_comment = 0 {$sql_search}"
+              ;                 
     }else{
         $sql = " select * from {$write_table} where wr_is_comment = 0 ";
     }
     if(!empty($notice_array))
         $sql .= " and wr_id not in (".implode(', ', $notice_array).") ";
     $sql .= " {$sql_order} limit {$from_record}, $page_rows ";
+   
 }
+
 // 페이지의 공지개수가 목록수 보다 작을 때만 실행
 if($page_rows > 0) {
+   
     $result = sql_query($sql);
     $k = 0;
 
     while ($row = sql_fetch_array($result))
     {
+      
         // 검색일 경우 wr_id만 얻었으므로 다시 한행을 얻는다
-        if ($is_search_bbs)
-            if($bo_table === 'quest'){ // quest 게시판일 경우
+        if ($is_search_bbs)            
+           
                 $row = sql_fetch("  select * from {$write_table} 
-                                    join wow_db.quest_template
-                                    on  {$write_table}.wr_id = wow_db.quest_template.entry     
+                                    join wow_db.item_template
+                                    on  {$write_table}.wr_id = wow_db.item_template.entry     
                                     where wr_id = '{$row['wr_parent']}' 
-                                    order
-                                    by   wow_db.quest_template.QuestLevel asc  
-                                     ");
-            }else{
-                $row = sql_fetch("  select * from {$write_table} 
-                                    where wr_id = '{$row['wr_parent']}' ");  
-            }    
-        $list[$i] = get_list($row, $board, $board_skin_url, G5_IS_MOBILE ? $board['bo_mobile_subject_len'] : $board['bo_subject_len']);
+                                 ");
+           
+          
+        $list[$i] = $row; //get_list($row, $board, $board_skin_url, G5_IS_MOBILE ? $board['bo_mobile_subject_len'] : $board['bo_subject_len']);
         if (strstr($sfl, 'subject')) {
             $list[$i]['subject'] = search_font($stx, $list[$i]['subject']);
         }
@@ -231,13 +265,13 @@ if($page_rows > 0) {
     }
 }
 
-$write_pages = get_paging(G5_IS_MOBILE ? $config['cf_mobile_pages'] : $config['cf_write_pages'], $page, $total_page, './board.php?bo_table='.$bo_table.$qstr.'&amp;page=');
+$write_pages = get_paging(G5_IS_MOBILE ? $config['cf_mobile_pages'] : $config['cf_write_pages'], $page, $total_page, './item.php?bo_table='.$bo_table.$qstr.'&amp;page=');
 
 $list_href = '';
 $prev_part_href = '';
 $next_part_href = '';
 if ($is_search_bbs) {
-    $list_href = './board.php?bo_table='.$bo_table;
+    $list_href = './item.php?bo_table='.$bo_table;
 
     $patterns = array('#&amp;page=[0-9]*#', '#&amp;spt=[0-9\-]*#');
 
@@ -245,17 +279,18 @@ if ($is_search_bbs) {
     $prev_spt = $spt - $config['cf_search_part'];
     if (isset($min_spt) && $prev_spt >= $min_spt) {
         $qstr1 = preg_replace($patterns, '', $qstr);
-        $prev_part_href = './board.php?bo_table='.$bo_table.$qstr1.'&amp;spt='.$prev_spt.'&amp;page=1';
+        $prev_part_href = './item.php?bo_table='.$bo_table.$qstr1.'&amp;spt='.$prev_spt.'&amp;page=1';
         $write_pages = page_insertbefore($write_pages, '<a href="'.$prev_part_href.'" class="pg_page pg_prev">이전검색</a>');
     }
 
     $next_spt = $spt + $config['cf_search_part'];
     if ($next_spt < 0) {
         $qstr1 = preg_replace($patterns, '', $qstr);
-        $next_part_href = './board.php?bo_table='.$bo_table.$qstr1.'&amp;spt='.$next_spt.'&amp;page=1';
+        $next_part_href = './item.php?bo_table='.$bo_table.$qstr1.'&amp;spt='.$next_spt.'&amp;page=1';
         $write_pages = page_insertafter($write_pages, '<a href="'.$next_part_href.'" class="pg_page pg_end">다음검색</a>');
     }
 }
+
 
 
 $write_href = '';
