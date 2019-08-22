@@ -55,7 +55,7 @@ if ( $item) {     //검색이면
 
     if (!$spt) $spt = $min_spt;
 
-    $sql_search .= " and (wr_num between {$spt} and ({$spt} + {$config['cf_search_part']})) ";
+   // $sql_search .= " and (wr_num between {$spt} and ({$spt} + {$config['cf_search_part']})) ";
 
     // 원글만 얻는다. (코멘트의 내용도 검색하기 위함)
     // 라엘님 제안 코드로 대체 http://sir.kr/g5_bug/2922
@@ -232,7 +232,7 @@ if ($is_search_bbs) {
     $sql .= " {$sql_order} limit {$from_record}, $page_rows ";
    
 }
-
+echo $sql;
 // 페이지의 공지개수가 목록수 보다 작을 때만 실행
 if($page_rows > 0) {
    
