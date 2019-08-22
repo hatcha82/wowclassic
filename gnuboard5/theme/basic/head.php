@@ -334,6 +334,11 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
     </div>
     <div id="container">
         <?php if (!defined("_INDEX_")) { ?>
-            <a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=<?php echo $board['bo_table'];?>"> <h2 id="container_title"><span title="<?php echo get_text($g5['title']); ?>"><?php echo get_head_title($g5['title']); ?></span></h2></a>        
+            <?php if ($board['bo_table'] === 'item') { ?>
+                <a href="<?php echo G5_BBS_URL ?>/item.php?bo_table=<?php echo $board['bo_table'];?>"> <h2 id="container_title"><span title="<?php echo get_text($g5['title']); ?>"><?php echo get_head_title($g5['title']); ?></span></h2></a>        
+            <?php } else { ?>    
+                <a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=<?php echo $board['bo_table'];?>"> <h2 id="container_title"><span title="<?php echo get_text($g5['title']); ?>"><?php echo get_head_title($g5['title']); ?></span></h2></a>        
+            <?php } ?>
+           
         <?php } ?>
 
