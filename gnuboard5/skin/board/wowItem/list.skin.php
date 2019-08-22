@@ -274,6 +274,19 @@ function reset_item_search(){
     
 
 }
+$( window ).load(function() {
+  var list = [];
+  $('a').each(function(idx, tag){
+      var $tag = $(tag);
+      if($tag.attr('href').indexOf('https://ko.classic.wowhead.com/item') != -1 ){
+        var name = $tag.find('span').text()
+        var id = $tag.attr('href').replace('https://ko.classic.wowhead.com/item=','');
+          var obj = { entry : id, name : name}
+          list.push(obj);
+      }
+  })
+  //console.log(list);
+});
 $( document ).ready(function() {
 
     
