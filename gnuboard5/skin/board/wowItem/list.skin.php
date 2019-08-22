@@ -233,6 +233,7 @@ var MeterialList = [
 ,   { Material :  3	 , name : "액체"} 
 ,   { Material :  5	 , name : "사슬"} 
 ,   { Material :  6	 , name : "판금"} 
+,   { Material :  7	 , name : "천"} 
 ,   { Material :  8	 , name : "가죽"} 
 ];
 
