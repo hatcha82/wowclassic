@@ -226,6 +226,16 @@ var bondingList =[
     ,   {bonding : 3 , name:'사용시'}
     ,   {bonding : 4 , name:'퀘스트'}    
 ]
+// ,   { Material :  4	 , ""} Jewelry
+var MeterialList = [
+    { Material :  1	 , name : "철"} 
+,   { Material :  2	 , name : "목재"} 
+,   { Material :  3	 , name : "액체"} 
+,   { Material :  5	 , name : "사슬"} 
+,   { Material :  6	 , name : "판금"} 
+,   { Material :  8	 , name : "가죽"} 
+];
+
 function createOptions(id , list, keyName,selectedItem){
     $("#"+ id).html('')
     var option = `<option value="">선택</option>`
@@ -238,8 +248,6 @@ function createOptions(id , list, keyName,selectedItem){
         var option = `<option value="${obj[keyName]}" style="${style}">${obj.name}</option>`
         
         if(selectedItem != '' && selectedItem == obj[keyName]){
-            
-            
             option = `<option value="${obj[keyName]}" style="${style}" selected>${obj.name}</option>`
         }
         $("#" + id).append(option)
@@ -261,6 +269,8 @@ function reset_item_search(){
     createOptions('AllowableClassSelect' , AllowableClassList, 'AllowableClass','')
     createOptions('QualitySelect' , QualityList, 'Quality','')
     createOptions('bondingSelect' , bondingList, 'bonding','')
+    createOptions('MeterialSelect' , MeterialList, 'Material','')
+    
 
 }
 $( document ).ready(function() {
@@ -273,7 +283,7 @@ $( document ).ready(function() {
     createOptions('AllowableClassSelect' , AllowableClassList, 'AllowableClass','<?php echo $_GET['AllowableClass']?>')
     createOptions('QualitySelect' , QualityList, 'Quality','<?php echo $_GET['Quality']?>')
     createOptions('bondingSelect' , bondingList, 'bonding','<?php echo $_GET['bonding']?>')
-
+    createOptions('MeterialSelect' , MeterialList, 'Material','<?php echo $_GET['Material']?>')
     
     
     $("#classSelect").change(function(e){
@@ -332,7 +342,7 @@ $( document ).ready(function() {
         <style>
         #bo_sch {color:#eee;width:100%}
         #bo_sch label{float:left;display:block;line-height:36px;width:60px;padding:0 5px;}
-        #bo_sch select{width:120px;border: 1px solid #444;}
+        #bo_sch select{width:100px;border: 1px solid #444;}
         #bo_sch button.sch_btn{float:right;margin-right:10px;border:1px solid #444;padding:0 20px;width:120px;height:30px;}
         </style>
         <fieldset id="bo_sch" >
@@ -366,7 +376,8 @@ $( document ).ready(function() {
             <select name="bonding" id="bondingSelect"></select>
              <label for="InventoryTypeSelect">슬롯</label>
             <select  name="InventoryType" id="InventoryTypeSelect"></select>        
-
+            <label for="MeterialSelect">재질</label>
+            <select  name="Material" id="MeterialSelect"></select>        
             <div style="clear:both"/>
         </div>
         <div style="width:100%">

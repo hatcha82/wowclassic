@@ -17,6 +17,7 @@ function get_item_queryStr($GET,$qstr){
         ,   'Quality'
         ,   'AllowableClass'
         ,   'bonding'
+        ,   'Material'
     );
     foreach($itemSearchColumn as $item) {
         if (isset($GET[ $item]))  {
@@ -62,6 +63,11 @@ function get_item_searchStr($GET, $sql_search){
         $bonding = $GET['bonding'];           
         $sql_search .= " and item_template.bonding = $bonding";
     }
+    if(isset($GET['Material']) && $GET['Material'] !== ''){
+        $Material = $GET['Material'];           
+        $sql_search .= " and item_template.Material = $Material";
+    }
+    
  
     return  $sql_search;
     
