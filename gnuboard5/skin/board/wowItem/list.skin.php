@@ -200,14 +200,14 @@ var RequiredLevelList =
 ]
 var AllowableClassList = 
 [
-        {AllowableClass :"11" , name : "드루이드", color: '#ff7c0a'}
-    ,   {AllowableClass :"3"  , name : "사냥꾼", color: '#7c9953 '}
-    ,   {AllowableClass :"8"  , name : "마법사", color: '#4f98b3'}
+        {AllowableClass :"1024" , name : "드루이드", color: '#ff7c0a'}
+    ,   {AllowableClass :"4"  , name : "사냥꾼", color: '#7c9953 '}
+    ,   {AllowableClass :"128"  , name : "마법사", color: '#4f98b3'}
     ,   {AllowableClass :"2"  , name : "성기사", color: '#cc749c '}
-    ,   {AllowableClass :"5"  , name : "사제", color: 'gray'}
-    ,   {AllowableClass :"4"  , name : "도적", color: '#99933f'}
-    ,   {AllowableClass :"7"  , name : "주술사", color: '#2359ff'}
-    ,   {AllowableClass :"9"  , name : "흑마법사", color: '#9382c9'}
+    ,   {AllowableClass :"16"  , name : "사제", color: 'gray'}
+    ,   {AllowableClass :"8"  , name : "도적", color: '#99933f'}
+    ,   {AllowableClass :"64"  , name : "주술사", color: '#2359ff'}
+    ,   {AllowableClass :"256"  , name : "흑마법사", color: '#9382c9'}
     ,   {AllowableClass :"1"  , name : "전사", color: '#997854'}
 ]
 var QualityList = 
@@ -407,7 +407,7 @@ $( document ).ready(function() {
         <div>
         
         </div>
-        <div style="width:100%;display:none;">
+        <div style="width:100%;">
             <label for="AllowableClassSelect">직업</label>
             <select name="AllowableClass" id="AllowableClassSelect"></select>
             <div style="clear:both"/>

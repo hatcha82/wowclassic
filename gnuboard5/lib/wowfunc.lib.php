@@ -55,7 +55,7 @@ function get_item_searchStr($GET, $sql_search){
     }
     if(isset($GET['AllowableClass']) && $GET['AllowableClass'] !== ''){
         $AllowableClass = $GET['AllowableClass'];           
-        // $sql_search .= " and item_template.AllowableClass & (1 << $AllowableClass) <> 0";
+        $sql_search .= " and item_template.AllowableClass = $AllowableClass";
 
         // <!-- AllowableClass& (1<<getClass()))) -->
     }
