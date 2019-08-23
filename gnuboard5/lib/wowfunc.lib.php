@@ -42,6 +42,7 @@ function get_item_searchStr($GET, $sql_search){
   
     global $itemSearchColumn;
     foreach($itemSearchColumn as $item) {
+
         if (isset($GET[ $item["column"]]) && $GET[$item["column"]] != '') {
             $itemValueStr='';
             $itemValue = $GET[$item["column"]];
@@ -57,7 +58,6 @@ function get_item_searchStr($GET, $sql_search){
                 $itemValueStr = str_replace('-' , ' and ', $itemValueStr);
                 $sql_search .= " and item_template." .$item["column"]. " between $itemValueStr";
             }else  if( $item["type"] === 'multi') {     
-
                 $sql_search .= " and ( item_template." .$item["column"]. "1 in ($itemValueStr)";
                 for($i = 2 ; $i <=10; $i++){
                     $sql_search .= " or item_template." .$item["column"]. "$i in ($itemValueStr)";

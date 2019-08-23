@@ -16,144 +16,144 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 
 <script>
 var  classList = [
-  {classId: 0   , name: "소모품"}
-, {classId: 1   , name: "컨테이너"}
-, {classId: 2   , name: "무기"}
-// , {classId: 3   , name: "Gem"} 보적
-, {classId: 4   , name: "방어구"}
-, {classId: 5   , name: "재료"}
-, {classId: 6   , name: "발사체"}
-, {classId: 7   , name: "상품(거래가능)"}
-// , {classId: 8   , name: "Generic(OBSOLETE)"}
-, {classId: 9   , name: "조리법/도안/고서"}
-// , {classId: 10	, name: "Money(OBSOLETE)"}
-, {classId: 11	, name: "통, 화살집"}
-, {classId: 12	, name: "퀘스트"}
-, {classId: 13	, name: "키"}
-// , {classId: 14	, name: "Permanent(OBSOLETE)"}
-// , {classId: 15	, name: "잡화"}
-// , {classId: 16	, name: "직업"}
+  {class: 0   , name: "소모품"}
+, {class: 1   , name: "컨테이너"}
+, {class: 2   , name: "무기"}
+// , {class: 3   , name: "Gem"} 보적
+, {class: 4   , name: "방어구"}
+, {class: 5   , name: "재료"}
+, {class: 6   , name: "발사체"}
+, {class: 7   , name: "상품(거래가능)"}
+// , {class: 8   , name: "Generic(OBSOLETE)"}
+, {class: 9   , name: "조리법/도안/고서"}
+// , {class: 10	, name: "Money(OBSOLETE)"}
+, {class: 11	, name: "통, 화살집"}
+, {class: 12	, name: "퀘스트"}
+, {class: 13	, name: "키"}
+// , {class: 14	, name: "Permanent(OBSOLETE)"}
+// , {class: 15	, name: "잡화"}
+// , {class: 16	, name: "직업"}
 ]
 var subClassList = [
-  // { classId :0	 ,  subClassId : 0	, name :  "Consumable	Usability in combat is decided by the spell assigned."} 
-// , { classId :0	 ,  subClassId : 1	, name :  "Potion"}
-// , { classId :0	 ,  subClassId : 2	, name :  "Elixir"}
-  { classId :0	 ,  subClassId : 3	, name :  "물약/비약/영약"}	
-, { classId :0	 ,  subClassId : 4	, name :  "두루마리"}	
-, { classId :0	 ,  subClassId : 5	, name :  "음식/음료/붕대"}	
-// , { classId :0	 ,  subClassId : 6	, name :  "생명석"}	
-// , { classId :0	 ,  subClassId : 7	, name :  "Bandage"}	
-, { classId :0	 ,  subClassId : 8	, name :  "기타"}	
-, { classId :1	 ,  subClassId : 0	, name :  "가방"}	
-, { classId :1	 ,  subClassId : 1	, name :  "영혼 가방"}	
-, { classId :1	 ,  subClassId : 2	, name :  "약초 가방"}	
-, { classId :1	 ,  subClassId : 3	, name :  "마법 부여 가방"}	
-// , { classId :1	 ,  subClassId : 4	, name :  "기계공학 가방"}	
-// , { classId :1	 ,  subClassId : 5	, name :  "Gem Bag"}	
-// , { classId :1	 ,  subClassId : 6	, name :  "Mining Bag"}	
-// , { classId :1	 ,  subClassId : 7	, name :  "Leatherworking Bag"}	
-, { classId :2	 ,  subClassId : 0	, name :  "도끼"}
-, { classId :2	 ,  subClassId : 1	, name :  "양손 도끼"}
-, { classId :2	 ,  subClassId : 2	, name :  "활"}	
-, { classId :2	 ,  subClassId : 3	, name :  "총"}	
-, { classId :2	 ,  subClassId : 18 , name :  "석궁"}	
-, { classId :2	 ,  subClassId : 4	, name :  "둔기"}
-, { classId :2	 ,  subClassId : 5	, name :  "양손 둔기"}
-, { classId :2	 ,  subClassId : 6	, name :  "장창"}	
-, { classId :2	 ,  subClassId : 7	, name :  "검"}
-, { classId :2	 ,  subClassId : 8	, name :  "양손 검"}
-, { classId :2	 ,  subClassId : 15 , name :  "단검"}	
-// , { classId :2	 ,  subClassId : 9	, name :  "Obsolete"}	
-, { classId :2	 ,  subClassId : 10 , name :  "지팡이"}	
-, { classId :2	 ,  subClassId : 19 , name :  "마법봉"}	
+  // { class :0	 ,  subclass : 0	, name :  "Consumable	Usability in combat is decided by the spell assigned."} 
+// , { class :0	 ,  subclass : 1	, name :  "Potion"}
+// , { class :0	 ,  subclass : 2	, name :  "Elixir"}
+  { class :0	 ,  subclass : 3	, name :  "물약/비약/영약"}	
+, { class :0	 ,  subclass : 4	, name :  "두루마리"}	
+, { class :0	 ,  subclass : 5	, name :  "음식/음료/붕대"}	
+// , { class :0	 ,  subclass : 6	, name :  "생명석"}	
+// , { class :0	 ,  subclass : 7	, name :  "Bandage"}	
+, { class :0	 ,  subclass : 8	, name :  "기타"}	
+, { class :1	 ,  subclass : 0	, name :  "가방"}	
+, { class :1	 ,  subclass : 1	, name :  "영혼 가방"}	
+, { class :1	 ,  subclass : 2	, name :  "약초 가방"}	
+, { class :1	 ,  subclass : 3	, name :  "마법 부여 가방"}	
+// , { class :1	 ,  subclass : 4	, name :  "기계공학 가방"}	
+// , { class :1	 ,  subclass : 5	, name :  "Gem Bag"}	
+// , { class :1	 ,  subclass : 6	, name :  "Mining Bag"}	
+// , { class :1	 ,  subclass : 7	, name :  "Leatherworking Bag"}	
+, { class :2	 ,  subclass : 0	, name :  "도끼"}
+, { class :2	 ,  subclass : 1	, name :  "양손 도끼"}
+, { class :2	 ,  subclass : 2	, name :  "활"}	
+, { class :2	 ,  subclass : 3	, name :  "총"}	
+, { class :2	 ,  subclass : 18 , name :  "석궁"}	
+, { class :2	 ,  subclass : 4	, name :  "둔기"}
+, { class :2	 ,  subclass : 5	, name :  "양손 둔기"}
+, { class :2	 ,  subclass : 6	, name :  "장창"}	
+, { class :2	 ,  subclass : 7	, name :  "검"}
+, { class :2	 ,  subclass : 8	, name :  "양손 검"}
+, { class :2	 ,  subclass : 15 , name :  "단검"}	
+// , { class :2	 ,  subclass : 9	, name :  "Obsolete"}	
+, { class :2	 ,  subclass : 10 , name :  "지팡이"}	
+, { class :2	 ,  subclass : 19 , name :  "마법봉"}	
 
-, { classId :2	 ,  subClassId : 16 , name :  "투척 무기"}
-//, { classId :2	 ,  subClassId : 11 , name :  "Exotic"}	
-// , { classId :2	 ,  subClassId : 12 , name :  "Exotic"}	
-, { classId :2	 ,  subClassId : 13 , name :  "장착 무기"}	
-, { classId :2	 ,  subClassId : 14 , name :  "그외 무기(전문기술)"}
-
-
-// , { classId :2	 ,  subClassId : 17 , name :  "Spear"}	
+, { class :2	 ,  subclass : 16 , name :  "투척 무기"}
+//, { class :2	 ,  subclass : 11 , name :  "Exotic"}	
+// , { class :2	 ,  subclass : 12 , name :  "Exotic"}	
+, { class :2	 ,  subclass : 13 , name :  "장착 무기"}	
+, { class :2	 ,  subclass : 14 , name :  "그외 무기(전문기술)"}
 
 
-, { classId :2	 ,  subClassId : 20 , name :  "낚싯대"}
-, { classId :3	 ,  subClassId : 0	, name :  "Red"}	
-, { classId :3	 ,  subClassId : 1	, name :  "Blue"}	
-, { classId :3	 ,  subClassId : 2	, name :  "Yellow"}	
-, { classId :3	 ,  subClassId : 3	, name :  "Purple"}
-, { classId :3	 ,  subClassId : 4	, name :  "Green"}	
-, { classId :3	 ,  subClassId : 5	, name :  "Orange"}	
-, { classId :3	 ,  subClassId : 6	, name :  "Meta"}	
-, { classId :3	 ,  subClassId : 7	, name :  "Simple"}	
-, { classId :3	 ,  subClassId : 8	, name :  "Prismatic"}	
+// , { class :2	 ,  subclass : 17 , name :  "Spear"}	
 
-, { classId :4	 ,  subClassId : 1	, name :  "천"}	
-, { classId :4	 ,  subClassId : 2	, name :  "가죽"}	
-, { classId :4	 ,  subClassId : 3	, name :  "사슬"}	
-, { classId :4	 ,  subClassId : 4	, name :  "판금"}	
-// , { classId :4	 ,  subClassId : 5	, name :  "Buckler(OBSOLETE)"}
-, { classId :4	 ,  subClassId : 6	, name :  "방패"}	
-, { classId :4	 ,  subClassId : 7	, name :  "성서"}
-, { classId :4	 ,  subClassId : 8	, name :  "우상"}
-, { classId :4	 ,  subClassId : 9	, name :  "토템"}	
-, { classId :4	 ,  subClassId : 0	, name :  "잡화"}	
-// , { classId :5	 ,  subClassId : 0	, name :  "Reagent"}	
-// , { classId :6	 ,  subClassId : 0	, name :  "Wand(OBSOLETE)"}	
-// , { classId :6	 ,  subClassId : 1	, name :  "Bolt(OBSOLETE)"}	
-, { classId :6	 ,  subClassId : 2	, name :  "화살"}	
-, { classId :6	 ,  subClassId : 3	, name :  "탄환"}	
-//, { classId :6	 ,  subClassId : 4	, name :  "Thrown(OBSOLETE)"}	
-, { classId :7	 ,  subClassId : 0	, name :  "거래가능"}	
-, { classId :7	 ,  subClassId : 1	, name :  "부품"}	
-, { classId :7	 ,  subClassId : 2	, name :  "폭약/폭탄"}	
-, { classId :7	 ,  subClassId : 3	, name :  "장치"}	
-//, { classId :7	 ,  subClassId : 4	, name :  "Jewelcrafting"}	
-// , { classId :7	 ,  subClassId : 5	, name :  "천"}	
-// , { classId :7	 ,  subClassId : 6	, name :  "가죽"}	
-// , { classId :7	 ,  subClassId : 7	, name :  "Metal & Stone"}	
-// , { classId :7	 ,  subClassId : 8	, name :  "Meat"}	
-, { classId :7	 ,  subClassId : 9	, name :  "약초"}	
-// , { classId :7	 ,  subClassId : 10 , name :  "Elemental"}
-//, { classId :7	 ,  subClassId : 11 , name :  "Other"}	
-// , { classId :7	 ,  subClassId : 12 , name :  "Enchanting"	}
-// , { classId :8	 ,  subClassId : 0	, name :  "Generic(OBSOLETE)"}	
-//, { classId :9	 ,  subClassId : 0	, name :  "책"	}
-, { classId :9	 ,  subClassId : 1	, name :  "가죽세공"	}
-, { classId :9	 ,  subClassId : 2	, name :  "재봉"}	
-, { classId :9	 ,  subClassId : 3	, name :  "기계공학"}	
-, { classId :9	 ,  subClassId : 4	, name :  "대장기술"}	
-, { classId :9	 ,  subClassId : 5	, name :  "요리"}	
-, { classId :9	 ,  subClassId : 6	, name :  "연금술"}	
-, { classId :9	 ,  subClassId : 7	, name :  "응급치료"}	
-, { classId :9	 ,  subClassId : 8	, name :  "마법부여"}
-, { classId :9	 ,  subClassId : 9	, name :  "낚시"}	
-// , { classId :9	 ,  subClassId : 10 , name :  "Jewelcrafting"}	
-// , { classId :10	 ,  subClassId :0	, name :  "Money(OBSOLETE)"}	
-// , { classId :11	 ,  subClassId :0	, name :  "Quiver(OBSOLETE)"}	
-// , { classId :11	 ,  subClassId :1	, name :  "Quiver(OBSOLETE)"}
-, { classId :11	 ,  subClassId :2	, name :  "화살통"}
-, { classId :11	 ,  subClassId :3	, name :  "탄약통"}
-, { classId :12	 ,  subClassId :0	, name :  "퀘스트"}	
-, { classId :13	 ,  subClassId :0	, name :  "키"}	
-//, { classId :13	 ,  subClassId :1	, name :  "Lockpick"}	
-// , { classId :14	 ,  subClassId :0	, name :  "Permanent"}	
-// , { classId :15	 ,  subClassId :0	, name :  "쓰래기"}	
-// , { classId :15	 ,  subClassId :1	, name :  "재료"}	
-//, { classId :15	 ,  subClassId :2	, name :  "Pet"}	
-// , { classId :15	 ,  subClassId :3	, name :  "Holiday"}	
-// , { classId :15	 ,  subClassId :4	, name :  "Other"}	
-// , { classId :15	 ,  subClassId :5	, name :  "Mount"}
-, { classId :16	 ,  subClassId :1	, name :  "Warrior"}	
-, { classId :16	 ,  subClassId :2	, name :  "Paladin"}	
-, { classId :16	 ,  subClassId :3	, name :  "Hunter"}	
-, { classId :16	 ,  subClassId :4	, name :  "Rogue"}	
-, { classId :16	 ,  subClassId :5	, name :  "Priest"}	
-, { classId :16	 ,  subClassId :6	, name :  "Death Knight"}
-, { classId :16	 ,  subClassId :7	, name :  "Shaman"}	
-, { classId :16	 ,  subClassId :8	, name :  "Mage"}	
-, { classId :16	 ,  subClassId :9	, name :  "Warlock"}	
-, { classId :16	 ,  subClassId :11	, name :  "Druid"}	
+
+, { class :2	 ,  subclass : 20 , name :  "낚싯대"}
+, { class :3	 ,  subclass : 0	, name :  "Red"}	
+, { class :3	 ,  subclass : 1	, name :  "Blue"}	
+, { class :3	 ,  subclass : 2	, name :  "Yellow"}	
+, { class :3	 ,  subclass : 3	, name :  "Purple"}
+, { class :3	 ,  subclass : 4	, name :  "Green"}	
+, { class :3	 ,  subclass : 5	, name :  "Orange"}	
+, { class :3	 ,  subclass : 6	, name :  "Meta"}	
+, { class :3	 ,  subclass : 7	, name :  "Simple"}	
+, { class :3	 ,  subclass : 8	, name :  "Prismatic"}	
+
+, { class :4	 ,  subclass : 1	, name :  "천"}	
+, { class :4	 ,  subclass : 2	, name :  "가죽"}	
+, { class :4	 ,  subclass : 3	, name :  "사슬"}	
+, { class :4	 ,  subclass : 4	, name :  "판금"}	
+// , { class :4	 ,  subclass : 5	, name :  "Buckler(OBSOLETE)"}
+, { class :4	 ,  subclass : 6	, name :  "방패"}	
+, { class :4	 ,  subclass : 7	, name :  "성서"}
+, { class :4	 ,  subclass : 8	, name :  "우상"}
+, { class :4	 ,  subclass : 9	, name :  "토템"}	
+, { class :4	 ,  subclass : 0	, name :  "잡화"}	
+// , { class :5	 ,  subclass : 0	, name :  "Reagent"}	
+// , { class :6	 ,  subclass : 0	, name :  "Wand(OBSOLETE)"}	
+// , { class :6	 ,  subclass : 1	, name :  "Bolt(OBSOLETE)"}	
+, { class :6	 ,  subclass : 2	, name :  "화살"}	
+, { class :6	 ,  subclass : 3	, name :  "탄환"}	
+//, { class :6	 ,  subclass : 4	, name :  "Thrown(OBSOLETE)"}	
+, { class :7	 ,  subclass : 0	, name :  "거래가능"}	
+, { class :7	 ,  subclass : 1	, name :  "부품"}	
+, { class :7	 ,  subclass : 2	, name :  "폭약/폭탄"}	
+, { class :7	 ,  subclass : 3	, name :  "장치"}	
+//, { class :7	 ,  subclass : 4	, name :  "Jewelcrafting"}	
+// , { class :7	 ,  subclass : 5	, name :  "천"}	
+// , { class :7	 ,  subclass : 6	, name :  "가죽"}	
+// , { class :7	 ,  subclass : 7	, name :  "Metal & Stone"}	
+// , { class :7	 ,  subclass : 8	, name :  "Meat"}	
+, { class :7	 ,  subclass : 9	, name :  "약초"}	
+// , { class :7	 ,  subclass : 10 , name :  "Elemental"}
+//, { class :7	 ,  subclass : 11 , name :  "Other"}	
+// , { class :7	 ,  subclass : 12 , name :  "Enchanting"	}
+// , { class :8	 ,  subclass : 0	, name :  "Generic(OBSOLETE)"}	
+//, { class :9	 ,  subclass : 0	, name :  "책"	}
+, { class :9	 ,  subclass : 1	, name :  "가죽세공"	}
+, { class :9	 ,  subclass : 2	, name :  "재봉"}	
+, { class :9	 ,  subclass : 3	, name :  "기계공학"}	
+, { class :9	 ,  subclass : 4	, name :  "대장기술"}	
+, { class :9	 ,  subclass : 5	, name :  "요리"}	
+, { class :9	 ,  subclass : 6	, name :  "연금술"}	
+, { class :9	 ,  subclass : 7	, name :  "응급치료"}	
+, { class :9	 ,  subclass : 8	, name :  "마법부여"}
+, { class :9	 ,  subclass : 9	, name :  "낚시"}	
+// , { class :9	 ,  subclass : 10 , name :  "Jewelcrafting"}	
+// , { class :10	 ,  subclass :0	, name :  "Money(OBSOLETE)"}	
+// , { class :11	 ,  subclass :0	, name :  "Quiver(OBSOLETE)"}	
+// , { class :11	 ,  subclass :1	, name :  "Quiver(OBSOLETE)"}
+, { class :11	 ,  subclass :2	, name :  "화살통"}
+, { class :11	 ,  subclass :3	, name :  "탄약통"}
+, { class :12	 ,  subclass :0	, name :  "퀘스트"}	
+, { class :13	 ,  subclass :0	, name :  "키"}	
+//, { class :13	 ,  subclass :1	, name :  "Lockpick"}	
+// , { class :14	 ,  subclass :0	, name :  "Permanent"}	
+// , { class :15	 ,  subclass :0	, name :  "쓰래기"}	
+// , { class :15	 ,  subclass :1	, name :  "재료"}	
+//, { class :15	 ,  subclass :2	, name :  "Pet"}	
+// , { class :15	 ,  subclass :3	, name :  "Holiday"}	
+// , { class :15	 ,  subclass :4	, name :  "Other"}	
+// , { class :15	 ,  subclass :5	, name :  "Mount"}
+, { class :16	 ,  subclass :1	, name :  "Warrior"}	
+, { class :16	 ,  subclass :2	, name :  "Paladin"}	
+, { class :16	 ,  subclass :3	, name :  "Hunter"}	
+, { class :16	 ,  subclass :4	, name :  "Rogue"}	
+, { class :16	 ,  subclass :5	, name :  "Priest"}	
+, { class :16	 ,  subclass :6	, name :  "Death Knight"}
+, { class :16	 ,  subclass :7	, name :  "Shaman"}	
+, { class :16	 ,  subclass :8	, name :  "Mage"}	
+, { class :16	 ,  subclass :9	, name :  "Warlock"}	
+, { class :16	 ,  subclass :11	, name :  "Druid"}	
 ]
 var InventoryTypeList = 
 [
@@ -319,16 +319,16 @@ function createOptions(id , list, keyName,selectedItem){
         $("#" + id).append(option)
     })
 }
-function createSubClassCheckButton(selectedClass,selectedValue){    
+function createSubClassCheckButton(selectedClass,selectedValue){   
         var classFiltered = subClassList.filter(function(data){
-	        return data.classId == selectedClass
+	        return data.class == selectedClass
         })
         $("#subClassCheck")
         $("#subClassCheck").html('')
-        createCheckButton('subClassCheck' , classFiltered, 'subClassId', `${selectedValue}`)
+        createCheckButton('subClassCheck' , classFiltered, 'subclass', `${selectedValue}`)
 }
 function reset_item_search(){
-    createOptions('classSelect' , classList, 'classId' ,'')
+    createOptions('classSelect' , classList, 'class' ,'')
     createSubClassCheckButton('','');    
     createOptions('RequiredLevelSelect' , RequiredLevelList, 'RequiredLevel','')
     createOptions('bondingSelect' , bondingList, 'bonding','')
@@ -357,10 +357,9 @@ $( window ).load(function() {
   //console.log(list);
 });
 $( document ).ready(function() {
-
     
-    createOptions('classSelect' , classList, 'classId' ,'<?php echo $_GET['class']?>')
-    createSubClassCheckButton('<?php echo $_GET['class']?>','<?php echo $_GET['subclass']?>');    
+    createOptions('classSelect' , classList, 'class' ,'<?php echo $_GET['class']?>')    
+    createSubClassCheckButton('<?php echo $_GET['class']?>',`<?php echo is_array($_GET['subclass']) ? implode ( ",", $_GET['subclass'] ) : $_GET['subclass'];?>`); 
     
     createOptions('RequiredLevelSelect' , RequiredLevelList, 'RequiredLevel','<?php echo $_GET['RequiredLevel']?>')
   
