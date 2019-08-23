@@ -12,7 +12,7 @@ $itemSearchColumn = array(
 ,   ["column" => "RequiredLevel", "type" => "between"]
 ,   ["column" => "InventoryType", "type" => "string"]
 ,   ["column" => "Quality", "type" => "string"]
-,   ["column" => "AllowableClass", "type" => "string"]
+,   ["column" => "AllowableClass", "type" => "multiBin"]
 ,   ["column" => "bonding", "type" => "string"]
 ,   ["column" => "Material", "type" => "string"]
 ,   ["column" => "stat_type", "type" => "multi"]
@@ -54,10 +54,18 @@ function get_item_searchStr($GET, $sql_search){
             }
 
             if( $item["type"] === 'between') {    
-                
                 $itemValueStr = str_replace('-' , ' and ', $itemValueStr);
                 $sql_search .= " and item_template." .$item["column"]. " between $itemValueStr";
-            }else  if( $item["type"] === 'multi') {     
+            }else  if( $item["type"] === 'multiBin') {     
+
+                $sql_search .=" and bin(". $item["column"] . ")  in ( ";
+                foreach($itemValue as $value) {
+                    $sql_search .= "bin(".$item["column"] ." & $value ) ,";
+                }
+                $sql_search = substr($sql_search, 0, -1);
+                $sql_search .=")";
+            }
+            else  if( $item["type"] === 'multi') {     
                 $sql_search .= " and ( item_template." .$item["column"]. "1 in ($itemValueStr)";
                 for($i = 2 ; $i <=10; $i++){
                     $sql_search .= " or item_template." .$item["column"]. "$i in ($itemValueStr)";
