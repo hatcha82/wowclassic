@@ -345,7 +345,7 @@ function createSubClassCheckButton(selectedClass,selectedValue){
 function reset_item_search(){
     createOptions('classSelect' , classList, 'class' ,'')
     createSubClassCheckButton('','');    
-    createOptions('RequiredLevelRadio' , RequiredLevelList, 'RequiredLevel','')
+    createRadioButton('RequiredLevelRadio' , RequiredLevelList, 'RequiredLevel','')
     createOptions('bondingSelect' , bondingList, 'bonding','')
     createOptions('MeterialSelect' , MeterialList, 'Material','')
     createCheckButton('bondingCheck' , bondingList, 'bonding',``)
