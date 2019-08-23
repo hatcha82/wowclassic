@@ -189,7 +189,7 @@ var InventoryTypeList =
 ]
 var RequiredLevelList =
 [
-, {RequiredLevel: "1-10" ,  name:  "0 - 10"}    
+, {RequiredLevel: "1-10" ,  name:  "1 - 10"}    
 , {RequiredLevel: "10-20" , name: "10 - 20"}    
 , {RequiredLevel: "20-30" , name: "20 - 30"}    
 , {RequiredLevel: "30-40" , name: "30 - 40"}    
@@ -272,10 +272,25 @@ var stat_typeList = [
     // , { stat_type : 37	, name : "ITEM_MOD_EXPERTISE_RATING"}
 
 ]
+function createRadioButton(id , list, keyName,selectedItem){
+    $("#"+ id).html('')    
+    var html = '<ul class="checkButton">';
 
+    list.forEach(function(obj){
+        var style = '';
+        if(obj['color']){
+            style +=`color:${obj['color']};`;
+        }
+        var radioButton = `<input type="radio" name="${keyName}" value="${obj[keyName]}"/><span style="${style}">${obj.name}</span>`;
+        if(selectedItem != '' && selectedItem == obj[keyName]){
+            radioButton = `<input type="radio" name="${keyName}" value="${obj[keyName]}" checked/><span style="${style}">${obj.name}</span>`;
+        }             
+        html+=`<li>${radioButton}</li>`;
+    })
+    html += '</ul>';
+    $("#" + id).append(html)
+}
 function createCheckButton(id , list, keyName,selectedItem){
-
-    
     $("#"+ id).html('')    
     var html = '<ul class="checkButton">';
 
@@ -330,7 +345,7 @@ function createSubClassCheckButton(selectedClass,selectedValue){
 function reset_item_search(){
     createOptions('classSelect' , classList, 'class' ,'')
     createSubClassCheckButton('','');    
-    createOptions('RequiredLevelSelect' , RequiredLevelList, 'RequiredLevel','')
+    createOptions('RequiredLevelRadio' , RequiredLevelList, 'RequiredLevel','')
     createOptions('bondingSelect' , bondingList, 'bonding','')
     createOptions('MeterialSelect' , MeterialList, 'Material','')
     createCheckButton('bondingCheck' , bondingList, 'bonding',``)
@@ -361,7 +376,7 @@ $( document ).ready(function() {
     createOptions('classSelect' , classList, 'class' ,'<?php echo $_GET['class']?>')    
     createSubClassCheckButton('<?php echo $_GET['class']?>',`<?php echo is_array($_GET['subclass']) ? implode ( ",", $_GET['subclass'] ) : $_GET['subclass'];?>`); 
     
-    createOptions('RequiredLevelSelect' , RequiredLevelList, 'RequiredLevel','<?php echo $_GET['RequiredLevel']?>')
+    createRadioButton('RequiredLevelRadio' , RequiredLevelList, 'RequiredLevel','<?php echo $_GET['RequiredLevel']?>')
   
     createOptions('QualitySelect' , QualityList, 'Quality','<?php echo $_GET['Quality']?>')
     createOptions('MeterialSelect' , MeterialList, 'Material','<?php echo $_GET['Material']?>')
@@ -447,7 +462,7 @@ $( document ).ready(function() {
         #bo_sch div.search_group span {margin-left:3px;}
         
         #bo_sch ul.checkButton span{margin-left:3px;}
-        #bo_sch ul.checkButton li{display:inline-block;margin:10px;width:120px;}
+        #bo_sch ul.checkButton li{display:inline-block;margin:10px;min-width:100px;}
         #bo_sch ul.checkButton li input{margin-right:2px;}
         </style>
         <fieldset id="bo_sch" >
@@ -473,16 +488,15 @@ $( document ).ready(function() {
             <input type="text" name="stx" value="<?php echo stripslashes($stx) ?>" class="sch_input" size="25" maxlength="20" placeholder="검색어를 입력해주세요">
         </div>
         <div class="search_group">
-            <label for="RequiredLevelSelect">레벨</label>
-            <select name="RequiredLevel" id="RequiredLevelSelect"></select>
-            
-            <label for="MeterialSelect">재질</label>
-            <select  name="Material" id="MeterialSelect"></select>        
-            <div style="clear:both"></div>
+            <span for="RequiredLevelRadio">레벨</span>
+            <div  id="RequiredLevelRadio"></div>
         </div>
         <div class="search_group">
             <label for="classSelect">분류1</label>
             <select  name="class" id="classSelect"></select>
+            <label for="MeterialSelect">재질</label>
+            <select  name="Material" id="MeterialSelect"></select>        
+            <div style="clear:both"></div>
             <div style="clear:both"></div>
             <div>
             <span for="subClassCheck">분류2</span>
