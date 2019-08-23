@@ -224,7 +224,7 @@ var bondingList =[
         {bonding : 1 , name:'획득시'}
     ,   {bonding : 2 , name:'착용시'}
     ,   {bonding : 3 , name:'사용시'}
-    ,   {bonding : 4 , name:'퀘스트'}    
+    //,   {bonding : 4 , name:'퀘스트'}    
 ]
 // ,   { Material :  4	 , ""} Jewelry
 var MeterialList = [
@@ -236,7 +236,72 @@ var MeterialList = [
 ,   { Material :  7	 , name : "천"} 
 ,   { Material :  8	 , name : "가죽"} 
 ];
+var stat_typeList = [
+      { stat_type : 0	, name : "마나"}
+    , { stat_type : 1	, name : "체력"}
+    , { stat_type : 3	, name : "민첩성"}
+    , { stat_type : 4	, name : "힘"}
+    , { stat_type : 5	, name : "지능"}
+    , { stat_type : 6	, name : "정신력"}
+    , { stat_type : 7	, name : "체력"}
+    // , { stat_type : 12	, name : "ITEM_MOD_DEFENSE_SKILL_RATING"}
+    // , { stat_type : 13	, name : "ITEM_MOD_DODGE_RATING"}
+    // , { stat_type : 14	, name : "ITEM_MOD_PARRY_RATING"}
+    // , { stat_type : 15	, name : "ITEM_MOD_BLOCK_RATING"}
+    // , { stat_type : 16	, name : "ITEM_MOD_HIT_MELEE_RATING"}
+    // , { stat_type : 17	, name : "ITEM_MOD_HIT_RANGED_RATING"}
+    // , { stat_type : 18	, name : "ITEM_MOD_HIT_SPELL_RATING"}
+    // , { stat_type : 19	, name : "ITEM_MOD_CRIT_MELEE_RATING"}
+    // , { stat_type : 20	, name : "ITEM_MOD_CRIT_RANGED_RATING"}
+    // , { stat_type : 21	, name : "ITEM_MOD_CRIT_SPELL_RATING"}
+    // , { stat_type : 22	, name : "ITEM_MOD_HIT_TAKEN_MELEE_RATING"}
+    // , { stat_type : 23	, name : "ITEM_MOD_HIT_TAKEN_RANGED_RATING"}
+    // , { stat_type : 24	, name : "ITEM_MOD_HIT_TAKEN_SPELL_RATING"}
+    // , { stat_type : 25	, name : "ITEM_MOD_CRIT_TAKEN_MELEE_RATING"}
+    // , { stat_type : 26	, name : "ITEM_MOD_CRIT_TAKEN_RANGED_RATING"}
+    // , { stat_type : 27	, name : "ITEM_MOD_CRIT_TAKEN_SPELL_RATING"}
+    // , { stat_type : 28	, name : "ITEM_MOD_HASTE_MELEE_RATING"}
+    // , { stat_type : 29	, name : "ITEM_MOD_HASTE_RANGED_RATING"}
+    // , { stat_type : 30	, name : "ITEM_MOD_HASTE_SPELL_RATING"}
+    // , { stat_type : 31	, name : "ITEM_MOD_HIT_RATING"}
+    // , { stat_type : 32	, name : "ITEM_MOD_CRIT_RATING"}
+    // , { stat_type : 33	, name : "ITEM_MOD_HIT_TAKEN_RATING"}
+    // , { stat_type : 34	, name : "ITEM_MOD_CRIT_TAKEN_RATING"}
+    // , { stat_type : 35	, name : "ITEM_MOD_RESILIENCE_RATING"}
+    // , { stat_type : 36	, name : "ITEM_MOD_HASTE_RATING"}
+    // , { stat_type : 37	, name : "ITEM_MOD_EXPERTISE_RATING"}
 
+]
+
+function createCheckButton(id , list, keyName,selectedItem){
+
+    
+    $("#"+ id).html('')    
+    var html = '<ul class="checkButton">';
+
+    list.forEach(function(obj){
+        var style = '';
+        if(obj['color']){
+            style +=`color:${obj['color']};`;
+        }
+        var checkButton = `<input type="checkbox" name="${keyName}[]" value="${obj[keyName]}"/><span style="${style}">${obj.name}</span>`;
+        if(selectedItem != '' ){
+            var selectedItemArray = selectedItem.split(',');
+            var key =  obj[keyName];
+            var test = selectedItemArray.filter(function(item){
+                return item == key;
+            })
+            
+            if(test.length == 1){
+                checkButton = `<input type="checkbox" name="${keyName}[]" value="${obj[keyName]}" checked/><span style="${style}">${obj.name}</span>`;
+            }
+             
+        }
+        html+=`<li>${checkButton}</li>`;
+    })
+    html += '</ul>';
+    $("#" + id).append(html)
+}
 function createOptions(id , list, keyName,selectedItem){
     $("#"+ id).html('')
     var option = `<option value="">선택</option>`
@@ -254,23 +319,27 @@ function createOptions(id , list, keyName,selectedItem){
         $("#" + id).append(option)
     })
 }
-function createSubClassOption(selectedClass,selectedValue){    
+function createSubClassCheckButton(selectedClass,selectedValue){    
         var classFiltered = subClassList.filter(function(data){
 	        return data.classId == selectedClass
         })
-        $("#subClassSelect")
-        $("#subClassSelect").html('')
-        createOptions('subClassSelect' , classFiltered, 'subClassId', `${selectedValue}`)
+        $("#subClassCheck")
+        $("#subClassCheck").html('')
+        createCheckButton('subClassCheck' , classFiltered, 'subClassId', `${selectedValue}`)
 }
 function reset_item_search(){
     createOptions('classSelect' , classList, 'classId' ,'')
-    createSubClassOption('','');    
-    createOptions('InventoryTypeSelect' , InventoryTypeList, 'InventoryType', '')
+    createSubClassCheckButton('','');    
     createOptions('RequiredLevelSelect' , RequiredLevelList, 'RequiredLevel','')
-    createOptions('AllowableClassSelect' , AllowableClassList, 'AllowableClass','')
-    createOptions('QualitySelect' , QualityList, 'Quality','')
     createOptions('bondingSelect' , bondingList, 'bonding','')
     createOptions('MeterialSelect' , MeterialList, 'Material','')
+    createCheckButton('bondingCheck' , bondingList, 'bonding',``)
+    createCheckButton('QualityCheck' , QualityList, 'Quality','')
+    createCheckButton('AllowableClassCheck' , AllowableClassList, 'AllowableClass','')
+    createCheckButton('stat_typeCheck' , stat_typeList, 'stat_type','')
+    createCheckButton('InventoryTypeCheck' , InventoryTypeList, 'InventoryType',``)
+
+    
     
 
 }
@@ -291,22 +360,42 @@ $( document ).ready(function() {
 
     
     createOptions('classSelect' , classList, 'classId' ,'<?php echo $_GET['class']?>')
-    createSubClassOption('<?php echo $_GET['class']?>','<?php echo $_GET['subclass']?>');    
-    createOptions('InventoryTypeSelect' , InventoryTypeList, 'InventoryType', '<?php echo $_GET['InventoryType']?>')
+    createSubClassCheckButton('<?php echo $_GET['class']?>','<?php echo $_GET['subclass']?>');    
+    
     createOptions('RequiredLevelSelect' , RequiredLevelList, 'RequiredLevel','<?php echo $_GET['RequiredLevel']?>')
-    createOptions('AllowableClassSelect' , AllowableClassList, 'AllowableClass','<?php echo $_GET['AllowableClass']?>')
+  
     createOptions('QualitySelect' , QualityList, 'Quality','<?php echo $_GET['Quality']?>')
-    createOptions('bondingSelect' , bondingList, 'bonding','<?php echo $_GET['bonding']?>')
     createOptions('MeterialSelect' , MeterialList, 'Material','<?php echo $_GET['Material']?>')
-    
-    
+
+    createCheckButton('bondingCheck' , bondingList, 'bonding',`<?php echo is_array($_GET['bonding']) ? implode ( ",", $_GET['bonding'] ) : $_GET['bonding'];?>`)
+    createCheckButton('QualityCheck' , QualityList, 'Quality',`<?php echo is_array($_GET['Quality']) ? implode ( ",", $_GET['Quality'] ) : $_GET['Quality'];?>`)
+    createCheckButton('AllowableClassCheck' , AllowableClassList, 'AllowableClass',`<?php echo is_array($_GET['AllowableClass']) ? implode ( ",", $_GET['AllowableClass'] ) : $_GET['AllowableClass'];?>`)
+    createCheckButton('stat_typeCheck' , stat_typeList, 'stat_type',`<?php echo is_array($_GET['stat_type']) ? implode ( ",", $_GET['stat_type'] ) : $_GET['stat_type'];?>`)
+    createCheckButton('InventoryTypeCheck' , InventoryTypeList, 'InventoryType',`<?php echo is_array($_GET['InventoryType']) ? implode ( ",", $_GET['InventoryType'] ) : $_GET['InventoryType'];?>`)
     $("#classSelect").change(function(e){
         var selectedValue = this.value;
-        createSubClassOption(selectedValue,'');
+        createSubClassCheckButton(selectedValue,'');
     })
+
+    $("td.AllowableClass").each(function(idx ,tag){
+	$tag = $(tag)
+	var AllowableClass = parseInt($tag.text());
+	var classObj= $.map(AllowableClassList,function(obj){		
+		if(obj.AllowableClass == AllowableClass) return obj;
+	})[0];
+	if(classObj){
+        var html = `<span style="color:${classObj.color}">${classObj.name}</span>`
+    }else{
+        var html ='';
+    }
+
+	$tag.html(html)
+})
     
 });
 </script>
+
+
 <!-- 게시판 목록 시작 { -->
 
 
@@ -315,10 +404,7 @@ $( document ).ready(function() {
 
     <!-- 게시판 페이지 정보 및 버튼 시작 { -->
     <div id="bo_btn_top">
-        <div id="bo_list_total">
-            <span>Total <?php echo number_format($total_count) ?>건</span>
-            <?php echo $page ?> 페이지
-        </div>
+       
 
         <?php if ($rss_href || $write_href) { ?>
         <ul class="btn_bo_user">
@@ -354,10 +440,16 @@ $( document ).ready(function() {
     <!-- } 게시판 카테고리 끝 -->
     <!-- 게시판 검색 시작 { -->
         <style>
-        #bo_sch {color:#eee;width:100%}
+        #bo_sch {color:#eee;width:100%;margin-bottom:10px;padding:10px;}
         #bo_sch label{float:left;display:block;line-height:36px;width:60px;padding:0 5px;}
         #bo_sch select{width:100px;border: 1px solid #444;}
         #bo_sch button.sch_btn{float:right;margin-right:10px;border:1px solid #444;padding:0 20px;width:120px;height:30px;}
+        #bo_sch div.search_group{border:1px solid #444;margin: 10px auto;}
+        #bo_sch div.search_group span {margin-left:3px;}
+        
+        #bo_sch ul.checkButton span{margin-left:3px;}
+        #bo_sch ul.checkButton li{display:inline-block;margin:10px;width:120px;}
+        #bo_sch ul.checkButton li input{margin-right:2px;}
         </style>
         <fieldset id="bo_sch" >
         <legend>게시물 검색</legend>
@@ -381,40 +473,58 @@ $( document ).ready(function() {
             <label for="stx" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label>
             <input type="text" name="stx" value="<?php echo stripslashes($stx) ?>" class="sch_input" size="25" maxlength="20" placeholder="검색어를 입력해주세요">
         </div>
-        <div style="width:100%">
+        <div class="search_group">
             <label for="RequiredLevelSelect">레벨</label>
             <select name="RequiredLevel" id="RequiredLevelSelect"></select>
-            <label for="QualitySelect">등급</label>
-            <select name="Quality" id="QualitySelect"></select>
-            <label for="bondingSelect">귀속</label>
-            <select name="bonding" id="bondingSelect"></select>
-             <label for="InventoryTypeSelect">슬롯</label>
-            <select  name="InventoryType" id="InventoryTypeSelect"></select>        
+            
             <label for="MeterialSelect">재질</label>
             <select  name="Material" id="MeterialSelect"></select>        
-            <div style="clear:both"/>
+            <div style="clear:both"></div>
         </div>
-        <div style="width:100%">
+        <div class="search_group">
             <label for="classSelect">분류1</label>
             <select  name="class" id="classSelect"></select>
-            <label for="subClassSelect">분류2</label>
-            <select name="subclass"id="subClassSelect"></select>
-            
-            <button type="submit"  value="검색" class="sch_btn"><i class="fa fa-search" aria-hidden="true"></i><span class="" style="font-size:0.9em;"> 검색</span></button>       
+            <div style="clear:both"></div>
+            <div>
+            <span for="subClassCheck">분류2</span>
+            <div  id="subClassCheck"></div>
+            </div>
+           
+            <div style="clear:both"></div>
+        </div>
+        <div class="search_group">
+            <span for="bondingCheck">귀속</span><Br/>
+            <div  id="bondingCheck"></div>
+            <div style="clear:both"></div>
+        </div>
+        <div class="search_group">
+            <span for="QualityCheck">등급</span><Br/>
+            <div  id="QualityCheck"></div>
+            <div style="clear:both"></div>
+        </div>
+        <div class="search_group">
+            <span for="AllowableClassCheck">직업</span><Br/>
+            <div id="AllowableClassCheck"></div>
+            <div style="clear:both"></div>
+        </div>
+        <div class="search_group">
+             <span for="stat_typeCheck">스탯</span><Br/>
+            <div id="stat_typeCheck"></div>
+            <div style="clear:both"></div>
+        </div>
+        <div class="search_group">
+            <span for="InventoryTypeCheck">슬롯</span><Br/>
+            <div id="InventoryTypeCheck"></div>
+            <div style="clear:both"></div>
+        </div>
+        <button type="submit"  value="검색" class="sch_btn"><i class="fa fa-search" aria-hidden="true"></i><span class="" style="font-size:0.9em;"> 검색</span></button>       
             <button type="button" onclick="reset_item_search()" value="초기화" class="sch_btn"><i class="fa fa-search" aria-hidden="true"></i><span class="" style="font-size:0.9em;"> 초기화</span></button>       
-            <div style="clear:both"/>
-        </div>
-        <div>
-        
-        </div>
-        <div style="width:100%;">
-            <label for="AllowableClassSelect">직업</label>
-            <select name="AllowableClass" id="AllowableClassSelect"></select>
-            <div style="clear:both"/>
-        </div>
-        
         </form>
     </fieldset>
+    <div id="bo_list_total" style="margin-bottom:10px;">
+        <span>Total <?php echo number_format($total_count) ?>건</span>
+        <?php echo $page ?> 페이지
+    </div>
     <!-- } 게시판 검색 끝 -->   
     <form name="fboardlist" id="fboardlist" action="./board_list_update.php" onsubmit="return fboardlist_submit(this);" method="post">
     <input type="hidden" name="bo_table" value="<?php echo $bo_table ?>">
@@ -443,6 +553,7 @@ $( document ).ready(function() {
             <?php } ?>
             <th scope="col">번호</th>
             <th scope="col">제목</th>
+            <th scope="col">직업</th>
             <th scope="col">아이템 레벨</th>
             <th scope="col">필요 레벨</th>
             
@@ -509,6 +620,10 @@ $( document ).ready(function() {
                     <?php if ($list[$i]['comment_cnt']) { ?><span class="sound_only">댓글</span><span class="cnt_cmt">+ <?php echo $list[$i]['wr_comment']; ?></span><span class="sound_only">개</span><?php } ?>
                 <!-- </div> -->
                 <ul>
+            </td>
+            <td align="center" class="AllowableClass">
+                <?php echo $list[$i]['AllowableClass'] ?>
+                <!-- AllowableClass& (1<<getClass()))) -->
             </td>
             <td align="center">
                 <?php echo $list[$i]['ItemLevel'] ?>
