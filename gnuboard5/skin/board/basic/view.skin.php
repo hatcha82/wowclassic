@@ -104,9 +104,6 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
       
         <!-- 본문 내용 시작 { -->
         <div id="bo_v_con"><?php echo get_view_thumbnail($view['content']); ?></div>
-        <div>
-        <iframe  id="iframe_test" src='https://classicwow.live/leveling/alliance/solo/dwarf/priest?section=1&step=4' width="100%" height="2000"/>
-        </div>
         <script>       
         
         $('img').on('error',function(){
