@@ -231,7 +231,7 @@ if ($is_search_bbs) {
     $sql .= " {$sql_order} limit {$from_record}, $page_rows ";
    
 }
-echo "<pre style='color:#eee'>$sql</pre>";
+//echo "<pre style='color:#eee'>$sql</pre>";
 // 페이지의 공지개수가 목록수 보다 작을 때만 실행
 if($page_rows > 0) {
    

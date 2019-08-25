@@ -113,12 +113,12 @@ var areaList = [
 		"mapId": "0",
 		"areaId": "40"
 	},
-	{
-		"zoneId": "21",
-		"name": "Kul Tiras",
-		"mapId": "0",
-		"areaId": "0"
-	},
+	// {
+	// 	"zoneId": "21",
+	// 	"name": "Kul Tiras",
+	// 	"mapId": "0",
+	// 	"areaId": "0"
+	// },
 	{
 		"zoneId": "22",
 		"name": "Programmer Isle",
@@ -155,12 +155,12 @@ var areaList = [
 		"mapId": "0",
 		"areaId": "0"
 	},
-	{
-		"zoneId": "30",
-		"name": "Nine",
-		"mapId": "0",
-		"areaId": "0"
-	},
+	// {
+	// 	"zoneId": "30",
+	// 	"name": "Nine",
+	// 	"mapId": "0",
+	// 	"areaId": "0"
+	// },
 	{
 		"zoneId": "32",
 		"name": "The Cemetary",
@@ -905,12 +905,12 @@ var areaList = [
 		"mapId": "0",
 		"areaId": "85"
 	},
-	{
-		"zoneId": "170",
-		"name": "Lordamere Lake",
-		"mapId": "0",
-		"areaId": "0"
-	},
+	// {
+	// 	"zoneId": "170",
+	// 	"name": "Lordamere Lake",
+	// 	"mapId": "0",
+	// 	"areaId": "0"
+	// },
 	{
 		"zoneId": "172",
 		"name": "Fenris Isle",
@@ -1079,12 +1079,12 @@ var areaList = [
 		"mapId": "0",
 		"areaId": "130"
 	},
-	{
-		"zoneId": "214",
-		"name": "The Great Sea",
-		"mapId": "0",
-		"areaId": "0"
-	},
+	// {
+	// 	"zoneId": "214",
+	// 	"name": "The Great Sea",
+	// 	"mapId": "0",
+	// 	"areaId": "0"
+	// },
 	{
 		"zoneId": "215",
 		"name": "Mulgore",
@@ -1379,12 +1379,12 @@ var areaList = [
 		"mapId": "37",
 		"areaId": "0"
 	},
-	{
-		"zoneId": "269",
-		"name": "Dun Algaz",
-		"mapId": "0",
-		"areaId": "0"
-	},
+	// {
+	// 	"zoneId": "269",
+	// 	"name": "Dun Algaz",
+	// 	"mapId": "0",
+	// 	"areaId": "0"
+	// },
 	{
 		"zoneId": "271",
 		"name": "Southshore",
@@ -1403,12 +1403,12 @@ var areaList = [
 		"mapId": "0",
 		"areaId": "267"
 	},
-	{
-		"zoneId": "276",
-		"name": "UNUSED Stonewrought Pass",
-		"mapId": "0",
-		"areaId": "0"
-	},
+	// {
+	// 	"zoneId": "276",
+	// 	"name": "UNUSED Stonewrought Pass",
+	// 	"mapId": "0",
+	// 	"areaId": "0"
+	// },
 	{
 		"zoneId": "277",
 		"name": "The Foothill Caverns",
@@ -1493,12 +1493,12 @@ var areaList = [
 		"mapId": "0",
 		"areaId": "267"
 	},
-	{
-		"zoneId": "293",
-		"name": "Thoradin’s Wall",
-		"mapId": "0",
-		"areaId": "0"
-	},
+	// {
+	// 	"zoneId": "293",
+	// 	"name": "Thoradin’s Wall",
+	// 	"mapId": "0",
+	// 	"areaId": "0"
+	// },
 	{
 		"zoneId": "294",
 		"name": "Eastern Strand",
@@ -1511,12 +1511,12 @@ var areaList = [
 		"mapId": "0",
 		"areaId": "267"
 	},
-	{
-		"zoneId": "296",
-		"name": "South Seas UNUSED",
-		"mapId": "0",
-		"areaId": "0"
-	},
+	// {
+	// 	"zoneId": "296",
+	// 	"name": "South Seas UNUSED",
+	// 	"mapId": "0",
+	// 	"areaId": "0"
+	// },
 	{
 		"zoneId": "297",
 		"name": "Jaguero Isle",
@@ -1577,12 +1577,12 @@ var areaList = [
 		"mapId": "0",
 		"areaId": "47"
 	},
-	{
-		"zoneId": "308",
-		"name": "The Forbidding Sea",
-		"mapId": "0",
-		"areaId": "0"
-	},
+	// {
+	// 	"zoneId": "308",
+	// 	"name": "The Forbidding Sea",
+	// 	"mapId": "0",
+	// 	"areaId": "0"
+	// },
 	{
 		"zoneId": "309",
 		"name": "Ironbeard’s Tomb",
@@ -1697,24 +1697,24 @@ var areaList = [
 		"mapId": "0",
 		"areaId": "45"
 	},
-	{
-		"zoneId": "330",
-		"name": "Thandol Span",
-		"mapId": "0",
-		"areaId": "0"
-	},
+	// {
+	// 	"zoneId": "330",
+	// 	"name": "Thandol Span",
+	// 	"mapId": "0",
+	// 	"areaId": "0"
+	// },
 	{
 		"zoneId": "331",
 		"name": "Ashenvale",
 		"mapId": "1",
 		"areaId": "0"
 	},
-	{
-		"zoneId": "332",
-		"name": "The Great Sea",
-		"mapId": "1",
-		"areaId": "0"
-	},
+	// {
+	// 	"zoneId": "332",
+	// 	"name": "The Great Sea",
+	// 	"mapId": "1",
+	// 	"areaId": "0"
+	// },
 	{
 		"zoneId": "333",
 		"name": "Circle of East Binding",
@@ -1973,12 +1973,12 @@ var areaList = [
 		"mapId": "1",
 		"areaId": "14"
 	},
-	{
-		"zoneId": "377",
-		"name": "Southfury River",
-		"mapId": "1",
-		"areaId": "0"
-	},
+	// {
+	// 	"zoneId": "377",
+	// 	"name": "Southfury River",
+	// 	"mapId": "1",
+	// 	"areaId": "0"
+	// },
 	{
 		"zoneId": "378",
 		"name": "Camp Taurajo",
@@ -2147,18 +2147,18 @@ var areaList = [
 		"mapId": "1",
 		"areaId": "14"
 	},
-	{
-		"zoneId": "408",
-		"name": "Gillijim’s Isle",
-		"mapId": "0",
-		"areaId": "0"
-	},
-	{
-		"zoneId": "409",
-		"name": "Island of Doctor Lapidis",
-		"mapId": "0",
-		"areaId": "0"
-	},
+	// {
+	// 	"zoneId": "408",
+	// 	"name": "Gillijim’s Isle",
+	// 	"mapId": "0",
+	// 	"areaId": "0"
+	// },
+	// {
+	// 	"zoneId": "409",
+	// 	"name": "Island of Doctor Lapidis",
+	// 	"mapId": "0",
+	// 	"areaId": "0"
+	// },
 	{
 		"zoneId": "410",
 		"name": "Razorwind Canyon",
@@ -2921,12 +2921,12 @@ var areaList = [
 		"mapId": "1",
 		"areaId": "405"
 	},
-	{
-		"zoneId": "616",
-		"name": "Hyjal",
-		"mapId": "1",
-		"areaId": "0"
-	},
+	// {
+	// 	"zoneId": "616",
+	// 	"name": "Hyjal",
+	// 	"mapId": "1",
+	// 	"areaId": "0"
+	// },
 	{
 		"zoneId": "618",
 		"name": "Winterspring",
@@ -4157,12 +4157,12 @@ var areaList = [
 		"mapId": "0",
 		"areaId": "33"
 	},
-	{
-		"zoneId": "1579",
-		"name": "Unused The Deadmines 002",
-		"mapId": "0",
-		"areaId": "0"
-	},
+	// {
+	// 	"zoneId": "1579",
+	// 	"name": "Unused The Deadmines 002",
+	// 	"mapId": "0",
+	// 	"areaId": "0"
+	// },
 	{
 		"zoneId": "1580",
 		"name": "Unused Ironclad Cove 003",
@@ -4775,12 +4775,12 @@ var areaList = [
 		"mapId": "329",
 		"areaId": "0"
 	},
-	{
-		"zoneId": "2037",
-		"name": "Quel’thalas",
-		"mapId": "0",
-		"areaId": "0"
-	},
+	// {
+	// 	"zoneId": "2037",
+	// 	"name": "Quel’thalas",
+	// 	"mapId": "0",
+	// 	"areaId": "0"
+	// },
 	{
 		"zoneId": "2057",
 		"name": "Scholomance",
@@ -5195,12 +5195,12 @@ var areaList = [
 		"mapId": "0",
 		"areaId": "139"
 	},
-	{
-		"zoneId": "2280",
-		"name": "DO NOT USE",
-		"mapId": "0",
-		"areaId": "0"
-	},
+	// {
+	// 	"zoneId": "2280",
+	// 	"name": "DO NOT USE",
+	// 	"mapId": "0",
+	// 	"areaId": "0"
+	// },
 	{
 		"zoneId": "2297",
 		"name": "Darrowmere Lake",
@@ -5933,12 +5933,12 @@ var areaList = [
 		"mapId": "1",
 		"areaId": "331"
 	},
-	{
-		"zoneId": "2917",
-		"name": "Hall of Legends",
-		"mapId": "1",
-		"areaId": "0"
-	},
+	// {
+	// 	"zoneId": "2917",
+	// 	"name": "Hall of Legends",
+	// 	"mapId": "1",
+	// 	"areaId": "0"
+	// },
 	{
 		"zoneId": "2918",
 		"name": "Champions’ Hall",
@@ -6581,12 +6581,12 @@ var areaList = [
 		"mapId": "532",
 		"areaId": "0"
 	},
-	{
-		"zoneId": "3459",
-		"name": "City",
-		"mapId": "0",
-		"areaId": "0"
-	},
+	// {
+	// 	"zoneId": "3459",
+	// 	"name": "City",
+	// 	"mapId": "0",
+	// 	"areaId": "0"
+	// },
 	{
 		"zoneId": "3460",
 		"name": "Golden Strand",
@@ -6695,12 +6695,12 @@ var areaList = [
 		"mapId": "571",
 		"areaId": "0"
 	},
-	{
-		"zoneId": "3478",
-		"name": "Gates of Ahn’Qiraj",
-		"mapId": "1",
-		"areaId": "0"
-	},
+	// {
+	// 	"zoneId": "3478",
+	// 	"name": "Gates of Ahn’Qiraj",
+	// 	"mapId": "1",
+	// 	"areaId": "0"
+	// },
 	{
 		"zoneId": "3479",
 		"name": "The Veiled Sea",
@@ -14136,7 +14136,7 @@ var  classList = [
       if(!nameField){
         nameField = keyName;
       }
-      var href="#";
+      var href="javascript:void(0);";
       var radioButton = `<input type="radio" name="${nameField}" value=""/><span style="">모두</span>`;
       html+=`<li>${radioButton}</li>`;
       list.forEach(function(obj){
@@ -14147,9 +14147,9 @@ var  classList = [
           if(wowheadHref){
             href = `${wowheadHref}=${obj[keyName]}`;
           }
-          radioButton = `<input type="radio" name="${nameField}" value="${obj[keyName]}"/><a href="${href}" style="${style}">${obj.name}</a>`;
+          radioButton = `<input type="radio" name="${nameField}" value="${obj[keyName]}"/><a class="noneLink" href="${href}" onclick="javascript:void(0);"  style="${style}">${obj.name}</a>`;
           if(selectedItem != '' && selectedItem == obj[keyName]){
-              radioButton = `<input type="radio" name="${nameField}" value="${obj[keyName]}" checked/><a href="${href}" style="${style}">${obj.name}</a>`;
+              radioButton = `<input type="radio" name="${nameField}" value="${obj[keyName]}" checked/><a class="noneLink" href="${href}" onclick="javascript:void(0);"  style="${style}">${obj.name}</a>`;
           }             
           html+=`<li>${radioButton}</li>`;
       })

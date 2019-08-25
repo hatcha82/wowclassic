@@ -78,7 +78,7 @@ $itemSearchColumn = array(
 );
 
 function get_item_queryStr($GET,$qstr){   
-    $qstr .= '&amp;item=true;quest=true';
+    $qstr .= "&amp;item=true;quest=true&zoneActiveIndex=" . $GET['zoneActiveIndex'] ."&andActiveIndex= " . $GET['andActiveIndex'];
     global $itemSearchColumn;
     foreach($itemSearchColumn as $item) {
         if (isset($GET[$item["column"]]))  {

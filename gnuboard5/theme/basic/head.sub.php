@@ -69,7 +69,10 @@ var g5_editor    = "<?php echo ($config['cf_editor'] && $board['bo_use_dhtml_edi
 var g5_cookie_domain = "<?php echo G5_COOKIE_DOMAIN ?>";
 </script>
 <script src="<?php echo G5_JS_URL ?>/jquery-1.8.3.min.js"></script>
+<script src="<?php echo G5_JS_URL ?>/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
 <script src="<?php echo G5_JS_URL ?>/jquery.menu.js?ver=<?php echo G5_JS_VER; ?>"></script>
+<!-- Latest compiled and minified JavaScript -->
+
 <script src="<?php echo G5_JS_URL ?>/common.js?ver=<?php echo G5_JS_VER; ?>"></script>
 <script src="<?php echo G5_JS_URL ?>/underscore-min.js"></script>
 <script src="<?php echo G5_JS_URL ?>/wow.js?ver=<?php echo G5_JS_VER; ?>"></script>
@@ -77,6 +80,7 @@ var g5_cookie_domain = "<?php echo G5_COOKIE_DOMAIN ?>";
 <script src="<?php echo G5_JS_URL ?>/wrest.js?ver=<?php echo G5_JS_VER; ?>"></script>
 <script src="<?php echo G5_JS_URL ?>/placeholders.min.js"></script>
 <link rel="stylesheet" href="<?php echo G5_JS_URL ?>/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="<?php echo G5_JS_URL ?>/jquery-ui-1.12.1.custom/jquery-ui.min.css">
 <link rel="shortcut icon" href="/img/logo-wow.ico" type="image/x-icon" />
 <?php
 if(G5_IS_MOBILE) {
