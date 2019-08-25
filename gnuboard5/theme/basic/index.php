@@ -20,7 +20,7 @@ include_once(G5_THEME_PATH.'/head.php');
                 where a.bo_device in ('pc','both') ";
     if(!$is_admin)
         $sql .= " and a.bo_use_cert = '' ";
-    $sql .= " and a.bo_table not in ( 'gallery','item') ";     //공지사항과 갤러리 게시판은 제외
+    $sql .= " and a.bo_table not in ( 'gallery','item', 'quest') ";     //공지사항과 갤러리 게시판은 제외
     $sql .= " order by b.gr_order, a.bo_order ";
     $result = sql_query($sql);
     for ($i=0; $row=sql_fetch_array($result); $i++) {
