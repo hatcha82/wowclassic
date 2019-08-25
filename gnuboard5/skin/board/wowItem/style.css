@@ -9,6 +9,8 @@
 #bo_list a.btn_admin {} /* 관리자 전용 버튼 */
 #bo_list a.btn_admin:focus, #bo_list .btn_admin:hover {}
 
+        
+
 /* 읽기 버튼 */
 #bo_v a.btn_b01 {}
 #bo_v a.btn_b01:focus, #bo_v a.btn_b01:hover {}
@@ -167,6 +169,18 @@ box-shadow: inset 0 2px 5px  rgba(255,255,255,0.3);}
 #bo_sch select{border:0;margin:9px 5px ;height:20px;float:left;border-right:1px solid #444;background:rgba(17, 17, 17, 0.9);;color:#eee}
 #bo_sch .sch_input{color:#eee;height:38px;border:0;padding:0;background-color:transparent;float:left}
 #bo_sch .sch_btn{height:38px;float:left;background:none;border:0;width:40px;font-size:15px;color:#eee;}
+
+
+#bo_sch {color:#eee;width:100%;margin-bottom:10px;padding:10px;}
+#bo_sch label{float:left;display:block;line-height:36px;width:60px;padding:0 5px;}
+#bo_sch select{width:100px;border: 1px solid #444;}
+#bo_sch button.sch_btn{float:right;margin-right:10px;border:1px solid #444;padding:0 20px;width:120px;height:30px;}
+#bo_sch div.search_group{border:1px solid #444;margin: 10px auto;}
+#bo_sch div.search_group span {margin-left:3px;}
+#bo_sch ul.checkButton span{margin-left:3px;}
+#bo_sch ul.checkButton li{display:inline-block;margin:10px;min-width:100px;}
+#bo_sch ul.checkButton li input{margin-right:2px;}
+
 
 
 /* 게시판 쓰기 */

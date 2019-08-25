@@ -15,325 +15,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 <script type="text/javascript" src="/jquery.multiselect/jquery.multiselect.js"></script>
 
 <script>
-var  classList = [
-  {class: 0   , name: "소모품"}
-, {class: 1   , name: "컨테이너"}
-, {class: 2   , name: "무기"}
-// , {class: 3   , name: "Gem"} 보적
-, {class: 4   , name: "방어구"}
-, {class: 5   , name: "재료"}
-, {class: 6   , name: "발사체"}
-, {class: 7   , name: "상품(거래가능)"}
-// , {class: 8   , name: "Generic(OBSOLETE)"}
-, {class: 9   , name: "조리법/도안/고서"}
-// , {class: 10	, name: "Money(OBSOLETE)"}
-, {class: 11	, name: "통, 화살집"}
-, {class: 12	, name: "퀘스트"}
-, {class: 13	, name: "키"}
-// , {class: 14	, name: "Permanent(OBSOLETE)"}
-// , {class: 15	, name: "잡화"}
-// , {class: 16	, name: "직업"}
-]
-var subClassList = [
-  // { class :0	 ,  subclass : 0	, name :  "Consumable	Usability in combat is decided by the spell assigned."} 
-// , { class :0	 ,  subclass : 1	, name :  "Potion"}
-// , { class :0	 ,  subclass : 2	, name :  "Elixir"}
-  { class :0	 ,  subclass : 3	, name :  "물약/비약/영약"}	
-, { class :0	 ,  subclass : 4	, name :  "두루마리"}	
-, { class :0	 ,  subclass : 5	, name :  "음식/음료/붕대"}	
-// , { class :0	 ,  subclass : 6	, name :  "생명석"}	
-// , { class :0	 ,  subclass : 7	, name :  "Bandage"}	
-, { class :0	 ,  subclass : 8	, name :  "기타"}	
-, { class :1	 ,  subclass : 0	, name :  "가방"}	
-, { class :1	 ,  subclass : 1	, name :  "영혼 가방"}	
-, { class :1	 ,  subclass : 2	, name :  "약초 가방"}	
-, { class :1	 ,  subclass : 3	, name :  "마법 부여 가방"}	
-// , { class :1	 ,  subclass : 4	, name :  "기계공학 가방"}	
-// , { class :1	 ,  subclass : 5	, name :  "Gem Bag"}	
-// , { class :1	 ,  subclass : 6	, name :  "Mining Bag"}	
-// , { class :1	 ,  subclass : 7	, name :  "Leatherworking Bag"}	
-, { class :2	 ,  subclass : 0	, name :  "도끼"}
-, { class :2	 ,  subclass : 1	, name :  "양손 도끼"}
-, { class :2	 ,  subclass : 2	, name :  "활"}	
-, { class :2	 ,  subclass : 3	, name :  "총"}	
-, { class :2	 ,  subclass : 18 , name :  "석궁"}	
-, { class :2	 ,  subclass : 4	, name :  "둔기"}
-, { class :2	 ,  subclass : 5	, name :  "양손 둔기"}
-, { class :2	 ,  subclass : 6	, name :  "장창"}	
-, { class :2	 ,  subclass : 7	, name :  "검"}
-, { class :2	 ,  subclass : 8	, name :  "양손 검"}
-, { class :2	 ,  subclass : 15 , name :  "단검"}	
-// , { class :2	 ,  subclass : 9	, name :  "Obsolete"}	
-, { class :2	 ,  subclass : 10 , name :  "지팡이"}	
-, { class :2	 ,  subclass : 19 , name :  "마법봉"}	
 
-, { class :2	 ,  subclass : 16 , name :  "투척 무기"}
-//, { class :2	 ,  subclass : 11 , name :  "Exotic"}	
-// , { class :2	 ,  subclass : 12 , name :  "Exotic"}	
-, { class :2	 ,  subclass : 13 , name :  "장착 무기"}	
-, { class :2	 ,  subclass : 14 , name :  "그외 무기(전문기술)"}
-
-
-// , { class :2	 ,  subclass : 17 , name :  "Spear"}	
-
-
-, { class :2	 ,  subclass : 20 , name :  "낚싯대"}
-, { class :3	 ,  subclass : 0	, name :  "Red"}	
-, { class :3	 ,  subclass : 1	, name :  "Blue"}	
-, { class :3	 ,  subclass : 2	, name :  "Yellow"}	
-, { class :3	 ,  subclass : 3	, name :  "Purple"}
-, { class :3	 ,  subclass : 4	, name :  "Green"}	
-, { class :3	 ,  subclass : 5	, name :  "Orange"}	
-, { class :3	 ,  subclass : 6	, name :  "Meta"}	
-, { class :3	 ,  subclass : 7	, name :  "Simple"}	
-, { class :3	 ,  subclass : 8	, name :  "Prismatic"}	
-
-, { class :4	 ,  subclass : 1	, name :  "천"}	
-, { class :4	 ,  subclass : 2	, name :  "가죽"}	
-, { class :4	 ,  subclass : 3	, name :  "사슬"}	
-, { class :4	 ,  subclass : 4	, name :  "판금"}	
-// , { class :4	 ,  subclass : 5	, name :  "Buckler(OBSOLETE)"}
-, { class :4	 ,  subclass : 6	, name :  "방패"}	
-, { class :4	 ,  subclass : 7	, name :  "성서"}
-, { class :4	 ,  subclass : 8	, name :  "우상"}
-, { class :4	 ,  subclass : 9	, name :  "토템"}	
-, { class :4	 ,  subclass : 0	, name :  "잡화"}	
-// , { class :5	 ,  subclass : 0	, name :  "Reagent"}	
-// , { class :6	 ,  subclass : 0	, name :  "Wand(OBSOLETE)"}	
-// , { class :6	 ,  subclass : 1	, name :  "Bolt(OBSOLETE)"}	
-, { class :6	 ,  subclass : 2	, name :  "화살"}	
-, { class :6	 ,  subclass : 3	, name :  "탄환"}	
-//, { class :6	 ,  subclass : 4	, name :  "Thrown(OBSOLETE)"}	
-, { class :7	 ,  subclass : 0	, name :  "거래가능"}	
-, { class :7	 ,  subclass : 1	, name :  "부품"}	
-, { class :7	 ,  subclass : 2	, name :  "폭약/폭탄"}	
-, { class :7	 ,  subclass : 3	, name :  "장치"}	
-//, { class :7	 ,  subclass : 4	, name :  "Jewelcrafting"}	
-// , { class :7	 ,  subclass : 5	, name :  "천"}	
-// , { class :7	 ,  subclass : 6	, name :  "가죽"}	
-// , { class :7	 ,  subclass : 7	, name :  "Metal & Stone"}	
-// , { class :7	 ,  subclass : 8	, name :  "Meat"}	
-, { class :7	 ,  subclass : 9	, name :  "약초"}	
-// , { class :7	 ,  subclass : 10 , name :  "Elemental"}
-//, { class :7	 ,  subclass : 11 , name :  "Other"}	
-// , { class :7	 ,  subclass : 12 , name :  "Enchanting"	}
-// , { class :8	 ,  subclass : 0	, name :  "Generic(OBSOLETE)"}	
-//, { class :9	 ,  subclass : 0	, name :  "책"	}
-, { class :9	 ,  subclass : 1	, name :  "가죽세공"	}
-, { class :9	 ,  subclass : 2	, name :  "재봉"}	
-, { class :9	 ,  subclass : 3	, name :  "기계공학"}	
-, { class :9	 ,  subclass : 4	, name :  "대장기술"}	
-, { class :9	 ,  subclass : 5	, name :  "요리"}	
-, { class :9	 ,  subclass : 6	, name :  "연금술"}	
-, { class :9	 ,  subclass : 7	, name :  "응급치료"}	
-, { class :9	 ,  subclass : 8	, name :  "마법부여"}
-, { class :9	 ,  subclass : 9	, name :  "낚시"}	
-// , { class :9	 ,  subclass : 10 , name :  "Jewelcrafting"}	
-// , { class :10	 ,  subclass :0	, name :  "Money(OBSOLETE)"}	
-// , { class :11	 ,  subclass :0	, name :  "Quiver(OBSOLETE)"}	
-// , { class :11	 ,  subclass :1	, name :  "Quiver(OBSOLETE)"}
-, { class :11	 ,  subclass :2	, name :  "화살통"}
-, { class :11	 ,  subclass :3	, name :  "탄약통"}
-, { class :12	 ,  subclass :0	, name :  "퀘스트"}	
-, { class :13	 ,  subclass :0	, name :  "키"}	
-//, { class :13	 ,  subclass :1	, name :  "Lockpick"}	
-// , { class :14	 ,  subclass :0	, name :  "Permanent"}	
-// , { class :15	 ,  subclass :0	, name :  "쓰래기"}	
-// , { class :15	 ,  subclass :1	, name :  "재료"}	
-//, { class :15	 ,  subclass :2	, name :  "Pet"}	
-// , { class :15	 ,  subclass :3	, name :  "Holiday"}	
-// , { class :15	 ,  subclass :4	, name :  "Other"}	
-// , { class :15	 ,  subclass :5	, name :  "Mount"}
-, { class :16	 ,  subclass :1	, name :  "Warrior"}	
-, { class :16	 ,  subclass :2	, name :  "Paladin"}	
-, { class :16	 ,  subclass :3	, name :  "Hunter"}	
-, { class :16	 ,  subclass :4	, name :  "Rogue"}	
-, { class :16	 ,  subclass :5	, name :  "Priest"}	
-, { class :16	 ,  subclass :6	, name :  "Death Knight"}
-, { class :16	 ,  subclass :7	, name :  "Shaman"}	
-, { class :16	 ,  subclass :8	, name :  "Mage"}	
-, { class :16	 ,  subclass :9	, name :  "Warlock"}	
-, { class :16	 ,  subclass :11	, name :  "Druid"}	
-]
-var InventoryTypeList = 
-[
-  {InventoryType: 1	, name: "머리"}
-, {InventoryType: 2	, name: "목"}
-, {InventoryType: 3	, name: "어깨"}
-, {InventoryType: 4	, name: "셔츠"}
-, {InventoryType: 5	, name: "가슴"}
-, {InventoryType: 6	, name: "허리"}
-, {InventoryType: 7	, name: "다리"}
-, {InventoryType: 8	, name: "발"}
-, {InventoryType: 9	, name: "손목"}
-, {InventoryType: 10	, name: "손"}
-, {InventoryType: 11	, name: "반지"}
-, {InventoryType: 12	, name: "장신구"}
-, {InventoryType: 13	, name: "무기"}
-, {InventoryType: 14	, name: "방패"}
-, {InventoryType: 15	, name: "활"}
-, {InventoryType: 16	, name: "등"}
-, {InventoryType: 17	, name: "양손"}
-, {InventoryType: 18	, name: "가방"}
-, {InventoryType: 19	, name: "휘장"}
-, {InventoryType: 20	, name: "로브"}
-, {InventoryType: 21	, name: "주장비"}
-, {InventoryType: 22	, name: "보조 장비 무기"}
-, {InventoryType: 23	, name: "보조장비"}
-, {InventoryType: 24	, name: "탄"}
-, {InventoryType: 25	, name: "투척 무기"}
-, {InventoryType: 26	, name: "원거리 장비" }
-, {InventoryType: 27	, name: "통, 화살집"}
-,   {InventoryType: 0	, name: "기타"}
-// , {InventoryType: 28	, name: "Relic"} 유물
-]
-var RequiredLevelList =
-[
-, {RequiredLevel: "1-10" ,  name:  "1 - 10"}    
-, {RequiredLevel: "10-20" , name: "10 - 20"}    
-, {RequiredLevel: "20-30" , name: "20 - 30"}    
-, {RequiredLevel: "30-40" , name: "30 - 40"}    
-, {RequiredLevel: "40-50" , name: "40 - 50"} 
-, {RequiredLevel: "50-60" , name: "50 - 60"} 
-, {RequiredLevel: "60-100" , name: "60 - 100"}    
-
-]
-var AllowableClassList = 
-[
-        {AllowableClass :"1024" , name : "드루이드", color: '#ff7c0a'}
-    ,   {AllowableClass :"4"  , name : "사냥꾼", color: '#7c9953 '}
-    ,   {AllowableClass :"128"  , name : "마법사", color: '#4f98b3'}
-    ,   {AllowableClass :"2"  , name : "성기사", color: '#cc749c '}
-    ,   {AllowableClass :"16"  , name : "사제", color: 'gray'}
-    ,   {AllowableClass :"8"  , name : "도적", color: '#99933f'}
-    ,   {AllowableClass :"64"  , name : "주술사", color: '#2359ff'}
-    ,   {AllowableClass :"256"  , name : "흑마법사", color: '#9382c9'}
-    ,   {AllowableClass :"1"  , name : "전사", color: '#997854'}
-]
-var QualityList = 
-[
-        { Quality : 0 	, name : "하급" ,color:'#9d9d9d'}
-    ,   { Quality : 1 	, name : "일반" ,color:'#fff'}
-    ,   { Quality : 2 	, name : "고급" ,color:'#1eff00'}
-    ,   { Quality : 3 	, name : "희귀" ,color:'#0070dd'}
-    ,   { Quality : 4 	, name : "영웅" ,color:'#9345ff'}
-    ,   { Quality : 5 	, name : "전설" ,color:'#ff8000'}
-    //,   { Quality : 6 	, name : "유물"}
-]
-var bondingList =[
-        {bonding : 1 , name:'획득시'}
-    ,   {bonding : 2 , name:'착용시'}
-    ,   {bonding : 3 , name:'사용시'}
-    //,   {bonding : 4 , name:'퀘스트'}    
-]
-// ,   { Material :  4	 , ""} Jewelry
-var MeterialList = [
-    { Material :  1	 , name : "철"} 
-,   { Material :  2	 , name : "목재"} 
-,   { Material :  3	 , name : "액체"} 
-,   { Material :  5	 , name : "사슬"} 
-,   { Material :  6	 , name : "판금"} 
-,   { Material :  7	 , name : "천"} 
-,   { Material :  8	 , name : "가죽"} 
-];
-var stat_typeList = [
-      { stat_type : 0	, name : "마나"}
-    , { stat_type : 1	, name : "체력"}
-    , { stat_type : 3	, name : "민첩성"}
-    , { stat_type : 4	, name : "힘"}
-    , { stat_type : 5	, name : "지능"}
-    , { stat_type : 6	, name : "정신력"}
-    , { stat_type : 7	, name : "체력"}
-    // , { stat_type : 12	, name : "ITEM_MOD_DEFENSE_SKILL_RATING"}
-    // , { stat_type : 13	, name : "ITEM_MOD_DODGE_RATING"}
-    // , { stat_type : 14	, name : "ITEM_MOD_PARRY_RATING"}
-    // , { stat_type : 15	, name : "ITEM_MOD_BLOCK_RATING"}
-    // , { stat_type : 16	, name : "ITEM_MOD_HIT_MELEE_RATING"}
-    // , { stat_type : 17	, name : "ITEM_MOD_HIT_RANGED_RATING"}
-    // , { stat_type : 18	, name : "ITEM_MOD_HIT_SPELL_RATING"}
-    // , { stat_type : 19	, name : "ITEM_MOD_CRIT_MELEE_RATING"}
-    // , { stat_type : 20	, name : "ITEM_MOD_CRIT_RANGED_RATING"}
-    // , { stat_type : 21	, name : "ITEM_MOD_CRIT_SPELL_RATING"}
-    // , { stat_type : 22	, name : "ITEM_MOD_HIT_TAKEN_MELEE_RATING"}
-    // , { stat_type : 23	, name : "ITEM_MOD_HIT_TAKEN_RANGED_RATING"}
-    // , { stat_type : 24	, name : "ITEM_MOD_HIT_TAKEN_SPELL_RATING"}
-    // , { stat_type : 25	, name : "ITEM_MOD_CRIT_TAKEN_MELEE_RATING"}
-    // , { stat_type : 26	, name : "ITEM_MOD_CRIT_TAKEN_RANGED_RATING"}
-    // , { stat_type : 27	, name : "ITEM_MOD_CRIT_TAKEN_SPELL_RATING"}
-    // , { stat_type : 28	, name : "ITEM_MOD_HASTE_MELEE_RATING"}
-    // , { stat_type : 29	, name : "ITEM_MOD_HASTE_RANGED_RATING"}
-    // , { stat_type : 30	, name : "ITEM_MOD_HASTE_SPELL_RATING"}
-    // , { stat_type : 31	, name : "ITEM_MOD_HIT_RATING"}
-    // , { stat_type : 32	, name : "ITEM_MOD_CRIT_RATING"}
-    // , { stat_type : 33	, name : "ITEM_MOD_HIT_TAKEN_RATING"}
-    // , { stat_type : 34	, name : "ITEM_MOD_CRIT_TAKEN_RATING"}
-    // , { stat_type : 35	, name : "ITEM_MOD_RESILIENCE_RATING"}
-    // , { stat_type : 36	, name : "ITEM_MOD_HASTE_RATING"}
-    // , { stat_type : 37	, name : "ITEM_MOD_EXPERTISE_RATING"}
-
-]
-function createRadioButton(id , list, keyName,selectedItem){
-    $("#"+ id).html('')    
-    var html = '<ul class="checkButton">';
-
-    list.forEach(function(obj){
-        var style = '';
-        if(obj['color']){
-            style +=`color:${obj['color']};`;
-        }
-        var radioButton = `<input type="radio" name="${keyName}" value="${obj[keyName]}"/><span style="${style}">${obj.name}</span>`;
-        if(selectedItem != '' && selectedItem == obj[keyName]){
-            radioButton = `<input type="radio" name="${keyName}" value="${obj[keyName]}" checked/><span style="${style}">${obj.name}</span>`;
-        }             
-        html+=`<li>${radioButton}</li>`;
-    })
-    html += '</ul>';
-    $("#" + id).append(html)
-}
-function createCheckButton(id , list, keyName,selectedItem){
-    $("#"+ id).html('')    
-    var html = '<ul class="checkButton">';
-
-    list.forEach(function(obj){
-        var style = '';
-        if(obj['color']){
-            style +=`color:${obj['color']};`;
-        }
-        var checkButton = `<input type="checkbox" name="${keyName}[]" value="${obj[keyName]}"/><span style="${style}">${obj.name}</span>`;
-        if(selectedItem != '' ){
-            var selectedItemArray = selectedItem.split(',');
-            var key =  obj[keyName];
-            var test = selectedItemArray.filter(function(item){
-                return item == key;
-            })
-            
-            if(test.length == 1){
-                checkButton = `<input type="checkbox" name="${keyName}[]" value="${obj[keyName]}" checked/><span style="${style}">${obj.name}</span>`;
-            }
-             
-        }
-        html+=`<li>${checkButton}</li>`;
-    })
-    html += '</ul>';
-    $("#" + id).append(html)
-}
-function createOptions(id , list, keyName,selectedItem){
-    $("#"+ id).html('')
-    var option = `<option value="">선택</option>`
-    $("#" + id).append(option)
-    list.forEach(function(obj){
-        var style = '';
-        if(obj['color']){
-            style +=`color:${obj['color']};`;
-        }
-        var option = `<option value="${obj[keyName]}" style="${style}">${obj.name}</option>`
-        
-        if(selectedItem != '' && selectedItem == obj[keyName]){
-            option = `<option value="${obj[keyName]}" style="${style}" selected>${obj.name}</option>`
-        }
-        $("#" + id).append(option)
-    })
-}
 function createSubClassCheckButton(selectedClass,selectedValue){   
         var classFiltered = subClassList.filter(function(data){
 	        return data.class == selectedClass
@@ -353,24 +35,8 @@ function reset_item_search(){
     createCheckButton('AllowableClassCheck' , AllowableClassList, 'AllowableClass','')
     createCheckButton('stat_typeCheck' , stat_typeList, 'stat_type','')
     createCheckButton('InventoryTypeCheck' , InventoryTypeList, 'InventoryType',``)
-
-    
-    
-
 }
-$( window ).load(function() {
-  var list = [];
-  $('a').each(function(idx, tag){
-      var $tag = $(tag);
-      if($tag.attr('href').indexOf('https://ko.classic.wowhead.com/item') != -1 ){
-        var name = $tag.find('span').text()
-        var id = $tag.attr('href').replace('https://ko.classic.wowhead.com/item=','');
-          var obj = { entry : id, name : name}
-          list.push(obj);
-      }
-  })
-  //console.log(list);
-});
+
 $( document ).ready(function() {
     
     createOptions('classSelect' , classList, 'class' ,'<?php echo $_GET['class']?>')    
@@ -392,19 +58,19 @@ $( document ).ready(function() {
     })
 
     $("td.AllowableClass").each(function(idx ,tag){
-	$tag = $(tag)
-	var AllowableClass = parseInt($tag.text());
-	var classObj= $.map(AllowableClassList,function(obj){		
-		if(obj.AllowableClass == AllowableClass) return obj;
-	})[0];
-	if(classObj){
-        var html = `<span style="color:${classObj.color}">${classObj.name}</span>`
-    }else{
-        var html ='';
-    }
+        $tag = $(tag)
+        var AllowableClass = parseInt($tag.text());
+        var classObj= $.map(AllowableClassList,function(obj){		
+            if(obj.AllowableClass == AllowableClass) return obj;
+        })[0];
+        if(classObj){
+            var html = `<span style="color:${classObj.color}">${classObj.name}</span>`
+        }else{
+            var html ='';
+        }
 
-	$tag.html(html)
-})
+        $tag.html(html)
+    })
     
 });
 </script>
@@ -453,18 +119,6 @@ $( document ).ready(function() {
     <?php } ?>
     <!-- } 게시판 카테고리 끝 -->
     <!-- 게시판 검색 시작 { -->
-        <style>
-        #bo_sch {color:#eee;width:100%;margin-bottom:10px;padding:10px;}
-        #bo_sch label{float:left;display:block;line-height:36px;width:60px;padding:0 5px;}
-        #bo_sch select{width:100px;border: 1px solid #444;}
-        #bo_sch button.sch_btn{float:right;margin-right:10px;border:1px solid #444;padding:0 20px;width:120px;height:30px;}
-        #bo_sch div.search_group{border:1px solid #444;margin: 10px auto;}
-        #bo_sch div.search_group span {margin-left:3px;}
-        
-        #bo_sch ul.checkButton span{margin-left:3px;}
-        #bo_sch ul.checkButton li{display:inline-block;margin:10px;min-width:100px;}
-        #bo_sch ul.checkButton li input{margin-right:2px;}
-        </style>
         <fieldset id="bo_sch" >
         <legend>게시물 검색</legend>
         <form name="fsearch" method="get">

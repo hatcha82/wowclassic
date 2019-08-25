@@ -12,6 +12,156 @@ if ($is_nogood) $colspan++;
 add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0);
 ?>
 
+<script>
+var questTypeList = [
+    {type: 1	 ,  name :   "Group"}
+,   {type: 21    ,  name : 	"Life"}
+,   {type: 41    ,  name : 	"PvP"}
+,   {type: 62    ,  name : 	"Raid"}
+,   {type: 81    ,  name : 	"Dungeon"}
+,   {type: 82    ,  name : 	"World Event"} 
+,   {type: 83    ,  name : 	"Legendary"}
+,   {type: 84    ,  name : 	"Escort"}
+,   {type: 85    ,  name : 	"Heroic"}
+]
+var zoneType2 = [
+    ,   {zonId : 440  , name :""}         
+    ,   {zonId : 2677 , name :""}     
+    ,   {zonId : 1377 , name :""}     
+    ,   {zonId : 3428 , name :""}     
+    ,   {zonId : 2717 , name :""}     
+    ,   {zonId : 493  , name :""}     
+    ,   {zonId : 3429 , name :""}     
+    ,   {zonId : 1583 , name :""}     
+    ,   {zonId : 25   , name :""} 
+    ,   {zonId : 139  , name :""}     
+    ,   {zonId : 3456 , name :""}     
+    ,   {zonId : 1519 , name :""}     
+    ,   {zonId : 15   , name :""} 
+    ,   {zonId : 16   , name :""} 
+    ,   {zonId : 2597 , name :""}     
+    ,   {zonId : 2159 , name :""}     
+    ,   {zonId : 1977 , name :""}     
+    ,   {zonId : 19   , name :""} 
+]
+var DungeonList = [
+  {zoneId :2437	, name : "" ,minLevel : "9" }
+,  {zoneId :719	    , name : "" ,minLevel : "10" }
+,  {zoneId :718	    , name : "" ,minLevel : "11" }
+,  {zoneId :1581	, name : "" ,minLevel : "14" }
+,  {zoneId :209	    , name : "" ,minLevel : "16" }
+,  {zoneId :331	    , name : "" ,minLevel : "21" }
+,  {zoneId :717	    , name : "" ,minLevel : "16" }
+,  {zoneId :133	    , name : "" ,minLevel : "20" }
+,  {zoneId :1717	, name : "" ,minLevel : "20" }
+,  {zoneId :796	    , name : "" ,minLevel : "25" }
+,  {zoneId :1517	, name : "" ,minLevel : "35" }
+,  {zoneId :722	    , name : "" ,minLevel : "28" }
+,  {zoneId :1417	, name : "" ,minLevel : "38" }
+,  {zoneId :978	    , name : "" ,minLevel : "40" }
+,  {zoneId :400	    , name : "" ,minLevel : "40" }
+,  {zoneId :2100	, name : "" ,minLevel : "38" }
+,  {zoneId :51	    , name : "" ,minLevel : "45" }
+,  {zoneId :490	    , name : "" ,minLevel : "47" }
+,  {zoneId :1584	, name : "" ,minLevel : "1" }
+,  {zoneId :25	    , name : "" ,minLevel : "48" }
+,  {zoneId :1583	, name : "" ,minLevel : "40" }
+,  {zoneId :2017	, name : "" ,minLevel : "52" }
+,  {zoneId :139	    , name : "" ,minLevel : "55" }
+,  {zoneId :493	    , name : "" ,minLevel : "56" }
+,  {zoneId :2557	, name : "" ,minLevel : "54" }
+,  {zoneId :46	    , name : "" ,minLevel : "57" }
+,  {zoneId :2057	, name : "" ,minLevel : "52" }
+,  {zoneId :1537	, name : "" ,minLevel : "58" }
+,  {zoneId :1637	, name : "" ,minLevel : "58" }
+,  {zoneId :2717	, name : "" ,minLevel : "55" }
+]
+
+
+function createSubClassCheckButton(selectedClass,selectedValue){   
+        var classFiltered = subClassList.filter(function(data){
+	        return data.class == selectedClass
+        })
+        $("#subClassCheck")
+        $("#subClassCheck").html('')
+        createCheckButton('subClassCheck' , classFiltered, 'subclass', `${selectedValue}`)
+}
+function reset_item_search(){
+    createOptions('classSelect' , classList, 'class' ,'')
+    createSubClassCheckButton('','');    
+    createRadioButton('MinLevelRadio' , MinLevelList, 'MinLevel','')
+    createOptions('bondingSelect' , bondingList, 'bonding','')
+    createOptions('MeterialSelect' , MeterialList, 'Material','')
+    createCheckButton('bondingCheck' , bondingList, 'bonding',``)
+    createCheckButton('QualityCheck' , QualityList, 'Quality','')
+    createCheckButton('RequiredClassesCheck' , RequiredClassesList, 'RequiredClasses','')
+    createCheckButton('stat_typeCheck' , stat_typeList, 'stat_type','')
+    createCheckButton('InventoryTypeCheck' , InventoryTypeList, 'InventoryType',``)
+}
+var AreaLevelList = [
+    {AreaLevel : 0, name : "동부왕국"}
+,   {AreaLevel : 1, name : "칼림도어"}
+]
+$(document).load(function(){
+    $("#AreaLevelRadio1 a").each(function(idx, tag){
+        var $tag = $(tag);
+        if($tag.text() === 'undefined'){
+            $tag.parent().remove()
+        }
+    })
+    $("#AreaLevelRadio2 a").each(function(idx, tag){
+        var $tag = $(tag);
+        if($tag.text() === 'undefined'){
+            $tag.parent().remove()
+        }
+    })
+
+})
+$( document ).ready(function() {
+    
+    
+    createRadioButton('typeRadio' , questTypeList, 'type','<?php echo $_GET['type']?>')
+    createRadioButton('AreaLevelRadio' ,DungeonList, 'zoneId','<?php echo $_GET['ZoneOrSort']?>','ZoneOrSort','https://ko.classic.wowhead.com/zone')
+    createRadioButton('AreaLevelRadio1' , _.where(areaList, {mapId : "0",areaId: "0"}), 'zoneId','<?php echo $_GET['ZoneOrSort']?>','ZoneOrSort','https://ko.classic.wowhead.com/zone')
+
+    createRadioButton('AreaLevelRadio2' , _.where(areaList, {mapId : "1",areaId: "0"}), 'zoneId','<?php echo $_GET['ZoneOrSort']?>','ZoneOrSort','https://ko.classic.wowhead.com/zone')
+  
+
+    createOptions('classSelect' , classList, 'class' ,'<?php echo $_GET['class']?>')    
+    createSubClassCheckButton('<?php echo $_GET['class']?>',`<?php echo is_array($_GET['subclass']) ? implode ( ",", $_GET['subclass'] ) : $_GET['subclass'];?>`); 
+    
+    createRadioButton('MinLevelRadio' , MinLevelList, 'MinLevel','<?php echo $_GET['MinLevel']?>')
+  
+    createOptions('QualitySelect' , QualityList, 'Quality','<?php echo $_GET['Quality']?>')
+    createOptions('MeterialSelect' , MeterialList, 'Material','<?php echo $_GET['Material']?>')
+
+    createCheckButton('bondingCheck' , bondingList, 'bonding',`<?php echo is_array($_GET['bonding']) ? implode ( ",", $_GET['bonding'] ) : $_GET['bonding'];?>`)
+    createCheckButton('QualityCheck' , QualityList, 'Quality',`<?php echo is_array($_GET['Quality']) ? implode ( ",", $_GET['Quality'] ) : $_GET['Quality'];?>`)
+    createCheckButton('RequiredClassesCheck' , RequiredClassesList, 'RequiredClasses',`<?php echo is_array($_GET['RequiredClasses']) ? implode ( ",", $_GET['RequiredClasses'] ) : $_GET['RequiredClasses'];?>`)
+    createCheckButton('stat_typeCheck' , stat_typeList, 'stat_type',`<?php echo is_array($_GET['stat_type']) ? implode ( ",", $_GET['stat_type'] ) : $_GET['stat_type'];?>`)
+    createCheckButton('InventoryTypeCheck' , InventoryTypeList, 'InventoryType',`<?php echo is_array($_GET['InventoryType']) ? implode ( ",", $_GET['InventoryType'] ) : $_GET['InventoryType'];?>`)
+    $("#classSelect").change(function(e){
+        var selectedValue = this.value;
+        createSubClassCheckButton(selectedValue,'');
+    })
+
+    $("span.RequiredClasses").each(function(idx ,tag){
+        $tag = $(tag)
+        var RequiredClasses = parseInt($tag.text());
+        var classObj= $.map(RequiredClassesList,function(obj){		
+            if(obj.RequiredClasses == RequiredClasses) return obj;
+        })[0];
+        if(classObj){
+            var html = `<span style="color:${classObj.color}">${classObj.name}</span>`
+        }else{
+            var html ='';
+        }
+
+        $tag.html(html)
+    })
+    
+});
+</script>
 <!-- 게시판 목록 시작 { -->
 <div id="bo_list" style="width:<?php echo $width; ?>">
 
@@ -37,7 +187,8 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
     <?php if ($is_category) { ?>
     <nav id="bo_cate">
         <h2><?php echo $board['bo_subject'] ?> 카테고리</h2>
-        <ul id="bo_cate_ul">    
+        <ul id="bo_cate_ul" style="display:none">    
+
         <?php for ($i=0; $i<count($categories); $i++) {?>
         <?php $category = trim($categories[$i]); ?>     
             <li style="cursor:pointer" onclick='window.location="<?php echo G5_BBS_URL.'/board.php?bo_table='. $bo_table ."&amp;sca=". urlencode($category); ?>"' >              
@@ -55,7 +206,102 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
     </nav>
     <?php } ?>
     <!-- } 게시판 카테고리 끝 -->
+ <!-- 게시판 검색 시작 { -->
+    <fieldset id="bo_sch">
+        <legend>게시물 검색</legend>
 
+        <form name="fsearch" method="get">
+        <input type="hidden" name="bo_table" value="<?php echo $bo_table ?>">
+        <input type="hidden" name="sca" value="<?php echo $sca ?>">
+        <input type="hidden" name="sop" value="and">
+        <input type="hidden" name="quest" value="true">
+        <label for="sfl" class="sound_only">검색대상</label>
+        <div style="display:none">
+            <select name="sfl" id="sfl">
+                <option value="wr_subject"<?php echo get_selected($sfl, 'wr_subject', true); ?>>제목</option>
+                <option value="wr_content"<?php echo get_selected($sfl, 'wr_content'); ?>>내용</option>
+                <option value="wr_subject||wr_content"<?php echo get_selected($sfl, 'wr_subject||wr_content'); ?>>제목+내용</option>
+                <option value="mb_id,1"<?php echo get_selected($sfl, 'mb_id,1'); ?>>회원아이디</option>
+                <option value="mb_id,0"<?php echo get_selected($sfl, 'mb_id,0'); ?>>회원아이디(코)</option>
+                <option value="wr_name,1"<?php echo get_selected($sfl, 'wr_name,1'); ?>>글쓴이</option>
+                <option value="wr_name,0"<?php echo get_selected($sfl, 'wr_name,0'); ?>>글쓴이(코)</option>
+            </select>
+            <label for="stx" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label>
+            <input type="text" name="stx" value="<?php echo stripslashes($stx) ?>" class="sch_input" size="25" maxlength="20" placeholder="검색어를 입력해주세요">
+        </div>
+        <div class="search_group">
+            <span for="MinLevelRadio">레벨</span>
+            <div  id="MinLevelRadio"></div>
+        </div>
+
+        
+        <div class="search_group">
+            <span for="typeRadio">유형</span>
+            <div  id="typeRadio"></div>
+        </div>
+        <div class="search_group">
+            <span for="AreaLevelRadio">던전</span>
+            <div  id="AreaLevelRadio"></div>
+        </div>
+        <div class="search_group">
+            <span for="AreaLevelRadio1">동부왕국</span>
+            <div  id="AreaLevelRadio1"></div>
+        </div>
+        <div class="search_group">
+            <span for="AreaLevelRadio2">칼림도어</span>
+            <div  id="AreaLevelRadio2"></div>
+        </div>
+        
+        <!-- <div class="search_group">
+            <label for="classSelect">분류1</label>
+            <select  name="class" id="classSelect"></select>
+            <label for="MeterialSelect">재질</label>
+            <select  name="Material" id="MeterialSelect"></select>        
+            <div style="clear:both"></div>
+            <div style="clear:both"></div>
+            <div>
+            <span for="subClassCheck">분류2</span>
+            <div  id="subClassCheck"></div>
+            </div>
+           
+            <div style="clear:both"></div>
+        </div> -->
+        <div class="search_group">
+            <span for="RequiredClassesCheck">직업</span><Br/>
+            <div id="RequiredClassesCheck"></div>
+            <div style="clear:both"></div>
+        </div>
+        <div style="display:none">
+
+        <div class="search_group">
+            <span for="bondingCheck">귀속</span><Br/>
+            <div  id="bondingCheck"></div>
+            <div style="clear:both"></div>
+        </div>
+        <div class="search_group">
+            <span for="QualityCheck">등급</span><Br/>
+            <div  id="QualityCheck"></div>
+            <div style="clear:both"></div>
+        </div>
+        
+        <div class="search_group">
+             <span for="stat_typeCheck">스탯</span><Br/>
+            <div id="stat_typeCheck"></div>
+            <div style="clear:both"></div>
+        </div>
+        <div class="search_group">
+            <span for="InventoryTypeCheck">슬롯</span><Br/>
+            <div id="InventoryTypeCheck"></div>
+            <div style="clear:both"></div>
+        </div>
+        </div>
+        <button type="submit"  value="검색" class="sch_btn"><i class="fa fa-search" aria-hidden="true"></i><span class="" style="font-size:0.9em;"> 검색</span></button>       
+            <button type="button" onclick="reset_item_search()" value="초기화" class="sch_btn"><i class="fa fa-search" aria-hidden="true"></i><span class="" style="font-size:0.9em;"> 초기화</span></button>       
+        </form>
+        <button type="submit" value="검색" class="sch_btn"><i class="fa fa-search" aria-hidden="true"></i><span class="sound_only">검색</span></button>
+        </form>
+    </fieldset>
+    <!-- } 게시판 검색 끝 -->  
     <form name="fboardlist" id="fboardlist" action="./board_list_update.php" onsubmit="return fboardlist_submit(this);" method="post">
     <input type="hidden" name="bo_table" value="<?php echo $bo_table ?>">
     <input type="hidden" name="sfl" value="<?php echo $sfl ?>">
@@ -66,6 +312,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
     <input type="hidden" name="sod" value="<?php echo $sod ?>">
     <input type="hidden" name="page" value="<?php echo $page ?>">
     <input type="hidden" name="sw" value="">
+    <input type="hidden" name="quest" value="true">
     <style>
         table.questList tr td{vertical-align:top; }
     </style>
@@ -81,6 +328,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
             </th>
             <?php } ?>
             <th scope="col">번호</th>
+            <th scope="col">진영</th>
             <th scope="col">제목</th>
             <th scope="col" >필요</th>
             <th scope="col" >보상</th>
@@ -112,20 +360,30 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
                 echo $list[$i]['num'];
              ?>
             </td>
-
+            <td>
+            <?php echo get_available_camp($list[$i]['RequiredRaces'])?>
+            
+            </td>
             <td class="td_subject" style="padding-left:<?php echo $list[$i]['reply'] ? (strlen($list[$i]['wr_reply'])*10) : '0'; ?>px">
                 <ul>
                 <?php
                 if ($is_category && $list[$i]['ca_name']) {
                  ?>
-                <li>[<a href='<?php echo $list[$i]['ca_name_href'] ?>' class="">
-                <a style="pointer-events: none;cursor: default;" target="_blank" href="https://ko.classic.wowhead.com/zone=<?php echo $list[$i]['ca_name'] ?>"></a> 
+                <?php if($list[$i]['ZoneOrSort'] > 0) {?>
+                
+                <?php }?>
+                
+                <li style="font-size:1.2em">[<a href='<?php echo $list[$i]['ca_name_href'] ?>' class="">
+                <a style="pointer-events: none;cursor: default;" target="_blank" href="https://ko.classic.wowhead.com/zone=<?php echo $list[$i]['ZoneOrSort'] ?>"></a> 
                 </a>]
+                <!-- 지역 <span><?php echo $list[$i]['ZoneOrSort'] ?></span> -->
+                
+                <span class="RequiredRaces"><?php echo get_available_race($list[$i]['RequiredRaces'])?></span>
+                 <span class="RequiredClasses"><?php echo $list[$i]['RequiredClasses']?></span>
                 </li>
                 <?php } ?>
                 <?php if ($list[$i]['PrevQuestId'] > 0 ) {?>
                     <li style="font-size:0.8em">
-                    이전 퀘스트: <a style="" target="_blank"  href="https://ko.classic.wowhead.com/quest=<?php echo $list[$i]['PrevQuestId'] ?>"></a>                        
                     </li>
                 <?php } ?>
                 <?php $href=$list[$i]['href'];?>
@@ -235,30 +493,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 
     </form>
      
-       <!-- 게시판 검색 시작 { -->
-    <fieldset id="bo_sch">
-        <legend>게시물 검색</legend>
-
-        <form name="fsearch" method="get">
-        <input type="hidden" name="bo_table" value="<?php echo $bo_table ?>">
-        <input type="hidden" name="sca" value="<?php echo $sca ?>">
-        <input type="hidden" name="sop" value="and">
-        <label for="sfl" class="sound_only">검색대상</label>
-        <select name="sfl" id="sfl">
-            <option value="wr_subject"<?php echo get_selected($sfl, 'wr_subject', true); ?>>제목</option>
-            <option value="wr_content"<?php echo get_selected($sfl, 'wr_content'); ?>>내용</option>
-            <option value="wr_subject||wr_content"<?php echo get_selected($sfl, 'wr_subject||wr_content'); ?>>제목+내용</option>
-            <option value="mb_id,1"<?php echo get_selected($sfl, 'mb_id,1'); ?>>회원아이디</option>
-            <option value="mb_id,0"<?php echo get_selected($sfl, 'mb_id,0'); ?>>회원아이디(코)</option>
-            <option value="wr_name,1"<?php echo get_selected($sfl, 'wr_name,1'); ?>>글쓴이</option>
-            <option value="wr_name,0"<?php echo get_selected($sfl, 'wr_name,0'); ?>>글쓴이(코)</option>
-        </select>
-        <label for="stx" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label>
-        <input type="text" name="stx" value="<?php echo stripslashes($stx) ?>" required id="stx" class="sch_input" size="25" maxlength="20" placeholder="검색어를 입력해주세요">
-        <button type="submit" value="검색" class="sch_btn"><i class="fa fa-search" aria-hidden="true"></i><span class="sound_only">검색</span></button>
-        </form>
-    </fieldset>
-    <!-- } 게시판 검색 끝 -->   
+       
 </div>
 
 <?php if($is_checkbox) { ?>
