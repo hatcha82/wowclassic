@@ -12,7 +12,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 $sql = " select * from wow_db.quest_template where entry = '$wr_id' ";
 
 $wowQuest = sql_fetch($sql);
-echo var_dump($wowQuest);
+//echo var_dump($wowQuest);
 ?>
 </pre>
 
