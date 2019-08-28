@@ -9,3 +9,4 @@
 #new_list .new_tit{display:block;font-weight:bold;margin:0 0 5px;font-size:1.083em}
 #new_list .new_date{float:right;color:#666;font-style:italic}
 #new_list .new_board{color:#3ca1ff}
+#new_list span.new_profile{float:right;color:#999}
