@@ -45,7 +45,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 
 <script>
 jQuery(function($) {
-
+    wowheadLinkToKo();
     $( document ).ready( function() {
 
         // 폰트 리사이즈 쿠키있으면 실행

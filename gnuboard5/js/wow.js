@@ -14200,7 +14200,19 @@ var  classList = [
           $("#" + id).append(option)
       })
   }
-
+	function wowheadLinkToKo(){
+		$('a').each(function(idx, tag){
+			var $tag = $(tag);
+			if($tag.attr('href') && $tag.attr('href').indexOf('https://www.wowhead.com') != -1 ){				
+					var href = $tag.attr('href').split('https://www.wowhead.com').join('https://ko.classic.wowhead.com')		
+					$tag.attr('href',href)
+			}
+			if($tag.attr('href') && $tag.attr('href').indexOf('https://classic.wowhead.com') != -1 ){				
+					var href = $tag.attr('href').split('https://classic.wowhead.com').join('https://ko.classic.wowhead.com')		
+					$tag.attr('href',href)
+			}
+		})
+	}
   $( window ).load(function() {
     var list = [];
     $('a').each(function(idx, tag){
@@ -14213,4 +14225,4 @@ var  classList = [
         }
     })
     //console.log(list);
-  });
+	});

@@ -145,6 +145,7 @@ $(function() {
     setInterval(function(){
         $("#aside > div.notice > div > div.bx-controls.bx-has-controls-direction > div > a.bx-next").click()
     },10000)
+    wowheadLinkToKo();
 });
 </script>
 
