@@ -16,7 +16,7 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
             and 	ca_name = 'Youtube'
             order
             by 		wr_num
-            limit 30";
+            limit 10";
 
     $youtubeIdList = array();
     $result = sql_query($sql);
