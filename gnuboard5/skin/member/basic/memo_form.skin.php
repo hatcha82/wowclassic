@@ -38,9 +38,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
                 </li>
                 <li>
                     <span class="sound_only">자동등록방지</span>
-                    
                     <?php echo captcha_html(); ?>
-                    
                 </li>
             </ul>
         </div>

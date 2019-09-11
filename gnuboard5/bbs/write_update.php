@@ -277,6 +277,7 @@ if ($w == '' || $w == 'r') {
                      wr_8 = '$wr_8',
                      wr_9 = '$wr_9',
                      wr_10 = '$wr_10' ";
+        
     sql_query($sql);
 
     $wr_id = sql_insert_id();

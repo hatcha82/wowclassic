@@ -255,7 +255,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
         <?php echo $editor_js; // 에디터 사용시 자바스크립트에서 내용을 폼필드로 넣어주며 내용이 입력되었는지 검사함   ?>       
         document.previewform.wr_subject.value =  document.fwrite.wr_subject.value
         document.previewform.wr_1.value =  document.fwrite.wr_1.value
-        document.previewform.wr_content.value =  document.getElementById("wr_content").value;
+        document.previewform.wr_content.value =  document.getElementById("tx_wr_content").value;
         document.previewform.target='POPUPW'; POPUPW = window.open('about:blank','POPUPW','width=920,height=800');
     }
     function fwrite_submit(f)
