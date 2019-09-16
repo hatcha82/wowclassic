@@ -101,6 +101,9 @@ a.blizzard:focus, #tnb a.blizzard:hover{color:#4f4f4f;background: transparent}
 #tnb .tnb_community{background:#e7e7e7;font-weight:bold;}
 #tnb .tnb_community:focus, #tnb .tnb_community:hover {color:#333;border-bottom:0}
 #tnb .tnb_community a{color:#4f4f4f;border-bottom:1px solid #e7e7e7}
+#serverStatus{margin-top:-5px;}
+#tnb ul.serverStatus{display: inline;}
+#tnb ul.serverStatus li{display: inline;float:none;border:none;padding:0 10px;}
 
 #hd_qnb{float:right;margin-top:20px}
 #hd_qnb:after {display:block;visibility:hidden;clear:both;content:""}
