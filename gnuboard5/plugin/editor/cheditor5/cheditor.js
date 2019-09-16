@@ -828,13 +828,19 @@ cheditor.prototype = {
 
     handlePaste : function (ev) {
         var text, clip, elem, wrapper, pNode, space = [], div, self = this;
+     
         if (this.cheditor.mode === 'preview') {
             return;
         }
+     
         if (this.cheditor.paste !== 'text' && this.cheditor.mode === 'rich' && this.W3CRange) {
             wrapper = this.handleBeforePaste();
             setTimeout(function () {
                 if (wrapper) {
+                    if(wrapper.innerText && wrapper.innerText.indexOf('wowhead.com') != -1){
+                        var url =  wrapper.innerText
+                        wrapper.innerHTML = `<a href="${url}">${url}</a>`
+                    }
                     if (wrapper.hasChildNodes()) {
                         text = wrapper.innerHTML;
                         text = text.replace(/[\r\n]/g, '\u00a0');
@@ -885,9 +891,9 @@ cheditor.prototype = {
         text = this.trimSpace((this.undefined(clip) || clip === null) ?
             window.clipboardData.getData('Text') :
                 clip.getData('text/plain'));
-
+              
         if (text !== '') {
-            text = text.replace(/\r/g, '');
+            text = text.replace(/\r/g, '');         
             if (this.cheditor.mode === 'code') {
                 div = this.doc.createElement('div');
                 text = this.htmlEncode(text);
