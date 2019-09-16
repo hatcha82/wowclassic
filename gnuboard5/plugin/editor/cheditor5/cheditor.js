@@ -871,6 +871,10 @@ cheditor.prototype = {
 
                     pNode = wrapper.parentNode;
                     if (pNode) {
+                        if(pNode.innerText && pNode.innerText.indexOf('wowhead.com') != -1){
+                            var url =  pNode.innerText
+                            pNode.innerHTML = `<a href="${url}">${url}</a>`
+                        }
                         if (pNode.firstChild === wrapper && pNode.lastChild === wrapper) {
                             pNode.parentNode.removeChild(pNode);
                         } else {
