@@ -214,6 +214,9 @@ a.btn_admin:focus, a.btn_admin:hover {}
 .tbl_wrap {margin:0 10px 10px}
 .tbl_wrap table {width:100%;border-collapse:collapse;border-spacing:0}
 .tbl_wrap caption {padding:10px 0;color:#4b8b99;font-weight:bold;text-align:left}
+#serverStatus{margin-top:-5px;}
+ul.serverStatus{display: inline;}
+ul.serverStatus li{display:inline-block;text-align: center; border:none;width:33%}
 
 .tbl_head01 {}
 .tbl_head01 caption {padding:0 0 10px;color:#777;text-align:left}

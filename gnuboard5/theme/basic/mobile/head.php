@@ -21,6 +21,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
     } ?>
 
     <div id="hd_wrapper">
+  
         <div id="logo">          
             <a href="<?php echo G5_URL ?>"><img src="<?php echo G5_IMG_URL ?>/m_logo.png" alt="<?php echo $config['cf_title']; ?>"></a>
         </div>
@@ -200,6 +201,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 <div id="wrapper">
     <div id="container">
     <?php echo daum_adfit_mobile('top');?>
+    <?php echo get_wowServerStatus()?>
     <?php if (!defined("_INDEX_")) { ?>
        <a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=<?php echo $board['bo_table'];?>"> <h2 id="container_title" class="top" title="<?php echo get_text($g5['title']); ?>"><?php echo get_head_title($g5['title']); ?></h2></a>
     <?php } ?>
