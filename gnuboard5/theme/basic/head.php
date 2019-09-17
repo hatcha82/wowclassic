@@ -31,7 +31,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
       
         <a class="blizzard" href="https://worldofwarcraft.com/ko-kr/game/status/classic-kr" style="position:absolute;left:30px;diaplay:inline">
         
-        <div id="classicOpenDDay" style="display:none">
+        <div id="classicOpenDDay" style="">
         </div>
         <?php echo get_wowServerStatus()?>
         </a>
