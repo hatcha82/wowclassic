@@ -1,45 +1,37 @@
 <?php
 function get_wowServerStatus(){
-    return "";
-    // $url = "http://wowwait.com/";
-    // $ch = curl_init();                                 //curl 초기화
-    // curl_setopt($ch, CURLOPT_URL, $url);               //URL 지정하기
-    // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);    //요청 결과를 문자열로 반환 
-    // curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);      //connection timeout 10초 
-    // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);   //원격 서버의 인증서가 유효한지 검사 안함
+    $sql = "select  *
+            from    WowServerStatuses
+            order 
+            by      serverType  desc
+            ,       serverName";
+    $result = sql_query($sql, true);
+    echo "<ul style='color:#eee' id='serverStatus' class='serverStatus'>";
+    $updateAt = '';
+    for ($i=0; $row=sql_fetch_array($result); $i++) {
+        $serverName = $row["serverName"];
+        $serverStatus = $row["serverStatus"];
+        $serverStatusColor = "";
+        $updateAt = $row["updatedAt"];
+        if($serverStatus === "정원초과"){
+            $serverStatusColor = 'red';
+        }else if($serverStatus === "혼잡"){
+            $serverStatusColor = 'yellow';
+        }else if($serverStatus === "보통"){
+            $serverStatusColor = 'green';
+        }else if($serverStatus === "쾌적"){
+            $serverStatusColor = 'green';
+        }else{
 
-    // $response = curl_exec($ch);
-
-    // curl_close($ch);
-    // $dom = new DomDocument();
-    // @$dom->load(curl_exec($response));
-    // $html = str_get_html($response);
-
-    // echo "<ul style='color:#eee' id='serverStatus' class='serverStatus'>";
-    // foreach($html->find('table') as $table){
-    //     foreach($table->find('tr') as $tr){
-    //         $serverName = $tr->find('td',0)->plaintext;
-    //         $serverStatus = $tr->find('td',1)->plaintext;
-    //         $serverStatusColor = "";
-
-    //         if($serverStatus === "정원초과"){
-    //             $serverStatusColor = 'red';
-    //         }else if($serverStatus === "혼잡"){
-    //             $serverStatusColor = 'yellow';
-    //         }else if($serverStatus === "보통"){
-    //             $serverStatusColor = 'green';
-    //         }else if($serverStatus === "쾌적"){
-    //             $serverStatusColor = 'green';
-    //         }else{
-
-    //         }
-    //         if($serverName){
-    //             echo "<li>$serverName: <span style='color:$serverStatusColor'>$serverStatus</span></li>";                
-    //         }
-
-    //     }
-    // }
-    // echo "</ul>";
+        }
+        if($serverName){
+            echo "<li>$serverName: <span style='color:$serverStatusColor'>$serverStatus</span></li>";                
+        }
+        
+    }
+  
+    echo "</ul>";
+   
 }
 function get_wowItem($contents)
 {
