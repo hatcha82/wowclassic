@@ -40,6 +40,8 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
         <ul>
             
             <?php if ($is_member) {  ?>
+                
+            <li><a href="https://toon.at/donate/637043684917070169" target="_blank"><i class="fa fa-donate"></i> 후원하기</a></li>
             <li><a href="<?php echo G5_BBS_URL ?>/member_confirm.php?url=<?php echo G5_BBS_URL ?>/register_form.php"><i class="fa fa-cog" aria-hidden="true"></i> 정보수정</a></li>
             <li><a href="<?php echo G5_BBS_URL ?>/logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i> 로그아웃</a></li>
             <?php if ($is_admin) {  ?>
