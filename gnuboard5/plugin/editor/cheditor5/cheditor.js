@@ -837,7 +837,7 @@ cheditor.prototype = {
             wrapper = this.handleBeforePaste();
             setTimeout(function () {
                 if (wrapper) {
-                    if(wrapper.innerText && wrapper.innerText.indexOf('wowhead.com') != -1){
+                    if(wrapper.innerText && wrapper.innerText.indexOf('http') != -1){
                         var url =  wrapper.innerText
                         wrapper.innerHTML = `<a href="${url}">${url}</a>`
                     }
@@ -871,7 +871,7 @@ cheditor.prototype = {
 
                     pNode = wrapper.parentNode;
                     if (pNode) {
-                        if(pNode.innerText && pNode.innerText.indexOf('wowhead.com') != -1){
+                        if(pNode.innerText && pNode.innerText.indexOf('http') != -1){
                             var url =  pNode.innerText
                             pNode.innerHTML = `<a href="${url}">${url}</a>`
                         }
