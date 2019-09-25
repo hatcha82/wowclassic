@@ -839,9 +839,17 @@ cheditor.prototype = {
                 if (wrapper) {
                     if(wrapper.innerText && wrapper.innerText.indexOf('http') != -1){
                         var url =  wrapper.innerText
-                        wrapper.innerHTML = `<a href="${url}">${url}</a>`
+                        var list = wrapper.innerText.split('\n')
+                        var html = "";
+                        list.forEach(element => {                                
+                            html += `<p><a href="${element}">${element}</a></p>`
+                        });
+
+                          
+                        wrapper.innerHTML = html;
+                        //wrapper.innerHTML = `<a href="${url}">${url}</a>`
                     }
-                    if (wrapper.hasChildNodes()) {
+                    else if (wrapper.hasChildNodes()) {
                         text = wrapper.innerHTML;
                         text = text.replace(/[\r\n]/g, '\u00a0');
                         text = text.replace(/<font\s?([^>]+)>(\s+|&nbsp;+)<\/font>/gi, '\u00a0');
@@ -873,7 +881,14 @@ cheditor.prototype = {
                     if (pNode) {
                         if(pNode.innerText && pNode.innerText.indexOf('http') != -1){
                             var url =  pNode.innerText
-                            pNode.innerHTML = `<a href="${url}">${url}</a>`
+                            var list = pNode.innerText.split('\n')
+                            var html = "";
+                            list.forEach(element => {                                
+                                html += `<p><a href="${element}">${element}</a></p>`
+                            });
+
+                              
+                            pNode.innerHTML = html;
                         }
                         if (pNode.firstChild === wrapper && pNode.lastChild === wrapper) {
                             pNode.parentNode.removeChild(pNode);
