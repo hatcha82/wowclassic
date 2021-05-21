@@ -72,7 +72,11 @@ function latest($skin_dir='', $bo_table, $rows=10, $subject_len=40, $cache_time=
         $bo_subject = get_text($board['bo_subject']);
 
         $tmp_write_table = $g5['write_prefix'] . $bo_table; // 게시판 테이블 전체이름
-        $sql = " select * from {$tmp_write_table} where wr_is_comment = 0 order by wr_num limit 0, {$rows} ";
+        
+        $column_str = 'wr_id, wr_num, wr_reply, wr_parent, wr_is_comment, wr_comment, wr_comment_reply, ca_name, wr_option, wr_subject,  wr_link1, wr_link2, wr_link1_hit, wr_link2_hit, wr_hit, wr_good, wr_nogood, mb_id, wr_password, wr_name, wr_email, wr_homepage, wr_datetime, wr_1,wr_3,wr_4, wr_7, wr_8';        
+        $sql = " select {$column_str}  from {$tmp_write_table} where wr_is_comment = 0 order by wr_num limit 0, {$rows} ";
+
+        //$sql = " select * from {$tmp_write_table} where wr_is_comment = 0 order by wr_num limit 0, {$rows} ";
         $result = sql_query($sql);
         for ($i=0; $row = sql_fetch_array($result); $i++) {
             try {

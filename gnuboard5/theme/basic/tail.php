@@ -28,8 +28,7 @@ if (G5_IS_MOBILE) {
                         ";
             
                 $youtubeIdList = array();
-                $result = sql_query($sql);
-                echo var_dump( $result);
+                $result = sql_query($sql);              
                 
                 for ($i=0; $row=sql_fetch_array($result); $i++) {
                     preg_match('#(\.be/|/embed/|/v/|/watch\?v=)([A-Za-z0-9_-]{5,11})#',  $row['wr_content'], $matches);
